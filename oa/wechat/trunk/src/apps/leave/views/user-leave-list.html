@@ -1,0 +1,24 @@
+<div class="scrollable">
+  <div class="scrollable-content  approval-page my-application"  ui-scroll-bottom='bottomReached()'>
+      <section class="mod-application">
+          <ul class="application-list">
+              <li class="mod-type-approval clearfix" ng-repeat="record in records">
+                  <div class="mod-left">
+                        <span class="name">
+                            <strong>{{record.leaveRecord.corp_type_name}}申请-{{record.leaveRecord.duration}}h<i class="date">{{record.apply_time*1000|date:'MM/dd'}}</i></strong>
+                            <em>[开始时间] {{record.leaveRecord.start_time*1000|date:'yyyy-MM-dd HH:mm'}}</em>
+                            <em>[结束时间] {{record.leaveRecord.end_time*1000|date:'yyyy-MM-dd HH:mm'}}</em>
+                        </span>
+                  </div>
+                  <div class="mod-right">
+                      <span ng-if="record.status == 1" class="status icon-examination">审批中</span>
+                      <span ng-if="record.status == 2" class="status icon-passed">已通过</span>
+                      <span ng-if="record.status == 3" class="status icon-fail">未通过</span>
+                      <span ng-if="record.status == 4" class="status icon-back">已退回</span>
+                      <span ng-if="record.status == 0" class="status icon-revocationk">已撤销</span>
+                  </div>
+              </li>
+          </ul>
+      </section>
+  </div>
+</div>

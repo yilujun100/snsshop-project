@@ -1,0 +1,150 @@
+<!-- 知识库首页 -->
+<div class="container" set-main-min-height>
+	<div class="main">		
+		<!-- breadcrumb -->
+		<div class="breadcrumb">
+			<ul>
+				<li>当前位置：</li>
+				<li><a ui-sref="index.knowledge">知识库</a></li>
+				<li>&gt详情</li>
+			</ul>
+		</div>
+
+		<!-- km detail -->
+		<div class="km-detail mt-10">
+			<div class="km-detail-hd">
+				<h3 class="km-detail-tit" ng-bind="articleDetail.title"></h3>
+				<div class="km-detail-info-basic">
+					<p>发布时间：{{ articleDetail.publish_time * 1000 | date: 'yyyy-MM-dd HH:mm' }}</p>
+					<p>作者：{{ articleDetail.user.name }}</p>					
+					<span class="km-bott-cell-2">
+						<a href="javascript:;" ng-class="{'click-on': articleDetail.flow && articleDetail.flow.is_admire == 1}" ng-click="articleActionFn(articleDetail, 0)"><i class="icon-km-list icon-thumb-up"></i>{{ articleDetail.admire_count }}</a>
+						<a href="javascript:;" ng-class="{'click-on': articleDetail.flow && articleDetail.flow.is_collect == 1}" ng-click="articleActionFn(articleDetail, 1)"><i class="icon-km-list icon-star"></i>{{ articleDetail.collect_count }}</a>
+						<a href="javascript:;" ng-class="{'click-on': articleDetail.flow && articleDetail.flow.is_comment > 0}" ng-click="gotoComment()"><i class="icon-km-list icon-msg"></i>{{ articleDetail.comment_count }}</a>
+						<a href="javascript:;"><i class="icon-km-list icon-views"></i>{{ articleDetail.view_count }}</a>
+					</span>
+				</div>
+				<a ng-href="{{articleDetail.annexes}}" ng-if="articleDetail.annexes" class="btn-browse-attachment">浏览附件</a>
+			</div>
+			<div class="km-detail-con article-con" ng-bind-html="articleDetail.content | trust:'html'">
+				<!-- <p>设计是把一种计划、规划、设想通过某种形式传达出来的活动过程。人类通过劳动改造世界，创造文明，创造物质财富和精神财富，而最基础、最主要的创造活动是造物。设计便是造物活动进行预先的计划，可以把任何造物活动的计划技术和计划过程理解为设计。</p>
+				<p>根据工业设计师Victor Papanek 的定义，设计（Design）是为构建有意义的秩序而付出的有意识的直觉上的努力。更详细的定义如下：</p>
+				<p>第一步：理解用户的期望、需要、动机，并理解业务、技术和行业上的需求和限制。</p>
+				<p>第二步：将这些所知道的东西转化为对产品的规划（或者产品本身），使得产品的形式、内容和行为变得有用、能用，令人向往，并且在经济和技术上可行。（这是设计的意义和基本要求所在）</p>
+				<img src="../images/knowledge/km_detail.jpg" width="100%" height="auto" alt="">
+				<p>随着现代科技的发展、知识社会的到来、创新形态的嬗变，设计也正由专业设计师的工作向更广泛的用户参与演变，以用户为中心的、用户参与的创新设计日益受到关注，用户参与的创新2.0模式正在逐步显现。用户需求、用户参与、以用户为中心被认为是新条件下设计创新的重要特征，用户成为创新2.0的关键词，用户体验也被认为是知识社会环境下创新2.0模式的核心。设计不再是专业设计师的专利，以用户参与、以用户为中心也成为了设计的关键词，Fab Lab、Living Lab等的创新设计模式的探索正在成为设计的创新2.0模式。</p> -->
+			</div>
+			<div class="article-bott">
+				<a ui-sref="index.knowledge.detail({articleid:articleDetail.sibling.last.id})" class="article-prev" ng-hide="articleDetail.sibling.last == null">上一篇：{{ articleDetail.sibling.last.title }}</a>
+				<a ui-sref="index.knowledge.detail({articleid:articleDetail.sibling.next.id})" class="article-next mt-10" ng-hide="articleDetail.sibling.next == null">下一篇：{{ articleDetail.sibling.next.title }}</a>			
+			</div>
+			<!-- comment -->
+			<a href="#comment"></a>
+			<div class="comment" id="comment" name="comment">
+				<div class="comment-hd">
+					<h3>全部评论（{{ articleDetail.comment_count }}）</h3>
+				</div>
+				<div class="comment-con">
+					<div class="comment-publish clearfix">
+						<textarea id="commentField" ng-model="commentField"></textarea>
+						<a href="javascript:;" class="btn-publish" ng-click="commentSubmitFn(commentField)" style="margin-top: 10px;">提交评论</a>
+					</div>
+					<ul class="comment-list">
+						<li ng-repeat="comment in comments.contents">
+							<div class="comment-cell-1 clearfix">
+								<span class="fl">
+									<p class="comment-user" ng-bind="comment.user_name"></p>
+									<p class="comment-time" ng-bind="comment.create_time * 1000 | date: 'yyyy-MM-dd HH:mm'"></p>
+								</span>
+								<!-- <em class="comment-floor fr">8F</em> -->
+							</div>
+							<p class="comment-content" ng-bind="comment.comment">
+							</p>
+							<!-- <p class="comment-thumbs">点赞（23）</p> -->
+						</li>
+						<!-- <li>
+							<div class="comment-cell-1 clearfix">
+								<span class="fl">
+									<p class="comment-user">我喜欢八卦</p>
+									<p class="comment-time">4天前</p>
+								</span>
+								<em class="comment-floor fr">8F</em>
+							</div>
+							<p class="comment-content">
+								我没有看完，只是看了几个标题。感觉“五导家”讲的就是从五个步骤指导您而已！这是工作总结，很不错！感谢您的分享！
+							</p>
+							<p class="comment-thumbs">点赞（23）</p>
+						</li>
+						<li>
+							<div class="comment-cell-1 clearfix">
+								<span class="fl">
+									<p class="comment-user">我喜欢八卦</p>
+									<p class="comment-time">4天前</p>
+								</span>
+								<em class="comment-floor fr">8F</em>
+							</div>
+							<p class="comment-content">
+								我没有看完，只是看了几个标题。感觉“五导家”讲的就是从五个步骤指导您而已！这是工作总结，很不错！感谢您的分享！
+							</p>
+							<p class="comment-thumbs">点赞（23）</p>
+						</li> -->
+					</ul>
+					<!-- pagenation -->
+					<div class="list-page">
+						<uib-pagination total-items="page.totalCount" ng-model="page.pageNo" items-per-page="page.pageSize" max-size="5" ng-change="doRequest(comments.status,page.pageNo,page.pageSize,page.articleid)" class="samplePage pagination-sm" boundary-link-numbers="true" previous-text="上一页" next-text="下一页">
+						</uib-pagination>
+						<span>共{{ page.totalPage }}页&nbsp;&nbsp;{{ page.totalCount }}条</span>
+					</div>	
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="sidebar">
+		<!-- my card -->
+		<!-- <div class="my-card">
+			<div class="my-card-info">
+				<img ng-src="{{myCard[0].avatar}}" src="" err-src="images/knowledge/avatar.jpg" width="70" height="70" alt="" class="my-card-avatar">
+				<p class="my-name" ng-bind="myCard[0].name"></p>
+				<p class="my-department" ng-bind="myCard[0].position"></p>
+			</div>
+			<div class="my-card-actions">
+				<ul class="clearfix">
+					<li><a href="javascript:;" ui-sref="index.knowledge.myComment">{{ myCard.comment || 0 }} <i class="icon-my icon-my-comment"></i></a></li>
+					<li><a href="javascript:;" ui-sref="index.knowledge.myCollect">{{ myCard.collect || 0 }} <i class="icon-my icon-my-collect"></i></a></li>
+					<li><a href="javascript:;">498 <i class="icon-my icon-my-views"></i></a></li>
+				</ul>
+			</div>
+		</div> -->
+
+		<!-- hot tags -->
+		<div class="list tags-hot">			
+			<div class="list-hd clearfix">
+				<h3 class="list-tit fl">热门标签</h3>
+			</div>
+			<div class="tags-hot-con">
+				<ul class="clearfix">
+					<li ng-repeat="tag in tags"><a href="javascript:;" ng-click="searchTagFn(tag.id)" ng-bind="tag.name"></a></li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- recommend article -->
+		<div class="list recommend mt-10">			
+			<div class="list-hd clearfix">
+				<h3 class="list-tit fl">推荐</h3>
+				<a ui-sref="index.knowledge.articleRecommend" class="list-more fr">更多</a>
+			</div>
+			<div class="recommend-con">
+				<ul class="recommend-list">
+					<li ng-repeat="articleRecomm in articleRecommList" on-finished>
+						<p><em class="km-tag km-tag-standard" ng-if="articleRecomm.type_id == 30">培训</em><em class="km-tag km-tag-article" ng-if="articleRecomm.type_id == 31">干货</em><em class="km-tag km-tag-process" ng-if="articleRecomm.type_id == 32">规范</em>{{ articleRecomm.user.position }}为您推荐</p>
+						<a ui-sref="index.knowledge.detail({articleid:articleRecomm.id})" class="recomm-tit" ng-bind="articleRecomm.title"></a>
+					</li>
+				</ul>
+			</div>	
+		</div>
+	</div>
+</div>
+
+<!-- to top -->
+<a href="javascript:;" id="toTop" class="to-top" title="返回顶部" back-to-top>返回顶部</a>

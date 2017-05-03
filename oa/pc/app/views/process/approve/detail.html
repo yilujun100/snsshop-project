@@ -1,0 +1,163 @@
+<div class="ap-head">当前位置：<a ui-sref="index.process">流程</a>><a ui-sref="index.process.approve.apply">审批</a>><span>审批详情</span></div>
+<div class="ap-detail" fixed-detail-height>
+    <div class="detail">
+        <div class="detail_head clear">
+            <div class="detail_left">
+                <span><img ng-src="{{record.user_avatar}}"></span>
+                <span class="name">
+                <strong ng-hide="record.is_own">{{record.user_name}}</strong>
+                <strong ng-show="record.is_own">表单编号：{{record.form_number}}</strong>
+                <em>{{record.update_time*1000|date:'yyyy-MM-dd HH:mm'}}</em>
+            </span>
+            </div>
+            <div class="detail_right">
+                <span ng-if="record.status == 1" class="status icon-examination">审批中</span>
+                <span ng-if="record.status == 2" class="status icon-passed">已通过</span>
+                <span ng-if="record.status == 3" class="status icon-fail">未通过</span>
+                <span ng-if="record.status == 4" class="status icon-back">已退回</span>
+                <span ng-if="record.status == 0" class="status icon-revocationk">已撤销</span>
+            </div>
+        </div>
+        <ng-include ng-repeat="field in record.approvalRecordFields" src="'detail_field_'+field.type+'.html'"></ng-include>
+        <div class="detail_process" ng-show="approval_step.length > 0">
+            <div class="detail_field_title">审批流程</div>
+            <div class="officersbox clear" ng-class="{'imaginary-line':approval_step.length>3,'full-line':approval_step.length<=3}">
+                <div class="">
+                    <span class="mod-icon proposer"></span>
+                    <span class="name">{{record.user_name}}</span>
+                </div>
+                <div ng-show="approval_step.length>1" ng-class="{middle:approval_step.length==2}">
+                    <span class="mod-icon" ng-class="{0:'fail',1:'pass'}[approval_step[0].approve_result]"></span>
+                    <span class="name">{{approval_step[0].approver_name}}</span>
+                </div>
+                <div ng-show="approval_step.length>2">
+                    <span class="mod-icon" ng-class="{0:'fail',1:'pass'}[approval_step[approval_step.length-2].approve_result]"></span>
+                    <span class="name">{{approval_step[approval_step.length-2].approver_name}}</span>
+                </div>
+                <div>
+                    <span class="mod-icon" ng-class="{0:'fail',1:'pass'}[approval_step[approval_step.length-1].approve_result]"></span>
+                    <span class="name">{{approval_step[approval_step.length-1].approver_name}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="detail_group">
+            <div class="detail_gp">
+                <span class="gp_item_left padTop">审批日志</span>
+                <div class="gp_item_right padTop">
+                    <p ng-repeat="comment in record.approvalRecordComments">
+                        <span style="margin-right: 10px;display: inline-block;">{{comment.create_time*1000|date:'yyyy-MM-dd HH:mm'}}</span>
+                        <span style="width: 60px;display: inline-block;">{{comment.approver_name}} </span>
+                        <span>{{comment.comment}}</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div ng-if="(record.type=='leave' && record.is_own != 1)|| record.is_current == 1">
+            <div class="detail_normal" ng-if="record.type=='leave' && record.is_own != 1">
+                <a class="click_a clear" href="javascript:void(0)">
+                    <div class="gp_item_left padTop">查看他的请假记录</div>
+                    <div class="gp_item_left mod_arrow"></div>
+                </a>
+            </div>
+            <div class="detail_textarea" ng-if="record.is_current == 1">
+                <textarea placeholder="请输入你的审批意见....." rows="6" ng-model="approval_info.comment"></textarea>
+            </div>
+        </div>
+        <div class="checkIn-sign">
+            <div class="sign-body" ng-if="record.is_current == 1 && record.status == 1">
+                <div class="l-sign" ng-click="approval(0)">驳回</div>
+                <div class="r-sign" ng-click="approval(1)">同意</div>
+            </div>
+        </div>
+        <div class="checkIn-sign">
+            <div class="sign-body" ng-if="record.is_own == 1 && (record.status == 3 || record.status == 1 || record.status == 4)">
+                <div class="l-sign" ng-click="cancel()">撤销</div>
+                <div class="r-sign" ng-click="resubmit()">重新提交</div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/ng-template" id="detail_field_date.html">
+    <div class="detail_group">
+        <div class="detail_gp">
+            <span class="gp_item_left padTop">{{field.name}}</span>
+            <span class="gp_item_right padTop">{{field.value}}</span>
+        </div>
+    </div>
+</script>
+<script type="text/ng-template" id="detail_field_text.html">
+    <div class="detail_group">
+        <div class="detail_gp">
+            <span class="gp_item_left padTop">{{field.name}}</span>
+            <span class="gp_item_right padTop">{{field.value}}</span>
+        </div>
+    </div>
+</script>
+<script type="text/ng-template" id="detail_field_time.html">
+    <div class="detail_group">
+        <div class="detail_gp">
+            <span class="gp_item_left padTop">{{field.name}}</span>
+            <span class="gp_item_right padTop">{{field.value}}</span>
+        </div>
+    </div>
+</script>
+<script type="text/ng-template" id="detail_field_datetime.html">
+    <div class="detail_group">
+        <div class="detail_gp">
+            <span class="gp_item_left padTop">{{field.name}}</span>
+            <span class="gp_item_right padTop">{{field.value}}</span>
+        </div>
+    </div>
+</script>
+<script type="text/ng-template" id="detail_field_select.html">
+    <div class="detail_group">
+        <div class="detail_gp">
+            <span class="gp_item_left padTop">{{field.name}}</span>
+            <span class="gp_item_right padTop">{{field.value}}</span>
+        </div>
+    </div>
+</script>
+<script type="text/ng-template" id="detail_field_textarea.html">
+    <div class="detail_group">
+        <div class="detail_gp">
+            <span class="gp_item_left padTop">{{field.name}}</span>
+            <span class="gp_item_right padTop">{{field.value}}</span>
+        </div>
+    </div>
+</script>
+<script type="text/ng-template" id="detail_field_attachment.html">
+    <div class="detail_box" ng-show="field.value.length > 0">
+        <div class="detail_field_title">{{field.name}}</div>
+        <div class="mod-pic-box clear">
+            <span class="img-box" ng-repeat="image in field.value">
+                <img class="img" ng-click="openLightboxModal(upload_url+'/'+image.path)" ng-src="{{upload_url}}/{{image.path}}"/>
+            </span>
+        </div>
+    </div>
+</script>
+<!-- <div class="detail_group">
+    <div class="detail_gp_l clear">
+        <span class="gp_item_left ">请假类型</span>
+        <span class="gp_item_right">{{record.approvalSpecialFields.corp_type_name}}</span>
+    </div>
+    <div class="detail_gp_r clear">
+        <span class="gp_item_left ">请假时长</span>
+        <span class="gp_item_right">{{record.approvalSpecialFields.duration}}小时</span>
+    </div>
+</div>
+<div class="detail_group">
+    <div class="detail_gp_l clear">
+        <span class="gp_item_left ">开始时间</span>
+        <span class="gp_item_right">{{record.approvalSpecialFields.start_time}}</span>
+    </div>
+    <div class="detail_gp_r clear">
+        <span class="gp_item_left ">结束时间</span>
+        <span class="gp_item_right">{{record.approvalSpecialFields.end_time}}</span>
+    </div>
+</div>
+<div class="detail_group">
+    <div class="detail_gp">
+        <span class="gp_item_left padTop">请假事由</span>
+        <span class="gp_item_right padTop">{{record.approvalSpecialFields.reason}}</span>
+    </div>
+</div> -->

@@ -1,0 +1,53 @@
+<ul class="l-nav l-nav-fold" ng-if="!isOpen">
+    <li class="item">
+        <a class="head-pic" ui-sref="index.personalCenter"><img ng-src="{{headimg}}" src="" err-src="images/portal/avatar.jpg" alt="head-pic"></a>
+        <aside>头像</aside>
+    </li>
+    <!-- <li class="item">
+        <a ui-sref-active="l-nav-active" ui-sref="index.portal"><img src="images/leftbar/home.png" alt="home"></a>
+        <aside>首页</aside>
+    </li> -->
+    <li class="item">
+        <a ui-sref-active="l-nav-active" ui-sref="index.portal.noticeList"><img src="images/portal/message.png" alt="message"></a>
+        <aside>最新公告</aside>
+    </li>
+    <li class="item">
+        <a ui-sref-active="l-nav-active" ui-sref="index.portal.companyNews"><img src="images/portal/mail-list.png" alt="mail-list"></a>
+        <aside>企业新闻</aside>
+    </li>
+    <li class="item">
+        <a ui-sref-active="l-nav-active" ui-sref="index.portal.systemList"><img src="images/portal/book.png" alt="book"></a>
+        <aside>行政制度</aside>
+    </li>
+</ul>
+
+<ul class="l-nav-open" ng-if="isOpen">
+    <li class="item">
+        <a class="head-pic" ui-sref="index.personalCenter">
+            <img ng-src="{{headimg}}" src="" err-src="images/portal/avatar.jpg" alt="head-pic">
+            <div class="leftbar-user">
+                <h3>{{userName}}</h3>
+                <p>欢迎来到盛灿小家</p>
+            </div>
+        </a>
+    </li>
+    <li class="item">
+        <a ui-sref="index.portal.noticeList" ui-sref-active="l-nav-active">
+            <img src="images/portal/message.png">
+            <h3>最新公告</h3>
+        </a>
+    </li>
+    <li class="item">
+        <a ui-sref="index.portal.companyNews" ui-sref-active="l-nav-active">
+            <img src="images/portal/mail-list.png">
+            <h3>企业新闻</h3>
+        </a>
+    </li>
+    <li class="item">
+        <a ui-sref="index.portal.systemList" ui-sref-active="l-nav-active">
+            <img src="images/portal/book.png">
+            <h3>行政制度</h3>
+        </a>
+    </li>
+</ul>
+<div ng-class="{'lb-icon-open': !isOpen, 'lb-icon-fold': isOpen}" ng-click="toggleFn()"></div>

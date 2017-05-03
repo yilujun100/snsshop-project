@@ -1,0 +1,100 @@
+<!-- 文章详情 -->
+<div class="scrollable">
+	<div class="scrollable-content" ui-scroll-bottom='bottomReached()'>	
+		<div class="article-detail">
+			<div class="article-detail-hd">
+				<div class="article-info-related clearfix">
+					<span class="article-info-l fl">
+						<img ng-src="{{articleData.author.avatar}}" ng-if="articleData.is_anonymity == 0" src="" err-src="images/user_avatar_default.jpg" width="30" height="30" alt="" class="author-avatar">
+						<img src="images/avatar_anonymous.jpg" ng-if="articleData.is_anonymity == 1" width="25" height="25" alt="" class="author-avatar">
+						<h3 class="article-author" ng-if="articleData.is_anonymity == 0" ng-bind="articleData.author.name"></h3>
+						<h3 class="article-author" ng-if="articleData.is_anonymity == 1">匿名用户</h3>
+						<p class="article-publish-time" ng-bind="articleData.create_time * 1000 | date: 'yyyy-MM-dd'"></p>
+					</span>
+					<div class="article-info-r fr clearfix">
+						<b class="article-belong-circle">#{{articleData.coteries.title}}</b>
+						<span><i class="icon-article-views"></i>{{articleData.view_count}}</span>
+						<!-- <span ng-click="articleCollectFn(articleData.id)"><i class="icon-article-collect"></i>{{articleData.collect_count}}</span>			 -->
+					</div>
+				</div>
+				<h3 class="article-detail-title mt-10">
+					<em class="article-tag article-tag-essence" ng-if="articleData.is_best">精</em>
+					<em class="article-tag article-tag-top" ng-if="articleData.is_top">置顶</em>
+					{{ articleData.title }}
+				</h3>
+			</div>
+			<div class="article-detail-con">
+				<img ng-if="articleData.image" ng-src="{{articleData.image}}" width="100%" alt="">
+				<div ng-bind-html="articleData.content | trust:'html'" style="margin-top: 10px;"></div>
+				<!-- <img src="images/thumb_bbs.jpg" width="100%" alt="">
+				<p>新闻类的app通常会将图片放置在左侧，文字放置在右侧，而实际情况是用户一进入首页首先扫一遍标题，图片反而是在扫完标题有兴趣之后再去关注的，为什么，变革——今天的我们不是昨天的我们且也不是明天的我们。我还清晰的记得我曾经的想法，我以前的观点，看看他们已经走过的岁月，有时慢，有时迅速如突然的风暴。</p>
+				<p>这也许很矛盾，在另一个十年后，这篇文章一定会过时。如果你和我在同一个旅程，我希望这篇文章能够帮到你。</p>
+				<p>哇，这个设计师是个天才。我想象她坐在她的办公桌旁，开着Photoshop喝着菊花茶，静静地把她头脑中奇妙非凡的视觉呈现在屏幕上，我认为她有一些我根本没有的天赋。</p> -->
+				<div class="article-actions">
+					<a href="javascript:;" class="article-action-like" ng-class="{'article-action-like-on': articleData.is_admire}" ng-click="articleLikedFn(articleData.id)"><i class="icon-thumbs-up-o"></i>赞</a>
+					<a href="javascript:;" class="article-action-collect" ng-class="{'article-action-collect-on': articleData.is_collect}" ng-click="articleCollectFn(articleData.id)"><i class="icon-star-o"></i>收藏</a>
+				</div>
+				<!-- <div class="article-thumbs"><span ng-click="articleLikedFn(articleData.id)"><i class="icon-heart"></i>{{articleData.admire_count}}人赞</span></div> -->
+			</div>
+		</div>
+
+		<div class="article-comments mt-15">
+			<h3 class="comment-title"><i class="icon-article-comment"></i>评论 <strong>({{commentList.length}})</strong></h3>
+			<ul class="comment-list">
+				<li ng-repeat="comment in commentList | orderBy: 'id'">
+					<div class="c-user-avatar">
+						<img ng-src="{{comment.user_avatar}}" width="40" height="40" alt="">
+					</div>
+					<div class="c-wrap">
+						<p class="clearfix"><em class="c-user-name fl" ng-bind="comment.user_name"></em><span class="floor fr">{{$index + 1}}楼</span></p>
+						<p class="c-content" ng-bind="comment.comment"></p>
+						<p class="c-bott clearfix"><em class="c-time fl" ng-bind="comment.create_time * 1000 | date: 'yyyy-MM-dd'"></em><span class="c-thumbs fr" ng-class="{'c-thumbs-on': comment.flow != null}" ng-click="commentLikedFn(comment.id)"><i class="icon-c-thumb"></i>{{comment.admire_count}}</span></p>
+					</div>
+				</li>
+				<!-- <li>
+					<div class="c-user-avatar">
+						<img src="images/avatar.jpg" width="40" height="40" alt="">
+					</div>
+					<div class="c-wrap">
+						<p class="clearfix"><em class="c-user-name fl">陈雪梨</em><span class="floor fr">1楼</span></p>
+						<p class="c-content">设计是把一种计划、规划、设想通过某种形式传达出来的活动过程。基础、最主要的创造活动是造物</p>
+						<p class="c-bott clearfix"><em class="c-time fl">2016-08-23</em><span class="c-thumbs c-thumbs-on fr"><i class="icon-c-thumb"></i>2980</span></p>
+					</div>
+				</li>
+				<li>
+					<div class="c-user-avatar">
+						<img src="images/avatar.jpg" width="40" height="40" alt="">
+					</div>
+					<div class="c-wrap">
+						<p class="clearfix"><em class="c-user-name fl">阳刚</em><span class="floor fr">2楼</span></p>
+						<p class="c-content">美，是指能引起人们美感的客观事物的一种共同的本质属性。</p>
+						<p class="c-bott clearfix"><em class="c-time fl">2016-08-23</em><span class="c-thumbs fr"><i class="icon-c-thumb"></i>2980</span></p>
+					</div>
+				</li>
+				<li>
+					<div class="c-user-avatar">
+						<img src="images/avatar.jpg" width="40" height="40" alt="">
+					</div>
+					<div class="c-wrap">
+						<p class="clearfix"><em class="c-user-name fl">张钰涵</em><span class="floor fr">3楼</span></p>
+						<p class="c-content">灵感（inspiration）是人们思维过程中认识飞跃的心理现象，一种新的思路突然接通。</p>
+						<p class="c-bott clearfix"><em class="c-time fl">2016-08-23</em><span class="c-thumbs fr"><i class="icon-c-thumb"></i>2980</span></p>
+					</div>
+				</li> -->
+			</ul>
+		</div>
+	</div>
+</div>	
+
+<a href="#/post" class="btn-new-post">发帖</a>
+
+<div class="bott-comment">
+
+
+	<p>
+	<a href="#/index" class="home-btn"><span class="home-span"></span></a>
+		<input type="text" placeholder="添加评论" id="commentField" ng-click="parseIosFloat($event)" ng-model="commentContent">
+
+		<a href="javascript:;" class="btn-comment-submit" ng-click="commentSubmitFn(commentContent)">提交评论</a>	
+	</p>
+</div>

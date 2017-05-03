@@ -1,0 +1,72 @@
+<!-- 加班调休 -->
+<div class="container">	
+	<!-- breadcrumb -->
+	<div class="breadcrumb">
+		<ul>
+			<li>当前位置：</li>
+			<li><a ui-sref="index.personalCenter">个人中心</a></li>
+			<li>&gt;加班调休信息</li>
+		</ul>
+	</div>
+
+	<!-- overtime off -->
+	<div class="overtime-off mt-10">
+		<div class="overtime-off-hd clearfix">
+			<ul class="tab-title fl" click-tab>
+				<li class="tab-active">加班列表</li>
+				<li>调休列表</li>
+			</ul>
+			<div class="tab-statis fr">
+				<ul>
+					<li>加班时长总计<b ng-bind="statisOvertime"></b>小时</li>
+					<li>调休时长总计<b ng-bind="statisLeavetime"></b>小时</li>
+					<li>剩余可调休时长<b ng-bind="statisOvertime - statisLeavetime">2</b>小时</li>
+				</ul>
+			</div>
+		</div>
+		<div class="overtime-off-con tab-con">
+			<div class="data-overtime" style="display: block;">
+				<table class="data-table">
+					<thead>
+						<tr>
+							<th width="50%">加班日期</th>
+							<th width="50%">加班时长</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td colspan="2" ng-show="dataOvertimeNull">								
+								<div class="data-empty"><i class="icon-info"></i>没有查询到符合条件的记录</div>
+							</td>
+						</tr>
+						<tr ng-repeat="data in overtimeList" ng-show="!dataOvertimeNull">
+							<td>{{ data.date }}</td>
+							<td>{{ data.longtime }}小时</td>
+						</tr>
+					</tbody>
+				</table>				
+			</div>
+			<div class="data-leave">
+				<table class="data-table">
+					<thead>
+						<tr>
+							<th width="50%">调休日期</th>
+							<th width="50%">调休时长</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td colspan="2" ng-show="dataLeaveNull">								
+								<div class="data-empty"><i class="icon-info"></i>没有查询到符合条件的记录</div>
+							</td>
+						</tr>
+						<tr ng-repeat="data in leaveList"  ng-show="!dataLeaveNull">
+							<td>{{ data.date }}</td>
+							<td>{{ data.longtime }}小时</td>
+						</tr>
+					</tbody>
+				</table>				
+			</div>
+		</div>
+	</div>
+</div>

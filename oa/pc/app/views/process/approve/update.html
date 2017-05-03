@@ -1,0 +1,158 @@
+<div class="apply-approve" ng-show="showPage" fixed-window-height>
+    <div class="apply-leave-head">
+        <h4>{{flow_state_name}}</h4></div>
+    <div class="">
+        <div class="scrollable-content approval-page">
+            <section class="mod-application approve-apply form-submit" ng-hide="fields.length<=0 && special_fields.length<=0">
+                <ul class="application-list">
+                    <!-- <ng-include ng-if="special_fields" src="'views/record-form-special-fields.html'"></ng-include> -->
+                    <ng-include ng-repeat="field in fields" src="'form_field_'+field.type+'.html'"></ng-include>
+                </ul>
+            </section>
+            <!-- <div style="height: 100%;width: 100%;" ng-if="flow.id && fields.length<=0 && !special_fields">
+          <img style="height: 100%; width: 100%" src="../approval/images/coming-soon.jpg">
+      </div> -->
+        </div>
+    </div>
+    <div class="sec-btn">
+        <input class="sub" ng-if="fields.length>0 || special_fields" type="submit" value="提交" ng-click="submit()">
+    </div>
+</div>
+<!-- <div ui-content-for="bottom-button" ng-if="fields.length>0 || special_fields">
+    <div class="mod-action-bar mui-flex">
+        <a href="javascript:;" ng-click="submit()" class="support support-green cell">提交</a>
+    </div>
+</div> -->
+<!--日期时间字段-->
+<script type="text/ng-template" id="form_field_datetime.html">
+    <li class="apply-form-group clearfix">
+        <div class="apply-form-group-label">{{field.name}}：</div>
+        <div class="apply-form-group-control">
+            <!-- <input class="items-input" type="text" ms-date-time ng-model="field.value" placeholder="请选择{{field.name}}"> -->
+            <input date-range-picker class="form-control date-picker" format-date type="text" ng-model="field.value" options="opts" required/>
+        </div>
+    </li>
+</script>
+<!--单行文本字段-->
+<script type="text/ng-template" id="form_field_text.html">
+    <li class="apply-form-group clearfix">
+        <div class="apply-form-group-label">{{field.name}}：</div>
+        <div class="apply-form-group-control">
+            <input class="form-control" type="text" ng-model="field.value" placeholder="请输入{{field.name}}">
+        </div>
+    </li>
+</script>
+<!--日期字段-->
+<script type="text/ng-template" id="form_field_date.html">
+    <li class="apply-form-group clearfix">
+        <div class="apply-form-group-label">{{field.name}}：</div>
+        <div class="apply-form-group-control">
+            <!-- <input class="items-input" type="text" ms-date ng-model="field.value" placeholder="请选择{{field.name}}"> -->
+            <input date-range-picker class="form-control date-picker" type="text" ng-model="field.value" options="opts" required/>
+        </div>
+    </li>
+</script>
+<!--单选字段-->
+<script type="text/ng-template" id="form_field_select.html">
+    <li class="apply-form-group-select clearfix">
+        <div class="apply-form-group-label">{{field.name}}：</div>
+        <div class="apply-form-group-control" ng-class="{'select-empty':!field.value}">
+            <!-- <select ms-select class="items-input" ng-model="field.value">
+                <option value="">请选择{{field.name}}</option>
+                <option ng-repeat="item in field.data track by $index" value="{{item}}" ng-selected="item == field.value">{{item}}</option>
+            </select> -->
+            <ui-select ng-model="field.value" ng-disabled="disabled" style="width: 200px;">
+                <ui-select-match placeholder="选择{{field.name}}">{{$select.selected}}</ui-select-match>
+                <ui-select-choices repeat="item in field.data">
+                    <div>{{item}}</div>
+                </ui-select-choices>
+            </ui-select>
+        </div>
+    </li>
+</script>
+<!--多行文本字段-->
+<script type="text/ng-template" id="form_field_textarea.html">
+    <li class="apply-form-group-textarea clearfix">
+        <div class="apply-form-group-label">{{field.name}}：</div>
+        <div class="apply-form-group-control">
+            <textarea ng-model="field.value" placeholder="请输入{{field.name}}" rows="6"></textarea>
+            <!--<div class="hint">加油，还差一个字！</div>-->
+        </div>
+    </li>
+</script>
+<!--附件字段-->
+<script type="text/ng-template" id="form_field_attachment.html">
+    <section class="apply-form-group-upload clearfix">
+        <div class="clearfix">
+            <label class="apply-form-group-label" for="ap-upload">上传附件：</label>
+            <!-- <input style="margin-left: 35px;" type="file" name="ap-upload"> -->
+            <!-- <label class="control-label">Select File</label>
+            <input id="input-4" name="input4[]" type="file" multiple class="file-loading" style="font-size: 999px;"> -->
+            <!-- <div ng-show="uploader.isHTML5"> -->
+            <!-- 3. nv-file-over uploader="link" over-class="className" -->
+            <!-- <div class="well my-drop-zone" nv-file-over="" uploader="uploader">
+                            Base drop zone
+                        </div> -->
+            <!-- Example: nv-file-drop="" uploader="{Object}" options="{Object}" filters="{String}" -->
+            <!-- <div nv-file-drop="" uploader="uploader" options="{ url: '/foo' }">
+                            <div nv-file-over="" uploader="uploader" over-class="another-file-over-class" class="well my-drop-zone">
+                                Another drop zone with its own settings
+                            </div>
+                        </div>
+                    </div> -->
+            <!-- Example: nv-file-select="" uploader="{Object}" options="{Object}" filters="{String}" -->
+            <div class="apply-form-group-control">
+                <a class="upload-pic" href="javascript:void(0)">
+                    <input class="upload-input-work" type="file" nv-file-select="" uploader="uploader" multiple />
+                </a>
+            </div>
+        </div>
+        <br/>
+        <div class="upload-all-pic">
+            <!-- <thead>
+                            <tr>
+                                <th width="50%">Name</th>
+                                <th ng-show="uploader.isHTML5">Size</th>
+                                <th ng-show="uploader.isHTML5">Progress</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead> -->
+            <ul>
+                <li ng-repeat="item in uploader.queue">
+                    <td>
+                        <!-- <strong>{{ item.file.name }}</strong> -->
+                        <!-- Image preview -->
+                        <!--auto height-->
+                        <!--<div ng-thumb="{ file: item.file, width: 100 }"></div>-->
+                        <!--auto width-->
+                        <div ng-show="uploader.isHTML5" ng-thumb="{ file: item._file, height: 100 }"></div>
+                        <!--fixed width and height -->
+                        <!--<div ng-thumb="{ file: item.file, width: 100, height: 100 }"></div>-->
+                    </td>
+                    <!-- <td ng-show="uploader.isHTML5" nowrap>{{ item.file.size/1024/1024|number:2 }} MB</td> -->
+                    <td ng-show="uploader.isHTML5">
+                        <div class="progress" style="margin-bottom: 0;">
+                            <div class="progress-bar" role="progressbar" ng-style="{ 'width': item.progress + '%' }"></div>
+                        </div>
+                    </td>
+                    <td class="text-center">
+                        <span ng-show="item.isSuccess"><i class="glyphicon glyphicon-ok"></i></span>
+                        <span ng-show="item.isCancel"><i class="glyphicon glyphicon-ban-circle"></i></span>
+                        <span ng-show="item.isError"><i class="glyphicon glyphicon-remove"></i></span>
+                    </td>
+                    <td nowrap>
+                        <!-- <button type="button" class="btn btn-success btn-xs" ng-click="item.upload()" ng-disabled="item.isReady || item.isUploading || item.isSuccess">
+                                        <span class="glyphicon glyphicon-upload"></span> Upload
+                                    </button>
+                                    <button type="button" class="btn btn-warning btn-xs" ng-click="item.cancel()" ng-disabled="!item.isUploading">
+                                        <span class="glyphicon glyphicon-ban-circle"></span> Cancel
+                                    </button> -->
+                        <button type="button" class="btn btn-danger btn-xs" ng-click="item.remove()">
+                            <span class="glyphicon glyphicon-trash"></span> 删除
+                        </button>
+                    </td>
+                </li>
+            </ul>
+        </div>
+</script>

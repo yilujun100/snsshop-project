@@ -1,0 +1,49 @@
+<div class="scrollable">
+    <div class="scrollable-content">
+        <div class="section section-warning" style="background-color: #f1d300">
+            <b>{{now| date:'MM月'}}考勤记录</b>
+        </div>
+         <div class="section">
+             <ul class="list-unstyled">
+                 <li ng-repeat="record in records">
+                     <div class="row no-margin">
+                         <div class="col-xs-3 text-muted no-padding">{{record.date| date:'dd日'}}-周{{day_arr[record.day]}}</div>
+                         <div class="col-xs-3 no-padding text-center">
+                             <span ng-if="record.sign_in_is_prove">签卡
+                                 <span>
+                                    <br/><small class="text-muted">{{record.sign_in_actual_time*1000| date:'HH:mm'}}</small>
+                                 </span>
+                             </span>
+                             <span ng-if="record.sign_in_is_prove == 0 && record.sign_in_actual_time">
+                                 {{record.sign_in_actual_time*1000| date:'HH:mm'}}
+                             </span>
+                             <span ng-if="record.sign_in_is_prove == 0 && !record.sign_in_actual_time && record.sign_in_time">{{record.sign_in_time*1000| date:'HH:mm'}}</span>
+                             <span ng-if="!record.sign_in_actual_time && !record.sign_in_time">---</span>
+                         </div>
+                         <div class="col-xs-3 no-padding text-center">
+                             <span ng-if="record.sign_out_is_prove">签卡
+                                 <span>
+                                    <br/><small class="text-muted">{{record.sign_out_actual_time*1000| date:'HH:mm'}}</small>
+                                 </span>
+                                 <span ng-show="isNextDay(record)">
+                                     <br/><small class="text-muted">{{record.sign_out_actual_time*1000| date:'MM-dd'}}</small>
+                                 </span>
+                             </span>
+                             <span ng-if="record.sign_out_is_prove == 0 && record.sign_out_actual_time">
+                                 {{record.sign_out_actual_time*1000| date:'HH:mm'}}
+                                 <span ng-show="isNextDay(record)">
+                                     <br/><small class="text-muted">{{record.sign_out_actual_time*1000| date:'MM-dd'}}</small>
+                                 </span>
+                             </span>
+                             <span ng-if="record.sign_out_is_prove == 0 && !record.sign_out_actual_time && record.sign_out_time">{{record.sign_out_time*1000| date:'HH:mm'}}</span>
+                             <span ng-if="!record.sign_out_actual_time && !record.sign_out_time">---</span>
+                         </div>
+                         <div class="col-xs-3 no-padding text-right">
+                             <span ng-class="{'text-primary':record.status!=1}">{{status_arr[record.status]}}</span>
+                         </div>
+                     </div>
+                 </li>
+             </ul>
+         </div>
+    </div>
+</div>

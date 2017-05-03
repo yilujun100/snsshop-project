@@ -1,0 +1,20 @@
+<div class="scrollable">
+  <div class="scrollable-content">
+      <section class="approval-list">
+          <ul>
+              <li ng-repeat="flow in flows">
+                  <a ng-href="#/record/create/{{flow.id}}{{flow.department_id?'/'+flow.department_id:''}}" style="display: block">
+                      <div class="pic">
+                          <img ng-hide="flow.icon" src="images/default-form-icon.jpg" />
+                      </div>
+                      <div class="info">
+                          <h3>{{flow.name}}</h3>
+                          <p ng-show="flow.show_department">{{flow.department_name}}</p>
+                      </div>
+                      <div class="clearfix"></div>
+                  </a>
+              </li>
+          </ul>
+      </section>
+  </div>
+</div>

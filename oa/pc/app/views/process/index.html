@@ -1,0 +1,54 @@
+<div class="pr" ng-show="showPage">
+    <div class="pr-head">当前位置：<a href="">流程</a></div>
+    <div class="pr-body process-type clear">
+        <div class="pr-item">
+            <a ui-sref="index.process.approve">
+                <img class="pr-pic" src="images/process/approve.png" alt="approve">
+                <span class="pr-title">
+                    <span class="pr-maintitle">审批</span>
+                <!-- <span class="pr-message">有（15）条消息</span> -->
+                </span>
+                <!-- <img class="pr-arrow" src="images/process/arrow.png" alt="arrow"> -->
+            </a>
+        </div>
+        <div class="pr-item">
+            <a ui-sref="index.process.leave">
+                <img class="pr-pic" src="images/process/leave.png" alt="ask for leave">
+                <span class="pr-title">            
+                <span class="pr-maintitle">请假</span>
+                <!-- <span class="pr-message">有（15）条消息</span> -->
+                </span>
+                <!-- <img class="pr-arrow" src="images/process/arrow.png" alt="arrow"> -->
+            </a>
+        </div>
+        <div class="pr-item">
+            <a ui-sref="index.workorder">
+                <img class="pr-pic" src="images/process/ticket.png" alt="check in">
+                <span class="pr-title">            
+                <span class="pr-maintitle">工单</span>
+                <!-- <span class="pr-message">有（15）条消息</span> -->
+                </span>
+                <!-- <img class="pr-arrow" src="images/process/arrow.png" alt="arrow"> -->
+            </a>
+        </div>
+        <div class="pr-item">
+            <a ui-sref="index.process.checkIn">
+                <img class="pr-pic" src="images/process/check-in.png" alt="check in">
+                <span class="pr-title">            
+                <span class="pr-maintitle">考勤</span>
+                <!-- <span class="pr-message">有（15）条消息</span> -->
+                </span>
+                <!-- <img class="pr-arrow" src="images/process/arrow.png" alt="arrow"> -->
+            </a>
+        </div>       
+    </div>
+</div>
+<style>
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+</style>

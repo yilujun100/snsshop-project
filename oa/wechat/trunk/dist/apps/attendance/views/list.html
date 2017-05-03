@@ -1,0 +1,19 @@
+<div class="scrollable">
+    <div class="scrollable-content">
+         <div class="section section-no-padding">
+             <uib-datepicker ng-model="currentDate" min-date="minDate" show-weeks="false" datepicker-mode="year" format-day-title="yyyy年MM月" format-month-title="yyyy年" format-month="MM月" class="inline-datepicker"></uib-datepicker>
+         </div>
+        <div class="section" style="background-color: #eee">
+            <span>{{currentDate|date:'MM月dd日'}}</span>
+            <a class="pull-right" ng-href="#/record/{{currentDate|date:'yyyy-MM-dd'}}">本月记录</a>
+        </div>
+         <div class="section" ng-show="logs.length">
+             <ul class="list-unstyled">
+                 <li ng-repeat="log in logs">
+                     <span class="text-muted">{{log.time*1000| date:'yyyy-MM-dd HH:mm:ss'}}</span>
+                     <span class="pull-right">{{log.type==1?'签到':'签退'}}</span>
+                 </li>
+             </ul>
+         </div>
+    </div>
+</div>

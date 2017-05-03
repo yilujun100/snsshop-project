@@ -1,0 +1,169 @@
+<div class="scrollable">
+  <div class="scrollable-content approval-page">
+      <section class="mod-application approval-process">
+          <ul class="application-list" ng-show="record.id">
+              <li class="info clearfix">
+                  <div class="mod-left">
+                      <span class="avatar"><img ng-src="{{record.user_avatar}}"></span>
+                        <span class="name">
+                            <strong ng-hide="record.is_own">{{record.user_name}}</strong>
+                            <strong ng-show="record.is_own">表单编号：{{record.form_number}}</strong>
+                            <em>{{record.create_time*1000|date:'yyyy-MM-dd HH:mm'}}</em>
+                        </span>
+                  </div>
+                  <!--<div class="mod-right lineh35">产品技术部</div>-->
+                  <div class="mod-type-approval mod-right">
+                  <span ng-if="record.status == 1" class="status icon-examination">审批中</span>
+                  <span ng-if="record.status == 2" class="status icon-passed">已通过</span>
+                  <span ng-if="record.status == 3" class="status icon-fail">未通过</span>
+                  <span ng-if="record.status == 4" class="status icon-back">已退回</span>
+                  <span ng-if="record.status == 0" class="status icon-revocationk">已撤销</span>
+                  </div>
+              </li>
+              <!--<li class="form-info">
+                  <h3>表单编号F-AD-02-001</h3>
+                  <p>申请时间{{record.create_time*1000|date:'yyyy-MM-dd HH:mm'}}</p>
+                  <span class="pass-btn">已通过</span>
+              </li>-->
+              <!-- <ng-include ng-if="record.approvalSpecialFields" src="'views/record-detail-special-fields.html'"></ng-include> -->
+              <ng-include ng-repeat="field in record.ticketRecordFields" src="'detail_field_'+field.type+'.html'"></ng-include>
+              <li class="approving-officers" ng-show="approval_step.length > 0">
+                  <div style="margin-bottom: 20px">审批流程</div>
+                  <div class="officers-box clearfix" ng-click="showApprovalStep()" ng-class="{'imaginary-line':approval_step.length>3,'full-line':approval_step.length<=3}">
+                      <div class="">
+                          <span class="mod-icon proposer"></span>
+                          <span class="name">{{record.user_name}}</span>
+                      </div>
+                      <div ng-show="approval_step.length>1" ng-class="{middle:approval_step.length==2}">
+                          <span class="mod-icon" ng-class="{0:'fail',1:'pass'}[approval_step[0].approve_result]"></span>
+                          <span class="name">{{approval_step[0].approver_user_name}}</span>
+                      </div>
+                      <div ng-show="approval_step.length>2">
+                          <span class="mod-icon" ng-class="{0:'fail',1:'pass'}[approval_step[approval_step.length-2].approve_result]"></span>
+                          <span class="name">{{approval_step[approval_step.length-2].approver_user_name}}</span>
+                      </div>
+                      <div>
+                          <span class="mod-icon" ng-class="{0:'fail',1:'pass'}[approval_step[approval_step.length-1].approve_result]"></span>
+                          <span class="name">{{approval_step[approval_step.length-1].approver_user_name}}</span>
+                      </div>
+                  </div>
+              </li>
+              <li class="opinion">
+                  <dl>
+                      <dt>审批日志</dt>
+                      <dd>
+                          <p ng-repeat="comment in record.ticketRecordComments">
+                              <strong>{{comment.approver_user_name}}  {{comment.create_time*1000|date:'yyyy-MM-dd HH:mm'}}</strong>
+                              <span>{{comment.comment}}</span>
+                          </p>
+                      </dd>
+                  </dl>
+              </li>
+          </ul>
+      </section>
+      <div class="mod-application" ng-if="record.menu&&record.menu.type==2">
+          <div class="bg-fff mod-record mtb15">
+              <ul class="application-list">
+                  <!-- <li ng-if="record.type=='leave' && record.is_own != 1">
+                      <a class="clearfix" ng-href="#/record/user-leave-list/{{record.user_id}}">
+                          <div class="mod-left">查看他的请假记录</div>
+                          <div class="mod_arrow"></div>
+                      </a>
+                  </li> -->
+                  <li class="opinion border-b0" ng-if="record.is_current == 1">
+                      <div class="textarea-box">
+                          <textarea placeholder="请输入你的审批意见....." class="needsclick" ng-model="approval_info.comment"></textarea>
+                      </div>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </div>
+</div>
+<div ng-if="record.menu">
+<div ui-content-for="bottom-button" ng-if="record.menu.type==2 && record.status == 1">
+    <div class="mod-action-bar mui-flex">
+        <a href="javascript:;" class="support support-white cell" ng-click="approval(0)" ng-if="record.menu.cancel.is_show">{{record.menu.cancel.name}}</a>
+        <a href="javascript:;" class="support support-green cell" ng-click="approval(1)" ng-if="record.menu.comfirm.is_show">{{record.menu.comfirm.name}}</a>
+    </div>
+</div>
+<div ui-content-for="bottom-button" ng-if="record.menu.type == 1 && (record.status == 3 || record.status == 1 || record.status == 4)">
+    <div class="mod-action-bar mui-flex">
+        <a href="javascript:;" class="support support-white cell" ng-click="cancel()" ng-if="record.menu.cancel.is_show">{{record.menu.cancel.name}}</a>
+        <a ng-href="javascript:;" ng-click="resubmit()" class="support support-green cell" ng-if="record.menu.comfirm.is_show">{{record.menu.comfirm.name}}</a>
+    </div>
+</div>
+</div>
+<script type="text/ng-template" id="detail_field_form.html">
+    <li class="clearfix">
+        <div class="mod-left">{{field.name}}</div>
+        <div class="mod-right">{{field.value}}</div>
+    </li>
+</script>
+<script type="text/ng-template" id="detail_field_form_child.html">
+    <li class="clearfix">
+        <div class="mod-left">{{field.name}}</div>
+        <div class="mod-right">{{field.value}}</div>
+    </li>
+</script>
+<script type="text/ng-template" id="detail_field_date.html">
+    <li class="clearfix">
+        <div class="mod-left">{{field.name}}</div>
+        <div class="mod-right">{{field.value}}</div>
+    </li>
+</script>
+
+
+<script type="text/ng-template" id="detail_field_text.html">
+    <li class="clearfix">
+        <div class="mod-left">{{field.name}}</div>
+        <div class="mod-right">{{field.value}}</div>
+    </li>
+</script>
+<script type="text/ng-template" id="detail_field_depart.html">
+    <li class="clearfix">
+        <div class="mod-left">{{field.name}}</div>
+        <div class="mod-right">{{field.value}}</div>
+    </li>
+</script>
+<script type="text/ng-template" id="detail_field_time.html">
+    <li class="clearfix">
+        <div class="mod-left">{{field.name}}</div>
+        <div class="mod-right">{{field.value}}</div>
+    </li>
+</script>
+<script type="text/ng-template" id="detail_field_datetime.html">
+    <li class="clearfix">
+        <div class="mod-left">{{field.name}}</div>
+        <div class="mod-right">{{field.value}}</div>
+    </li>
+</script>
+<script type="text/ng-template" id="detail_field_select.html">
+    <li class="clearfix">
+        <div class="mod-left">{{field.name}}</div>
+        <div class="mod-right">{{field.value}}</div>
+    </li>
+</script>
+<script type="text/ng-template" id="detail_field_textarea.html">
+    <li class="clearfix">
+        <div class="mod-left">{{field.name}}</div>
+        <div class="mod-right">{{field.value}}</div>
+    </li>
+</script>
+<script type="text/ng-template" id="detail_field_attachment.html">
+    <li class="opinion" ng-show="field.value.length > 0">
+        <dl class="m0">
+            <dt class="b-line clearfix">
+                <div class="mod-left w15">{{field.name}}</div>
+            </dt>
+            <dd>
+                <div class="mod-pic-box clearfix">
+                    <span class="img-box" ng-repeat="image in field.value">
+                        <img class="img" ng-click="showImage(field,upload_url+'/'+image.path)" ng-src="{{upload_url}}/{{image.path}}"/>
+                    </span>
+                </div>
+            </dd>
+        </dl>
+
+    </li>
+</script>

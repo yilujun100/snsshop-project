@@ -1,0 +1,73 @@
+<div class="room">
+    <div class="ap-head">当前位置：<a ui-sref="index.conference">会议室管理</a>>会议详情</div>
+    <div class="room-body room-font-size">
+        <!-- 会议详情 -->
+        <div class="room-detail-title clearfix">
+            <span class="room-detail-title-left">会议详情</span>
+            <a ng-if="data.owner" class="room-detail-title-right" ui-sref="index.conference.update({update_id:update_id})">编辑</a>
+        </div>
+        <!-- 会议时间 -->
+        <!-- <div class="show-room-dateTime">
+            <label style="margin-right: 57px">会议时间</label>{{bookCreate.book_date}} &nbsp;&nbsp;<span ng-if="showStartTime">{{showStartTime}}-{{showEndTime}}</span>
+        </div> -->
+        <!-- 会议主题 -->
+        <div class="room-detail-theme clearfix">
+            <div class="room-detail-theme-head border-right">会议主题</div>
+            <div class="room-detail-theme-body"> {{data.book_name}}</div>
+        </div>
+        <!-- 会议内容 -->
+        <div class="room-detail-content clearfix">
+            <div class="room-detail-content-head border-right">会议内容</div>
+        <div class="room-detail-content-body">{{data.book_content}}</div>
+        </div>
+        <!-- 会议发起人&&会议室 -->
+        <div class="room-detail-user-roomId clearfix">
+            <div class="room-detail-bookuser border-right clearfix">
+                <div class="room-detail-bookuser-head border-right">会议发起人</div>
+                <div class="room-detail-bookuser-body"> {{data.book_user.name}}</div>
+            </div>
+            <div class="room-detail-roomId clearfix">
+                <div class="room-detail-roomId-head border-right">会议室</div>
+                <div class="room-detail-roomId-body"> {{data.room.name}}</div>
+            </div>
+        </div>
+        <!-- 会议日期时间 -->
+        <div class="room-detail-datetime clearfix">
+            <div class="room-detail-bookuser border-right clearfix">
+                <div class="room-detail-bookuser-head border-right">会议日期</div>
+                <div class="room-detail-bookuser-body"> {{data.book_date}}</div>
+            </div>
+            <div class="room-detail-roomId clearfix">
+                <div class="room-detail-roomId-head border-right">会议时间</div>
+                <div class="room-detail-roomId-body"> {{data.bookTime}}</div>
+            </div>
+        </div>
+        <!-- 会议说明 -->
+       <!--  <div class="show-room-warn">
+            <label style="margin-right: 22px">会议时间提醒</label><span>会议前10分钟提醒</span>
+        </div> -->
+        <!-- 邀请会议人员 -->
+        <div class="room-detail-users">
+            <label>邀请参加会议名单</label>
+        </div>
+        <!-- 会议人员列表 -->
+        <div class="room-detail-users-list">
+            <ul class="clearfix">
+                <li class="con-personnel" ng-repeat="user in data.room_book_user"><img ng-src="{{user.user.avatar}}" src="" err-src="./images/portal/avatar.jpg" alt="personnel">
+                    <div>{{user.user.name}}</div>
+                </li>
+            </ul>
+        </div>
+        <!-- 确定 -->
+        <!-- <div class="select-room-submit" ng-click="submit()"><span>确定</span></div> -->
+    </div>
+</div>
+<style>
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+</style>

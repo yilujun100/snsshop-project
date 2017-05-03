@@ -1,0 +1,52 @@
+<!-- 编辑帖子 -->
+<div class="container">	
+	<!-- breadcrumb -->
+	<div class="breadcrumb">
+		<ul>
+			<li>当前位置：</li>
+			<li><a ui-sref="index.bbs">BBS</a></li>
+			<li>&gt;编辑帖子</li>
+		</ul>
+	</div>
+
+	<!-- post -->
+	<div class="post mt-10">
+		<div class="post-hd">
+			<h3>编辑帖子</h3>
+		</div>
+		<div class="post-con">
+			<form name="postForm" novalidate>
+				<div class="form-item">
+					<label>所属圈子：</label>
+					<select name="belongCircle" ng-model="belongCircle" ng-options="circle as circle.title for circle in belongCircleList">
+					</select>
+					<input type="hidden" id="selectedCircleId" ng-value="circleId" ng-bind="circleId">
+					<!-- <span ng-hide="true">{{ circleId }}</span> -->
+					<b class="error-info" ng-hide="isSelectedCircle">请选择板块</b>
+				</div>
+				<div class="form-item">
+					<label>发帖人：</label>
+					<span>
+						<p><input type="radio" name="author" id="authorDefault"><label for="authorDefault">{{ poster.name }}（默认）</label></p>
+						<p><input type="radio" name="author" id="authorAnonymous"><label for="authorAnonymous">匿名（匿名则默认头像）</label></p>
+					</span>
+				</div>
+				<div class="form-item">
+					<label>标题：</label>
+					<input type="text" name="postTitle" ng-model="postTitle" ng-blur="checkTitle()" required>
+					<b class="error-info" ng-show="showErrorTitle">请输入标题</b>
+				</div>
+				<div class="form-item">
+					<label>内容：</label>
+					<!-- <textarea name="postContent"></textarea> -->
+					<div id="content" ng-model="postContent" contenteditable="true"></div>
+					<b class="error-info" ng-show="showErrorContent">请输入正文</b>
+				</div>
+				<div class="form-item">
+					<label></label>
+					<a href="javascript:;" class="btn-post-submit" ng-click="save()">提交</a>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

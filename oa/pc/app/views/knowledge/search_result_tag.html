@@ -1,0 +1,105 @@
+<!-- 搜索结果页 -->
+<div class="container" set-main-min-height>
+	<div class="main">		
+		<!-- breadcrumb -->
+		<div class="breadcrumb">
+			<ul>
+				<li>当前位置：</li>
+				<li><a ui-sref="index.knowledge">知识库</a></li>
+				<li>&gt知识查询</li>
+			</ul>
+		</div>
+
+		<!-- km query -->
+		<div class="list km-query mt-10">
+			<div class="list-hd">
+				<h3 class="list-tit fl">知识查询</h3>
+				<span class="query-tag fl">查询条件:<b ng-bind="currentTagName"></b></span>
+			</div>
+			<div class="km-query-con">
+				
+				<div class="search-empty" ng-if="isDataNull">
+					暂未搜索到相关的结果！
+				</div>
+				<!-- km list -->
+				<ul class="km-list">
+					<li ng-repeat="article in articles.contents">
+						<div class="km-avatar">
+							<img ng-src="{{article.article.user.avatar}}" src="" err-src="images/user_avatar_default.jpg" width="126" height="126" alt="">
+						</div>
+						<div class="km-info">
+							<em class="km-tag km-tag-standard" ng-if="article.article.type_id == 30">培训</em>
+							<em class="km-tag km-tag-article" ng-if="article.article.type_id == 31">干货</em>
+							<em class="km-tag km-tag-process" ng-if="article.article.type_id == 32">规范</em>
+							<h3 class="km-title"><a ui-sref="index.knowledge.detail({articleid:article.article.id})" ng-bind="article.article.title" target="_blank"></a></h3>
+							<p class="km-desc" ng-bind="article.article.description"></p>
+							<div class="km-bott clearfix mt-10">
+								<span class="km-bott-cell-1 fl">
+									<p>发布时间：{{ article.article.publish_time * 1000 | date: 'yyyy-MM-dd HH:mm' }}</p>
+									<p>作者：{{ article.article.user.name }}</p>
+								</span>
+								<span class="km-bott-cell-2 fr">
+									<a href="javascript:;" ng-class="{'click-on': article.article.flow && article.article.flow.is_admire == 1}" ng-click="thumbsFn(article.article)"><i class="icon-km-list icon-thumb-up"></i>{{ article.article.admire_count }}</a>
+									<a href="javascript:;" ng-class="{'click-on': article.article.flow && article.article.flow.is_collect == 1}" ng-click="collectFn(article.article)"><i class="icon-km-list icon-star"></i>{{ article.article.collect_count }}</a>
+									<a href="javascript:;" ng-class="{'click-on': article.article.flow && article.article.flow.is_comment > 0}" ui-sref="index.knowledge.comment({articleid:article.article.id})"><i class="icon-km-list icon-msg"></i>{{ article.article.comment_count }}</a>
+								</span>
+							</div>
+						</div>
+					</li>
+				</ul>
+
+				<!-- pagenation -->
+				<div class="list-page">
+					<uib-pagination total-items="page.totalCount" ng-model="page.pageNo" items-per-page="page.pageSize" max-size="5" ng-change="doRequest(articles.status,page.pageNo,page.pageSize,articles.tagId)" class="samplePage pagination-sm" boundary-link-numbers="true" previous-text="上一页" next-text="下一页">
+					</uib-pagination>
+					<span>共{{ page.totalPage }}页&nbsp;&nbsp;{{ page.totalCount }}条</span>
+				</div>	
+			</div>
+		</div>
+	</div>
+	<div class="sidebar">
+		<!-- my card -->
+		<!-- <div class="my-card">
+			<div class="my-card-info">
+				<img ng-src="{{myCard[0].avatar}}" src="" err-src="images/avatar.jpg" width="70" height="70" alt="" class="my-card-avatar">
+				<p class="my-name" ng-bind="myCard[0].name"></p>
+				<p class="my-department" ng-bind="myCard[0].position"></p>
+			</div>
+			<div class="my-card-actions">
+				<ul class="clearfix">
+					<li><a href="javascript:;" ui-sref="index.knowledge.myComment">{{ myCard.comment || 0 }} <i class="icon-my icon-my-comment"></i></a></li>
+					<li><a href="javascript:;" ui-sref="index.knowledge.myCollect">{{ myCard.collect || 0 }} <i class="icon-my icon-my-collect"></i></a></li>
+					<li><a href="javascript:;">498 <i class="icon-my icon-my-views"></i></a></li>
+				</ul>
+			</div>
+		</div> -->
+
+		<!-- hot tags -->
+		<div class="list tags-hot">			
+			<div class="list-hd clearfix">
+				<h3 class="list-tit fl">热门标签</h3>
+			</div>
+			<div class="tags-hot-con">
+				<ul class="clearfix">
+					<li ng-repeat="tag in tags" ng-class="{'tag-active': currentTagId == tag.id}"><a href="javascript:;" ng-click="searchTagFn(tag.id)" ng-bind="tag.name"></a></li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- recommend article -->
+		<div class="list recommend mt-10">			
+			<div class="list-hd clearfix">
+				<h3 class="list-tit fl">推荐</h3>
+				<a ui-sref="index.knowledge.articleRecommend" class="list-more fr">更多</a>
+			</div>
+			<div class="recommend-con">
+				<ul class="recommend-list">
+					<li ng-repeat="articleRecomm in articleRecommList" on-finished>
+						<p><em class="km-tag km-tag-standard" ng-if="articleRecomm.type_id == 30">培训</em><em class="km-tag km-tag-article" ng-if="articleRecomm.type_id == 31">干货</em><em class="km-tag km-tag-process" ng-if="articleRecomm.type_id == 32">规范</em>{{ articleRecomm.user.position }}为您推荐</p>
+						<a ui-sref="index.knowledge.detail({articleid:articleRecomm.id})" class="recomm-tit" ng-bind="articleRecomm.title"></a>
+					</li>
+				</ul>
+			</div>	
+		</div>
+	</div>
+</div>

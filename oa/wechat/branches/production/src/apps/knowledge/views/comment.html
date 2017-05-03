@@ -1,0 +1,51 @@
+<div class="scrollable">
+	<div class="scrollable-content" ui-scroll-bottom='bottomReached()'>
+		<!-- comment -->
+		<div class="comment-list">
+			<dl ng-repeat="comment in commentList">
+				<dt>
+					<img ng-src="{{comment.user_avatar}}" src="" err-src="images/avatar.jpg" width="40" height="40" alt="">
+				</dt>
+				<dd>
+					<p class="comm-user-name" ng-bind="comment.user_name"></p>
+					<p class="comm-user-desc" ng-bind="comment.comment"></p>
+					<p class="comm-item-last clearfix">
+						<em class="comm-date fl" ng-bind="comment.create_time * 1000 | date: 'yyyy-MM-dd'"></em><!-- <span class="comm-praise comm-praise-on fr"><i class="icon-praise"></i>2980</span> -->
+					</p>
+				</dd>
+			</dl>
+			<!-- <dl>
+				<dt>
+					<img src="images/avatar.jpg" width="40" height="40" alt="">
+				</dt>
+				<dd>
+					<p class="comm-user-name">陈雪梨</p>
+					<p class="comm-user-desc">设计是把一种计划、规划、设想通过某种形式传达出来的活动过程。基础、最主要的创造活动是造物</p>
+					<p class="comm-item-last clearfix">
+						<em class="comm-date fl">2016-08-23</em><span class="comm-praise fr"><i class="icon-praise"></i>2980</span>
+					</p>
+				</dd>
+			</dl>
+			<dl>
+				<dt>
+					<img src="images/avatar.jpg" width="40" height="40" alt="">
+				</dt>
+				<dd>
+					<p class="comm-user-name">陈雪梨</p>
+					<p class="comm-user-desc">设计是把一种计划、规划、设想通过某种形式传达出来的活动过程。基础、最主要的创造活动是造物</p>
+					<p class="comm-item-last clearfix">
+						<em class="comm-date fl">2016-08-23</em><span class="comm-praise fr"><i class="icon-praise"></i>2980</span>
+					</p>
+				</dd>
+			</dl> -->
+		</div>
+	</div>
+</div>
+
+<!-- comment fill -->
+<div class="bott-comment">
+	<p>
+		<input type="text" placeholder="添加评论" id="commentField" ng-model="commentField">
+		<a href="javascript:;" class="btn-comment-submit" ng-click="commentSubmitFn(commentField)">提交评论</a>		
+	</p>
+</div>

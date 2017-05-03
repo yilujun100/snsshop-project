@@ -1,0 +1,101 @@
+<ul class="l-nav l-nav-fold" ng-if="!isOpen">
+    <li class="item">
+        <a class="head-pic" ui-sref="index.personalCenter"><img ng-src="{{headimg}}" src="" err-src="images/portal/avatar.jpg" alt="head-pic"></a>
+        <aside>头像</aside>
+    </li>
+    <!-- <li class="item">
+        <a ui-sref="index.knowledge.myAdmire" ui-sref-active="l-nav-active"><img src="images/knowledge/icon_leftbar_thumbs.png"></a>
+        <aside>我赞过的</aside>
+    </li>
+    <li class="item">
+        <a ui-sref="index.knowledge.myComment" ui-sref-active="l-nav-active"><img src="images/knowledge/icon_leftbar_msg.png"></a>
+        <aside>我评论的</aside>
+    </li>
+    <li class="item">
+        <a ui-sref="index.knowledge.myCollect" ui-sref-active="l-nav-active"><img src="images/knowledge/icon_leftbar_star.png"></a>
+        <aside>我收藏的</aside>
+    </li> -->
+    <!-- <li class="item">
+        <a href="#"><img src="images/knowledge/icon_leftbar_eye.png"></a>
+        <aside>我浏览的</aside>
+    </li> -->
+    <li class="item">
+        <a ui-sref="index.knowledge.train" ui-sref-active="l-nav-active"><img src="images/knowledge/icon_leftbar_km.png"></a>
+        <aside>培训中心</aside>
+    </li>
+    <li class="item">
+        <a ui-sref="index.knowledge.share" ui-sref-active="l-nav-active"><img src="images/knowledge/icon_leftbar_share.png"></a>
+        <aside>干货分享</aside>
+    </li>
+    <li class="item">
+        <a ui-sref="index.knowledge.standard" ui-sref-active="l-nav-active"><img src="images/knowledge/icon_leftbar_edit.png"></a>
+        <aside>制度</aside>
+    </li>
+    <li class="item">
+        <a ui-sref="index.knowledge.query" ui-sref-active="l-nav-active"><img src="images/knowledge/icon_leftbar_query.png"></a>
+        <aside>知识查询</aside>
+    </li>
+</ul>
+<ul class="l-nav-open" ng-if="isOpen">
+    <li class="item">
+        <a class="head-pic" ui-sref="index.personalCenter">
+            <img ng-src="{{headimg}}" src="" err-src="images/portal/avatar.jpg" alt="head-pic">
+            <div class="leftbar-user">
+                <h3>{{userName}}</h3>
+                <p>欢迎来到盛灿小家</p>
+            </div>
+        </a>
+    </li>
+    <!-- <li class="item">
+        <a ui-sref="index.knowledge.myAdmire" ui-sref-active="l-nav-active">
+            <img src="images/knowledge/icon_leftbar_thumbs.png">
+            <h3>我赞过的</h3>
+        </a>
+    </li>
+    <li class="item">
+        <a ui-sref="index.knowledge.myComment" ui-sref-active="l-nav-active">
+            <img src="images/knowledge/icon_leftbar_msg.png">
+            <h3>我评论的</h3>
+        </a>
+    </li>
+    <li class="item">
+        <a ui-sref="index.knowledge.myCollect" ui-sref-active="l-nav-active">
+            <img src="images/knowledge/icon_leftbar_star.png">
+            <h3>我收藏的</h3>
+        </a>
+    </li> -->
+    <!-- <li class="item">
+        <a href="#">
+            <img src="images/knowledge/icon_leftbar_eye.png">
+            <h3>我浏览的</h3>
+        </a>
+    </li> -->
+    <li class="item">
+        <a ui-sref="index.knowledge.train" ui-sref-active="l-nav-active">
+            <img src="images/knowledge/icon_leftbar_km.png">
+            <h3>培训中心</h3>
+        </a>
+    </li>
+    <li class="item">
+        <a ui-sref="index.knowledge.share" ui-sref-active="l-nav-active">
+            <img src="images/knowledge/icon_leftbar_share.png">
+            <h3>干货分享</h3>
+        </a>
+    </li>
+    <li class="item">
+        <a ui-sref="index.knowledge.standard" ui-sref-active="l-nav-active">
+            <img src="images/knowledge/icon_leftbar_edit.png">
+            <h3>制度</h3>
+        </a>
+    </li>
+    <li class="item">
+        <a ui-sref="index.knowledge.query" ui-sref-active="l-nav-active">
+            <img src="images/knowledge/icon_leftbar_query.png">
+            <h3>知识查询</h3>
+        </a>
+    </li>
+</ul>
+
+<!-- <div class="lb-icon-open" ng-click="leftBarOpen()" ng-if="!isOpen"></div>
+<div class="lb-icon-fold" ng-click="leftBarFold()" ng-if="isOpen"></div> -->
+<div ng-class="{'lb-icon-open': !isOpen, 'lb-icon-fold': isOpen}" ng-click="toggleFn()"></div>

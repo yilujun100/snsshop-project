@@ -1,0 +1,21 @@
+<div class="pr-body clear" style="margin-top: 10px;">
+    <div class="pr-item" ng-repeat="flow in flows">
+        <a ui-sref="index.workorder.apply.form({flow_id:flow.id})">
+            <img class="pr-pic" src="images/process/approve.png" alt="{{flow.name}}">
+            <span class="pr-title">
+                    <span class="pr-maintitle">{{flow.name}}</span>
+            <!-- <span class="pr-message">有（15）条消息</span> -->
+            </span>
+            <!-- <img class="pr-arrow" src="images/process/arrow.png" alt="{{flow.name}}"> -->
+        </a>
+    </div>    
+</div>
+<style>
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+</style>

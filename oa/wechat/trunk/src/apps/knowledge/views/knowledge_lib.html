@@ -1,0 +1,174 @@
+<div class="scrollable">
+	<div class="scrollable-content" ui-scroll-bottom='bottomReached()'>
+		<!-- search -->
+		<div class="search">
+			<div class="search-inner" ng-click="isShow=true">
+				搜索<i class="icon-search"></i>
+			</div>
+		</div>
+
+		<!-- search area -->
+		<div class="search-mask" ng-show="isShow"></div>
+		<div class="search-area" ng-show="isShow">
+			<div class="search-box">
+				<input id="searchFiled" type="text" ng-model="keyword" placeholder="请输入想搜索的内容">
+				<a href="javascript:;" class="btn-search" ng-click="searchFn(keyword)">搜索</a>
+				<a href="javascript:;" class="btn-clear" ng-click="init()">清除</a>
+			</div>
+			<div class="history mt-10" ng-show="hasRecord">
+				<ul>
+					<li ng-repeat="record in historyRecords | limitTo: 6"><a href="#/search/detail/{{record.id}}" ng-bind="record.title"></a></li>
+					<!-- <li><a href="#">什么样的设计才是有思想和灵魂的设计？</a></li>
+					<li><a href="#">发现设计不为人发现的美最重要！</a></li>
+					<li><a href="#">设计思路与想法创新！</a></li> -->
+				</ul>
+			</div>
+			<div class="hot mt-10">
+				<h3 class="hot-title">热门标签</h3>
+				<ul class="clearfix">
+					<li ng-repeat="tag in tags"><a href="javascript:;" ng-click="searchTagFn(tag.id)" ng-bind="tag.name"></a></li>
+					<!-- <li><a href="javascript:;" ng-click="setSearchVal('产品')">产品</a></li>
+					<li><a href="javascript:;" ng-click="setSearchVal('类库框架')">类库框架</a></li>
+					<li><a href="javascript:;" ng-click="setSearchVal('HTML5/CSS')">HTML5/CSS</a></li>
+					<li><a href="javascript:;" ng-click="setSearchVal('服务类')">服务类</a></li>
+					<li><a href="javascript:;" ng-click="setSearchVal('测试')">测试</a></li>
+					<li><a href="javascript:;" ng-click="setSearchVal('前端开发')">前端开发</a></li>
+					<li><a href="javascript:;" ng-click="setSearchVal('设计')">设计</a></li> -->
+				</ul>
+			</div>
+		</div>
+
+		<!-- articles -->
+		<div class="articles mt-15">
+			<!-- filter -->
+			<div class="articles-filter">
+				<ul class="clearfix">
+					<!-- <li ng-class="{'filter-active': filterId == 1}" ng-click="filterId = 1" ng-init="filterId = 1"><i class="icon-filter icon-recommend"></i>推荐</li>
+					<li ng-class="{'filter-active': filterId == 2}" ng-click="filterId = 2"><i class="icon-filter icon-train"></i>培训</li>
+					<li ng-class="{'filter-active': filterId == 3}" ng-click="filterId = 3"><i class="icon-filter icon-dry"></i>干货</li>
+					<li ng-class="{'filter-active': filterId == 4}" ng-click="filterId = 4"><i class="icon-filter icon-system"></i>制度</li> -->
+					<li ng-class="{'filter-active':condition.is_promote=='1'}" ng-click="setRecommendFilter('1')"><i class="icon-filter icon-recommend"></i>推荐</li>
+					<li ng-class="{'filter-active':condition.type_id=='30'}" ng-click="setFilter('30')"><i class="icon-filter icon-train"></i>培训</li>
+					<li ng-class="{'filter-active':condition.type_id=='31'}" ng-click="setFilter('31')"><i class="icon-filter icon-dry"></i>干货</li>
+					<li ng-class="{'filter-active':condition.type_id=='32'}" ng-click="setFilter('32')"><i class="icon-filter icon-system"></i>规范</li>
+				</ul>
+			</div>
+
+			<!-- article list -->
+			<div class="article-list mt-15" >
+				<ul>
+					<li ng-repeat="article in articleList" data-id="{{article.id}}">
+						<div class="article-cell-up">
+							<div class="article-cell-1 clearfix">
+								<div class="user-avatar fl">
+									<img ng-src="{{ article.user.avatar }}" width="32" height="32" alt="">
+								</div>
+								<div class="user-info fl">
+									<p><em class="user-name">{{ article.user.name }}</em><span class="views"><i class="icon-views"></i>{{ article.view_count }}</span><b ng-bind="article.publish_time * 1000 | date: 'yyyy-MM-dd'"></b></p>
+									<p class="quote">{{ article.user.position }}专门为您推荐的话题！</p>
+								</div>
+								<div class="collect fr" ng-click="collectFn(article)" ng-class="{'collect-on': article.flow && article.flow.is_collect == 1}"></div>
+							</div>
+							<div class="article-cell-2">
+								<a href="#/article/detail/{{article.id}}">
+									<h3 class="article-title">										
+										<em class="article-tag tag-essence" ng-if="article.is_best == 1 ? true : false">精华</em>
+										<em class="article-tag tag-article" ng-if="article.type_id == 30 ? true : flase">培训</em>
+										<em class="article-tag tag-process" ng-if="article.type_id == 31 ? true : flase">干货</em>
+										<em class="article-tag tag-standard" ng-if="article.type_id == 32 ? true : flase">规范</em>{{ article.title }}
+									</h3>
+									<p class="article-desc">{{ article.description }}</p>				
+								</a>
+							</div>							
+						</div>
+						<div class="article-cell-bott actions clearfix">
+							<a href="javascript:;" ng-click="thumbsFn(article)" ng-class="{'click-on': article.flow && article.flow.is_admire == 1}"><i class="icon-thumbs-up"></i>{{ article.admire_count }}</a>
+							<a href="#/comment-list/{{article.id}}"><i class="icon-comments"></i>{{ article.comment_count }}</a>
+						</div>
+					</li>
+					<!-- <li>
+						<div class="article-cell-up">
+							<div class="article-cell-1 clearfix">
+								<div class="user-avatar fl">
+									<img src="images/avatar.jpg" width="32" height="32" alt="">
+								</div>
+								<div class="user-info fl">
+									<p><em class="user-name">陈晓雪</em><span class="views"><i class="icon-views"></i>3409</span></p>
+									<p class="quote">设计师专门为您推荐的话题！</p>
+								</div>
+								<div class="collect fr"></div>
+							</div>
+							<div class="article-cell-2">
+								<a href="#/article/detail">
+									<h3 class="article-title"><em class="article-tag tag-article">文章</em>什么样的设计才是有思想和灵魂的设计？</h3>
+									<p class="article-desc">设计是把一种计划、规划、设想通过某种形式传达出来的活动过程基础、最主要的创造活动是造物</p>				
+								</a>
+							</div>							
+						</div>
+						<div class="article-cell-bott actions clearfix">
+							<a href="#"><i class="icon-thumbs-up"></i>2980</a>
+							<a href="#/comment-list"><i class="icon-comments"></i>865</a>
+						</div>
+					</li>
+					<li>
+						<div class="article-cell-up">
+							<div class="article-cell-1 clearfix">
+								<div class="user-avatar fl">
+									<img src="images/avatar.jpg" width="32" height="32" alt="">
+								</div>
+								<div class="user-info fl">
+									<p><em class="user-name">李晓彤</em><span class="views"><i class="icon-views"></i>67</span></p>
+									<p class="quote">现在最热门的话题.</p>
+								</div>
+								<div class="collect collect-on fr"></div>
+							</div>
+							<div class="article-cell-2">
+								<a href="">
+									<h3 class="article-title"><em class="article-tag tag-standard">规范</em>发现不为人发现的美最重要！</h3>
+									<p class="article-desc">设计是把一种计划、规划、设想通过某种形式传达出来的活动过程基础、最主要的创造活动是造物</p>				
+								</a>
+							</div>							
+						</div>
+						<div class="article-cell-bott actions clearfix">
+							<a href="#" class="click-on"><i class="icon-thumbs-up"></i>2980</a>
+							<a href="#"><i class="icon-comments"></i>865</a>
+						</div>
+					</li>
+					<li>
+						<div class="article-cell-up">
+							<div class="article-cell-1 clearfix">
+								<div class="user-avatar fl">
+									<img src="images/avatar.jpg" width="32" height="32" alt="">
+								</div>
+								<div class="user-info fl">
+									<p><em class="user-name">王旭</em></p>
+									<p class="quote">设计灵感在哪里？</p>
+								</div>
+								<div class="collect fr"></div>
+							</div>
+							<div class="article-cell-2">
+								<a href="">
+									<h3 class="article-title"><em class="article-tag tag-standard">规范</em>设计思路与想法创新！</h3>
+									<p class="article-desc">灵感（inspiration）是人们思维过程中认识飞跃的心理现象，一种新的思路突然接通</p>							
+								</a>
+							</div>							
+						</div>
+						<div class="article-cell-bott actions clearfix">
+							<a href="#" class="click-on"><i class="icon-thumbs-up"></i>2980</a>
+							<a href="#"><i class="icon-comments"></i>865</a>
+						</div>
+					</li> -->
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- bottom nav	start -->
+<div class="navbar navbar-app navbar-absolute-bottom" ui-yield-to="bottom-button">
+    <div class="btn-group justified">
+        <a href="#/index" class="btn btn-navbar" ng-class="{active:setHighlight('/index,/search-result')}"><i class="icon-nav icon-nav-book"></i> 知识库</a>
+        <a href="#/my-collection" class="btn btn-navbar" ng-class="{active:setHighlight('/my-collection')}"><i class="icon-nav icon-nav-star"></i> 收藏</a>
+        <a href="#/personal-center" class="btn btn-navbar" ng-class="{active:setHighlight('/personal-center')}"><i class="icon-nav icon-nav-user"></i> 个人</a>
+    </div>
+</div>
+<!-- bottom nav	end -->

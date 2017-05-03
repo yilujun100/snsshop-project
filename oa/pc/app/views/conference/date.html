@@ -1,0 +1,181 @@
+<div class="uib-datepicker" ng-switch="datepickerMode" role="application" ng-keydown="keydown($event)">
+    <uib-daypicker ng-switch-when="day" tabindex="0" template-url="views/conference/day.html"></uib-daypicker>
+    <uib-monthpicker ng-switch-when="month" tabindex="0" template-url="views/conference/month.html"></uib-monthpicker>
+    <uib-yearpicker ng-switch-when="year" tabindex="0" template-url="views/conference/year.html"></uib-yearpicker>
+    <style>
+    .inline-datepicker table thead tr th:first-child,
+    .inline-datepicker table thead tr th:first-child .btn-default {
+        text-align: right;
+    }
+       .inline-datepicker table thead tr th:first-child.text-center {
+        text-align: center;
+    } 
+    .note.inline-datepicker table thead tr th:first-child .btn-default.btn {
+        text-align: center;
+    }
+    
+    .note.inline-datepicker table td button.btn-info.active,
+    .note.inline-datepicker table td button {
+        background: none;
+        outline: none;
+        box-shadow: none;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+    
+    .note .uib-day.text-center {
+        height: 150px;
+        width: 14%
+    }
+    
+    .note.inline-datepicker table {
+        text-align: center;
+    }
+    
+    .note.inline-datepicker table td button {
+        height: 150px;
+        border-right: 1px solid #ececec;
+        border-bottom: 1px solid #ececec;
+        margin-right: -1px;
+        margin-bottom: -1px;
+        line-height: normal;
+        position: relative;
+        padding: 0;
+        cursor: auto;
+    }
+    
+    .note.inline-datepicker table td,
+    .note.inline-datepicker table th {
+        background-color: #fff !important;
+    }
+    
+    .note tbody {
+        border-top: 1px solid #ececec;
+    }
+    
+    .note.inline-datepicker table td button span {
+        /*float: right;*/
+        margin: 0;
+        top: 10px;
+        right: 5px;
+        position: absolute;
+        font-weight: 700;
+    }
+    
+    .note.inline-datepicker table thead tr:first-child th {
+        padding: 0 0;
+    }
+    
+    .note.inline-datepicker table td button.btn-info.active span {
+        background-color: #fff;
+        color: #000;
+    }
+    
+    .note.inline-datepicker table td button.btn-info.active .text-info {
+        color: #000;
+        font-weight: 700;
+    }
+    
+    .note.inline-datepicker table td button .text-info {
+        border: none;
+    }
+    
+    .note ul.note-ul {
+        top: 30px;
+        font-size: 12px;
+        color: #fff;
+        position: absolute;
+        width: 100%;
+    }
+    
+    .note ul.note-ul a {
+        color: #fff;
+        cursor: pointer;
+        height: 100%;
+        display: block;
+        position: absolute;
+        width: 100%;
+    }
+    
+    .note ul.note-ul li {
+        position: relative;
+        height: 20px;
+        margin-bottom: 1px;
+        line-height: 20px;
+    }
+    
+    .note ul.note-ul li label {
+        position: absolute;
+    }
+    
+    .note ul.note-ul li label.book-time {
+        left: 5px;
+        cursor: pointer;
+    }
+    
+    .note ul.note-ul li label.book-name {
+        left: 80px;
+        width: 21%;
+        cursor: pointer;
+        overflow: hidden;
+    }
+    
+    .note ul.note-ul li label.book-user-name {
+        right: 5px;
+        cursor: pointer;
+    }
+    
+    .note-li-bg {
+        background-color: #69bdff;
+    }
+    
+    .note-normal-bg {
+        background-color: #888888;
+    }
+    
+    .note.inline-datepicker table td.uib-month button span {
+        width: 30px;
+        height: 30px;
+        display: block;
+        margin: 0 auto;
+        font-size: 12px;
+        position: relative;
+    }
+    
+    .note.inline-datepicker table td.uib-month button.btn-info.active {
+        background-color: #2285ff;
+    }
+    
+    .note.inline-datepicker table td.uib-month button.btn-info.active .text-info {
+        background-color: #2285ff;
+        color: #fff;
+    }
+    
+    .note.inline-datepicker table td.uib-month button.btn-info.active span {
+        background-color: #2285ff;
+        color: #fff;
+    }
+    
+    .note.inline-datepicker table td.uib-year button span {
+        width: 30px;
+        height: 30px;
+        display: block;
+        margin: 0 auto;
+        font-size: 12px;
+        position: relative;
+    }
+    
+    .note.inline-datepicker table td.uib-year button.btn-info.active {
+        background-color: #2285ff;
+    }
+    
+    .note.inline-datepicker table td.uib-year button.btn-info.active .text-info {
+        background-color: #2285ff;
+        color: #fff;
+    }
+    
+    .note.inline-datepicker table td.uib-year button.btn-info.active span {
+        background-color: #2285ff;
+        color: #fff;
+    }
+    </style>
+</div>

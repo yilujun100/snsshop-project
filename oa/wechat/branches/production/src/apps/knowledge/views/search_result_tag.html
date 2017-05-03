@@ -1,0 +1,121 @@
+<div class="scrollable">
+	<div class="scrollable-content" ui-scroll-bottom='bottomReached()'>
+		<div class="search-empty" ng-if="isDataNull">
+			暂未搜索到相关的结果！
+		</div>
+		<!-- articles -->
+		<div class="articles">
+
+			<!-- article list -->
+			<div class="article-list">
+				<ul>
+					<li ng-repeat="article in articleList" data-id="{{article.article.id}}">
+						<div class="article-cell-up">
+							<div class="article-cell-1 clearfix">
+								<div class="user-avatar fl">
+									<img ng-src="{{ article.article.user.avatar }}" width="32" height="32" alt="">
+								</div>
+								<div class="user-info fl">
+									<p><em class="user-name">{{ article.article.user.name }}</em><span class="views"><i class="icon-views"></i>{{ article.article.view_count }}</span></p>
+									<p class="quote">{{ article.article.user.position }}专门为您推荐的话题！</p>
+								</div>
+								<div class="collect fr" ng-click="collectFn(article.article)" ng-class="{'collect-on': article.article.flow && article.article.flow.is_collect == 1}"></div>
+							</div>
+							<div class="article-cell-2">
+								<a href="#/search/detail/{{article.id}}">
+									<h3 class="article-title"><em class="article-tag tag-article" ng-if="article.article.type_id == 30 ? true : flase">培训</em><em class="article-tag tag-process" ng-if="article.article.type_id == 31 ? true : flase">干货</em><em class="article-tag tag-standard" ng-if="article.article.type_id == 32 ? true : flase">规范</em>{{ article.article.title }}</h3>
+									<p class="article-desc">{{ article.article.description }}</p>				
+								</a>
+							</div>							
+						</div>
+						<div class="article-cell-bott actions clearfix">
+							<a href="javascript:;" ng-click="thumbsFn(article.article)" ng-class="{'click-on': article.article.flow && article.article.flow.is_admire == 1}"><i class="icon-thumbs-up"></i>{{ article.article.admire_count }}</a>
+							<a href="#/comment-list/{{article.id}}"><i class="icon-comments"></i>{{ article.article.comment_count }}</a>
+						</div>
+					</li>
+					<!-- <li>
+						<div class="article-cell-up">
+							<div class="article-cell-1 clearfix">
+								<div class="user-avatar fl">
+									<img src="images/avatar.jpg" width="32" height="32" alt="">
+								</div>
+								<div class="user-info fl">
+									<p><em class="user-name">陈晓雪</em><span class="views"><i class="icon-views"></i>3409</span></p>
+									<p class="quote">设计师专门为您推荐的话题！</p>
+								</div>
+								<div class="collect fr"></div>
+							</div>
+							<div class="article-cell-2">
+								<a href="#/article/detail">
+									<h3 class="article-title"><em class="article-tag tag-article">文章</em>什么样的设计才是有思想和灵魂的设计？</h3>
+									<p class="article-desc">设计是把一种计划、规划、设想通过某种形式传达出来的活动过程基础、最主要的创造活动是造物</p>				
+								</a>
+							</div>							
+						</div>
+						<div class="article-cell-bott actions clearfix">
+							<a href="#"><i class="icon-thumbs-up"></i>2980</a>
+							<a href="#/comment-list"><i class="icon-comments"></i>865</a>
+						</div>
+					</li>
+					<li>
+						<div class="article-cell-up">
+							<div class="article-cell-1 clearfix">
+								<div class="user-avatar fl">
+									<img src="images/avatar.jpg" width="32" height="32" alt="">
+								</div>
+								<div class="user-info fl">
+									<p><em class="user-name">李晓彤</em><span class="views"><i class="icon-views"></i>67</span></p>
+									<p class="quote">现在最热门的话题.</p>
+								</div>
+								<div class="collect collect-on fr"></div>
+							</div>
+							<div class="article-cell-2">
+								<a href="">
+									<h3 class="article-title"><em class="article-tag tag-standard">规范</em>发现不为人发现的美最重要！</h3>
+									<p class="article-desc">设计是把一种计划、规划、设想通过某种形式传达出来的活动过程基础、最主要的创造活动是造物</p>				
+								</a>
+							</div>							
+						</div>
+						<div class="article-cell-bott actions clearfix">
+							<a href="#" class="click-on"><i class="icon-thumbs-up"></i>2980</a>
+							<a href="#"><i class="icon-comments"></i>865</a>
+						</div>
+					</li>
+					<li>
+						<div class="article-cell-up">
+							<div class="article-cell-1 clearfix">
+								<div class="user-avatar fl">
+									<img src="images/avatar.jpg" width="32" height="32" alt="">
+								</div>
+								<div class="user-info fl">
+									<p><em class="user-name">王旭</em></p>
+									<p class="quote">设计灵感在哪里？</p>
+								</div>
+								<div class="collect fr"></div>
+							</div>
+							<div class="article-cell-2">
+								<a href="">
+									<h3 class="article-title"><em class="article-tag tag-standard">规范</em>设计思路与想法创新！</h3>
+									<p class="article-desc">灵感（inspiration）是人们思维过程中认识飞跃的心理现象，一种新的思路突然接通</p>							
+								</a>
+							</div>							
+						</div>
+						<div class="article-cell-bott actions clearfix">
+							<a href="#" class="click-on"><i class="icon-thumbs-up"></i>2980</a>
+							<a href="#"><i class="icon-comments"></i>865</a>
+						</div>
+					</li> -->
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- bottom nav	start -->
+<div class="navbar navbar-app navbar-absolute-bottom" ui-yield-to="bottom-button">
+    <div class="btn-group justified">
+        <a href="#/index" class="btn btn-navbar" ng-class="{active:setHighlight('/index,/search-result')}"><i class="icon-nav icon-nav-book"></i> 知识库</a>
+        <a href="#/my-collection" class="btn btn-navbar" ng-class="{active:setHighlight('/my-collection')}"><i class="icon-nav icon-nav-star"></i> 收藏</a>
+        <a href="#/personal-center" class="btn btn-navbar" ng-class="{active:setHighlight('/personal-center')}"><i class="icon-nav icon-nav-user"></i> 个人</a>
+    </div>
+</div>
+<!-- bottom nav	end -->

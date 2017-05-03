@@ -1,0 +1,47 @@
+<!-- 搜索结果 -->
+<div class="scrollable">
+	<div class="scrollable-content" ui-scroll-bottom='bottomReached()'>
+		
+		<div class="search-empty" ng-if="isDataNull">
+			暂未搜索到相关的结果！
+		</div>
+		<!-- article list -->
+		<div class="articles">
+			<div class="article-list">				
+				<div ng-repeat="article in articleList" class="article-item">
+					<div class="article-item-cell-1 clearfix">
+						<span class="fl">
+							<img ng-src="{{article.user.avatar}}" ng-if="article.is_anonymity == 0" src="" err-src="images/user_avatar_default.jpg" width="25" height="25" alt="" class="user-avatar">
+							<img src="images/avatar_anonymous.jpg" ng-if="article.is_anonymity == 1" width="25" height="25" alt="" class="user-avatar">
+							<b class="belog-circle">#{{ article.coteries.title }}</b>
+						</span>
+						<em class="fr publish-time" ng-bind="article.create_time * 1000 | date: 'yyyy-MM-dd'"></em>
+					</div>
+					<h3 class="article-title"><em ng-if="article.is_top == 1" class="post-tag post-tag-top">置顶</em><em ng-if="article.is_best == 1" class="post-tag post-tag-essence">精</em><a href="#/article-detail/{{article.id}}"  ng-bind="article.title"></a></h3>
+					<div class="article-thumb mt-10" ng-if="article.image">
+						<img ng-src="{{article.image}}" width="100%" height="auto" alt="">
+					</div>
+					<p class="article-desc" ng-bind-html="article.description | trust:'html'"></p>
+					<div class="article-bott clearfix">
+						<span class="fl">
+							<p>发布者<strong class="author" ng-bind="article.user.name" ng-if="article.is_anonymity == 0"></strong><strong class="author" ng-if="article.is_anonymity == 1">匿名用户</strong></p>
+							<p><strong class="admires" ng-bind="article.admire_count"></strong>赞同</p>
+							<p><strong class="comments" ng-bind="article.comment_count"></strong>评论</p>
+						</span>
+						<em class="fr views"><i class="icon-view"></i>{{ article.view_count }}</em>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- bottom nav	start -->
+<div class="navbar navbar-app navbar-absolute-bottom" ui-yield-to="bottom-button">
+    <div class="btn-group justified">
+        <a href="#/index" class="btn btn-navbar" ng-class="{active:setHighlight('/index,/search-result')}"><i class="icon-nav icon-nav-bbs"></i> BBS</a>
+        <a href="#/circle" class="btn btn-navbar" ng-class="{active:setHighlight('/my-collection')}"><i class="icon-nav icon-nav-circle"></i> 圈子</a>
+        <a href="#/personal-center" class="btn btn-navbar" ng-class="{active:setHighlight('/personal-center')}"><i class="icon-nav icon-nav-personal"></i> 个人</a>
+    </div>
+</div>
+<!-- bottom nav	end -->

@@ -1,0 +1,33 @@
+<div class="fixheight" ng-show="showPage">
+    <div class="ap-group">
+        <ul class="ap-group-nav clear">
+            <li class="ap-gnav-item" ng-class="{'ap-gnav-active':workOrderRecord.status==''}" ng-click="changeState('')">全部</li>
+            <li class="ap-gnav-item" ng-class="{'ap-gnav-active':workOrderRecord.status=='1'}" ng-click="changeState('1')">审批中</li>
+            <li class="ap-gnav-item" ng-class="{'ap-gnav-active':workOrderRecord.status=='2'}" ng-click="changeState('2')">已通过</li>
+            <li class="ap-gnav-item" ng-class="{'ap-gnav-active':workOrderRecord.status=='3'}" ng-click="changeState('3')">未通过</li>
+            <li class="ap-gnav-item" ng-class="{'ap-gnav-active':workOrderRecord.status=='4'}" ng-click="changeState('4')">已退回</li>
+            <li class="ap-gnav-item" ng-class="{'ap-gnav-active':workOrderRecord.status=='0'}" ng-click="changeState('0')">已撤销</li>
+        </ul>
+    </div>
+    <div class="ap-content">
+        <div class="ap-content-item" ng-repeat="content in workOrderRecord.contents">
+            <a ui-sref="index.workorder.detail({detail_id:content.id})" target="_blank">
+                <span class="ap-citem-title">{{content.form_name}}</span>
+                <span class="ap-citem-time">{{content.create_time*1000|date:'MM/dd'}}</span>
+                <!-- <span class="ap-citem-time">{{content.leaveRecord.duration}}</span> -->
+                <!-- <span class="ap-citem-apply-time">{{content.apply_time*1000|date:'MM/dd'}}</span> -->
+                <!-- <span class="ap-citem-start-time">开始时间：{{content.leaveRecord.start_time*1000|date:'yyyy-MM-dd HH:mm'}}</span>
+                <span class="ap-citem-end-time">结束时间：{{content.leaveRecord.end_time*1000|date:'yyyy-MM-dd HH:mm'}}</span> -->
+                <div class="ap-citem-record-time">
+                    <span ng-repeat="field in content.ticket_record_field" ng-if="field.is_wechat_list_show == 1">[{{field.name}}] {{field.value}}</span>
+                </div>
+                <span class="ap-citem-pic" ng-class="{'approving':content.status=='1','nopass':content.status=='3','return':content.status=='4','revoke':content.status=='0'}"></span>
+            </a>
+        </div>
+    </div>
+    <div class="fix-page list-page pager">
+        <uib-pagination total-items="page.totalCount" ng-model="page.pageNo" items-per-page="page.pageSize" max-size="5" ng-change="doRequest(workOrderRecord.status,page.pageNo,page.pageSize)" class="samplePage" boundary-link-numbers="true" previous-text="上一页" next-text="下一页" force-ellipses="true">
+        </uib-pagination>
+        <span>共{{page.totalPage}}页&nbsp;&nbsp;{{page.totalCount}}条</span>
+    </div>
+</div>

@@ -1,0 +1,111 @@
+<ul class="l-nav l-nav-fold" ng-if="!isOpen">
+    <li class="item">
+        <a class="head-pic" ui-sref="index.personalCenter"><img ng-src="{{headimg}}" src="" err-src="images/portal/avatar.jpg" alt="head-pic"></a>
+        <aside>头像</aside>
+    </li>
+    <!-- <li class="item">
+        <a ui-sref="index.bbsIndex" ui-sref-active="l-nav-active"><img src="images/bbs/icon_leftbar_bbs.png"></a>
+        <aside>BBS</aside>
+    </li> -->
+    <li class="item">
+        <a ui-sref="index.bbs.post" ui-sref-active="l-nav-active"><img src="images/bbs/icon_leftbar_post.png"></a>
+        <aside>我要发帖</aside>
+    </li>
+    <!-- <li class="item">
+        <a ui-sref="index.bbs.myPost" ui-sref-active="l-nav-active"><img src="images/bbs/icon_leftbar_posts.png"></a>
+        <aside>我的帖子</aside>
+    </li>
+    <li class="item">
+        <a ui-sref="index.bbs.myCircle" ui-sref-active="l-nav-active"><img src="images/bbs/icon_leftbar_circles.png"></a>
+        <aside>我的圈子</aside>
+    </li>
+    <li class="item">
+        <a ui-sref="index.bbs.myReply" ui-sref-active="l-nav-active"><img src="images/bbs/icon_leftbar_replys.png"></a>
+        <aside>我的回帖</aside>
+    </li>
+    <li class="item">
+        <a ui-sref="index.bbs.myCollect" ui-sref-active="l-nav-active"><img src="images/bbs/icon_leftbar_collect.png"></a>
+        <aside>帖子收藏</aside>
+    </li> -->
+    <!-- <li class="item">
+        <a ui-sref="index.knowledge.query" ui-sref-active="l-nav-active"><img src="images/bbs/icon_leftbar_view.png"></a>
+        <aside>我看过的</aside>
+    </li> -->
+    <li class="item" ng-if="isManager">
+        <a ui-sref="index.bbs.manage" ui-sref-active="l-nav-active"><img src="images/bbs/icon_leftbar_manage.png"></a>
+        <aside>管理圈子</aside>
+    </li>
+    <li class="item">
+        <a ui-sref="index.bbs.allCircles" ui-sref-active="l-nav-active"><img src="images/bbs/icon_leftbar_dialog.png"></a>
+        <aside>所有圈子</aside>
+    </li>
+</ul>
+<ul class="l-nav-open" ng-if="isOpen">
+    <li class="item">
+        <a class="head-pic" ui-sref="index.personalCenter">
+            <img ng-src="{{headimg}}" src="" err-src="images/portal/avatar.jpg" alt="head-pic">
+            <div class="leftbar-user">
+                <h3>{{userName}}</h3>
+                <p>欢迎来到盛灿小家</p>
+            </div>
+        </a>
+    </li>
+    <!-- <li class="item">
+        <a ui-sref="index.bbs" ui-sref-active="l-nav-active">
+            <img src="images/bbs/icon_leftbar_bbs.png">
+            <h3>BBS</h3>
+        </a>
+    </li> -->
+    <li class="item">
+        <a ui-sref="index.bbs.post" ui-sref-active="l-nav-active">
+            <img src="images/bbs/icon_leftbar_post.png">
+            <h3>我要发帖</h3>
+        </a>
+    </li>
+    <!-- <li class="item">
+        <a ui-sref="index.bbs.myPost" ui-sref-active="l-nav-active">
+            <img src="images/bbs/icon_leftbar_posts.png">
+            <h3>我的帖子</h3>
+        </a>
+    </li>
+    <li class="item">
+        <a ui-sref="index.bbs.myCircle" ui-sref-active="l-nav-active">
+            <img src="images/bbs/icon_leftbar_circles.png">
+            <h3>我的圈子</h3>
+        </a>
+    </li>
+    <li class="item">
+        <a ui-sref="index.bbs.myReply" ui-sref-active="l-nav-active">
+            <img src="images/bbs/icon_leftbar_replys.png">
+            <h3>我的回帖</h3>
+        </a>
+    </li>
+    <li class="item">
+        <a ui-sref="index.bbs.myCollect" ui-sref-active="l-nav-active">
+            <img src="images/bbs/icon_leftbar_collect.png">
+            <h3>帖子收藏</h3>
+        </a>
+    </li> -->
+    <!-- <li class="item">
+        <a ui-sref="index.knowledge.query" ui-sref-active="l-nav-active">
+            <img src="images/bbs/icon_leftbar_view.png">
+            <h3>我看过的</h3>
+        </a>
+    </li> -->
+    <li class="item" ng-if="isManager">
+        <a ui-sref="index.bbs.manage" ui-sref-active="l-nav-active">
+            <img src="images/bbs/icon_leftbar_manage.png">
+            <h3>管理圈子</h3>
+        </a>
+    </li>
+    <li class="item">
+        <a ui-sref="index.bbs.allCircles" ui-sref-active="l-nav-active">
+            <img src="images/bbs/icon_leftbar_dialog.png">
+            <h3>所有圈子</h3>
+        </a>
+    </li>
+</ul>
+
+<!-- <div class="lb-icon-open" ng-click="leftBarOpen()" ng-if="!isOpen"></div>
+<div class="lb-icon-fold" ng-click="leftBarFold()" ng-if="isOpen"></div> -->
+<div ng-class="{'lb-icon-open': !isOpen, 'lb-icon-fold': isOpen}" ng-click="toggleFn()"></div>

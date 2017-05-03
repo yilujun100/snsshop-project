@@ -1,0 +1,47 @@
+<div class="scrollable">
+	<div class="scrollable-content">
+
+		<!-- article detail -->
+		<div class="detail-empty" ng-show="articleDetail.status == 0">该文章已被删除</div>
+		<div class="detail" ng-show="articleDetail.status == 1">
+			<div class="detail-hd">
+				<div class="detail-cell-1 clearfix">
+					<div class="user-avatar fl">
+						<img ng-src="{{articleDetail.user.avatar}}" width="32" height="32" alt="">
+					</div>
+					<div class="user-info fl">						
+						<p><em class="user-name">{{articleDetail.user.name}}</em></p>
+						<p class="quote">{{articleDetail.user.position}}专门为您推荐的话题！</p>
+					</div>
+					<div class="article-tags fr">
+						<em class="article-tag tag-essence" ng-if="articleDetail.is_best == 1 ? true : false">精华</em>
+						<!-- <em class="article-tag tag-article">文章</em> -->
+						<em class="article-tag tag-article" ng-if="articleDetail.type_id == 30 ? true : flase">培训</em>
+						<em class="article-tag tag-process" ng-if="articleDetail.type_id == 31 ? true : flase">干货</em>
+						<em class="article-tag tag-standard" ng-if="articleDetail.type_id == 32 ? true : flase">规范</em>
+					</div>
+					<div class="detail-time" ng-bind="articleDetail.publish_time * 1000 | date: 'yyyy-MM-dd'"></div>
+				</div>
+				<h3 class="article-title" ng-bind="articleDetail.title"></h3>
+				<a ng-href="{{articleDetail.annexes}}" ng-if="articleDetail.annexes != null" class="view-attachments">浏览附件&gt;&gt;</a>
+			</div>
+			<div class="detail-con" ng-bind-html="articleDetail.content | trust:'html'">
+				<!-- <p>时装的款式多种多样，不断创新是时装设计得以保持时尚性的唯一途径。时尚的理念来源与瞬间的火花般的灵感，看似不可捉摸实际上却带有一定的规律性。灵感的来源是多样化的，不是一蹴而就而是在有目的的收集信息的情况下产生的“量”变。文章阐述了在时装设计中灵感产生的几大来源，以及应该如何将这种信息加以整合应用在时装设计当中的方法。</p>
+				<p>不仅仅是网页方面的设计，这个世界上围绕在我们身边的所有东西都可以激发我们的网站设计灵感。</p>
+				<p>你永远不会知道创意的火花什么时候会撞击到你。在项目过程中，我经常发现一些最平常的事物可以让我用一种新的或不同的方式进行思考。这里有10个除了网站以外的我最喜欢的设计灵感资源。</p>
+				<p>思考设计最好的其中一个地方就是户外。</p>
+				<p>设计是把一种计划、规划、设想通过某种形式传达出来的活动过程。基础、最主要的创造活动是造物</p> -->
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- bottom nav	start -->
+<div class="navbar navbar-app navbar-absolute-bottom" ui-yield-to="bottom-button">
+    <div class="btn-group justified">
+        <a href="javascript:;" class="btn btn-navbar" ng-class="{'btn-active': articleDetail.flow && articleDetail.flow.is_admire == 1}" ng-click="articleActionFn(articleDetail, 0)"><i class="icon-article-nav icon-article-thumbs"></i> {{articleDetail.admire_count}}</a>
+        <a href="javascript:;" class="btn btn-navbar" ng-class="{'btn-active': articleDetail.flow && articleDetail.flow.is_collect == 1}" ng-click="articleActionFn(articleDetail, 1)"><i class="icon-article-nav icon-article-star"></i> {{articleDetail.collect_count}}</a>
+        <a href="#/comment-list/{{articleDetail.id}}" class="btn btn-navbar" ng-class="{'btn-active': articleDetail.flow && articleDetail.flow.is_comment == 1}"><i class="icon-article-nav icon-article-comments"></i> {{articleDetail.comment_count}}</a>
+    </div>
+</div>
+<!-- bottom nav	end -->

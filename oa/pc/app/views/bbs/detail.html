@@ -1,0 +1,234 @@
+<!-- 帖子详情 -->
+<div class="container">
+	<div class="main">
+		<!-- breadcrumb -->
+		<div class="breadcrumb">
+			<ul>
+				<li>当前位置：</li>
+				<li><a ui-sref="index.bbs">BBS</a></li>
+				<li>&gt;帖子详情</li>
+			</ul>
+		</div>
+
+		<!-- post detail -->
+		<div class="post-detail mt-10">
+
+			<div class="post-detail-hd">
+				<h3 class="post-detail-tit" ng-bind="articleData.title"></h3>
+				<div class="post-detail-info-basic">
+					<p>
+						<em class="post-tag post-tag-top" ng-if="articleData.is_top == 1">置顶</em>
+						<em class="post-tag post-tag-essence" ng-if="articleData.is_best == 1">精</em>						
+					</p>
+					<p>
+						<span ng-bind="articleData.author.name" ng-if="articleData.is_anonymity == 0">aaa</span>
+						<span ng-if="articleData.is_anonymity == 1">匿名用户</span>
+					</p>
+					<p ng-bind="articleData.create_time * 1000 | date: 'yyyy-MM-dd HH:mm'"></p>
+					<p>来自{{ articleData.coteries.title }}</p>
+				</div>
+				<!-- <div class="post-detail-info-basic">
+					<p>圈子：{{ articleData.coteries.title }}</p>
+					<p>作者：<span ng-bind="articleData.author.name" ng-if="articleData.is_anonymity == 0"></span><span ng-if="articleData.is_anonymity == 1">匿名用户</span></p>					
+					<p>发布时间：{{ articleData.create_time * 1000 | date: 'yyyy-MM-dd HH:mm' }}</p>
+					<span class="post-bott-cell-2">
+						<a href="javascript:;" ng-class="{'post-click-on': articleData.is_admire}" ng-click="articleLikedFn(articleData.id)"><i class="icon-post-list icon-post-thumb-up"></i>{{ articleData.admire_count }}</a>
+						<a href="javascript:;" ng-class="{'post-click-on': articleData.is_collect}" ng-click="articleCollectFn(articleData.id)"><i class="icon-post-list icon-post-star"></i>{{ articleData.collect_count }}</a>
+						<a href="javascript:;" ng-class="{'post-click-on': articleData.is_comment}" ng-click="gotoCommentFn()"><i class="icon-post-list icon-post-msg"></i>{{ articleData.comment_count }}</a>
+					</span>
+				</div> -->
+			</div>
+			<img ng-if="articleData.image != ''" ng-src="{{articleData.image}}" alt="" style="display: block; margin: 10px auto">
+			<div class="post-detail-con article-con" ng-bind-html="articleData.content | trust:'html'">
+				<!-- <p>设计是把一种计划、规划、设想通过某种形式传达出来的活动过程。人类通过劳动改造世界，创造文明，创造物质财富和精神财富，而最基础、最主要的创造活动是造物。设计便是造物活动进行预先的计划，可以把任何造物活动的计划技术和计划过程理解为设计。</p>
+				<p>根据工业设计师Victor Papanek 的定义，设计（Design）是为构建有意义的秩序而付出的有意识的直觉上的努力。更详细的定义如下：</p>
+				<p>第一步：理解用户的期望、需要、动机，并理解业务、技术和行业上的需求和限制。</p>
+				<p>第二步：将这些所知道的东西转化为对产品的规划（或者产品本身），使得产品的形式、内容和行为变得有用、能用，令人向往，并且在经济和技术上可行。（这是设计的意义和基本要求所在）</p>
+				<img src="images/bbs/article_detail.jpg" width="100%" height="auto" alt="">
+				<p>随着现代科技的发展、知识社会的到来、创新形态的嬗变，设计也正由专业设计师的工作向更广泛的用户参与演变，以用户为中心的、用户参与的创新设计日益受到关注，用户参与的创新2.0模式正在逐步显现。用户需求、用户参与、以用户为中心被认为是新条件下设计创新的重要特征，用户成为创新2.0的关键词，用户体验也被认为是知识社会环境下创新2.0模式的核心。设计不再是专业设计师的专利，以用户参与、以用户为中心也成为了设计的关键词，Fab Lab、Living Lab等的创新设计模式的探索正在成为设计的创新2.0模式。</p> -->
+			</div>
+			<div class="post-detail-actions" id="comment" name="comment">
+				<a href="javascript:;" class="btn-thumbs-up" ng-click="articleLikedFn(articleData.id)">赞({{ articleData.admire_count }})</a>
+				<a href="javascript:;" class="btn-post-comment" ng-click="gotoCommentFn()">回复({{ articleData.comment_count }})</a>
+			</div>
+					<div class="comment-publish clearfix">
+						<textarea class="text-field" id="commentField" ng-model="input.commentContent" text-field></textarea>
+						<div class="comment-publish-bott mt-10 clearfix">
+							<div class="tool-face" title="表情" qq-face></div>
+							<a href="javascript:;" class="btn-publish" ng-click="commentSubmitFn(input.commentContent)">提交评论</a>							
+						</div>
+					</div>
+			<!-- <div class="post-bott">
+				<a href="#" class="article-prev">上一篇：设计新理论</a>
+				<a href="#" class="article-next mt-10">下一篇：武汉武昌区领导考察微信智慧商圈——“智慧天心”项目</a>			
+			</div> -->
+			<!-- comment -->
+			<div class="comment">
+				<div class="comment-hd">
+					<h3>全部评论（{{ page.totalCount || 0 }}）</h3>
+				</div>
+				<div class="comment-con">
+					<ul class="comment-list">
+						<li ng-repeat="comment in commentList | orderBy: 'id'" ng-init="itemComment = comment">
+							<div class="comment-cell-1 clearfix">
+								<span class="fl">
+									<p class="comment-user" ng-bind="comment.user_name"></p>
+									<p class="comment-time" ng-bind="comment.create_time * 1000 | date: 'yyyy-MM-dd HH:mm'"></p>
+								</span>
+								<em class="comment-floor fr">{{ (page.pageNo - 1) * 8 + $index + 1}}F</em>
+							</div>
+							<p class="comment-content" ng-bind-html="comment.comment | replaceFace | trust:'html'"></p>
+							<div class="comment-actions clearfix">
+								<a href="javascript:;" class="comment-immediate" ng-show="(comment.commentList == undefined) && (comment.isShow)" ng-click="doCommentOpen(comment)">立即评论</a>
+								<a href="javascript:;" class="comment-total" ng-show="(comment.commentList.length > 0) && (comment.isShow)" ng-click="doCommentOpen(comment)">评论({{ comment.commentList.length }})</a>
+								<a href="javascript:;" class="comment-fold" ng-hide="comment.commentFold" ng-click="doCommentFold(comment)">收起评论({{ comment.commentList.length || 0 }})</a>
+								<a href="javascript:;" class="comment-thumbs" ng-class="{'comment-thumbs-on': comment.flow != null}" ng-click="commentLikedFn(comment.id)"><i class="icon-comment-thumbs"></i>点赞（{{comment.admire_count}}）</a>
+							</div>
+							<div class="comment-box" ng-hide="comment.commentFold">
+								<div class="comment-box-list">
+									<div class="comment-item" ng-repeat="replyItem in comment.commentList">
+										<p ng-show="replyItem.reply_comment_id == 0"><em class="comment-item-user" ng-bind="replyItem.user_name"></em><span class="comment-item-time" ng-bind="replyItem.create_time * 1000 | date: 'yyyy-MM-dd HH:mm'"></span></p>
+										<p ng-show="replyItem.reply_comment_id != 0">
+											<span class="reply-users"><em ng-bind="replyItem.user_name"></em><b>回复</b><em ng-bind="replyItem.parent_user_name"></em></span>
+											<span class="comment-item-time" ng-bind="replyItem.create_time * 1000 | date: 'yyyy-MM-dd HH:mm'"></span>
+										</p>
+										<p class="comment-item-content" ng-bind-html="replyItem.comment | replaceFace | trust:'html'"></p>
+										<div class="comment-item-actions">
+											<a href="javascript:;" class="comment-action-reply" ng-click="doReplyOpen(replyItem)">回复</a>
+											<!-- <a href="javascript:;" class="comment-action-thumbs"><i class="icon-comment-thumbs"></i>赞</a> -->
+										</div>
+										<div class="comment-item-reply" ng-hide="replyItem.replyFold">
+											<textarea class="mt-10" id="replyContent{{replyItem.id}}" ng-model="replyContent" text-field></textarea>
+											<div class="comment-item-reply-actions mt-10">
+												<div class="tool-face" title="表情" qq-face></div>
+												<a href="javascript:;" class="btn-reply-cancel" ng-click="doReplyFold(replyItem)">取消</a>
+												<a href="javascript:;" class="btn-reply-confirm" ng-click="doReplyConfirm(replyContent, replyItem, itemComment)">评论</a>
+											</div>
+										</div>
+									</div>
+									<!-- <div class="comment-item">
+										<p><em class="comment-item-user">菠萝</em><span class="comment-item-time">1小时前</span></p>
+										<p class="comment-item-content">喜欢就去追把，驾驾驾驭驭驭</p>
+										<div class="comment-item-actions">
+											<a href="javascript:;" class="comment-action-reply">回复</a>
+											<a href="javascript:;" class="comment-action-thumbs"><i class="icon-comment-thumbs"></i>赞</a>
+										</div>
+										<div class="comment-item-reply">
+											<textarea class="mt-10"></textarea>
+											<div class="comment-item-reply-actions mt-10">
+												<a href="javascript:;" class="btn-reply-cancel">取消</a>
+												<a href="javascript:;" class="btn-reply-confirm">评论</a>
+											</div>
+										</div>
+									</div> -->
+								</div>
+								<div class="comment-box-bott">
+									<textarea placeholder="写下你的评论..." id="commentCon{{comment.id}}"  ng-model="commentCon" text-field></textarea>
+									<div class="comment-box-bott-btns mt-10">
+										<div class="tool-face" title="表情" qq-face></div>
+										<!-- <a href="javascript:;" class="btn-bott-cancel" ng-click="doCancel()">取消</a> -->
+										<a href="javascript:;" class="btn-bott-confirm" ng-click="doComment(commentCon, comment)">评论</a>			
+									</div>
+								</div>
+							</div>
+							<!-- <p class="comment-thumbs" ng-class="{'comment-thumbs-on': comment.flow != null}" ng-click="commentLikedFn(comment.id)"><i class="icon-comment-thumbs"></i>点赞（{{comment.admire_count}}）</p> -->
+						</li>
+						<!-- <li>
+							<div class="comment-cell-1 clearfix">
+								<span class="fl">
+									<p class="comment-user">我喜欢八卦</p>
+									<p class="comment-time">4天前</p>
+								</span>
+								<em class="comment-floor fr">8F</em>
+							</div>
+							<p class="comment-content">
+								我没有看完，只是看了几个标题。感觉“五导家”讲的就是从五个步骤指导您而已！这是工作总结，很不错！感谢您的分享！
+							</p>
+							<p class="comment-thumbs">点赞（23）</p>
+						</li>
+						<li>
+							<div class="comment-cell-1 clearfix">
+								<span class="fl">
+									<p class="comment-user">我喜欢八卦</p>
+									<p class="comment-time">4天前</p>
+								</span>
+								<em class="comment-floor fr">8F</em>
+							</div>
+							<p class="comment-content">
+								我没有看完，只是看了几个标题。感觉“五导家”讲的就是从五个步骤指导您而已！这是工作总结，很不错！感谢您的分享！
+							</p>
+							<p class="comment-thumbs">点赞（23）</p>
+						</li> -->
+					</ul>						
+					<!-- pagenation -->
+					<div class="list-page">
+						<uib-pagination total-items="page.totalCount" ng-model="page.pageNo" items-per-page="page.pageSize" max-size="5" ng-change="doRequest(page.pageNo,page.pageSize,articleData.id)" class="samplePage pagination-sm" boundary-link-numbers="true" previous-text="上一页" next-text="下一页">
+						</uib-pagination>
+						<span>共{{ page.totalPage }}页&nbsp;&nbsp;{{ page.totalCount }}条</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="sidebar">
+		<!-- my card -->
+		<!-- <div class="my-card">
+			<div class="my-card-info">
+				<img ng-src="{{userInfo.avatar}}" width="70" height="70" alt="" class="my-card-avatar">
+				<p class="my-name">{{ userInfo.name }}<strong ng-if="isManager">（版主）</strong></p>
+				<p class="my-department">{{ userInfo.position }}</p>
+				<a ui-sref="index.bbs.post">我要发帖</a>
+			</div>
+			<div class="my-card-actions">
+				<ul class="clearfix">
+					<li><a href="javascript:;" ui-sref="index.bbs.myReply">{{ userInfo.comment_count }} <i class="icon-card icon-card-comment"></i></a></li>
+					<li><a href="javascript:;" ui-sref="index.bbs.myCollect">{{ userInfo.collect_count }} <i class="icon-card icon-card-collect"></i></a></li>
+					<li><a href="javascript:;">498 <i class="icon-card icon-card-views"></i></a></li>
+				</ul>
+			</div>
+		</div> -->
+
+		<!-- search -->
+		<!-- <div class="post-search">
+			<p><input type="text" placeholder="搜索关键词" id="searchFiled" ng-model="keyword"><a href="javascript:;" class="btn-post-search" ng-click="searchFn(keyword)">搜索</a></p>
+		</div> -->
+
+		<!-- circles -->
+		<div class="list circles">			
+			<div class="list-hd clearfix">
+				<h3 class="list-tit fl">所有圈子</h3>
+				<a ui-sref="index.bbs.allCircles" class="list-more fr">更多</a>
+			</div>
+			<div class="circles-con">
+				<ul class="clearfix">
+					<li ng-repeat="circle in circleList"><a ui-sref="index.bbs.circleRecommend({id:circle.id})" ng-bind="circle.title"></a></li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- recommend post -->
+		<div class="list recommend-post mt-10">			
+			<div class="list-hd clearfix">
+				<h3 class="list-tit fl">推荐话题</h3>
+				<a ui-sref="index.bbs.postRecommend" class="list-more fr">更多</a>
+			</div>
+			<div class="recommend-post-con">
+				<ul class="recommend-post-list">
+					<li ng-repeat="articleRecomm in articleRecommendList" ng-class="{'top-rank': $index <= 2}">
+						<a ui-sref="index.bbs.detail({articleId:articleRecomm.id})"><em>{{ $index + 1 }}</em>{{ articleRecomm.title }}</a>
+						<!-- <div class="post-recomm-info-other mt-10">
+							<span class="post-recomm-author" ng-if="articleRecomm.is_anonymity == 0">作者：{{ articleRecomm.user.name }}</span>
+							<span class="post-recomm-author" ng-if="articleRecomm.is_anonymity == 1">作者：匿名</span>
+							<span class="publish-time">时间：{{ articleRecomm.create_time * 1000 | date: 'yyyy-MM-dd HH:mm' }}</span>
+						</div> -->
+					</li>
+				</ul>
+			</div>	
+		</div>
+	</div>
+</div>
+
+<!-- to top -->
+<a href="javascript:;" id="toTop" class="to-top" title="返回顶部" back-to-top>返回顶部</a>
+<!-- fixed comment -->
+<a href="javascript:;" id="toComment" class="fixed-comment" title="评论" fixed-comment>评论</a>

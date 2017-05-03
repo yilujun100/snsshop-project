@@ -1,0 +1,106 @@
+<!-- 论坛首页 -->
+<div class="scrollable">
+	<div class="scrollable-content" id="myScrollableContent" ui-scroll-bottom='bottomReached()' history-push-state>		
+		<!-- search -->
+		<div class="search">
+			<div class="search-inner" ng-click="isShow=true">
+				搜索<i class="icon-search"></i>
+			</div>
+		</div>
+
+		<!-- search area -->
+		<div class="search-mask" ng-show="isShow"></div>
+		<div class="search-area" ng-show="isShow">
+			<div class="search-box">
+				<input id="searchFiled" type="text" ng-model="keyword" placeholder="请输入想搜索的内容">
+				<a href="javascript:;" class="btn-search" ng-click="searchFn(keyword)">搜索</a>
+				<a href="javascript:;" class="btn-clear" ng-click="init()">清除</a>
+			</div>
+		</div>
+
+		<!-- article list -->
+		<div class="articles">
+			<div class="article-list">				
+				<div ng-repeat="article in bbsArticleList" class="article-item">
+					<a href="#/article-detail/{{article.id}}">
+						<div class="article-item-cell-1 clearfix">
+							<span class="fl">
+								<img ng-src="{{article.user.avatar}}" ng-if="article.is_anonymity == 0" src="" err-src="images/user_avatar_default.jpg" width="25" height="25" alt="" class="user-avatar">
+								<img src="images/avatar_anonymous.jpg" ng-if="article.is_anonymity == 1" width="25" height="25" alt="" class="user-avatar">
+								<b class="belog-circle">#{{ article.coteries.title }}</b>
+							</span>
+							<em class="fr publish-time" ng-bind="article.create_time * 1000 | date: 'yyyy-MM-dd'"></em>
+						</div>
+						<h3 class="article-title"><em ng-if="article.is_top == 1" class="post-tag post-tag-top">置顶</em><em ng-if="article.is_best == 1" class="post-tag post-tag-essence">精</em>{{ article.title }}</h3>
+						<div class="article-thumb mt-10" ng-if="article.image">
+							<img ng-src="{{article.image}}" width="100%" height="auto" alt="">
+						</div>
+						<p class="article-desc" ng-bind-html="article.description | trust:'html'"></p>
+						<div class="article-bott clearfix">
+							<span class="fl">
+								<p>发布者<strong class="author" ng-bind="article.user.name" ng-if="article.is_anonymity == 0"></strong><strong class="author" ng-if="article.is_anonymity == 1">匿名用户</strong></p>
+								<p><strong class="admires" ng-bind="article.admire_count"></strong>赞</p>
+								<p><strong class="comments" ng-bind="article.comment_count"></strong>评论</p>
+							</span>
+							<em class="fr views"><i class="icon-view"></i>{{ article.view_count }}</em>
+						</div>
+					</a>
+				</div>
+				<!-- <div class="article-item">
+					<div class="article-item-cell-1 clearfix">
+						<span class="fl">
+							<img src="images/avatar.jpg" width="25" height="25" alt="" class="user-avatar">
+							<b class="belog-circle">#学习交流</b>
+						</span>
+						<em class="fr publish-time">2016-09-05</em>
+					</div>
+					<h3 class="article-title"><a href="#/article-detail">什么样的设计才是有思想和灵魂的设计？</a></h3>
+					<div class="article-thumb mt-10">
+						<img src="images/thumb_bbs.jpg" width="100%" height="auto" alt="">
+					</div>
+					<p class="article-desc">新闻类的app通常会将图片放置在左侧，文字放置在右侧，而实际情况是用户一进入首页首先扫一遍标题，图片反而是在扫完标题有兴趣之后再去关注的，为什么...</p>
+					<div class="article-bott clearfix">
+						<span class="fl">
+							<p>发布者<strong class="author">Lucciy</strong></p>
+							<p><strong class="admires">300</strong>赞同</p>
+							<p><strong class="comments">122</strong>评论</p>
+						</span>
+						<em class="fr views"><i class="icon-view"></i>354</em>
+					</div>
+				</div>
+				<div class="article-item mt-15">
+					<div class="article-item-cell-1 clearfix">
+						<span class="fl">
+							<img src="images/avatar.jpg" width="25" height="25" alt="" class="user-avatar">
+							<b class="belog-circle">#电影</b>
+						</span>
+						<em class="fr publish-time">2016-09-04</em>
+					</div>
+					<h3 class="article-title">《鲁滨逊漂流记》首曝片段萌宠大战喵星人</h3>
+					<p class="article-desc">同时发布的四款动态人物海报则展现了萌宠百态，无论是全情投入的贪吃饼干，还是肆意放纵的魔性摇摆都喜感十足，唯独变色龙卡梅罗依然帅爆亮相，前脚刚叶...</p>
+					<div class="article-bott clearfix">
+						<span class="fl">
+							<p>发布者<strong class="author">刘云奇</strong></p>
+							<p><strong class="admires">300</strong>赞同</p>
+							<p><strong class="comments">122</strong>评论</p>
+						</span>
+						<em class="fr views"><i class="icon-view"></i>354</em>
+					</div>
+				</div> -->
+			</div>
+		</div>
+		<a href="javascript:;" class="to-top" back-to-top>返回顶部</a>
+	</div>
+</div>
+
+<a href="#/post" class="btn-new-post">发帖</a>
+
+<!-- bottom nav	start -->
+<div class="navbar navbar-app navbar-absolute-bottom" ui-yield-to="bottom-button">
+    <div class="btn-group justified">
+        <a href="#/index" class="btn btn-navbar" ng-class="{active:setHighlight('/index,/search-result')}"><i class="icon-nav icon-nav-bbs"></i> BBS</a>
+        <a href="#/circle" class="btn btn-navbar" ng-class="{active:setHighlight('/my-collection')}"><i class="icon-nav icon-nav-circle"></i> 圈子</a>
+        <a href="#/personal-center" class="btn btn-navbar" ng-class="{active:setHighlight('/personal-center')}"><i class="icon-nav icon-nav-personal"></i> 个人</a>
+    </div>
+</div>
+<!-- bottom nav	end -->

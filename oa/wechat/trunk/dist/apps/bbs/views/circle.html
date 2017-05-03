@@ -1,0 +1,55 @@
+<!-- 圈子 初次登录 -->
+<div class="scrollable">
+    <div class="scrollable-content">
+        <div class="circle">
+            <div class="circle-tips">
+                <p><i class="icon-bulb"></i>你还没有圈子哦，请先加入圈子吧！</p>
+            </div>
+            <div class="circle-interest mt-15">
+                <div class="circle-interest-hd">
+                    <h3>可能感兴趣的圈子</h3>
+                </div>
+                <div class="circle-interest-con">
+                    <ul class="circle-list">
+                        <li class="circle-item" ng-repeat="category in categoryList" ng-if="category.user == null">
+                            <div class="circle-info-basic fl">
+                                <img ng-src="{{category.images}}" width="45" height="45" alt="" class="circle-thumb">
+                                <h3 class="circle-name" ng-bind="category.title"></h3>
+                                <p class="circle-number">{{ category.member_count }}人</p>
+                            </div>
+                            <!-- <a href="javascript:;" class="circle-actions join fr" ng-class="{'already-joined': category.status}" ng-click="join(category)">加入</a> -->
+                            <a href="javascript:;" class="circle-action-follow" ng-click="join(category)" ng-if="!category.status"><i>+</i>关注</a>
+                            <a href="javascript:;" class="circle-action-follow-already" ng-if="category.status">已关注</a>
+                        </li>
+                        <!-- <li class="circle-item">
+					<div class="circle-info-basic fl">
+						<img src="images/avatar.jpg" width="45" height="45" alt="" class="circle-thumb">
+						<h3 class="circle-name">八卦闲聊</h3>
+						<p class="circle-number">303人</p>
+					</div>
+					<a href="javascript:;" class="circle-actions already-joined fr">已加入</a>
+				</li>
+				<li class="circle-item">
+					<div class="circle-info-basic fl">
+						<img src="images/avatar.jpg" width="45" height="45" alt="" class="circle-thumb">
+						<h3 class="circle-name">明星娱乐</h3>
+						<p class="circle-number">134人</p>
+					</div>
+					<a href="javascript:;" class="circle-actions join fr">加入</a>
+				</li> -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <a href="#/post" class="btn-new-post">发帖</a>
+        <!-- bottom nav	start -->
+        <div class="navbar navbar-app navbar-absolute-bottom" ui-yield-to="bottom-button">
+            <div class="btn-group justified">
+                <a href="#/index" class="btn btn-navbar" ng-class="{active:setHighlight('/index,/search-result')}"><i class="icon-nav icon-nav-bbs"></i> BBS</a>
+                <a href="#/circle" class="btn btn-navbar" ng-class="{active:setHighlight('/circle')}"><i class="icon-nav icon-nav-circle"></i> 圈子</a>
+                <a href="#/personal-center" class="btn btn-navbar" ng-class="{active:setHighlight('/personal-center')}"><i class="icon-nav icon-nav-personal"></i> 个人</a>
+            </div>
+        </div>
+        <!-- bottom nav	end -->
+    </div>
+</div>

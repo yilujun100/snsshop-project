@@ -1,0 +1,34 @@
+<!-- 消息详情 -->
+<div class="container">
+	<!-- breadcrumb -->
+	<div class="breadcrumb">
+		<ul>
+			<li>当前位置：</li>
+			<li><a ui-sref="index.personalCenter">个人中心</a></li>
+			<li>&gt;消息中心</li>
+		</ul>
+	</div>
+	<!-- msg detail -->
+	<div class="msg-wrap mt-10">		
+		<div class="msg-hd">
+			<h3>消息中心</h3>
+			<div class="tab-hd-cell clearfix mt-10">
+				<ul class="tab-action-group fl">
+					<li><a ui-sref="index.personalCenter.msg" class="btn-action btn-action-primary">返回</a></li>
+					<!-- <li><a href="javascript:;" class="btn-action btn-action-default">删除</a></li>
+					<li><a href="javascript:;" class="btn-action btn-action-primary">查看文章</a></li> -->
+				</ul>
+			</div>
+		</div>
+		<div class="msg-detail">
+			<h3 class="msg-title">{{ msgInfo.title }}<em class="msg-date" ng-bind="msgInfo.create_time * 1000 | date: 'yyyy-MM-dd'"></em></h3>
+			<div class="msg-content" ng-bind-html="msgInfo.content | trust: 'html'">
+				<!-- <p>闫游欢：</p>
+				<p style="text-indent: 2em;">您好！</p>
+				<p style="text-indent: 2em;">发布会的文章“如何在逆境中生存”,已经被管理员置顶！</p>
+				<p style="text-align: right;">2016-08-26</p> -->
+			</div>
+			<a ng-href="{{msgInfo.link}}" class="view-msg-detail" target="_blank">查看详情</a>
+		</div>
+	</div>
+</div>

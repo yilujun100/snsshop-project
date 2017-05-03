@@ -1,0 +1,46 @@
+<div class="scrollable">
+    <!-- 蒙层 -->
+    <div class="mask-layer" ng-show="showSelect" ng-click="clickMask()"></div>
+    <!-- end蒙层 -->
+    <div class="num_conference clearfix" ng-click="selectConference()">
+        <span style="float: left;">{{currentItem.name}}</span> 
+        <span ng-if="!showSelect">
+            <i class="fa fa-chevron-down"></i>
+            <!-- <img src="./images/dropdown.png" alt=""> -->
+            </span>
+            <span ng-if="showSelect">
+            <i class="fa fa-chevron-up"></i>
+            <!-- <img src="./images/dropup.png" alt=""> -->
+            </span>
+        <!-- 会议室下拉弹窗 -->
+        <div ng-show="showSelect" class="select_dropdown">
+        	<div class="drop_item" ng-repeat="item in conferenceItems" ng-click="changeData($event,$index)">{{item.name}}</div>
+        </div>
+        <!-- end会议室下拉弹窗 -->
+    </div>
+    <div class="scrollable-content">
+        <!-- 日历 -->
+        <div class="section section-no-padding" style="">
+            <uib-datepicker ng-model="currentDate" min-date="minDate" show-weeks="false" datepicker-mode="year" format-day-title="yyyy年MM月" format-month-title="yyyy年" format-month="MM月" class="inline-datepicker"></uib-datepicker>
+        </div>
+        <!-- 会议记录 -->
+        <div class="conference_records">
+            <div class="con_item clearfix" ng-repeat="twoRecords in bookRecords">
+                <div class="con_item_l" ng-style="leftStyle">
+                    <div class="l_top" ng-style="leftItemStyle"></div>
+                    <div class="l_middle">{{$index+9}}:00</div>
+                    <div class="l_bottom" ng-style="leftItemStyle"></div>
+                </div>
+                <div class="con_item_r">
+                    <a class="con_record_item" ng-repeat="record in twoRecords | changeHref" ng-href="{{record.href}}">
+                        <span class="citem_title" ng-if="record.data">{{record.data.room_book.book_name}}</span>
+                        <span class="citem_pic" ng-if="record.data"><img src="./images/con_more.png"></span>
+                        <span class="citem_time" ng-if="record.data">{{record.point.slice(0,5)}}</span>
+                        <span class="citem_place" ng-if="record.data">{{record.data.room_detail.name}}</span>
+                        <span class="citem_user" ng-if="record.data">{{record.data.room_book.users.name}}</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

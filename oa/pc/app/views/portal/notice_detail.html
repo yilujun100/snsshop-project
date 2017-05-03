@@ -1,0 +1,30 @@
+<!-- 文章 -->
+<div class="container">
+	<!-- breadcrumb -->
+	<div class="breadcrumb">
+		<ul>
+			<li>当前位置：</li>
+			<li><a ui-sref="index.portal">门户</a></li>
+			<li>&gt<a ui-sref="index.portal.systemList">最新公告</a></li>
+			<li>&gt最新公告详情</li>
+		</ul>
+	</div>
+	
+	<!-- article -->
+	<div class="article mt-10">
+		<div class="article-hd">
+			<h3 class="article-tit" ng-bind="noticeDetail.title"></h3>
+			<div class="portal-detail-info-basic">
+				<p>发布时间：{{ noticeDetail.create_time*1000 | date: 'yyyy-MM-dd' }}</p>
+				<p>发布者：{{ noticeDetail.author }}</p>
+				<p>浏览量：{{ noticeDetail.view_count }}</p>
+			</div>
+		</div>
+		<div class="article-con" ng-bind-html="noticeDetail.content | trust:'html'">
+		</div>
+		<!-- <div class="article-bott">
+			<a href="#" class="article-prev">上一篇：总部／产品技术中心／设计部——王伟</a>
+			<a href="#" class="article-next mt-10">下一篇：总部／产品技术中心／研发支持部／前端开发组——陈晓雪</a>			
+		</div> -->
+	</div>
+</div>

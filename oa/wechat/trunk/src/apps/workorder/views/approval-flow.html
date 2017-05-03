@@ -1,0 +1,41 @@
+<div class="modal" ng-click="close()">
+    <!--流程-->
+        <div class="scrollable process-layer">
+            <div class="scrollable-content">
+                <div class="process-box">
+            <ul>
+                <li class="proposer-box clearfix">
+                    <div class="process-left">
+                        <span>{{record.user_name}}</span>
+                        <span>{{record.apply_time*1000|date:'yyyy-MM-dd HH:mm'}}</span>
+                    </div>
+                    <div class="process-middle">
+                        <div class="mod-icon"></div>
+                    </div>
+                    <div class="process-right">发起申请</div>
+                </li>
+                <li class="clearfix" ng-repeat="step in approval_step" ng-class="{0:'fail-box',1:'pass-box'}[step.approve_result]">
+                    <div class="process-left">
+                        <span>{{step.approver_user_name}}</span>
+                        <span ng-show="step.approve_time">{{step.approve_time*1000|date:'yyyy-MM-dd HH:mm'}}</span>
+                    </div>
+                    <div class="process-middle">
+                        <div class="mod-icon">
+                        </div>
+                    </div>
+                    <div class="process-right">
+                        <span ng-show="step.approve_result==1">同意</span>
+                        <span ng-show="step.approve_result==0">驳回</span>
+                        <span ng-show="step.status == 0 && record.status == 1">待审批</span>
+                        <span>{{step.approve_comment}}</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+            </div>
+        </div>
+    <!--流程-->
+</div>
+<!--蒙层-->
+<div class="mask-layer" style="display:blcok;"></div>
+<!--/蒙层-->

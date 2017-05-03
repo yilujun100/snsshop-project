@@ -1,0 +1,45 @@
+<h1 class="logo"><img src="images/topbar/logo.jpg" alt="塖灿科技"></h1>
+<ul class="nav">
+    <li ui-sref-active="active"><a ui-sref="index.portal">门户</a></li>
+    <li ui-sref-active="active"><a ui-sref="index.process">流程</a></li>
+    <li ui-sref-active="active"><a ui-sref="index.knowledge">知识库</a></li>
+    <li ui-sref-active="active"><a ui-sref="index.bbs">BBS</a></li>
+    <li ui-sref-active="active"><a ui-sref="index.conference">会议室管理</a></li>
+    <!-- <li>
+        <a ui-sref="index.bbs"><img src="./images/topbar/nav-icon.png" alt=""></a>
+    </li>
+    <li><a ui-sref="index.bbs">常用</a></li> -->
+
+</ul>
+<div class="head-icon">
+    <ul class="nav-icon">
+        <!-- <li class="changeSearch">
+            <img src="./images/topbar/search.png" alt="search">
+            <div class="head-search">
+                <input type="search" class="in-search">
+                <img class="btn-search" src="../images/topbar/search.png" alt="">
+            </div>
+        </li> -->
+        <li>
+            <a ui-sref="index.personalCenter.msg"><img src="./images/topbar/message.png" alt="消息"><h3>消息</h3><em class="msg-circle" ng-hide="msgNumber.unread == 0" ng-bind="msgNumber.unread"></em></a>
+        </li>
+        <li>
+            <a ui-sref="index.personalCenter"><img src="./images/topbar/user.png" alt="个人中心"><h3>个人中心</h3></a>
+        </li>
+        <!-- <li>
+            <a ui-sref="index.bbs"><img src="./images/topbar/star.png" alt="收藏" title="收藏"></a>
+        </li> -->
+        <li>
+            <a ng-click="wxLoginFn()"><img src="./images/topbar/signout.png" alt="登陆" title="登陆"></a>
+        </li>
+    </ul>
+    <!-- <div class="head-icon"> 
+    <ul class="nav-icon">
+        <li><a ui-sref="index.approval"><img src="./images/topbar/message.png" alt="message"></a></li>
+        <li><a ui-sref="index.personalCenter({userid:452})"><img src="./images/topbar/user.png" alt="user"></a></li>
+        <li><a ui-sref="index.approval"><img src="./images/topbar/star.png" alt="star"></a></li>
+        <li><a ui-sref="index.approval"><img src="./images/topbar/signout.png" alt="sign out"></a></li>
+    </ul>
+
+</div> -->
+ 

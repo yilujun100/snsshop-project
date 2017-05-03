@@ -1,0 +1,39 @@
+<div class="scrollable">  
+  <div class="scrollable-content">
+      <div class="section user-info">
+          <div class="primary-info">
+              <div class="avatar"><img ng-src="{{ currentUser.avatar?currentUser.avatar:'../../images/icon_avatar_default.png' }}"></div>
+              <h4>{{currentUser.name}}</h4>
+              <p>{{currentUser.mobile}}</p>
+          </div>
+          <ul class="list-unstyled">
+              <li ng-show="currentUser.weixin_userid">
+                  <label>账号:</label>
+                  {{currentUser.weixin_userid}}
+              </li>
+              <li ng-show="currentUser.position">
+                  <label>职位:</label>
+                  {{currentUser.position}}
+              </li>
+              <li ng-show="currentUser.weixin_id">
+                  <label>微信号:</label>
+                  {{currentUser.weixin_id}}
+              </li>
+              <li ng-show="currentUser.departments" ng-repeat="department in currentUser.departments">
+                  <label>{{$first?'所在部门:':''}}</label>
+                  {{department.path}}
+              </li>
+              <li ng-show="currentUser.email">
+                  <label>邮箱:</label>
+                  {{currentUser.email}}
+              </li>
+          </ul>
+      </div>
+      <div class="section" ng-show="currentUser.mobile">
+          <a ng-href="tel:{{currentUser.mobile}}" class="btn btn-info btn-block"><i class="iconfont icon-dadianhua1"></i>打电话</a>
+          <br>
+          <a ng-href="sms:{{currentUser.mobile}}" class="btn btn-primary btn-block"><i class="iconfont icon-duanxin"></i>发短信</a>
+          <br>
+      </div>
+  </div>
+</div>

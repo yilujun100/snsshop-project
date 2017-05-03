@@ -1,0 +1,60 @@
+<!-- 我要发帖 -->
+<div class="container">	
+	<!-- breadcrumb -->
+	<div class="breadcrumb">
+		<ul>
+			<li>当前位置：</li>
+			<li><a ui-sref="index.bbs">BBS</a></li>
+			<li>&gt;我要发帖</li>
+		</ul>
+	</div>
+
+	<!-- post -->
+	<div class="post mt-10">
+		<div class="post-hd">
+			<h3>我要发帖</h3>
+		</div>
+		<div class="post-con">
+			<form name="postForm" novalidate>
+				<div class="form-item">
+					<label>标题：</label>
+					<input type="text" name="postTitle" ng-model="postTitle" ng-blur="checkTitle()" required ng-maxlength="30">
+					<span class="title-word-limit">最多输入30个字符</span>
+					<b class="error-info" ng-show="showErrorTitle">请输入标题</b>
+					<b class="error-info" ng-show="showErrorTitleLimit">您输入的字数已超出限制</b>
+				</div>
+				<div class="form-item">
+					<label>发帖人：</label>
+					<span>
+						<!-- <p><input type="radio" name="author" id="authorDefault" checked><label for="authorDefault">{{ poster.name }}（默认）</label></p> -->
+						<p><input type="checkbox" name="author" id="authorAnonymous" ng-init="isAnonymous = false" ng-model="isAnonymous" ng-checked="isAnonymous"><label for="authorAnonymous">匿名（匿名则默认头像）</label></p>
+					</span>
+				</div>
+				<div class="form-item">
+					<label>所属圈子：</label>
+					<select name="belongCircle" ng-model="belongCircle" ng-options="circle as circle.title for circle in belongCircleList">
+						<!-- <option ng-repeat="option in belongCircleList" ng-bind="option.title" ng-value="option.id"></option> -->
+						<!-- <option value="0">圈子1</option>
+						<option value="1">圈子2</option>
+						<option value="2">圈子3</option> -->
+					</select>
+					<input type="hidden" id="selectedCircleId" ng-value="circleId" ng-bind="circleId">
+					<!-- <span ng-hide="true">{{ circleId }}</span> -->
+					<b class="error-info" ng-hide="isSelectedCircle">请选择板块</b>
+				</div>
+				<div class="form-item">
+					<label>内容：</label>
+					<!-- <textarea name="postContent"></textarea> -->
+					<div id="content" ng-model="postContent" contenteditable="true"></div>
+					<div class="content-word-limit" ng-hide="showErrorContentLimit">当前已输入<b ng-bind="alreadyInputCon">0</b>个字符，您还可以输入<strong ng-bind="canInputCon">10000</strong>个字符</div>
+					<div class="content-word-limit content-word-limit-error" ng-show="showErrorContentLimit">您输入的字数已超出限制</div>
+					<b class="error-info" ng-show="showErrorContent">请输入正文</b>
+				</div>
+				<div class="form-item">
+					<label></label>
+					<a href="javascript:;" class="btn-post-submit" ng-click="save()">发表帖子</a>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

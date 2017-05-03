@@ -1,0 +1,33 @@
+<style>
+  .header {font-weight: 700;text-align: center;padding: 20px 0;font-size: 16px;}
+      .content {border-top: 1px solid #ddd;}
+    .box {display: -webkit-flex;display: flex;}
+    .box .item {padding:10px 3px;border-right: 1px solid #ddd;border-bottom: 1px solid #ddd;}
+    .content .box:nth-child(even) {background-color: #f9f9f9}
+    .item-4 {flex: 4}
+    .item-3 {flex: 2.4}
+    .item-2 {flex: 2}
+    .item-1{flex: 1.5}
+</style>
+<div class="scrollable">
+  <div class="scrollable-content"  ui-scroll-bottom='bottomReached()'>
+      <div class="header">
+    加班自动核算明细{{routeDate}}
+  </div>
+  <div class="content">
+    <div class="box" style="font-weight: 700">
+      <div class="item item-1">姓名</div>
+      <div class="item item-4">部门</div>
+      <div class="item item-3">结束时间</div>
+      <div class="item item-1">时长</div>
+    </div>
+    <div class="box" ng-repeat="item in data">
+      <div class="item item-1" style="word-break: break-all;">{{item.user_name}}</div>
+      <div class="item item-4">{{item.recordDepartments.department_path}}</div>
+      <div class="item item-3">{{item.end_time | date:'yyyy-MM-dd HH:mm'}}</div>
+      <div class="item item-1">{{item.longtime}}小时</div>
+    </div>
+  </div>
+  </div>
+</div>
+

@@ -1,0 +1,81 @@
+<!-- 个人中心 -->
+<div class="container">
+	<div class="wrapper clearfix">
+		<div class="panel card-1 fl">
+			<div class="personal-avatar"><img ng-src="{{userInfo.info.avatar}}" src="" err-src="images/portal/avatar.jpg" width="192" height="192" alt=""></div>
+			<p class="personal-item"><label>姓名</label><span ng-bind="userInfo.info.name"></span></p>
+			<p class="personal-item"><label>职位</label><span ng-bind="userInfo.info.position"></span></p>
+			<!-- <p class="personal-item nickname"><label>昵称</label><span ng-bind="userInfo.info.weixin_userid"></span></p> -->
+		</div>
+		<div class="panel card-2 fl">
+			<p class="personal-item"><label>联系方式</label><span ng-bind="userInfo.info.mobile"></span></p>
+			<p class="personal-item"><label>所属部门</label><span ng-bind="userInfo.path.name"></span></p>
+			<p ng-if="userInfo.info.join_time" class="personal-item"><label>公司司龄</label><span ng-bind="userInfo.info.join_time | computAge"></span></p>
+			<p ng-if="!userInfo.info.join_time" class="personal-item"><label>公司司龄</label><span ng-bind="userInfo.info.create_time | computAge"></span></p>
+			<p class="personal-item"><label>直属领导</label><span ng-bind="userInfo.leader.leader_name"></span></p>
+		</div>		
+	</div>
+	<div class="wrapper wrapper-col-3 clearfix">
+		<div class="panel card-4 fl">
+			<a ui-sref="index.personalCenter.overtimeOff">
+				<dl>
+					<dt>
+						<i class="icon-personal icon-hourglass"></i>
+					</dt>
+					<dd>
+						<h3>{{ statisOvertime - statisLeavetime }}小时</h3>
+						<p>你剩余的调休时长</p>
+					</dd>
+				</dl>
+			</a>
+		</div>
+		<div class="panel card-4 fl">
+			<a ui-sref="index.process.checkIn">
+				<dl>
+					<dt>
+						<i class="icon-personal icon-calendar-ok"></i>
+					</dt>
+					<dd>
+						<h3>{{ personalInfo.month.sign }}次</h3>
+						<p>你本月的签卡次数</p>
+					</dd>
+				</dl>
+			</a>
+		</div>
+		<div class="panel card-4 fl">
+			<a ui-sref="index.process.checkIn">
+				<dl>
+					<dt>
+						<i class="icon-personal icon-expre-cry"></i>
+					</dt>
+					<dd>
+						<h3>{{ personalInfo.month.late }}次</h3>
+						<p>你本月迟到次数</p>
+					</dd>
+				</dl>
+			</a>
+		</div>
+		<div class="panel card-4 fl">
+			<a ui-sref="index.personalCenter.score">
+				<dl>
+					<dt>
+						<i class="icon-personal icon-data"></i>
+					</dt>
+					<dd>
+						<h3>{{ scoreTotal.score }}分</h3>
+						<p>你的积分</p>
+					</dd>
+				</dl>
+			</a>
+		</div>
+	</div>
+</div>
+<style>
+/* .footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+} */
+</style>

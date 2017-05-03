@@ -1,0 +1,123 @@
+<!-- 所有圈子 -->
+<div class="container">
+	<div class="main">		
+		<!-- breadcrumb -->
+		<div class="breadcrumb">
+			<ul>
+				<li>当前位置：</li>
+				<li><a ui-sref="index.bbs">BBS</a></li>
+				<li>&gt;所有圈子</li>
+			</ul>
+		</div>
+
+		<!-- circle joined -->
+		<div class="circle circle-joined mt-10">
+			<div class="circle-hd">
+				<h3>我加入的圈子</h3>
+			</div>
+			<div class="circle-con">
+				<ul class="circle-list clearfix">
+					<li ng-repeat="circle in joinedCircleList">
+						<img ng-src="{{circle.images}}" width="90" height="90" alt="" class="circle-thumb">
+						<span class="circle-info-basic">
+							<p ng-bind="circle.title"></p>
+							<p>{{ circle.member_count }}人</p>
+						</span>
+						<a href="javascript:;" class="circle-actions already-joined" ng-click="exit(circle)">已加入</a>
+					</li>
+					<!-- <li>
+						<img src="images/bbs/avatar.jpg" width="90" height="90" alt="" class="circle-thumb">
+						<span class="circle-info-basic">
+							<p>八卦闲聊</p>
+							<p>208人</p>
+						</span>
+						<a href="javascript:;" class="circle-actions already-joined">已加入</a>
+					</li> -->
+				</ul>
+			</div>
+		</div>
+
+		<!-- circle recommend -->
+		<div class="circle circle-recomm mt-10">
+			<div class="circle-hd">
+				<h3>期待您加入</h3>
+			</div>
+			<div class="circle-con">
+				<ul class="circle-list clearfix">
+					<li ng-repeat="circle in notJoinedCircleList">
+						<img ng-src="{{circle.images}}" width="90" height="90" alt="" class="circle-thumb">
+						<span class="circle-info-basic">
+							<p ng-bind="circle.title"></p>
+							<p>{{ circle.member_count }}人</p>
+						</span>
+						<a href="javascript:;" class="circle-actions join" ng-click="join(circle)">加入</a>
+					</li>
+					<!-- <li>
+						<img src="images/bbs/avatar.jpg" width="90" height="90" alt="" class="circle-thumb">
+						<span class="circle-info-basic">
+							<p>八卦闲聊</p>
+							<p>208人</p>
+						</span>
+						<a href="javascript:;" class="circle-actions join">加入</a>
+					</li> -->
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	<div class="sidebar">
+		<!-- my card -->
+		<!-- <div class="my-card">
+			<div class="my-card-info">
+				<img ng-src="{{userInfo.avatar}}" width="70" height="70" alt="" class="my-card-avatar">
+				<p class="my-name">{{ userInfo.name }}<strong ng-if="isManager">（版主）</strong></p>
+				<p class="my-department">{{ userInfo.position }}</p>
+				<a ui-sref="index.bbs.post">我要发帖</a>
+			</div>
+			<div class="my-card-actions">
+				<ul class="clearfix">
+					<li><a href="javascript:;" ui-sref="index.bbs.myReply">{{ userInfo.comment_count }} <i class="icon-card icon-card-comment"></i></a></li>
+					<li><a href="javascript:;" ui-sref="index.bbs.myCollect">{{ userInfo.collect_count }} <i class="icon-card icon-card-collect"></i></a></li>
+					<li><a href="javascript:;">498 <i class="icon-card icon-card-views"></i></a></li>
+				</ul>
+			</div>
+		</div> -->
+
+		<!-- circles -->
+		<div class="list circles">			
+			<div class="list-hd clearfix">
+				<h3 class="list-tit fl">所有圈子</h3>
+				<a ui-sref="index.bbs.allCircles" class="list-more fr">更多</a>
+			</div>
+			<div class="circles-con">
+				<ul class="clearfix">
+					<li ng-repeat="circle in circleList"><a ui-sref="index.bbs.circleRecommend({id:circle.id})" ng-bind="circle.title"></a></li>
+					<!-- <li><a href="#">技术论坛</a></li>
+					<li><a href="#">我的大学</a></li>
+					<li><a href="#">情感天地</a></li>
+					<li><a href="#">征婚交友</a></li> -->
+				</ul>
+			</div>
+		</div>
+
+		<!-- recommend post -->
+		<div class="list recommend-post mt-10">			
+			<div class="list-hd clearfix">
+				<h3 class="list-tit fl">推荐话题</h3>
+				<a ui-sref="index.bbs.postRecommend" class="list-more fr">更多</a>
+			</div>
+			<div class="recommend-post-con">
+				<ul class="recommend-post-list">
+					<li ng-repeat="articleRecomm in articleRecommendList" ng-class="{'top-rank': $index <= 2}">
+						<a ui-sref="index.bbs.detail({articleId:articleRecomm.id})"><em>{{ $index + 1 }}</em>{{ articleRecomm.title }}</a>
+						<!-- <div class="post-recomm-info-other mt-10">
+							<span class="post-recomm-author" ng-if="articleRecomm.is_anonymity == 0">作者：{{ articleRecomm.user.name }}</span>
+							<span class="post-recomm-author" ng-if="articleRecomm.is_anonymity == 1">作者：匿名</span>
+							<span class="publish-time">时间：{{ articleRecomm.create_time * 1000 | date: 'yyyy-MM-dd HH:mm' }}</span>
+						</div> -->
+					</li>
+				</ul>
+			</div>	
+		</div>
+	</div>
+</div>

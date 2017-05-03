@@ -1,0 +1,29 @@
+<div class="scrollable">
+	<div class="scrollable-content" ui-scroll-bottom="bottomReached()">
+		<!-- events list -->
+		<div class="events-list">
+			<ul>
+				<li ng-repeat="article in articles" data-id="{{article.id}}">
+					<a ng-href="#/news/detail/{{article.id}}">
+						<img ng-src="{{article.image}}" class="thumb-events" width="100%" height="auto" alt="">
+					</a>
+					<div class="events-info">
+						<a ng-href="#/news/detail/{{article.id}}" class="events-title">{{ article.title }}<i class="icon-hot"></i></a>
+						<p class="events-desc">{{ article.description }}</p>
+						<p class="events-bott"><em class="e-author">作者：{{ article.author }}</em><span class="e-publish-time">时间：{{ article.pulish_time * 1000 | date: 'yyyy-MM-dd' }}</span></p>
+					</div>
+				</li>
+				<!-- <li>
+					<a href="#">
+						<img src="images/thumb_events.jpg" class="thumb-events" width="100%" height="auto" alt="">
+					</a>
+					<div class="events-info">
+						<a href="#" class="events-title">贵阳开阳县政府调研盛灿桐乡市市长调研盛灿<i class="icon-new"></i></a>
+						<p class="events-desc">位于浙北杭嘉湖平原腹地的桐乡市，素有“鱼米之乡，丝绸之府，文化之邦”的美誉。</p>
+						<p class="events-bott"><em class="e-author">作者：vinni</em><span class="e-publish-time">时间：2016-6-5</span></p>
+					</div>
+				</li> -->
+			</ul>
+		</div>
+	</div>
+</div>

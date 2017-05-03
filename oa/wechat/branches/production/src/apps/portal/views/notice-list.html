@@ -1,0 +1,21 @@
+<div class="scrollable">
+	<div class="scrollable-content" ui-scroll-bottom='bottomReached()'>
+		<!-- notice list -->
+		<div class="notice-list">
+			<ul>
+				<li ng-repeat="notice in noticeList" data-id="{{notice.id}}">
+					<a ng-href="#/notice/detail/{{notice.id}}">{{ notice.title }}<i class="icon-new"></i><em class="publish-time">{{ notice.pulish_time*1000 | date: 'yyyy-MM-dd' }}</em></a>
+				</li>
+				<!-- <li>
+					<a href="">产品技术中心员工专项奖奖励制度<i class="icon-hot"></i><em class="publish-time">2016-6-8</em></a>
+				</li>
+				<li>
+					<a href="">2016年小伙伴的旅游月又要开始啦<em class="publish-time">2016-6-8</em></a>
+				</li>
+				<li>
+					<a href="">盛灿小伙伴出游拓展视频出炉啦<em class="publish-time">2016-6-8</em></a>
+				</li> -->
+			</ul>
+		</div>
+	</div>
+</div>

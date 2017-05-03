@@ -1,0 +1,92 @@
+<!-- 编辑帖子 -->
+<style>
+body {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;}
+.title-tips {
+  font-weight: bold;
+  margin-bottom: 3px;
+}
+.publish-article-content {
+position: relative;
+  background: #fff;
+}
+.publish-article-content .article-content {
+  height: 200px;
+}
+.publish-article-content .article-content p {
+	color: #999;
+}
+.publish-article-content .footer-btn {
+	position: relative;
+  text-align: right;
+}
+.publish-article-content .footer-btn .upload-img {
+  display: inline-block;
+  vertical-align: bottom;
+  width: 30px;
+  height: 30px;
+  background: url(images/icon_pic.png) no-repeat right center;
+  background-size: 24px auto;
+}
+</style>
+<div class="scrollable">
+	<div class="scrollable-content" pic-preview>
+		<div class="post">
+			<div class="add-thumb" ng-hide="hasCropImg">
+				<div class="file-box">
+					<a href="javascript:;" class="btn-pic-add">+添加封面</a>
+					<!-- <input type="file" name="upload-pic" id="upload-pic" image-with-preview onchange="angular.element(this).scope().crop()" ng-model="image" accept="image/jpeg,image/png"> -->
+					<input type="file" id="fileInput">
+				</div>
+			</div>
+			<div class="crop-img" ng-if="hasCropImg">
+				<img alt="" ng-src="{{thumbPic}}" width="100%">
+				<div class="file-box file-box-update">
+					<a href="javascirpt:;" class="btn-pic-modify">修改封面</a>
+					<input type="file" id="fileInputUpdate" pic-update-preview>					
+				</div>
+			</div>
+			<div class="error-info">
+				<span ng-show="showErrorTitle"><i class="icon-info"></i>请输入标题</span>
+				<span ng-show="showErrorContent"><i class="icon-info"></i>请输入正文</span>
+				<span ng-show="showErrorSelectCircle"><i class="icon-info"></i>
+				请选择板块</span>
+			</div>
+			<div class="post-wrap">
+				<form id="formPost" novalidate name="postForm">
+					<p><input type="text" placeholder="请输入标题" id="postTitle" name="postTitle" ng-model="postTitle" required></p>
+					<!-- <div class="post-content mt-10 clearfix">
+						<textarea id="postContent" placeholder="正文" name="postContent" ng-model="postContent" required></textarea>
+						<a href="javascript:;" class="btn-insert-pic">插入图片</a>
+					</div> -->
+					<div class="publish-article-content mt-10">
+						<input type="hidden" id="target">
+						<div class="article-content" id="content" art-editor></div>
+						<div class="footer-btn g-image-upload-box">
+							<div class="upload-button">
+								<span class="upload"><i class="upload-img"></i></span>
+								<input type="file" class="input-file" id="imageUpload" name="fileInput" accept="image/*" style="position:absolute; top: 0;left:0;opacity:0;width:100%; height: 30px;">
+							</div>
+						</div>
+					</div>
+					<input type="hidden" ng-model="hasSelectCircle">
+					<div class="choose-plate mt-10 clearfix">
+						<h3 class="choose-plate-title">选择板块 <b>(最多选一个)</b></h3>
+						<ul class="plate-list">	
+							<li ng-repeat="circle in circleList" ng-bind="circle.title" ng-click="selectCircleFn(circle.id)" data-circle-id="{{circle.id}}" ng-class="{'click-on': circle.isCurrent}"></li>		
+						</ul>
+					</div>				
+				</form>
+			</div>
+		</div>
+
+		<div class="pic-crop" id="preview"> <!-- 裁剪图片尺寸宽高比 4/1 -->
+		</div>
+	</div>
+</div>
+<div class="bott-post-submit">
+	<p><input type="checkbox" id="anonymous" ng-model="postAnonymous" ng-checked="isAnonymous"><label for="anonymous">匿名发帖</label></p>
+	<a href="javascript:;" class="btn-post-submit" ng-click="save()">提交</a>
+</div>	
+<button id="btnConfirm" style="display: none;">确认</button>

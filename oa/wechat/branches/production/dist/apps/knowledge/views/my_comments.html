@@ -1,0 +1,43 @@
+<div class="scrollable">
+	<div class="scrollable-content" ui-scroll-bottom="bottomReached()">
+
+		<!-- articles -->
+		<div class="articles">
+
+			<!-- article list -->
+			<div class="article-list">
+				<ul>
+					<li ng-repeat="commentItem in commentList" data-id="{{commentItem.article_id}}">
+						<div class="article-cell-up">
+							<div class="article-cell-1 clearfix">
+								<div class="user-avatar fl">
+									<img ng-src="{{commentItem.article.user.avatar}}" width="32" height="32" alt="">
+								</div>
+								<div class="user-info fl">
+									<p><em class="user-name" ng-bind="commentItem.article.user.name"></em></p>
+									<p class="quote">{{ commentItem.article.user.position }}专门为您推荐的话题！</p>
+								</div>
+							</div>
+							<div class="article-cell-2">
+								<a href="#/article/detail/{{commentItem.article.id}}">
+									<h3 class="article-title"><em class="article-tag tag-article" ng-if="commentItem.article.type_id == 30 ? true : flase">培训</em><em class="article-tag tag-process" ng-if="commentItem.article.type_id == 31 ? true : flase">干货</em><em class="article-tag tag-standard" ng-if="commentItem.article.type_id == 32 ? true : flase">规范</em>{{ commentItem.article.title }}</h3>
+									<p class="article-desc" ng-bind="commentItem.article.description"></p>				
+								</a>
+							</div>							
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- bottom nav	start -->
+<div class="navbar navbar-app navbar-absolute-bottom" ui-yield-to="bottom-button">
+    <div class="btn-group justified">
+        <a href="#/index" class="btn btn-navbar" ng-class="{active:setHighlight('/index')}"><i class="icon-nav icon-nav-book"></i> 知识库</a>
+        <a href="#/my-collection" class="btn btn-navbar" ng-class="{active:setHighlight('/my-collection')}"><i class="icon-nav icon-nav-star"></i> 收藏</a>
+        <a href="#/personal-center" class="btn btn-navbar" ng-class="{active:setHighlight('/personal-center,/my-comments,/my-admire')}"><i class="icon-nav icon-nav-user"></i> 个人</a>
+    </div>
+</div>
+<!-- bottom nav	end -->

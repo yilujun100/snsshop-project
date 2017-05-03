@@ -1,0 +1,23 @@
+<div class="scrollable">
+	<div class="scrollable-content">
+		<!-- personal center -->
+		<div class="personal-center">
+			<div class="area-avatar">
+				<div class="area-bg"></div>
+				<div class="user-info-basic">
+					<div class="user-avatar">
+						<img ng-src="{{userInfo.info.avatar}}" src="" err-src="images/avatar.jpg" width="100" height="100" alt="">
+					</div>
+					<p class="user-name">{{ userInfo.info.name }}</p>
+					<p class="user-department">{{ userInfo.path.name }}</p>
+				</div>
+				<div class="user-info-others">
+					<p><em><i class="icon-personal-center icon-position"></i>职位</em><span>{{ userInfo.info.position }}</span></p>
+					<p><em><i class="icon-personal-center icon-leader"></i>直属领导</em><span>{{ userInfo.leader.leader_name }}</span></p>
+					<p><em><i class="icon-personal-center icon-calendar"></i>公司司龄</em><span ng-bind="userInfo.info.join_time | computAge"></span></p>
+					<p><em><i class="icon-personal-center icon-contact"></i>联系方式</em><span>{{ userInfo.info.mobile }}</span></p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

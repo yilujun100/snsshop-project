@@ -1,0 +1,185 @@
+/*工单申请*/
+
+/*日历控件*/
+
+.full button span {
+    background-color: limegreen;
+    border-radius: 32px;
+    color: black;
+}
+
+.partially button span {
+    background-color: orange;
+    border-radius: 32px;
+    color: black;
+}
+
+.input-group {
+    position: relative;
+    display: table;
+    border-collapse: separate;
+}
+
+.input-group .form-control:first-child,
+.input-group-addon:first-child,
+.input-group-btn:first-child>.btn,
+.input-group-btn:first-child>.btn-group>.btn,
+.input-group-btn:first-child>.dropdown-toggle,
+.input-group-btn:last-child>.btn-group:not(:last-child)>.btn,
+.input-group-btn:last-child>.btn:not(:last-child):not(.dropdown-toggle) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.input-group .form-control,
+.input-group-addon,
+.input-group-btn {
+    display: table-cell;
+}
+
+.input-group .form-control {
+    position: relative;
+    z-index: 2;
+    float: left;
+    width: 100%;
+    margin-bottom: 0;
+}
+
+.input-group-btn {
+    position: relative;
+    font-size: 0;
+    white-space: nowrap;
+}
+
+.input-group-addon,
+.input-group-btn {
+    width: 1%;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+.input-group-btn:last-child>.btn,
+.input-group-btn:last-child>.btn-group {
+    z-index: 2;
+    margin-left: -1px;
+}
+
+.input-group-btn>.btn {
+    position: relative;
+}
+
+.glyphicon-calendar:before {
+    content: "\e109";
+}
+
+.btn-info.active,
+.btn-info:active,
+.open>.dropdown-toggle.btn-info {
+    color: #fff;
+    background-color: #31b0d5;
+    border-color: #269abc;
+}
+
+.btn-default {
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+}
+
+
+/*.btn-group-sm>.btn,
+.btn-sm {
+    padding: 5px 10px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px;
+}*/
+
+.btn-default:hover {
+    color: #333;
+    background-color: #e6e6e6;
+    border-color: #adadad;
+}
+
+.work-order-popup {
+    float: left;
+    width: 250px;
+    position: relative;
+}
+
+.work-order-timer {
+    position: absolute;
+    right: -110px;
+    top: -40px;
+}
+
+.work-order .btn {
+    padding: 9px 16px;
+}
+
+.work-order th {
+    text-align: center;
+}
+
+.text-center {
+    text-align: center;
+}
+
+
+/*daterangepicker*/
+
+.table-condensed>tbody>tr>td,
+.table-condensed>tbody>tr>th,
+.table-condensed>tfoot>tr>td,
+.table-condensed>tfoot>tr>th,
+.table-condensed>thead>tr>td,
+.table-condensed>thead>tr>th {
+    padding: 6px;
+    font-size: 12px;
+    box-sizing: border-box;
+}
+
+.btn-success {
+    color: #fff;
+    background-color: #0a80de;
+    /*border-color: #4cae4c;*/
+}
+
+.btn-fail {
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+}
+
+.glyphicon-time:before {
+    content: "\e023";
+}
+
+.upload-input-work {
+    opacity: 0;
+    width: 163px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.upload-pic {
+    display: inline-block;
+    width: 163px;
+    height: 40px;
+    line-height: 40px;
+    background: url(../images/knowledge/icon_upload.jpg) no-repeat;
+    z-index: 2;
+    cursor: pointer;
+    /*overflow: hidden;*/
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+.upload-all-pic .btn {
+    padding: 1px 5px;
+    background-color: #fff;
+    color: #0a80de;
+    border:1px solid #0a80de;
+}

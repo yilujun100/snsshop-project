@@ -1,0 +1,45 @@
+<div class="scrollable">
+	<div class="scrollable-content" ui-scroll-bottom='bottomReached()'>
+		<!-- new people list -->
+		<div class="new-people-list">
+			<dl ng-repeat="people in peopleList">
+				<a ng-href="#/new/intro/{{ people.id }}">
+					<dt>
+						<img ng-src="{{ people.avatar }}" width="60" height="60" alt="">
+					</dt>
+					<dd>					
+						<p class="name">{{ people.name }}<em class="join-date">{{ people.join_date }}</em></p>
+						<p class="department">{{ people.department_path }}/{{ people.position }}</p>
+					</dd>					
+				</a>
+			</dl>
+			<!-- <dl>
+				<dt>
+					<img src="images/avatar.jpg" width="60" height="60" alt="">
+				</dt>
+				<dd>					
+					<p class="name">赵薇<em class="join-date">2016-8-13</em></p>
+					<p class="department">总部/产品技术中心/测试组</p>
+				</dd>
+			</dl>
+			<dl>
+				<dt>
+					<img src="images/avatar.jpg" width="60" height="60" alt="">
+				</dt>
+				<dd>					
+					<p class="name">林心如<em class="join-date">2016-8-13</em></p>
+					<p class="department">总部/产品技术中心/研发支持部</p>
+				</dd>
+			</dl>
+			<dl>
+				<dt>
+					<img src="images/avatar.jpg" width="60" height="60" alt="">
+				</dt>
+				<dd>					
+					<p class="name">王伟<em class="join-date">2016-8-13</em></p>
+					<p class="department">总部/产品技术中心/研发支持部/前端开发组</p>
+				</dd>
+			</dl> -->
+		</div>
+	</div>
+</div>

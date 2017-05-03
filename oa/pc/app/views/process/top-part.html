@@ -1,0 +1,8 @@
+<div class="ap-head">当前位置：<a ui-sref="index.process">流程</a>><a ui-sref="{{partState}}">{{part}}</a>><a>{{selectnav}}</a></div>
+<div class="ap-body">
+    <div class="ap-nav clear">
+        <div ng-repeat="item in items" ng-class="{'ap-active':content.id==item.id}" class="ap-nav-item" ng-click="changeIndex(item.id)">
+            <a>{{item.title}}</a>
+        </div>
+    </div>
+</div>

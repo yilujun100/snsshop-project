@@ -1,0 +1,30 @@
+<!-- 我的发帖 -->
+<div class="scrollable">
+	<div class="scrollable-content" ui-scroll-bottom='bottomReached()'>
+		<div class="my-post">
+			<ul>
+				<li ng-repeat="post in postList">
+					<h3><a href="#/article-detail/{{post.id}}"><i class="icon-file"></i>{{ post.title }}</a></h3>
+					<p ng-bind-html="post.description | trust:'html'"></p>
+					<div class="btn-opera-group">
+						<a href="#/post-edit/{{post.id}}" class="btn-opera-edit">编辑</a>
+						<a href="javascript:;" class="btn-opera-del" ng-click="postDel(post)">删除</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+
+<a href="#/post" class="btn-new-post">发帖</a>
+
+<!-- bottom nav	start -->
+<div class="navbar navbar-app navbar-absolute-bottom" ui-yield-to="bottom-button">
+    <div class="btn-group justified">
+        <a href="#/index" class="btn btn-navbar" ng-class="{active:setHighlight('/index,/search-result')}"><i class="icon-nav icon-nav-bbs"></i> BBS</a>
+        <a href="#/circle" class="btn btn-navbar" ng-class="{active:setHighlight('/circle')}"><i class="icon-nav icon-nav-circle"></i> 圈子</a>
+        <a href="#/personal-center" class="btn btn-navbar" ng-class="{active:setHighlight('/personal-center')}"><i class="icon-nav icon-nav-personal"></i> 个人</a>
+    </div>
+</div>
+<!-- bottom nav	end -->

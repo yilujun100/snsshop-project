@@ -1,0 +1,42 @@
+<div class="room">
+    <div class="ap-head">当前位置：<a ui-sref="index.conference">会议室管理</a>>我的发起</div>
+    <div class="room-body room-font-size">
+        <!-- 会议详情 -->
+        <div class="room-detail-title clearfix">
+            <span class="room-detail-title-left">我的发起</span>
+            <a ng-if="data.owner" class="room-detail-title-right" ui-sref="index.conference.update({update_id:update_id})">编辑</a>
+        </div>
+        <div class="room-fixheight">
+            <div class="ap-content">
+                <div class="ap-content-item one-height" ng-repeat="content in book_records">
+                    <!-- <a ui-sref="index.conference.detail({detail_id:content.id})" target="_blank"> -->
+                    <div>
+                        <span class="ap-citem-title">{{content.book_name}}</span>
+                        <!-- <span class="ap-citem-time">{{record.leaveRecord.duration}}</span> -->
+                        <span class="ap-citem-apply-time">{{content.room.name}}</span>
+                        <span class="ap-citem-start-time">开始时间：{{content.book_start|date:'yyyy-MM-dd HH:mm'}}</span>
+                        <span class="ap-citem-end-time">结束时间：{{content.book_end|date:'yyyy-MM-dd HH:mm'}}</span>
+                        <a class="room-citem-do" ui-sref="index.conference.detail({detail_id:content.id})" target="_blank">查看详情</a>
+                        <a ng-click="remove(content.id)" class="room-citem-do-revoke">撤销</a>
+                    </div>
+                </div>
+            </div>
+            <div class="fix-page list-page room-pager">
+                <uib-pagination total-items="page.totalCount" ng-model="page.pageNo" items-per-page="page.pageSize" max-size="5" ng-change="doRequest(page.pageNo-1,page.pageSize)" class="samplePage" boundary-link-numbers="true" previous-text="上一页" next-text="下一页" force-ellipses="true">
+                </uib-pagination>
+                <span>共{{page.totalPage}}页&nbsp;&nbsp;{{page.totalCount}}条</span>
+            </div>
+        </div>
+        <!-- 确定 -->
+        <!-- <div class="select-room-submit" ng-click="submit()"><span>确定</span></div> -->
+    </div>
+</div>
+<style>
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+</style>

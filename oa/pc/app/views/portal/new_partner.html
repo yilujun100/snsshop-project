@@ -1,0 +1,124 @@
+<!-- 新人列表 -->
+<div class="container">
+	<div class="main">
+		<!-- breadcrumb -->
+		<div class="breadcrumb">
+			<ul>
+				<li>当前位置：</li>
+				<li><a href="#">门户</a></li>
+				<li>&gt新伙伴</li>
+			</ul>
+		</div>
+		
+		<!-- new partner list -->
+		<div class="list new-partner mt-10">
+			<div class="list-hd">
+				<h3 class="list-tit fl">欢迎新伙伴加入</h3>
+			</div>
+			<div class="new-partner-con">
+				<dl ng-repeat="newPartner in newPartnerList.contents">
+					<dt>
+						<img ng-src="{{newPartner.avatar}}" width="100" height="100" alt="" class="new-partner-avatar">
+						<p class="new-parner-name" ng-bind="newPartner.name"></p>
+					</dt>
+					<dd>
+						<a ui-sref="index.portal.newPartner.detail({userid:newPartner.id})">
+							<p class="new-partner-department">{{ newPartner.department_path }}/{{ newPartner.position }}</p>
+							<!-- <p class="new-partner-desc">作为一个前端工程师，在实现设计师的设计稿时，如果有自己的一些想法怎么办？是直接什么也不说，直接照着设计稿做；还是提出一些建议交流？</p> -->
+							<p class="new-partner-date" ng-bind="newPartner.join_date"></p>						
+						</a>
+					</dd>
+				</dl>
+				<!-- <dl>
+					<dt>
+						<img src="../images/portal/avatar.jpg" width="100" height="100" alt="" class="new-partner-avatar">
+						<p class="new-parner-name">陈晓雪</p>
+					</dt>
+					<dd>
+						<a ui-sref="index.portal.newPartner.detail">
+							<p class="new-partner-department">总部／产品技术中心／研发支持部／前端开发组</p>
+							<p class="new-partner-desc">作为一个前端工程师，在实现设计师的设计稿时，如果有自己的一些想法怎么办？是直接什么也不说，直接照着设计稿做；还是提出一些建议交流？</p>
+							<p class="new-partner-date">2016-08-15</p>						
+						</a>
+					</dd>
+				</dl>
+				<dl>
+					<dt>
+						<img src="../images/portal/avatar.jpg" width="100" height="100" alt="" class="new-partner-avatar">
+						<p class="new-parner-name">陈晓雪</p>
+					</dt>
+					<dd>
+						<a href="#">
+							<p class="new-partner-department">总部／产品技术中心／设计部</p>
+							<p class="new-partner-desc">现在指的是公司或企业中从事文字工作的职位，就是以文字来表现已经制定的创意策略。文案它不同于设计师用画面或其他手段的表现手法，它是一个与广告创意先后相继的表现的过程、发展的过程、深化的过程， 多存在于广告公司，企业宣传，新闻策划等。</p>
+							<p class="new-partner-date">2016-08-15</p>						
+						</a>
+					</dd>
+				</dl>
+				<dl>
+					<dt>
+						<img src="../images/portal/avatar.jpg" width="100" height="100" alt="" class="new-partner-avatar">
+						<p class="new-parner-name">陈晓雪</p>
+					</dt>
+					<dd>
+						<a href="#">
+							<p class="new-partner-department">总部／产品技术中心／研发支持部／前端开发组</p>
+							<p class="new-partner-desc">作为一个前端工程师，在实现设计师的设计稿时，如果有自己的一些想法怎么办？是直接什么也不说，直接照着设计稿做；还是提出一些建议交流？</p>
+							<p class="new-partner-date">2016-08-15</p>						
+						</a>
+					</dd>
+				</dl>
+				<dl>
+					<dt>
+						<img src="../images/portal/avatar.jpg" width="100" height="100" alt="" class="new-partner-avatar">
+						<p class="new-parner-name">陈晓雪</p>
+					</dt>
+					<dd>
+						<a href="#">
+							<p class="new-partner-department">总部／产品技术中心／研发支持部／前端开发组</p>
+							<p class="new-partner-desc">作为一个前端工程师，在实现设计师的设计稿时，如果有自己的一些想法怎么办？是直接什么也不说，直接照着设计稿做；还是提出一些建议交流？</p>
+							<p class="new-partner-date">2016-08-15</p>						
+						</a>
+					</dd>
+				</dl> -->
+
+				<!-- pagenation -->
+				<!-- <div class="pagenation">
+					<ul>
+						<li><a href="#" class="btn-prev">prev</a></li>
+						<li><a href="#">1</a></li>
+						<li class="page-current"><a href="#">2</a></li>
+						<li><a href="#">3</a></li>
+						<li><a href="#">4</a></li>
+						<li><a href="#">5</a></li>
+						<li><a href="#">6</a></li>
+						<li class="no-border">...</li>
+						<li><a href="#">100</a></li>
+						<li><a href="#" class="btn-next">next</a></li>
+					</ul>
+					<span class="page-total">共100页 800条</span>
+				</div> -->
+				<div class="list-page">
+					<uib-pagination total-items="page.totalCount" ng-model="page.pageNo" items-per-page="page.pageSize" max-size="5" ng-change="doRequest(newPartnerList.status,page.pageNo,page.pageSize)" class="samplePage pagination-sm" boundary-link-numbers="true" previous-text="上一页" next-text="下一页">
+					</uib-pagination>
+					<span>共{{ page.totalPage }}页&nbsp;&nbsp;{{ page.totalCount }}条</span>
+				</div>			
+			</div>
+		</div>
+	</div>
+	<!-- sidebar start -->
+	<div class="sidebar">
+		<!-- ad -->
+		<div class="ad">
+			<ul>
+				<li ng-repeat="ad in adList">
+					<a ng-href="{{ad.link}}" target="_blank">
+						<img ng-src="{{ad.src}}" width="320" height="90" alt="">
+						<h3 class="ad-tit" ng-bind="ad.name"></h3>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- sidebar end -->
+</div>

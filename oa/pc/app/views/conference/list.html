@@ -1,0 +1,149 @@
+<div class="room">
+    <div class="ap-head">当前位置{{selectMonth}}：<a ui-sref="index.conference">会议室管理</a>><a ui-sref="index.conference.list">会议日历</a></div>
+    <div class="room-body" fixed-detail-height>
+        <!-- <div ng-controller="conferenceListCtrl as vm">
+            <h2 class="text-center">{{ vm.calendarTitle }}</h2>
+            <div class="row">
+                <div class="col-md-6 text-center">
+                    <div class="btn-group">
+                        <button class="btn btn-primary" mwl-date-modifier date="vm.viewDate" decrement="vm.calendarView" ng-click="vm.cellIsOpen = false">
+                            Previous
+                        </button>
+                        <button class="btn btn-default" mwl-date-modifier date="vm.viewDate" set-to-today ng-click="vm.cellIsOpen = false">
+                            Today
+                        </button>
+                        <button class="btn btn-primary" mwl-date-modifier date="vm.viewDate" increment="vm.calendarView" ng-click="vm.cellIsOpen = false">
+                            Next
+                        </button>
+                    </div>
+                </div>
+                <br class="visible-xs visible-sm">
+                <div class="col-md-6 text-center">
+                    <div class="btn-group">
+                        <label class="btn btn-primary" ng-model="vm.calendarView" uib-btn-radio="'year'" ng-click="vm.cellIsOpen = false">Year</label>
+                        <label class="btn btn-primary" ng-model="vm.calendarView" uib-btn-radio="'month'" ng-click="vm.cellIsOpen = false">Month</label>
+                        <label class="btn btn-primary" ng-model="vm.calendarView" uib-btn-radio="'week'" ng-click="vm.cellIsOpen = false">Week</label>
+                        <label class="btn btn-primary" ng-model="vm.calendarView" uib-btn-radio="'day'" ng-click="vm.cellIsOpen = false">Day</label>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <mwl-calendar events="vm.events" view="vm.calendarView" view-title="vm.calendarTitle" view-date="vm.viewDate" on-event-click="vm.eventClicked(calendarEvent)" on-event-times-changed="vm.eventTimesChanged(calendarEvent); calendarEvent.startsAt = calendarNewEventStart; calendarEvent.endsAt = calendarNewEventEnd" cell-is-open="vm.cellIsOpen" day-view-start="06:00" day-view-end="22:59" day-view-split="30" cell-modifier="vm.modifyCell(calendarCell)" cell-auto-open-disabled="true" on-timespan-click="vm.timespanClicked(calendarDate, calendarCell)">
+            </mwl-calendar>
+            <br>
+            <br>
+            <br>
+            <h3 id="event-editor">
+                Edit events
+                <button
+                  class="btn btn-primary pull-right"
+                  ng-click="vm.addEvent()">
+                  Add new
+                </button>
+                <div class="clearfix"></div>
+            </h3>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Primary color</th>
+                        <th>Secondary color</th>
+                        <th>Starts at</th>
+                        <th>Ends at</th>
+                        <th>Remove</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="event in vm.events track by $index">
+                        <td>
+                            <input type="text" class="form-control" ng-model="event.title">
+                        </td>
+                        <td>
+                            <input class="form-control" colorpicker type="text" ng-model="event.color.primary">
+                        </td>
+                        <td>
+                            <input class="form-control" colorpicker type="text" ng-model="event.color.secondary">
+                        </td>
+                        <td>
+                            <p class="input-group" style="max-width: 250px">
+                                <input type="text" class="form-control" readonly uib-datepicker-popup="dd MMMM yyyy" ng-model="event.startsAt" is-open="event.startOpen" close-text="Close">
+                                <span class="input-group-btn">
+                                  <button
+                                    type="button"
+                                    class="btn btn-default"
+                                    ng-click="vm.toggle($event, 'startOpen', event)">
+                                    <i class="glyphicon glyphicon-calendar"></i>
+                                  </button>
+                                </span>
+                            </p>
+                            <div uib-timepicker ng-model="event.startsAt" hour-step="1" minute-step="15" show-meridian="true">
+                            </div>
+                        </td>
+                        <td>
+                            <p class="input-group" style="max-width: 250px">
+                                <input type="text" class="form-control" readonly uib-datepicker-popup="dd MMMM yyyy" ng-model="event.endsAt" is-open="event.endOpen" close-text="Close">
+                                <span class="input-group-btn">
+                                  <button
+                                    type="button"
+                                    class="btn btn-default"
+                                    ng-click="vm.toggle($event, 'endOpen', event)">
+                                    <i class="glyphicon glyphicon-calendar"></i>
+                                  </button>
+                                </span>
+                            </p>
+                            <div uib-timepicker ng-model="event.endsAt" hour-step="1" minute-step="15" show-meridian="true">
+                            </div>
+                        </td>
+                        <td>
+                            <button class="btn btn-danger" ng-click="vm.events.splice($index, 1)">
+                                Delete
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div> -->
+        <div class="clearfix select-room">
+            <div class="select-label">选择会议室：</div>
+            <ui-select ng-model="condition.selectRoom" ng-disabled="disabled" style="width: 308px;float: left;">
+                <ui-select-match placeholder="选择会议室">{{$select.selected.name}}</ui-select-match>
+                <ui-select-choices repeat="type in conferenceItems| propsFilter: {name: $select.search}">
+                    <div>{{type.name}}</div>
+                </ui-select-choices>
+            </ui-select>
+            <div class="apply-room-book"><a ui-sref="index.conference">发起会议</a></div>
+        </div>
+        <div style="position: relative;">
+            <div class="change-month-day">
+                <div class="change-month-day-content">
+                    <div class="select-month" ng-class="{'select-type-bg':selectMonth}" ng-click="changeType(true)">月</div>
+                    <div class="select-day" ng-class="{'select-type-bg':!selectMonth}" ng-click="changeType(false)">天</div>
+                </div>
+            </div>
+            <div ng-show="selectMonth">
+                <uib-datepicker ng-show="!changeMonthDay" ng-model="currentDateNote" min-date="minDate" datepicker-options="options" datepicker-mode="year" format-day-title="yyyy年MM月" format-month-title="yyyy年" format-month="MM月" class="inline-datepicker note" template-url="views/conference/date.html" style="border: 1px solid #ececec;"></uib-datepicker>
+            </div>
+            <div ng-show="!selectMonth">
+                <uib-datepicker ng-model="currentDate" min-date="minDate" datepicker-options="options" datepicker-mode="year" format-day-title="yyyy年MM月" format-month-title="yyyy年" format-month="MM月" template-url="" class="inline-datepicker" style="border: 1px solid #ececec;"></uib-datepicker>
+                <div class="room-day-record clearfix">
+                    <div class="room-day-record-l"><img src="./images/conference/line.png" alt=""></div>
+                    <div class="room-day-time-record clearfix">
+                        <div class="room-day-time-record-item clearfix" ng-repeat="twoRecords in bookRecords">
+                            <div class="record-r-top">{{$index+9}}:00 <img src="./images/conference/list-icon.png" alt=""></div>
+                            <div class="record-r-bottom clearfix">
+                                <div class="record-r-bottom-l" ng-repeat="record in twoRecords" ng-if="record.data">
+                                    <a style="display: block;" ui-sref="index.conference.detail({detail_id:record.data.book_id})">
+                                        <span>{{record.data.room_detail.name}}】</span>
+                                        <span class="ellipsis" title="{{record.data.room_book.book_name}}">{{record.data.room_book.book_name}}</span>
+                                        <span>({{record.point.slice(0,5)}}-{{record.point.slice(0,5)}})</span>
+                                        <span style="padding-right: 90px;float: right;">{{record.data.room_book.users.name}}</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="scrollable">
+	<div class="scrollable-content">
+		<!-- events detail -->
+		<div class="events-detail">
+			<div class="events-detail-hd">
+				<h3 class="events-title">{{ articleDetail.title }}</h3>
+				<p class="events-others">
+					<em class="ev-author">作者：{{ articleDetail.author }}</em>
+					<span class="ev-publish-time">时间：{{ articleDetail.pulish_time*1000 | date: 'yyyy-MM-dd' }}</span>
+					<i vlass="ev-views">浏览量：{{ articleDetail.view_count }}</i>
+				</p>
+			</div>
+			<div class="events-detail-con" ng-bind-html="articleDetail.content | trust:'html'">
+				<!-- <img src="images/article.jpg" width="100%" alt="">
+				<p>位于浙北杭嘉湖平原腹地的桐乡市，素有“鱼米之乡，丝绸之府，文化之邦”的美誉。运河古镇群落、特色庄园之乡、商贸休闲之地等旅游品牌的建设，乌镇—石门省级旅游度假区、浙江省休闲农业与乡村旅游示范县的成功获批，成为桐乡繁荣发展现代服务业、加快提升现代农业的有力佐证。且在2014年11月19日始，乌镇成为世界互联网大会永久会址。作为世界互联网大会的举办地，桐乡市的旅游业以及商业的发展都是不可小觑的</p>
+				<p>其实在第二届世界互联网大会开始前，乌镇已经实现了智慧旅游、智能交通、智慧养老，建立了智慧信息亭、互联网医院、互联网金融还有微信政务平台。乌镇80%的商户都接入了电子支付，同时全镇实现Wi-Fi覆盖。“互联网+”方便游客获取信息的同时，也实打实的改善了用户的支付体验。不过，当下的乌镇仅仅是完成了移动支付的接入。作为乌镇的直属市，桐乡市政府一直在寻找合作机会，利用互联网优势整合资源、提升服务，更高效地解决桐乡市城市发展过程中的诸多问题。</p> -->
+			</div>
+		</div>
+	</div>
+</div>

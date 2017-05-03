@@ -1,0 +1,134 @@
+<!-- 我发布的 -->
+<div class="container">	
+	<!-- breadcrumb -->
+	<div class="breadcrumb">
+		<ul>
+			<li>当前位置：</li>
+			<li><a ui-sref="index.personalCenter">个人中心</a></li>
+			<li>&gt;我发布的</li>
+		</ul>
+	</div>
+
+	<!-- my publish -->
+	<div class="my-publish mt-10">
+		<div class="my-publish-hd">			
+			<ul class="tab-title fl" click-tab>
+				<li class="tab-active">知识库({{ pageKm.totalCount }})</li>
+				<li>BBS({{ pageBbs.totalCount }})</li>
+			</ul>
+		</div>
+		<div class="my-publish-con tab-con">
+			<!-- km -->
+			<div class="data-publish-km" style="display: block;">				
+				<table class="data-table">
+					<thead>
+						<tr>
+							<th width="80%">内容</th>
+							<th width="10%">所属应用</th>
+							<th width="10%">操作</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-if="dataArticleNull">
+							<td colspan="3">								
+								<div class="data-empty"><i class="icon-info"></i>没有查询到符合条件的记录</div>
+							</td>
+						</tr>
+						<tr ng-repeat="article in articleKmList" ng-if="!dataArticleNull">
+							<td>
+								<div class="km-avatar">
+									<img ng-src="{{article.user.avatar}}" src="" err-src="./images/user_avatar_default.jpg" width="126" height="126" alt="">
+								</div>
+								<div class="km-info text-left my-list-info">
+									<em class="km-tag km-tag-standard" ng-if="article.type_id == 30">培训</em>
+									<em class="km-tag km-tag-article" ng-if="article.type_id == 31">干货</em>
+									<em class="km-tag km-tag-process" ng-if="article.type_id == 32">规范</em>
+									<h3 class="km-title"><a ui-sref="index.knowledge.detail({articleid:article.id})" ng-bind="article.title" target="_blank"></a></h3>
+									<p class="km-desc" ng-bind-html="article.description | trust:'html'"></p>
+									<div class="km-bott">
+										<span class="km-bott-cell-1">
+											<p>发布时间：{{ article.publish_time * 1000 | date: 'yyyy-MM-dd' }}</p>
+											<p>发布者：{{ article.user.name }}</p>
+										</span>
+									</div>
+								</div>
+							</td>
+							<td>知识库</td>
+							<td>
+								<a href="javascript:;" class="action-del-publish" ng-click="opDelPublish(article, 'knowledge')">删除</a>
+								<a ui-sref="index.knowledge.edit({articleId: article.id})" class="action-edit-publish">编辑</a>
+							</td>
+						</tr>
+					</tbody>
+					<tfoot>
+						<tr>
+							<td colspan="3">								
+								<!-- pagenation -->
+								<div class="list-page">
+									<uib-pagination total-items="pageKm.totalCount" ng-model="pageKm.pageNo" items-per-page="pageKm.pageSize" max-size="5" ng-change="doKmRequest('',pageKm.pageNo,pageKm.pageSize)" class="samplePage pagination-sm" boundary-link-numbers="true" previous-text="上一页" next-text="下一页">
+									</uib-pagination>
+									<span>共{{ pageKm.totalPage }}页&nbsp;&nbsp;{{ pageKm.totalCount }}条</span>
+								</div>	
+							</td>
+						</tr>
+					</tfoot>
+				</table>
+			</div>
+			<!-- bbs -->
+			<div class="data-publish-bbs">				
+				<table class="data-table">
+					<thead>
+						<tr>
+							<th width="80%">内容</th>
+							<th width="10%">所属应用</th>
+							<th width="10%">操作</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-if="dataPostNull">
+							<td colspan="3">								
+								<div class="data-empty"><i class="icon-info"></i>没有查询到符合条件的记录</div>
+							</td>
+						</tr>
+						<tr ng-repeat="post in articleBbsList" ng-if="!dataPostNull">
+							<td>
+								<div class="post-avatar">
+									<img ng-if="post.is_anonymity == 0" ng-src="{{post.user.avatar}}" src="" err-src="./images/user_avatar_default.jpg" width="126" height="126" alt="">
+									<img ng-if="post.is_anonymity == 1" src="./images/bbs/avatar_anonymous.jpg" width="126" height="126" alt="">
+								</div>
+								<div class="post-list-info text-left my-list-info">
+									<h3 class="post-title"><a ui-sref="index.bbs.detail({articleId:post.id})" target="_blank"><em ng-if="post.is_top == 1" class="post-tag post-tag-top">置顶</em><em ng-if="post.is_best == 1" class="post-tag post-tag-essence">精</em>{{ post.title }}<em class="post-img" ng-if="post.image != ''"></em></a></h3>
+									<p class="post-desc" ng-bind-html="post.description | trust:'html'"></p>
+									<div class="post-list-bott">
+										<span class="post-bott-cell-1">
+											<p>发布时间：{{ post.create_time * 1000 | date: 'yyyy-MM-dd' }}</p>
+											<p ng-if="post.is_anonymity == 0">发布者：{{ post.user.name }}</p>
+											<p ng-if="post.is_anonymity == 1">发布者：匿名</p>
+										</span>
+									</div>
+								</div>
+							</td>
+							<td>BBS</td>
+							<td>
+								<a href="javascript:;" class="action-del-publish" ng-click="opDelPublish(post, 'bbs')">删除</a>
+								<a ui-sref="index.bbs.postEdit({postId: post.id})" class="action-edit-publish">编辑</a>
+							</td>
+						</tr>
+					</tbody>
+					<tfoot>
+						<tr>
+							<td colspan="3">								
+								<!-- pagenation -->
+								<div class="list-page">
+									<uib-pagination total-items="pageBbs.totalCount" ng-model="pageBbs.pageNo" items-per-page="pageBbs.pageSize" max-size="5" ng-change="doBbsRequest(pageBbs.pageNo,pageBbs.pageSize)" class="samplePage pagination-sm" boundary-link-numbers="true" previous-text="上一页" next-text="下一页">
+									</uib-pagination>
+									<span>共{{ pageBbs.totalPage }}页&nbsp;&nbsp;{{ pageBbs.totalCount }}条</span>
+								</div>
+							</td>
+						</tr>
+					</tfoot>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,58 @@
+<div class="clearfix" style="background-color: #fff">
+    <div ng-show="showPage">
+        <uib-datepicker ng-model="currentDate" min-date="minDate" datepicker-options="options" datepicker-mode="year" format-day-title="yyyy年MM月" format-month-title="yyyy年" format-month="MM月" class="inline-datepicker checkin-table"></uib-datepicker>
+    </div>
+    <div class="checkin-right">
+        <div class="checkIn-date" style="background-color: #fff">
+            <span>{{currentDate|date:'MM月dd日'}}</span>
+            <!-- <a class="pull-right" ng-href="#/record/{{currentDate|date:'yyyy-MM-dd'}}">本月记录</a> -->
+        </div>
+        <div class="checkIn-log" ng-show="logs.length">
+            <ul slim-scroll>
+                <li class="clear" ng-repeat="log in logs">
+                    <span class="checkIn-muted">{{log.time*1000| date:'yyyy-MM-dd HH:mm:ss'}}</span>
+                    <span class="checkIn-right">{{log.type==1?'签到':'签退'}}</span>
+                </li>
+            </ul>
+        </div>
+        <div class="checkIn-sign checkin-owner">
+            <div class="sign-body ">
+                <div class="l-sign" ng-click="sign(1)">签到</div>
+                <div class="r-sign" ng-click="sign(0)">签退</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="checkIn-month-log">
+    <div class="month-log-title clear">
+        <span class="l-log-title">{{logMonthCondition.date.value}}月考勤记录</span>
+        <!-- <span class="r-log-title">日期图标</span> -->
+    </div>
+    <div class="log-body">
+        <div class="log-body-title clear">
+            <div>日期</div>
+            <div>签到</div>
+            <div>签退</div>
+            <div>状态</div>
+        </div>
+        <div ng-repeat="record in records" class="log-body-item clear">
+            <div>{{record.date| date:'dd日'}}-星期{{day_arr[record.day]}}</div>
+            <div>{{record.sign_in_time?(record.sign_in_time*1000| date:'HH:mm'):'---'}}</div>
+            <div>{{record.sign_out_time?(record.sign_out_time*1000| date:'HH:mm'):'---'}}</div>
+            <div>{{status_arr[record.status]}}</div>
+        </div>
+    </div>
+    <!-- <div class="pager">
+        <uib-pagination total-items="page.totalCount" ng-model="page.pageNo" items-per-page="page.pageSize" max-size="5" ng-change="doRequest(leaveManage.status,page.pageNo,page.pageSize)" class="samplePage pagination-lg" boundary-link-numbers="true">
+        </uib-pagination>
+    </div> -->
+</div>
+<style>
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+</style>

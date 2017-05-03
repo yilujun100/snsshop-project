@@ -1,0 +1,130 @@
+<div class="scrollable">
+  <div class="scrollable-content approval-page">
+      <section class="mod-application form-submit" ng-hide="fields.length<=0 && special_fields.length<=0">
+          <ul class="application-list">
+              <!-- <ng-include ng-if="special_fields" src="'views/record-form-special-fields.html'"></ng-include> -->
+              <ng-include ng-repeat="field in form.form_field" src="'form_field_'+field.type+'.html'"></ng-include>
+          </ul>
+      </section>
+      <div style="height: 100%;width: 100%" ng-if="flow.id && fields.length<=0 && !special_fields">
+          <img style="height: 100%; width: 100%" src="../approval/images/coming-soon.jpg">
+      </div>
+  </div>
+</div>
+<div ui-content-for="bottom-button" ng-if="form.form_field.length>0 || special_fields">
+    <div class="mod-action-bar mui-flex">
+        <a href="javascript:;" ng-click="submit()" class="support support-green cell">提交</a>
+    </div>
+</div>
+<!--日期时间字段-->
+<script type="text/ng-template" id="form_field_datetime.html">
+    <li class="clearfix">
+        <div class="mod-left w25">{{field.name}}</div>
+        <div class="mod-right w70">
+            <input class="items-input" type="text"  ms-date-time ng-model="field.value" placeholder="请选择{{field.name}}">
+        </div>
+    </li>
+</script>
+<!--单行文本字段-->
+<script type="text/ng-template" id="form_field_text.html">
+    <li class="clearfix">
+        <div class="mod-left w20">{{field.name}}</div>
+        <div class="mod-right w70">
+            <input class="items-input" type="text" ng-model="field.value" placeholder="请输入{{field.name}}">
+        </div>
+    </li>
+</script>
+<!--部门字段-->
+<script type="text/ng-template" id="form_field_depart.html">
+    <li class="clearfix">
+        <div class="mod-left w20">{{field.name}}</div>
+        <div class="mod-right w70">
+            <input class="items-input" type="text" ng-model="field.value" ng-disabled="true">
+        </div>
+    </li>
+</script>
+<!--日期字段-->
+<script type="text/ng-template" id="form_field_date.html">
+    <li class="clearfix">
+        <div class="mod-left w20">{{field.name}}</div>
+        <div class="mod-right w70">
+            <input class="items-input" type="text"  ms-date ng-model="field.value" placeholder="请选择{{field.name}}">
+        </div>
+    </li>
+</script>
+<!--单选字段-->
+<script type="text/ng-template" id="form_field_select.html">
+    <li class="clearfix">
+        <div class="mod-left w20">{{field.name}}</div>
+        <div class="mod-right w70"  ng-class="{'select-empty':!field.value}">
+            <select ms-select class="items-input" ng-model="field.value">
+                <option value="">请选择{{field.name}}</option>
+                <option ng-repeat="item in field.data" value="{{item}}" ng-selected="item == field.value">{{item}}</option>
+            </select>
+        </div>
+    </li>
+</script>
+<!--form字段-->
+<script type="text/ng-template" id="form_field_form.html">
+    <li class="clearfix">
+        <div class="mod-left w20">{{field.name}}</div>
+        <div class="mod-right w70">
+            {{form_name?form_name:field.value}}
+        </div>
+    </li>
+</script>
+<!--form-child字段-->
+<script type="text/ng-template" id="form_field_form_child.html">
+    <li class="clearfix">
+        <div class="mod-left w20">{{field.name}}</div>
+         <div class="mod-right w70"  ng-class="{'select-empty':!field.value}" ng-if="isfirstCreate">
+            <select ms-select class="items-input" ng-model="field.value" item="{{field.data}}">
+                <option value="">请选择{{field.name}}</option>
+                <option ng-repeat="item in field.data" value="{{item.name}}" ng-selected="item.id == field.value">{{item.name}}</option>
+            </select>
+        </div>
+        <div class="mod-right w70" ng-if="!isfirstCreate">
+            {{field.value}}
+        </div>
+    </li>
+</script>
+<!--多行文本字段-->
+<script type="text/ng-template" id="form_field_textarea.html">
+    <li class="opinion">
+        <dl class="m0">
+            <dt class="b-line">{{field.name}}</dt>
+            <dd>
+                <div class="textarea-box">
+                    <textarea class="bordernone" ng-model="field.value"  placeholder="请输入{{field.name}}"></textarea>
+                    <!--<div class="hint">加油，还差一个字！</div>-->
+                </div>
+            </dd>
+        </dl>
+    </li>
+</script>
+<!--附件字段-->
+<script type="text/ng-template" id="form_field_attachment.html">
+    <li class="opinion">
+        <dl class="m0">
+            <dt class="b-line clearfix">
+                <div class="mod-left">{{field.name}}</div>
+                <div class="mod-right w80">
+                    <div class="upload-box">
+                        <span class="upload-text">轻触此处添加图片</span>
+                        <span class="upload-icon"><i class="iconfont icon-iconfontxiao11"></i></span>
+                        <input class="items-input upload-input needsclick" type="text" ng-click="selectImage(field)" readonly>
+                    </div>
+                </div>
+            </dt>
+            <dd>
+                <div class="mod-pic-box clearfix">
+                    <span class="img-box" ng-repeat="image in field.value">
+                        <img class="img" ng-click="showImage(field,image)" ng-src="{{image.id?upload_url+'/'+image.path:image.path}}"/>
+                        <em class="remove" ng-click="removeImage(field,$index)"></em>
+                    </span>
+                </div>
+            </dd>
+        </dl>
+
+    </li>
+</script>

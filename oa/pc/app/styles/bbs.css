@@ -1,0 +1,266 @@
+/*
+ * 论坛 bbs.css
+ * author:yilj@snsshop.cn
+ * date:2016-11-8
+*/
+
+/*====================== bbs index style =======================*/
+.bbs-wrap,
+.circle-wrap { background: #fff; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; }
+.bbs-wrap-hd,
+.circle-wrap-hd { padding-right: 30px; height: 80px; border-bottom: 1px solid #ececec; }
+.w-cell-l h3 { position: relative; float: left; width: 94px; line-height: 80px; text-align: center; font-size: 15px; color: #0a80de; font-weight: bold; }
+.w-cell-l h3:after { position: absolute; bottom: 0; left: 0; display: block; content: ''; width: 100%; height: 2px; background: #0a80de; }
+.circle-recommend,
+.circle-recommend em,
+.circle-recommend ul,
+.circle-recommend li { float: left; }
+.circle-recommend { margin-top: 32px; margin-left: 26px; }
+.circle-recommend em,
+.circle-recommend li { font-size: 13px; color: #666; }
+.circle-recommend li { margin-right: 16px; }
+.btn-post { display: block; margin-top: 19px; width: 132px; height: 40px; line-height: 40px; text-align: center; border: 1px solid #0a80de; background: #0a80de; font-size: 15px; color: #fff; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; }
+.btn-post:hover { color: #fff; }
+.post-table { position: relative; width: 100%; border-collapse: collapse; }
+.post-table th { padding: 10px 0; text-align: center; border-bottom: 1px solid #ececec; background: #fbfbfb; font-size: 13px; color: #666; font-weight: normal; } 
+.post-table th:first-child { text-align: left; text-indent: 4em; }
+.post-table td { padding: 20px 0; text-align: center; border-bottom: 1px solid #ececec; font-size: 15px; color: #464646; }
+.post-table tr td:first-child { text-align: left; padding-left: 30px; }
+.post-table tbody tr:nth-child(even) { background: #fbfbfb; }
+.user-avatar img { display: block; -webkit-border-radius: 50%; -moz-border-radius: 50%; border-radius: 50%; }
+.post-info { max-width: 80%; margin-top: 8px; margin-left: 16px; }
+.post-tag { display: inline-block; margin-right: 10px; width: 36px; height: 20px; line-height: 20px; text-align: center; font-size: 12px; color: #fff; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; }
+.post-tag-top { background: #ff5917; }
+.post-tag-essence { background: #0a80de; }
+.post-img { display: inline-block; vertical-align: -4px; margin-left: 10px; width: 30px; height: 24px; background: url(../images/bbs/icon_image.png) no-repeat; }
+.post-info-other span { margin-right: 70px; font-size: 13px; color: #888; }
+.my-name strong { font-weight: normal; color: #ff5917; }
+
+.my-card-info a { position: absolute; top: 0; right: 0; font-size: 14px; color: #0a80de; }
+.my-card-actions .icon-card { display: block; margin: 10px auto 0; width: 25px; height: 24px; background-repeat: no-repeat; background-position: center center; }
+.icon-card-comment { background-image: url(../images/bbs/icon_file.png); }
+.icon-card-collect { background-image: url(../images/bbs/icon_star_o.png); }
+.icon-card-views { background-image: url(../images/bbs/icon_diamond.png); }
+
+.post-search { width: 100%; height: 60px; background: #fff; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; overflow: hidden; }
+.post-search input,
+.post-search a { float: left; }
+.post-search input { border: 0; padding-left: 20px; width: 240px; height: 60px; line-height: 60px; font-size: 14px; color: #333; }
+.post-search .btn-post-search { display: block; width: 60px; height: 60px; background: #0a80de url(../images/bbs/icon_search.png) no-repeat center center; text-indent: -999em; }
+
+.circles-con ul { margin-top: -20px; padding: 20px 0; }
+.circles-con li { float: left; margin-top: 20px; width: 50%; text-align: center; }
+.circles-con a { font-size: 13px; color: #464646; }
+
+.recommend-post-list li { padding: 20px; }
+.recommend-post-list li:nth-child(odd) { background: #fbfbfb; }
+.recommend-post-list a { display: block; width: 100%; height: 22px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 13px; color: #464646; }
+.post-recomm-info-other span { font-size: 13px; color: #888; }
+.post-recomm-info-other .post-recomm-author { margin-right: 20px; }
+
+
+/*====================== circle index style =======================*/
+.welcome { padding: 30px; background: #fff; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; }
+.welcome-cell-1 img { display: block; -webkit-border-radius: 50%; -moz-border-radius: 50%; border-radius: 50%; }
+.welcome-cell-2 { margin-left: 20px; }
+.welcome-cell-2 p { margin-top: 16px; font-size: 14px; color: #464646; }
+.welcome-cell-2 p:first-child { margin-top: 6px; font-size: 16px; color: #0a80de; }
+.welcome-cell-3 { margin-top: 29px; }
+.welcome-cell-3 a { display: inline-block; margin-left: 20px; width: 132px; height: 42px; line-height: 42px; text-align: center; font-size: 15px; color: #fff; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; }
+.btn-has-joined { background: #0a80de; }
+.btn-apply-join { background: #5dbb1f; }
+.circle-filter li { position: relative; float: left; width: 94px; line-height: 80px; text-align: center; font-size: 15px; color: #464646; cursor: pointer; }
+.circle-filter .circle-on { color: #0a80de;  font-weight: bold; }
+.circle-filter .circle-on:after { position: absolute; bottom: 0; left: 0; display: block; content: ''; width: 100%; height: 2px; background: #0a80de; }
+
+
+/*====================== post detail style =======================*/
+.post-detail { background: #fff; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; }
+.post-detail-hd { position: relative; padding: 20px 0; border-bottom: 1px solid #ececec; }
+.post-detail-tit { text-align: center; font-size: 18px; color: #464646; font-weight: bold; }
+.post-detail-info-basic { margin-top: 10px; text-align: center; }
+.post-detail-info-basic p { display: inline-block; margin-left: 40px; font-size: 12px; color: #888; }
+.comment-hd { height: 60px; line-height: 60px; background: #fbfbfb; border-top: 1px solid #ececec; border-bottom: 1px solid #ececec; }
+.comment-hd h3 { padding-left: 20px; font-size: 14px; color: #464646; font-weight: bold; }
+.comment-publish { padding: 20px; }
+.comment-publish textarea { padding: 10px; width: 100%; height: 102px; border: 1px solid #e5e5e5; overflow: hidden; outline: none; resize: none; -webkit-border-radius: 6px; -moz-border-radius: 6px; border-radius: 6px; -webkit-box-shadow: 2px 4px 4px #f7f7f7 inset; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+.btn-publish { float: right; display: block; margin-top: 0; width: 96px; height: 34px; line-height: 34px; text-align: center; background: #0a80de; font-size: 15px; color: #fff; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; }
+.btn-publish:hover { color: #fff; }
+.comment-list li { padding: 20px; border-top: 1px solid #ececec; }
+.comment-cell-1 p { display: inline; font-size: 13px; color: #888; font-weight: bold; }
+.comment-cell-1 .comment-user { color: #0a80de; margin-right: 10px; }
+.comment-cell-1 .comment-floor { font-size: 13px; color: #ff5917; font-weight: bold; }
+.comment-content { margin-top: 10px; font-size: 15px; color: #666; }
+.comment-thumbs { margin-top: 10px; text-align: right; font-size: 13px; color: #888; font-weight: bold; cursor: pointer; }
+.comment-thumbs .icon-comment-thumbs { display: inline-block; vertical-align: -3px; margin-right: 4px; width: 17px; height: 16px; background-repeat: no-repeat; background-image: url(../images/bbs/icon_thumb_up.png); }
+.comment-thumbs-on { color: #0a80de; }
+.comment-thumbs-on .icon-comment-thumbs { background-image: url(../images/bbs/icon_thumb_up_on.png); }
+.post-bott-cell-2 a { display: inline-block; margin-left: 40px; font-size: 12px; color: #888; }
+.icon-post-list { display: inline-block; vertical-align: -4px; margin-right: 4px; width: 17px; height: 16px; background-repeat: no-repeat; }
+.icon-post-thumb-up { background-image: url(../images/bbs/icon_thumb_up.png); }
+.icon-post-star { background-image: url(../images/bbs/icon_star.png); }
+.icon-post-msg { background-image: url(../images/bbs/icon_msg.png); }
+.post-click-on { color: #0a80de !important; }
+.post-click-on .icon-post-thumb-up { background-image: url(../images/bbs/icon_thumb_up_on.png); }
+.post-click-on .icon-post-star { background-image: url(../images/bbs/icon_star_on.png); }
+.post-click-on .icon-post-msg { background-image: url(../images/bbs/icon_msg_on.png); }
+
+.post-bott { margin: 0 20px; padding: 20px 0; border-top: 1px solid #ececec; }
+.post-bott a { display: block; font-size: 14px; color: #464646; }
+.post-bott a:hover { color: #0a80de; text-decoration: underline; }
+
+.post-detail-con img { max-width: 100%; }
+
+.comment-actions { text-align: right; }
+.comment-actions a { position: relative; display: inline-block; margin-left: 10px; }
+.comment-immediate:before,
+.comment-total:before,
+.comment-fold:before { position: absolute; top: 2px; right: 0; display: block; content: ''; width: 1px; height: 14px; background: #bfbfbf; }
+.comment-immediate,
+.comment-total,
+.comment-fold { padding-right: 14px; font-size: 13px; color: #888; }
+.comment-box { position: relative; margin-top: 10px; border: 1px solid #e5e5e5; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; }
+.comment-box:before,
+.comment-box:after { position: absolute; display: block; content: ''; width: 0; height: 0; border-style: dashed dashed solid; }
+.comment-box:before { top: -16px; right: 144px; border-width: 8px;  border-color: transparent transparent #e5e5e5; }
+.comment-box:after { top: -13px; right: 145px; border-width: 7px; border-color: transparent transparent #fff; }
+.comment-box-list { padding: 0 20px; }
+.comment-item { padding: 20px 0; border-top: 1px solid #e5e5e5; font-size: 14px; }
+.comment-box-list .comment-item:first-child { border-top: 0; }
+.reply-users b { margin: 0 10px; color: #888; font-weight: normal; }
+.comment-item .comment-item-user,
+.reply-users em { color: #0a80de; }
+.comment-item .comment-item-time { margin-left: 20px; color: #888; }
+.comment-item .comment-item-content { margin-top: 10px; color: #666; }
+.comment-item .comment-item-actions { margin-top: 10px; }
+.comment-item .comment-action-reply { color: #0a80de; }
+.comment-item .comment-action-thumbs { position: relative; margin-left: 10px; padding-left: 12px; color: #888; }
+.comment-item .comment-action-thumbs:before { position: absolute; top: 3px; left: 0; display: block; content: ''; width: 1px; height: 14px; background: #bfbfbf; }
+.comment-item .icon-comment-thumbs { display: inline-block; vertical-align: -3px; margin-right: 4px; width: 17px; height: 16px; background-repeat: no-repeat; background-image: url(../images/bbs/icon_thumb_up.png); }
+.comment-item textarea,
+.comment-box-bott textarea { padding: 10px; width: 100%; height: 62px; border: 1px solid #e5e5e5; overflow: hidden; outline: none; resize: none; border-radius: 6px; -webkit-box-shadow: 2px 4px 4px #f7f7f7 inset; box-sizing: border-box; }
+.comment-item-reply-actions,
+.comment-box-bott-btns { text-align: right; }
+.btn-reply-cancel,
+.btn-bott-cancel { color: #888; }
+.btn-reply-confirm,
+.btn-bott-confirm { display: inline-block; margin-left: 20px; width: 64px; height: 34px; line-height: 34px; text-align: center; background: #0a80de; font-size: 15px; color: #fff; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; }
+.btn-reply-confirm:hover,
+.btn-bott-confirm:hover { color: #fff; }
+.comment-box-bott { margin: 0; padding: 20px; border-top: 1px solid #eee; border-radius: 0 0 4px 4px; background: #fbfbfb; }
+
+
+
+/*====================== all circles style =======================*/
+.circle { background: #fff; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; }
+.circle-hd { height: 74px; border-bottom: 1px solid #ececec; }
+.circle-hd h3 { padding-left: 30px; line-height: 74px; font-size: 15px; color: #464646; font-weight: bold; }
+.circle-con { padding: 30px 0; }
+.circle-list { position: relative; margin-top: -36px; width: 100%; }
+.circle-list:before { position: absolute; top: 30px; left: 50%; display: block; content: ''; width: 1px; height: 90%; border-left: 1px dashed #dcdcdc; }
+.circle-list li { position: relative; float: left; margin-top: 36px; width: 50%; padding: 0 30px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+.circle-thumb { position: absolute; top: 0; left: 30px; display: block; width: 90px; height: 90px; -webkit-border-radius: 50%; -moz-border-radius: 50%; border-radius: 50%; }
+.circle-info-basic { display: block; margin-left: 110px; padding-top: 16px; height: 74px; }
+.circle-info-basic p { margin-top: 16px; font-size: 13px; color: #666; }
+.circle-info-basic p:first-child { margin-top: 0; font-size: 16px; color: #464646; font-weight: bold; }
+.circle-actions { position: absolute; top: 27px; right: 30px; display: block; width: 36px; height: 36px; background-repeat: no-repeat; text-indent: -999em; }
+.already-joined { background-image: url(../images/bbs/icon_checkbox_on.png); }
+.join { background-image: url(../images/bbs/icon_checkbox.png); }
+
+
+/*====================== post style =======================*/
+.post { background: #fff; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; }
+.post-hd { height: 76px; border-bottom: 1px solid #ececec; }
+.post-hd h3 { padding-left: 30px; line-height: 76px; font-size: 16px; color: #464646; font-weight: bold; }
+.post-con { padding: 42px; }
+.form-item:after { content: '\200B'; display: block; clear: both; height: 0; overflow: hidden; visibility: hidden; }
+.form-item { zoom: 1; margin-top: 42px; }
+.post-con .form-item:first-child { margin-top: 0; }
+.form-item label,
+.form-item input,
+.form-item select,
+.form-item textarea,
+.form-item > span,
+.form-item > span p { float: left; }
+.form-item > label { margin-right: 30px; width: 100px; min-height: 1px; line-height: 40px; text-align: right; font-size: 14px; color: #464646;  }
+.form-item input[type="text"],
+.form-item select,
+.form-item textarea { padding: 10px; border: 1px solid #d1cfcf; font-size: 13px; color: #333; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; }
+.form-item select { width: 302px; }
+.form-item input[type="text"] { width: 400px; }
+.form-item textarea { width: 800px; height: 200px; overflow: auto; outline: none; resize: none; }
+.form-item > span { margin-top: 12px; }
+.form-item > span p { margin-right: 100px; font-size: 13px; color: #464646; }
+.form-item input[type="radio"] { margin-top: 3px; margin-right: 10px; }
+.btn-post-submit { float: left; display: block; width: 174px; height: 58px; line-height: 58px; text-align: center; background: #0a80de; font-size: 16px; color: #fff; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; }
+.btn-post-submit:hover { color: #fff; }
+.form-item .wangEditor-container { float: left; width: 800px; }
+.wangEditor-container .wangEditor-txt { height: 300px; }
+#editor-trigger { height: 300px; }
+.wangEditor-container .wangEditor-txt p { margin: 0; }
+.error-info { display: block; float: left; margin-left: 10px; line-height: 40px; font-size: 13px; color: #f00; font-weight: normal; }
+
+
+/*====================== manage circle style =======================*/
+.action-top,
+.action-best,
+.action-show-hide { display: block; margin-top: 4px; font-size: 13px; }
+.action-top,
+.action-top:hover { color: #ff5917; }
+.action-best,
+.action-best:hover { color: #0a80de; }
+.action-show-hide,
+.action-show-hide:hover,
+.action-collect-cancel,
+.action-collect-cancel:hover { color: #ff5917; }
+
+
+/*====================== expression style(@2017-1-4) =======================*/
+.tool-face { float: left; width: 24px; height: 24px; background: url(../images/biaoqing/icon_expression.png) no-repeat; cursor: pointer; }
+.tool-face:hover { background: url(../images/biaoqing/icon_expression_on.png) no-repeat; }
+.jquery-qqface { width: 406; height: 163; padding: 5px; border: 1px solid #e5e5e5; background: #fff; display: none; position: absolute; }
+.jquery-qqface-layer { width: 406px; height: 163px; cursor: pointer; position: relative; }
+.jquery-qqface-layer i { width: 26px; height: 26px; border: 1px solid transparent; margin: -1px 0 0 -1px; display: block; float: left; }
+
+
+/*====================== ue 布局优化 style(@2017-1-5) =======================*/
+.w-cell-r { margin-top: 19px; width: 540px; height: 42px; }
+.post-search { position: relative; width: 380px; height: 40px; border: 1px solid #c9c9c9; overflow: visible; }
+.btn-post { margin-top: 0; }
+.post-search input { padding-left: 10px; width: 287px; height: 40px; line-height: 40px; -webkit-border-radius: 6px 0 0 6px; -moz-border-radius: 6px 0 0 6px; border-radius: 6px 0 0 6px; }
+.post-search .btn-post-search { position: absolute; top: -1px; right: -1px; width: 84px; height: 42px; -webkit-border-radius: 0 4px 4px 0; -moz-border-radius: 0 4px 4px 0; border-radius: 0 4px 4px 0; }
+.circle-recommend { margin: 0; padding: 10px 10px 10px 26px; width: 100%; background: #fbfbfb; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+.circle-recommend li a { color: #666; }
+.bbs-wrap-con { clear: both; }
+.post-list li { padding: 20px 26px; width: 100%; height: 108px; background: #fff; border-top: 1px solid #ececec; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+.post-list li:nth-child(even) { background: #fbfbfb; }
+.post-info-other span { margin-right: 12px; }
+.post-statis { margin-top: 42px; }
+.post-statis span { margin-left: 10px; font-size: 13px; color: #888; }
+.post-statis .icon-post-statis { display: inline-block; vertical-align: -4px; margin-right: 6px; width: 21px; height: 16px; background-repeat: no-repeat; background-position: right center; }
+.icon-eye { background-image: url(../images/bbs/icon_eye.png); }
+.icon-comments { background-image: url(../images/bbs/icon_msg.png); }
+.circles-con li { margin-left: 30px; width: 116px; }
+.circles-con a { display: block; height: 28px; line-height: 28px; border: 1px solid #e5e5e5; background: #f2f2f2; font-size: 14px; color: #464646; overflow: hidden; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; }
+.circles-con a:hover { border: 1px solid #0a80de; background: #0a80de; color: #fff; }
+.list-more { background-image: url(../images/bbs/icon_more_cn.png); }
+.list-more:hover { background-image: url(../images/bbs/icon_more_on_cn.png); }
+.post-detail-info-basic p { margin-left: 10px; }
+.post-detail-actions { padding: 10px 0; text-align: center; }
+.post-detail-actions a { display: inline-block; margin: 0 10px; width: 106px; height: 40px; line-height: 40px; text-align: center; border: 1px solid #0a80de; font-size: 14px; color: #0a80de; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; }
+.recommend-post-list { padding: 10px 0; }
+.recommend-post-list li { margin-top: 8px; padding: 0 20px; }
+.recommend-post-list li:first-child { margin-top: 0; }
+.recommend-post-list li:nth-child(odd) { background: #fff; }
+.recommend-post-list a { line-height: 22px; font-size: 14px; }
+.recommend-post-list a:hover { color: #0a80de; }
+.recommend-post-list em { display: inline-block; vertical-align: 1px; margin-right: 6px; width: 14px; height: 14px; line-height: 14px; text-align: center; border: 1px solid #aab2bd; font-family: arial; font-size: 10px; color: #aab2bd; -webkit-border-radius: 50%; -moz-border-radius: 50%; border-radius: 50%; }
+.recommend-post-list .top-rank em { border: 1px solid #0a80de; color: #0a80de; }
+.fixed-comment { position: fixed; bottom: 150px; right: 20px; z-index: 100; display: block; width: 50px; height: 50px; background: url(../images/to_comment.png) no-repeat; text-indent: -999em; }
+.fixed-comment:hover { background: url(../images/to_comment_on.png) no-repeat; }
+.title-word-limit { margin-left: 10px; font-size: 13px; color: #999; }
+.content-word-limit { float: left; margin-top: -1px; margin-left: 130px; padding-right: 10px; width: 800px; height: 32px; line-height: 32px; text-align: right; border: 1px solid #ccc; font-size: 13px; color: #999; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+.content-word-limit-error { color: #f00; }
+.content-word-limit b,
+.content-word-limit strong { font-weight: normal; }
+.form-item input[type="checkbox"] { margin-top: 3px; margin-right: 6px; }

@@ -1,0 +1,26 @@
+<!-- 我的收藏 -->
+<div class="scrollable">
+	<div class="scrollable-content" ui-scroll-bottom='bottomReached()'>
+		<div class="my-collect">
+			<ul>
+				<li ng-repeat="collect in collectList">
+					<h3><a href="#/article-detail/{{collect.article_id}}"><i class="icon-file"></i>{{ collect.article.title }}</a></h3>
+					<p ng-bind-html="collect.article.description | trust:'html'"></p>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+
+<a href="#/post" class="btn-new-post">发帖</a>
+
+<!-- bottom nav	start -->
+<div class="navbar navbar-app navbar-absolute-bottom" ui-yield-to="bottom-button">
+    <div class="btn-group justified">
+        <a href="#/index" class="btn btn-navbar" ng-class="{active:setHighlight('/index,/search-result')}"><i class="icon-nav icon-nav-bbs"></i> BBS</a>
+        <a href="#/circle" class="btn btn-navbar" ng-class="{active:setHighlight('/circle')}"><i class="icon-nav icon-nav-circle"></i> 圈子</a>
+        <a href="#/personal-center" class="btn btn-navbar" ng-class="{active:setHighlight('/personal-center')}"><i class="icon-nav icon-nav-personal"></i> 个人</a>
+    </div>
+</div>
+<!-- bottom nav	end -->

@@ -1,0 +1,25 @@
+<div class="fixheight">
+    <div class="ap-group">
+        <ul class="ap-group-nav-manage clear">
+            <li class="ap-gnav-item" ng-class="{'ap-gnav-active':workorderManage.status=='0'}" ng-click="changeState('0')">待审批</li>
+            <li class="ap-gnav-item" ng-class="{'ap-gnav-active':workorderManage.status=='1'}" ng-click="changeState('1')">已审批</li>
+        </ul>
+    </div>
+    <div class="ap-content">
+        <div class="ap-content-item" ng-repeat="content in workorderManage.contents">
+            <a ui-sref="index.workorder.detail({detail_id:content.id})" target="_blank">
+                <span class="ap-citem-title">{{content.user_name}}-{{content.form_name}}</span>
+                <span class="ap-citem-time">{{record.leaveRecord.duration}}</span>
+                <span class="ap-citem-apply-time">{{content.apply_time*1000|date:'MM/dd'}}</span>
+                <span class="ap-citem-start-time">{{content.ticket_record_field[0].name}}：{{content.ticket_record_field[0].value}}</span>
+                <span class="ap-citem-end-time">{{content.ticket_record_field[1].name}}：{{content.ticket_record_field[1].value}}</span>
+                <span class="ap-citem-pic" ng-class="{'approving':content.status=='1','nopass':content.status=='3','return':content.status=='4','revoke':content.status=='0'}"></span>
+            </a>
+        </div>
+    </div>
+    <div class="fix-page list-page pager">
+        <uib-pagination total-items="page.totalCount" ng-model="page.pageNo" items-per-page="page.pageSize" max-size="5" ng-change="doRequest(workorderManage.status,page.pageNo,page.pageSize)" class="samplePage" boundary-link-numbers="true" previous-text="上一页" next-text="下一页" force-ellipses="true">
+        </uib-pagination>
+        <span>共{{page.totalPage}}页&nbsp;&nbsp;{{page.totalCount}}条</span>
+    </div>
+</div>

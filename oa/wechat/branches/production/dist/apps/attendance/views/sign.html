@@ -1,0 +1,39 @@
+<div class="scrollable">
+    <div class="scrollable-content">
+        <div class="section text-center sign-panel sign-in-bg" ng-class="{1: 'sign-in-bg', 2: 'sign-out-bg'}[type]">
+            <div ng-class="time_type">
+                <!-- <div class="sign-in-title"><img ng-show="time_type" ng-src="images/{{time_type}}.png" /></div> -->
+                <div class="timeWarp" ng-if="type==1">
+                    <!-- <img src="images/circle.png"> -->
+                    <div class="timeBox">
+                        <!-- <div  ng-show="time_type" class="cartoon_icon cartoon"></div> -->
+                        <div class="sign-type"><span class="sun"></span>上班</div>
+                        <h3 class="time">{{time|date:'HH:mm:ss'}}</h3>
+                        <div class="currentTime">
+                            <!-- <span>当前时间</span> -->
+                            <span class="colck"></span>
+                            {{time|date:'y-MM-dd'}}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeWarp" ng-if="type==2">
+                    <!-- <img src="images/circle.png"> -->
+                    <div class="timeBox moontype">
+                        <!-- <div  ng-show="time_type" class="cartoon_icon cartoon"></div> -->
+                        <div class="sign-type"><span class="moon"></span>下班</div>
+                        <h3 class="time">{{time|date:'HH:mm:ss'}}</h3>
+                        <div class="currentTime">
+                            <!-- <span>当前时间</span> -->
+                            <span class="moon-colck"></span>
+                            {{time|date:'y-MM-dd'}}
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <a class="sign-btn" ng-click="sign()"><span> {{type==1?"签到":"签退"}}</span></a>
+        </div>
+    </div>
+</div>

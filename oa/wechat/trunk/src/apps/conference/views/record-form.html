@@ -1,0 +1,179 @@
+<style>
+.has-navbar-bottom .app-body {
+    padding: 0;
+}
+</style>
+<div class="scrollable">
+    <!-- 蒙层 -->
+    <div class="mask-layer" ng-show="showSelect" ng-click="clickMask()"></div>
+    <!-- 选择参加人员蒙层 -->
+    <div class="mask-layer" style="z-index: 1006;" ng-show="showBookUsers">
+    </div>
+    <!-- end蒙层 -->
+    <!-- 会议室下拉弹窗 -->
+    <div ng-show="showSelect" class="select_dropdown">
+        <div class="drop_item" ng-repeat="item in conferenceItems" ng-click="changeData($event,$index)">{{item.name}}</div>
+    </div>
+    <!-- end会议室下拉弹窗 -->
+    <!-- 滑动content -->
+    <div class="scrollable-content">
+        <!-- 会议室号 -->
+        <div class="num_conference clearfix" ng-click="selectConference()">
+            <span style="float: left;">{{currentItem.name}}</span>
+            <span ng-if="!showSelect">
+            <i class="fa fa-chevron-down"></i>
+            <!-- <img src="./images/dropdown.png" alt=""> -->
+            </span>
+            <span ng-if="showSelect">
+            <i class="fa fa-chevron-up"></i>
+            <!-- <img src="./images/dropup.png" alt=""> -->
+            </span>
+        </div>
+        <!-- 日历 -->
+        <div class="section section-no-padding item-devide">
+            <uib-datepicker ng-model="currentDate" min-date="minDate" show-weeks="false" datepicker-mode="year" format-day-title="yyyy年MM月" format-month-title="yyyy年" format-month="MM月" class="inline-datepicker"></uib-datepicker>
+        </div>
+        <!-- 会议内容 -->
+        <section class="mod-application" style="background-color: #eee;">
+            <ul class="con-record-list">
+                <li class="record-detail-item-content item-devide apply-font-color clearfix">
+                    <div class="instruction">
+                    <span style="position: absolute;left: 0; color:red">*</span>
+                        可选时间段
+                    </div>
+                    <div class="con-when clearfix">
+                        <label ng-repeat="item in accessTime | accessTimeFilter" ng-class="{'when-bg':isSelectedTime(item),'when-disabled':!item.is_use}">{{item.point}}
+                            <input type="checkbox" ng-model="formData" ng-disabled="!item.is_use" ng-true-value="{{item}}" ng-false-value="false" ng-click="checkboxClick(item,$event)" ng-checked="isSelectedTime(item)" />
+                        </label>
+                    </div>
+                </li>
+                <li class="record-detail-item item-devide apply-font-color clearfix">
+                    <div class="mod-left">
+                        会议时间
+                    </div>
+                    <div class="mod-right">
+                        <!-- <input type="text" ng-model="bookCreate.book_date" ng-readonly="true"> -->
+                        {{bookCreate.book_date}}&nbsp;<span ng-if="showStartTime">{{showStartTime}}-{{showEndTime}}</span>
+                    </div>
+                </li>
+                <li class="record-detail-item item-devide apply-font-color clearfix">
+                    <div class="mod-left">
+                        <span style="position: absolute;left: 0; color:red">*</span>会议主题
+                    </div>
+                    <div class="mod-right">
+                        <input type="text" ng-model="bookCreate.book_name" placeholder="请输入会议主题">
+                    </div>
+                </li>
+                <li class="record-detail-item-content item-devide apply-font-color clearfix">
+                    <div class="instruction">
+                        会议内容
+                    </div>
+                    <div>
+                        <textarea ng-model="bookCreate.book_content" placeholder="请输入会议内容"></textarea>
+                    </div>
+                </li>
+                <li class="record-detail-item item-devide apply-font-color clearfix">
+                    <div class="mod-left">
+                        会议提醒
+                    </div>
+                    <div class="mod-right">
+                        会议前10分钟提醒
+                        <!-- <input type="text" ng-model="bookCreate.book_clock" placeholder="请输入会议提醒"> -->
+                    </div>
+                </li>
+                <li class="record-detail-item-content item-devide apply-font-color clearfix">
+                    <div class="instruction">
+                        邀请人员
+                        <span class="person-plus" ng-click="bookUsers()">
+                        </span>
+                    </div>
+                    <div>
+                        <ul class="clearfix">
+                            <li class="con-personnel" ng-repeat="user in allCheckedUsers"><img ng-src="{{user.avatar}}" alt="personnel">
+                                <i class="fa fa-close user-remove" ng-click="removeUser(user)"></i>
+                                <div>{{user.name}}</div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li style="height: 51px;"></li>
+                <!--  <li class="record-detail-item apply-font-color clearfix">
+                    <div class="mod-left">
+                        会议记录
+                    </div>
+                    <div class="mod-right">
+                        <input type="text" ng-model="bookCreate.record" ng-readonly="true">
+                    </div>
+                </li> -->
+            </ul>
+            <div ui-content-for="bottom-button">
+                <div class="mod-action-bar mui-flex">
+                    <a href="javascript:;" class="support support-blue cell" ng-click="submit()">保存</a>
+                    <!-- <a href="javascript:;" class="support support-green cell" ng-click="approval(1)">同意</a> -->
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+<!-- 选择参加人员所属部门 -->
+<div class="modal-content userbook" ng-show="showUsersContent">
+    <!-- <div class="modal-header scrollable-header">
+    </div> -->
+    <div class="modal-body scrollable-content clearfix">
+        <div class="drop-user" role="navigation">
+            <div class="sidebar-nav navbar-collapse collapse-user">
+                <ul class="nav in" id="side-menu" ng-include="'items_renderer.html'">
+                </ul>
+            </div>
+            <!-- /.sidebar-collapse -->
+        </div>
+    </div>
+    <div class="modal-footer scrollable-footer" style="border-right:1px solid #eff2fb " ng-click="sureUsers()">
+        <button class="btn" style="background-color: #fff;">确定</button>
+    </div>
+</div>
+<!-- end选择参加人员 -->
+<!-- 选择参加人员 -->
+<div class="modal-content userbook1" ng-show="showUsersContent">
+    <!-- <div class="modal-header scrollable-header">
+        <button class="close">&times;</button>
+        <h4 class="modal-title">Modal title</h4>
+    </div> -->
+    <div class="modal-body scrollable-content clearfix" ui-scroll-bottom='bottomReached()'>
+        <!-- 搜索框 -->
+        <div style="text-align: center;">
+            <input class="search_text" type="search" ng-model-options='{ debounce: 300 }' ng-model="inputName" ng-change="searchUserFn()" placeholder="搜索">
+        </div>
+        <div ng-repeat="item in departmentUsers" class="clearfix show-user">
+            <label class="show-user-left" for="user{{item.id}}"><img ng-src="{{item.avatar}}" alt="">{{item.name}}
+                <input ng-click="pushfuncArray($event,item)" id="user{{item.id}}" type="checkbox" ng-checked="isSelected(item.id)">
+            </label>
+        </div>
+    </div>
+    <div class="modal-footer scrollable-footer" ng-click="noSUsers()">
+        <button class="btn" style="background-color: #fff;">取消</button>
+    </div>
+</div>
+<!-- end选择参加人员 -->
+<script id="items_renderer.html" type="text/ng-template">
+    <li ng-repeat="item in list" ng-class="{active:collapseVar[{{item.id}}]==item.id}" class="collapse-li">
+        <a href="" ng-click="check(item.id,item,$event)" ng-if="item.items.length">
+            <span ng-if="item.parent_id==1" class="fa book-users-dir"></span>
+            <!--  <span ng-if="!item.items.length&&item.parent_id==1" class="fa book-users-nodir"></span> -->
+            <span ng-if="item.parent_id!=1" class="fa book-users-nodir"></span> {{item.name}}
+            <span ng-if="item.parent_id!=1" class="fa arrow"></span>
+            <span ng-if="item.parent_id==1" class="fa book-users-drop"></span>
+            <!-- <span ng-if="!item.items.length&&item.parent_id==1" class="fa book-users-drop"></span> -->
+        </a>
+        <a href="" ng-click="selectUserDarp(item.id,item,$event)" ng-if="!item.items.length">
+            <!-- <span ng-if="item.items.length&&item.parent_id==1" class="fa book-users-dir"></span> -->
+            <span ng-if="item.parent_id==1" class="fa book-users-nodir"></span>
+            <span ng-if="item.parent_id!=1" class="fa book-users-nodir"></span> {{item.name}}
+            <!-- <span ng-if="item.items.length&&item.parent_id!=1" class="fa arrow"></span> -->
+            <!-- <span ng-if="item.items.length&&item.parent_id==1" class="fa book-users-drop"></span> -->
+            <span ng-if="item.parent_id==1" class="fa book-users-drop"></span>
+        </a>
+        <ul ng-if="item.items.length" class="nav nav-second-level" uib-collapse="collapseVar[{{item.id}}]!={{item.id}}" ng-include="'items_renderer.html'" ng-init="list=item.items">
+        </ul>
+    </li>
+</script>

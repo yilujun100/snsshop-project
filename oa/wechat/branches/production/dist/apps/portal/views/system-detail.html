@@ -1,0 +1,17 @@
+<div class="scrollable">
+	<div class="scrollable-content">
+		<!-- system detail -->
+		<div class="events-detail">
+			<div class="events-detail-hd">
+				<h3 class="events-title">{{ systemDetail.title }}</h3>
+				<p class="events-others">
+					<em class="ev-author">作者：{{ systemDetail.author }}</em>
+					<span class="ev-publish-time">时间：{{ systemDetail.pulish_time*1000 | date: 'yyyy-MM-dd' }}</span>
+					<i vlass="ev-views">浏览量：{{ systemDetail.view_count }}</i>
+				</p>
+			</div>
+			<div class="events-detail-con" ng-bind-html="systemDetail.content | trust:'html'">
+			</div>
+		</div>
+	</div>
+</div>

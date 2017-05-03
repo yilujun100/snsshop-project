@@ -1,0 +1,74 @@
+<ul class="l-nav l-nav-fold" ng-if="!isOpen">
+    <li class="item">
+        <a class="head-pic" ui-sref="index.personalCenter"><img ng-src="{{headimg}}" src="" err-src="images/portal/avatar.jpg" alt="head-pic"></a>
+        <aside>头像</aside>
+    </li>
+    <!-- <li class="item">
+        <a ui-sref-active="l-nav-active" ui-sref="index.portal"><img src="images/leftbar/home.png" alt="home"></a>
+        <aside>首页</aside>
+    </li> -->
+    <li class="item">
+        <a ui-sref-active="l-nav-active" ui-sref="index.conference.apply"><img src="images/conference/left-apply-icon.png" alt="message"></a>
+        <aside>会议室预定</aside>
+    </li>
+    <!-- <li class="item">
+        <a ui-sref-active="l-nav-active" ui-sref="index.conference.list"><img src="images/leftbar/leave.png" alt="mail-list"></a>
+        <aside>会议详情</aside>
+    </li> -->
+    <li class="item">
+        <a ui-sref-active="l-nav-active" ui-sref="index.conference.list"><img src="images/conference/left-list-icon.png" alt="book"></a>
+        <aside>会议日历</aside>
+    </li>
+     <li class="item">
+        <a ui-sref-active="l-nav-active" ui-sref="index.conference.own"><img src="images/conference/left-list-icon.png" alt="book"></a>
+        <aside>我的发起</aside>
+    </li>
+</ul>
+
+<ul class="l-nav-open" ng-if="isOpen">
+    <!-- <li class="item">
+        <a class="head-pic" ui-sref="index.personalCenter">
+            <img ng-src="{{headimg}}" src="" err-src="images/portal/avatar.jpg" alt="head-pic">
+            <div class="leftbar-user">
+                <h3>{{userInfo.info.name}}</h3>
+                <p>欢迎来到SC小家</p>
+            </div>
+        </a>
+    </li> -->
+    <li class="item">
+        <a class="head-pic" ui-sref="index.personalCenter">
+            <img ng-src="{{headimg}}" src="" err-src="images/portal/avatar.jpg" alt="head-pic">
+            <div class="leftbar-user">
+                <h3>{{name}}</h3>
+                <p>欢迎来到盛灿小家</p>
+            </div>
+        </a>
+    </li>
+   <!--  <li class="item">
+        <a ui-sref="index.conference" ui-sref-active="l-nav-active">
+            <img src="images/leftbar/approve.png">
+            <h3>会议室管理</h3>
+        </a>
+    </li> -->
+    <li class="item">
+        <a ui-sref="index.conference.apply" ui-sref-active="l-nav-active">
+            <img src="images/conference/left-apply-icon.png">
+            <h3>会议室预定</h3>
+        </a>
+    </li>
+    
+    <li class="item">
+        <a ui-sref="index.conference.list" ui-sref-active="l-nav-active">
+            <img src="images/conference/left-list-icon.png">
+            <h3>会议日历</h3>
+        </a>
+    </li>
+    <li class="item">
+        <a ui-sref="index.conference.own" ui-sref-active="l-nav-active">
+            <img src="images/conference/left-list-icon.png">
+            <h3>我的发起</h3>
+        </a>
+    </li>
+</ul>
+<div ng-class="{'lb-icon-open': !isOpen, 'lb-icon-fold': isOpen}" ng-click="toggleFn()"></div>
+

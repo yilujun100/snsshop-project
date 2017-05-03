@@ -1,0 +1,33 @@
+<!-- 我加入的圈子 -->
+<div class="circle">
+	<div class="circle-has-joined">
+		<div class="circle-joined-hd">
+			<h3>我加入的圈子</h3>			
+		</div>
+		<div class="circle-joined-con">
+			<ul class="circle-list">
+				<li class="circle-item" ng-repeat="category in joinedList">
+					<div class="circle-info-basic fl">
+						<img ng-src="{{category.images}}" width="45" height="45" alt="" class="circle-thumb">
+						<h3 class="circle-name" ng-bind="category.title"></h3>
+						<p class="circle-number">{{ category.member_count }}人</p>
+					</div>
+					<!-- <a href="javascript:;" class="circle-actions fr" ng-class="{'join': category.status == false, 'already-joined': category.status == true}" ng-click="exit(category)">已加入</a> -->					
+                    <a href="javascript:;" class="circle-action-follow-already" ng-click="exit(category)">已关注</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<a href="#" class="btn-new-post">发帖</a>
+
+<!-- bottom nav	start -->
+<div class="navbar navbar-app navbar-absolute-bottom" ui-yield-to="bottom-button">
+    <div class="btn-group justified">
+        <a href="#/index" class="btn btn-navbar" ng-class="{active:setHighlight('/index,/search-result')}"><i class="icon-nav icon-nav-bbs"></i> BBS</a>
+        <a href="#/circle" class="btn btn-navbar" ng-class="{active:setHighlight('/circle')}"><i class="icon-nav icon-nav-circle"></i> 圈子</a>
+        <a href="#/personal-center" class="btn btn-navbar" ng-class="{active:setHighlight('/personal-center')}"><i class="icon-nav icon-nav-personal"></i> 个人</a>
+    </div>
+</div>
+<!-- bottom nav	end -->

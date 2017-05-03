@@ -1,0 +1,89 @@
+<ul class="l-nav l-nav-fold" ng-if="!isOpen">
+    <li class="item">
+        <a class="head-pic" ui-sref="index.personalCenter"><img ng-src="{{headimg}}" src="" err-src="images/portal/avatar.jpg" alt="head-pic"></a>
+        <aside>头像</aside>
+    </li>
+    <li class="item">
+        <a ui-sref-active="l-nav-active" ui-sref="index.personalCenter.infoBasic"><img src="images/personal_center/icon_leftbar_info.png" alt="message"></a>
+        <aside>基本信息</aside>
+    </li>
+    <li class="item">
+        <a ui-sref-active="l-nav-active" ui-sref="index.personalCenter.overtimeOff"><img src="images/personal_center/icon_leftbar_exchange.png" alt="mail-list"></a>
+        <aside>加班调休信息</aside>
+    </li>
+    <li class="item">
+        <a ui-sref-active="l-nav-active" ui-sref="index.personalCenter.msg"><img src="images/personal_center/icon_leftbar_bell.png" alt="book"></a>
+        <aside>消息中心</aside>
+    </li>
+    <li class="item">
+        <a ui-sref-active="l-nav-active" ui-sref="index.personalCenter.myCollect"><img src="images/personal_center/icon_leftbar_star.png" alt="book"></a>
+        <aside>我收藏的</aside>
+    </li>
+    <li class="item">
+        <a ui-sref-active="l-nav-active" ui-sref="index.personalCenter.myComment"><img src="images/personal_center/icon_leftbar_msg.png" alt="book"></a>
+        <aside>我评论的</aside>
+    </li>
+    <li class="item">
+        <a ui-sref-active="l-nav-active" ui-sref="index.personalCenter.myPublish"><img src="images/personal_center/icon_leftbar_publish.png" alt="book"></a>
+        <aside>我发布的</aside>
+    </li>
+    <li class="item">
+        <a ui-sref-active="l-nav-active" ui-sref="index.personalCenter.myPraise"><img src="images/personal_center/icon_leftbar_thumbs.png" alt="book"></a>
+        <aside>我赞过的</aside>
+    </li>
+</ul>
+
+<ul class="l-nav-open" ng-if="isOpen">
+    <li class="item">
+        <a class="head-pic" ui-sref="index.personalCenter">
+            <img ng-src="{{headimg}}" src="" err-src="images/portal/avatar.jpg" alt="head-pic">
+            <div class="leftbar-user">
+                <h3>{{userName}}</h3>
+                <p>欢迎来到盛灿小家</p>
+            </div>
+        </a>
+    </li>
+    <li class="item">
+        <a ui-sref="index.personalCenter.infoBasic" ui-sref-active="l-nav-active">
+            <img src="images/personal_center/icon_leftbar_info.png">
+            <h3>基本信息</h3>
+        </a>
+    </li>
+    <li class="item">
+        <a ui-sref="index.personalCenter.overtimeOff" ui-sref-active="l-nav-active">
+            <img src="images/personal_center/icon_leftbar_exchange.png">
+            <h3>加班调休信息</h3>
+        </a>
+    </li>
+    <li class="item">
+        <a ui-sref="index.personalCenter.msg" ui-sref-active="l-nav-active">
+            <img src="images/personal_center/icon_leftbar_bell.png">
+            <h3>消息中心</h3>
+        </a>
+    </li>
+    <li class="item">
+        <a ui-sref="index.personalCenter.myCollect" ui-sref-active="l-nav-active">
+            <img src="images/personal_center/icon_leftbar_star.png">
+            <h3>我收藏的</h3>
+        </a>
+    </li>
+    <li class="item">
+        <a ui-sref="index.personalCenter.myComment" ui-sref-active="l-nav-active">
+            <img src="images/personal_center/icon_leftbar_msg.png">
+            <h3>我评论的</h3>
+        </a>
+    </li>
+    <li class="item">
+        <a ui-sref="index.personalCenter.myPublish" ui-sref-active="l-nav-active">
+            <img src="images/personal_center/icon_leftbar_publish.png">
+            <h3>我发布的</h3>
+        </a>
+    </li>
+    <li class="item">
+        <a ui-sref="index.personalCenter.myPraise" ui-sref-active="l-nav-active">
+            <img src="images/personal_center/icon_leftbar_thumbs.png">
+            <h3>我赞过的</h3>
+        </a>
+    </li>
+</ul>
+<div ng-class="{'lb-icon-open': !isOpen, 'lb-icon-fold': isOpen}" ng-click="toggleFn()"></div>

@@ -1,0 +1,406 @@
+@import "mobile-angular-ui/src/less/variables.less";
+.sign-panel {
+    height: 100%;
+}
+
+.sign-panel .time {}
+
+.sign-panel .sign-btn {
+    position: fixed;
+    bottom: 12%;
+    left: 0;
+    right: 0;
+    width: 170px;
+    height: 38px;
+    background: #ffe21f;
+    border-radius: 20px;
+    box-shadow: 0 3px 0 #ecd012;
+    color: #ff4040;
+    display: block;
+    margin: 10% auto 0;
+    font-size: 18px;
+    i {
+        font-size: 18px;
+        line-height: 38px;
+    }
+}
+
+.inline-datepicker table {
+    width: 100%;
+}
+
+.inline-datepicker table th {
+    height: 40px;
+}
+
+.inline-datepicker table thead tr:first-child th,
+.inline-datepicker table thead tr:first-child .btn-default {
+    background: #f1d300;
+    color: #fff;
+    padding: 0
+}
+
+.inline-datepicker table thead tr:first-child th {
+    padding: 10px;
+}
+
+.inline-datepicker table td,
+.inline-datepicker table th {
+    background-color: #fff;
+}
+
+.inline-datepicker table td button {
+    padding: 5px 0;
+}
+
+.inline-datepicker table td button,
+.inline-datepicker table th button {
+    border: none;
+    border-radius: 0;
+    font-size: 16px;
+    line-height: 30px;
+}
+
+.inline-datepicker table td button.btn-info.active,
+.inline-datepicker table th button.btn-info.active {
+    background-color: transparent;
+    color: #fff;
+}
+
+.inline-datepicker table td button span,
+.inline-datepicker table th button span {
+    width: 30px;
+    height: 30px;
+    display: block;
+    margin: 0 auto;
+    font-size: 12px;
+}
+
+.inline-datepicker table td button.btn-info {
+    background-color: #ffffff
+}
+
+.inline-datepicker table td button .text-muted {
+    color: #CCC
+}
+
+.inline-datepicker table td button.btn-info.active span,
+.inline-datepicker table th button.btn-info.active span {
+    border-radius: 50%;
+    color: #fff;
+    background: #2285ff;
+    width: 30px;
+    height: 30px;
+    display: block;
+}
+
+.inline-datepicker table td button.btn-info.active .text-info,
+.inline-datepicker table th button.btn-info.active .text-info {
+    color: #ffffff;
+}
+
+.inline-datepicker table td button.btn-info {
+    color: #000;
+}
+
+.inline-datepicker table td button .text-info {
+    border-radius: 50%;
+    border: 1px #2285ff solid;
+}
+
+.btn-default:active,
+.btn-default.active,
+.open > .dropdown-toggle.btn-default {
+    background-color: #fff
+}
+
+ul {
+    text-align: left;
+}
+
+ul li {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+ul li label {
+    font-weight: normal;
+    width: 80px;
+    text-align: right;
+    margin-right: 5px;
+}
+
+
+/**/
+
+.signIn {
+    color: #333;
+}
+
+
+/*签到*/
+
+.sign-in-bg {
+    background: url(../images/sign-in-bg-01.jpg) no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+.sign-in-title {
+    width: 80%;
+    margin: 0 auto;
+    padding: 24% 0 5% 0;
+    min-height: 170px
+}
+
+.timeWarp {
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.timeBox {
+    position: fixed;
+    top: 4%;
+    /*right: 0;*/
+    /*bottom: 0;*/
+    left: 10px;
+    font-size: 12px;
+    color: #6e5d58;
+}
+
+.timeBox.moontype {
+    color: #989699;
+}
+
+.timeBox .time {
+    /*padding-top: 5%;*/
+    font-size: 30px;
+    margin-bottom: 0;
+    color: #544440;
+}
+
+.timeBox.moontype .time {
+    /*padding-top: 5%;*/
+    font-size: 30px;
+    color: #fff;
+    margin-bottom: 0;
+}
+
+.timeBox .sign-type {
+    text-align: left;
+}
+
+.timeBox .sun {
+    background: url(../images/sun.png) no-repeat;
+    background-size: cover;
+    float: left;
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+}
+
+.timeBox .moon {
+    background: url(../images/moon.png) no-repeat;
+    background-size: cover;
+    float: left;
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+}
+
+.cartoon_icon {
+    background: url(../images/cartoon.png) no-repeat;
+    background-size: cover;
+    width: 49px;
+    height: 69px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    display: block;
+}
+
+.almost_late .cartoon {}
+
+.late .cartoon {
+    background-position: 0 -260px;
+}
+
+.late .signInTitle {
+    padding-top: 17%;
+}
+
+.early .cartoon {
+    background-position: 0 -123px;
+}
+
+.early .signInTitle {
+    padding-top: 17%;
+}
+
+.currentTime {
+    /*border-bottom: 1px solid #b7d3e5;*/
+    /*width: 60%;*/
+    margin: 0 auto;
+    font-size: 14px;
+    color: #6e5d58;
+    height: 50%;
+    /*padding-top: 28%;*/
+    box-sizing: border-box;
+    text-align: left;
+}
+
+.moontype .currentTime {
+    color: #989699;
+}
+
+.currentTime span {
+    display: block;
+}
+
+.currentTime .colck {
+    background: url(../images/clock.png) no-repeat;
+    background-size: cover;
+    float: left;
+    width: 12px;
+    height: 12px;
+    margin-right: 6px;
+    margin-top: 3px;
+    margin-left: 1px;
+}
+
+.currentTime .moon-colck {
+    background: url(../images/moon-clock.png) no-repeat;
+    background-size: cover;
+    float: left;
+    width: 12px;
+    height: 12px;
+    margin-right: 6px;
+    margin-top: 3px;
+    margin-left: 1px;
+}
+
+.sign-panel .sign-btn .smile_icon2 {
+    background: url(../../../images/icon.png) no-repeat 0 -237px;
+    background-size: cover;
+    margin-right: 10px;
+    width: 20px;
+    height: 38px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.sign-panel .sign-btn .smile_icon3 {
+    background: url(../../../images/icon.png) no-repeat 0 -272px;
+    background-size: cover;
+    margin-right: 10px;
+    width: 20px;
+    height: 38px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.sign-panel .sign-btn span {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 38px;
+}
+
+
+/*签退*/
+
+.sign-out-bg {
+    background: url(../images/sign-out-bg-01.jpg) no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+.out .cartoon {
+    background-position: 0 -388px;
+    left: 0;
+    right: inherit;
+}
+
+@media (device-height:480px) and (-webkit-min-device-pixel-ratio:2) {
+    /* 兼容iphone4/4s */
+    .sign-in-title {
+        width: 70%;
+        padding: 20% 0 5% 0;
+        min-height: 150px
+    }
+    .sign-panel .sign-btn {
+        margin: 5% auto 0;
+    }
+    .timeWarp {
+        width: 100%;
+    }
+    .timeBox .time {
+        font-size: 22px;
+    }
+    .timeBox.moontype .time{
+        font-size: 22px;
+    }
+    .currentTime {
+        font-size: 12px;
+    }
+    .timeBox {
+        top: 2%;
+    }
+    .currentTime .colck {
+        margin-top: 2px;
+        width: 11px;
+        height: 11px;
+    }
+    .sign-panel .sign-btn {
+        width: 100px;
+        height: 23px;
+        bottom: 12%;
+    }
+    .sign-panel .sign-btn i,
+    .sign-panel .sign-btn span {
+        line-height: 29px;
+        font-size: 12px;
+    }
+}
+
+@media (device-height:568px) and (-webkit-min-device-pixel-ratio:2) {
+    /* 兼容iphone5 */
+    .sign-in-title {
+        width: 70%;
+        padding: 20% 0 5% 0;
+        min-height: 150px
+    }
+    .sign-panel .sign-btn {
+        margin: 5% auto 0;
+    }
+    .timeWarp {
+        width: 100%;
+    }
+    .timeBox .time {
+        font-size: 24px;
+    }
+    .timeBox.moontype .time {
+        font-size: 24px;
+    }
+    .currentTime {
+        font-size: 12px;
+    }
+    .currentTime .colck {
+        margin-top: 1px;
+        width: 12px;
+        height: 12px;
+    }
+    .sign-panel .sign-btn {
+        width: 142px;
+        bottom: 15%;
+    }
+}
+
+@media (device-height:667px) and (-webkit-min-device-pixel-ratio:2) {
+    /* 兼容iphone6 */
+}
+
+@media (device-height:736px) and (-webkit-min-device-pixel-ratio:2) {
+    /* 兼容iphone6 Plus */
+}

@@ -1,0 +1,162 @@
+<div class="room">
+    <div class="ap-head">当前位置：<a ui-sref="index.conference">会议室管理</a>><a ui-sref="index.conference">会议室预定</a></div>
+    <div class="room-body" fixed-detail-height>
+        <!-- 选择会议室 -->
+        <!-- <div class="clearfix select-room">
+            <div class="select-label">选择会议室：</div>
+            <ui-select ng-model="condition.selectRoom" ng-disabled="disabled" class="room-selcet-num">
+                <ui-select-match placeholder="选择会议室">{{$select.selected.name}}</ui-select-match>
+                <ui-select-choices repeat="type in conferenceItems| propsFilter: {name: $select.search}">
+                    <div>{{type.name}}</div>
+                </ui-select-choices>
+            </ui-select>
+        </div> -->
+        <!-- 选择日历和时间段 -->
+        <div class="select-room-dateTime clearfix">
+            <div class="select-room-date">
+                <!-- <div class="select-room-date-label"></div> -->
+                <div class="select-room-date-content">
+                    <uib-datepicker ng-model="currentDate" min-date="minDate" datepicker-options="options" datepicker-mode="year" format-day-title="yyyy年MM月" format-month-title="yyyy年" format-month="MM月" class="inline-datepicker" style="border: 1px solid #ececec;"></uib-datepicker>
+                </div>
+            </div>
+            <div class="select-room-time">
+                <!-- <div class="select-room-time-label"></div> -->
+                <div class="select-room-time-content clearfix">
+                    <div class="select-room-number">
+                        <div ng-repeat="type in conferenceItems|orderBy:'id'">{{type.name}}</div>
+                    </div>
+                    <div class="con-when-media" fixed-width>
+                        <div class="con-when">
+                            <ul class="hour">
+                                <li class="hour-label" ng-repeat="hour in accessTimes[0].data">{{hour.point}}</li>
+                            </ul>
+                            <div style="border-bottom: 1px solid #aaa">
+                                <div class="con-when-room-num" ng-repeat="accessTime in accessTimes|orderBy:'room_id'">
+                                    <label ng-repeat="(key,item) in accessTime.data | accessTimeFilter" ng-class="{'when-bg':isSelectedTime(item,accessTime.room_id),'when-disabled':item.is_use==0,'when-booked':item.is_use==2}" alert-book-time item="{{item}}" row="{{accessTime.row}}">
+                                        <input type="checkbox" ng-model="formData" ng-true-value="{{item}}" ng-false-value="false" ng-click="checkboxClick(accessTime.room_id,item,item.id,$event)" ng-checked="isSelectedTime(item,accessTime.room_id)" ng-disabled="!item.is_use||item.is_use==2" />
+                                        <!-- <div class="float_remind_box"><span ng-if="!item.is_use">已过期</span><span ng-if="item.is_use">{{accessTime.room_name}} {{item.point}}-{{accessTime.data[key+1].point}}</span></div> -->
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="float_remind_box_book"><span>{{accessTime.room_name}} {{showStartTime}}-{{showEndTime}}</span></div>
+                        </div>
+                    </div>
+                </div>
+                <ul class="book-color clearfix">
+                    <li><span class="book-color-label">已过期</span><span class="book-out-date"></span></li>
+                    <li><span class="book-color-label">已预订</span><span class="book-reserve"></span></li>
+                    <li><span class="book-color-label">已选中</span><span class="book-selected"></span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="show-room-form">
+            <!-- 会议时间 -->
+            <div class="show-room-dateTime">
+                <label style="margin-right: 57px;">会议时间</label>{{bookCreate.book_date}} &nbsp;&nbsp;<span ng-if="showStartTime">{{showStartTime}}-{{showEndTime}}</span>
+            </div>
+            <!-- 会议主题 -->
+            <div class="show-room-title">
+                <label style="margin-right: 52px">会议主题</label>
+                <input type="text" ng-model="bookCreate.book_name" required maxlength="20"><span style="color: red;margin-left: 5px;">*</span>
+            </div>
+            <!-- 会议内容 -->
+            <div class="show-room-content">
+                <label style="margin-right: 52px">会议内容</label>
+                <textarea ng-model="bookCreate.book_content" rows="8"></textarea>
+            </div>
+            <!-- 会议时间提醒 -->
+            <div class="show-room-warn clearfix">
+                <label style="margin-right: 28px;float: left;padding-top: 10px;">会议时间提醒</label>
+                <ui-select ng-model="bookCreate.book_clock" ng-disabled="disabled" class="room-selcet-num">
+                    <ui-select-match placeholder="选择提醒分钟">{{$select.selected}}</ui-select-match>
+                    <ui-select-choices repeat="type in book_clocks">
+                        <div>{{type}}</div>
+                    </ui-select-choices>
+                </ui-select>
+                <span class="label-clock">分钟</span>
+            </div>
+            <!-- 邀请会议人员 -->
+            <div class="show-room-users">
+                <label style="margin-right: 28px">邀请会议人员</label><span ng-click="open()">添加</span>
+            </div>
+            <!-- 会议人员列表 -->
+            <div class="show-room-users-list">
+                <ul class="clearfix">
+                    <li class="con-personnel" ng-repeat="user in allCheckedUsers"><img ng-src="{{user.avatar}}" src="" err-src="images/portal/avatar.jpg" alt="personnel">
+                        <i class="glyphicon glyphicon-remove" ng-click="removeUser(user)"></i>
+                        <div>{{user.name}}</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- 确定 -->
+        <div class="select-room-submit"><span ng-click="submit()">确定</span></div>
+    </div>
+</div>
+<script type="text/ng-template" id="myModalContent.html">
+    <div class="modal-body clearfix room-modal" id="modal-body">
+        <div class="show-room-users-department">
+            <div class="panel-body" slim-scroll dynamic-height="160">
+                <div class="department-tree" ui-tree data-drag-enabled="true">
+                    <ol ui-tree-nodes ng-model="list">
+                        <li ng-repeat="item in list" ui-tree-node ng-include="'items_renderer.html'"></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <div class="show-room-users-lists">
+            <ul class="clearfix" slim-scroll>
+                <div style="text-align: center;">
+                    <label class="user-check-all" for="user-check-all" ng-if="departmentUsers&&departmentUsers.length>0">全选
+                        <input id="user-check-all" type="checkbox" ng-click="userCheckAll($event,departmentUsers)" ng-checked="isSelectedAll(departmentUsers)">
+                    </label>
+                    <input class="search_text" type="search" ng-model-options='{ debounce: 300 }' ng-model="inputName" ng-change="searchUserFn()" placeholder="搜索">
+                </div>
+                <li class="con-personnel" ng-repeat="item in departmentUsers">
+                    <div>
+                        <label style="display: block;position: relative;height: 150px;" class="" for="user{{item.id}}">
+                            <img ng-src="{{item.avatar}}" src="" err-src="images/portal/avatar.jpg" alt="personnel">
+                            <div>{{item.name}}</div>
+                            <input class="user-checkbox" ng-click="pushfuncArray($event,item)" id="user{{item.id}}" type="checkbox" ng-checked="isSelected(item.id)">
+                            <span class="user-checkbox-image"></span>
+                        </label>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="modal-footer room-modal">
+        <button class="btn l-sign" type="button" ng-click="sureUsers()">确定</button>
+        <button class="btn r-sign" type="button" ng-click="cancel()">取消</button>
+    </div>
+</script>
+<script type="text/ng-template" id="items_renderer.html">
+    <div class="every-department clearfix" ng-click="selectUserDarp(item.id,item,$event)">
+        <span style="display: inline-block;" ng-if="item.parent_id!=0" ng-style="{width:20*(item.indent)+'px'}"></span>
+        <label for="{{item.id}}" class="department-checkbox">
+            <span class="department-name dropdown-toggle" ng-class="{active:currentDepartment.id == item.id}"> <i style="display: inline-block;vertical-align: middle;"><img src="images/conference/dir.png" alt=""></i> {{item.name}}
+        </span>
+            <!-- <input type="checkbox">
+            <span class="checkbox-image"></span> -->
+        </label>
+        <span style="position: absolute;top: 15px;right: 10px;" data-ng-show="item.items.length > 0">
+                        <a class="angular-ui-tree-icon" data-nodrag ng-click="toggle($event,this)">
+                            <i class="angular-ui-tree-icon-collapse glyphicon" ng-class="{'glyphicon-plus': collapsed, 'glyphicon-minus': !collapsed}"></i>
+                        </a>
+                    </span>
+        <!-- <span class="render_blank" data-ng-hide="item.items.length > 0"></span> -->
+    </div>
+    <ol ui-tree-nodes="options" ng-model="item.items" ng-class="{hidden: collapsed}">
+        <li class="user-li" ng-repeat="user in item.users">
+            <span style="float: left;height: 40px;width: 20px;" ng-if="item.parent_id==0"></span>
+            <span style="float: left;height: 40px;" ng-if="item.parent_id!=0" ng-style="{width:20*(item.indent+1)+'px'}"></span>
+            <label for="user{{user.id}}">
+                <img class="user-avatar" ng-src="{{user.avatar}}" src="" err-src="images/portal/avatar.jpg" alt="user_pic"> {{user.name}}
+                <!-- <input id="user{{user.id}}" class="user-checkbox" type="checkbox" ng-click="userchecked(user,$event)" ng-checked="isSelected(user.id)"> -->
+                <!-- <span class="user-checkbox-image"></span> -->
+            </label>
+        </li>
+        <li ng-repeat="item in item.items" ui-tree-node data-collapsed="true" ng-include="'items_renderer.html'">
+        </li>
+    </ol>
+</script>

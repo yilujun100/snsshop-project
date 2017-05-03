@@ -1,0 +1,198 @@
+<!-- 门户首页 -->
+<div class="container clearfix">
+	<!-- main start -->
+	<div class="main">
+		<!-- banner -->
+		<div class="banner">
+			<!-- <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
+					      <div uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
+					        <img ng-src="{{slide.image}}" style="margin:auto;">
+					        <div class="carousel-caption">
+					          <h4>Slide {{slide.id}}</h4>
+					          <p>{{slide.text}}</p>
+					        </div>
+					      </div>
+					    </div> -->
+		    <div>
+				<ul uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
+					<li uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id" on-finish-render-filters><a ng-href="{{slide.link}}" target="_blank"><img ng-src="{{ slide.image }}" width="100%" height="auto" alt=""></a></li>
+				</ul>		    	
+		    </div>
+			<!-- <ul>
+				<li><a href="#"><img src="../images/portal/banner.jpg" width="100%" height="290" alt=""></a></li>
+			</ul> -->
+		</div>
+
+		<!-- list -->
+		<div class="list mt-10" ng-repeat="column in columnList">
+			<div class="list-hd clearfix">
+				<h3 class="list-tit fl" ng-bind="column.name"></h3>
+				<a class="list-more fr" ui-sref="index.portal.columnList({columnId:column.id})">更多</a>
+			</div>
+			<div class="list-con">
+				<ul>
+					<li ng-repeat="article in column.newestPortalArticle | limitTo: 5">
+						<a ui-sref="index.portal.columnArticle({id:article.id})" data-id="{{article.id}}">
+							<span ng-bind="article.title"></span>
+							<em class="publish-time" ng-bind="article.pulish_time * 1000 | date: 'yyyy-MM-dd'"></em>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- notice -->
+		<!-- <div class="list notice mt-10">
+			<div class="list-hd clearfix">
+				<h3 class="list-tit fl">最新公告</h3>
+				<a ui-sref="index.portal.noticeList" class="list-more fr">更多</a>
+			</div>
+			<div class="list-con">
+				<ul>
+					<li ng-repeat="notice in noticeList | limitTo: 5"><a ui-sref="index.portal.noticeDetail({id:notice.id})" data-id="{{notice.id}}"><span ng-bind="notice.title"></span><em class="publish-time" ng-bind="notice.pulish_time * 1000 | date: 'yyyy-MM-dd'"></em></a></li>
+				</ul>
+			</div>
+		</div> -->
+		
+		<!-- company events -->
+		<!-- <div class="list company-events mt-10">
+			<div class="list-hd clearfix">
+				<h3 class="list-tit fl">企业大事记</h3>
+				<a ui-sref="index.portal.companyNews" class="list-more fr">更多</a>
+			</div>
+			<div class="list-con">
+				<ul>
+					<li ng-repeat="news in newsList | limitTo: 5"><a ui-sref="index.portal.article({id:news.id})" data-id="{{news.id}}"><span ng-bind="news.title"></span><em class="publish-time" ng-bind="news.pulish_time * 1000 | date: 'yyyy-MM-dd'"></em></a></li>
+				</ul>
+			</div>			
+		</div> -->
+		
+		<!-- admini system -->
+		<!-- <div class="list admini-system mt-10">
+			<div class="list-hd clearfix">
+				<h3 class="list-tit fl">公司制度</h3>
+				<a ui-sref="index.portal.systemList" class="list-more fr">更多</a>
+			</div>
+			<div class="list-con">
+				<ul>
+					<li ng-repeat="system in systemList | limitTo: 5"><a ui-sref="index.portal.systemDetail({id:system.id})" data-id="{{system.id}}"><span ng-bind="system.title"></span><em class="publish-time" ng-bind="system.pulish_time * 1000 | date: 'yyyy-MM-dd'"></em></a></li>
+				</ul>
+			</div>				
+		</div> -->
+	</div>
+	<!-- main end -->
+	<!-- sidebar start -->
+	<div class="sidebar">
+		<!-- ad -->
+		<div class="ad">
+			<ul>
+				<li ng-repeat="ad in adList">
+					<a ng-href="{{ad.link}}" target="_blank">
+						<img ng-src="{{ad.src}}" width="320" height="90" alt="">
+						<h3 class="ad-tit" ng-bind="ad.name"></h3>
+					</a>
+				</li>
+				<!-- <li>
+					<a href="#">
+						<img src="../images/portal/ad_1.jpg" width="320" height="90" alt="">
+						<h3 class="ad-tit">高管活动</h3>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="../images/portal/ad_2.jpg" width="320" height="90" alt="">
+						<h3 class="ad-tit">阳朔蝶变之旅</h3>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="../images/portal/ad_3.jpg" width="320" height="90" alt="">
+						<h3 class="ad-tit">7月生日会</h3>
+					</a>
+				</li> -->
+			</ul>
+		</div>
+
+		<!-- new partner -->
+		<div class="new-partner mt-10">
+			<div class="partner-hd">
+				<h3 class="fl">新伙伴</h3>
+				<a ui-sref="index.portal.newPartner" class="list-more fr">更多</a>
+			</div>
+			<div class="partner-con">
+				<ul>
+					<li ng-repeat="newPartner in newPartners | limitTo:9">
+						<a ui-sref="index.portal.newPartner.detail({userid:newPartner.id})">
+							<div class="partner-cell-1">
+								<img class="user-avatar" ng-src="{{newPartner.avatar}}" width="60" height="60" alt="">
+							</div>
+							<div class="partner-cell-2">
+								<h3 class="user-name" ng-bind="newPartner.name"></h3>
+								<p class="department">{{ newPartner.department_path }}/{{ newPartner.position }}</p>
+								<!-- <p class="join-date" ng-bind="newPartner.join_date"></p> -->
+							</div>
+						</a>
+					</li>
+					<!-- <li>
+						<a href="#">
+							<div class="partner-cell-1">
+								<img class="user-avatar" src="../images/portal/avatar.jpg" width="60" height="60" alt="">
+								<h3 class="user-name">陈晓雪</h3>
+							</div>
+							<div class="partner-cell-2">
+								<p class="department">总部／产品技术中心／研发支持部／前端开发组</p>
+								<p class="join-date">2016-08-14</p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<div class="partner-cell-1">
+								<img class="user-avatar" src="../images/portal/avatar.jpg" width="60" height="60" alt="">
+								<h3 class="user-name">李刚</h3>
+							</div>
+							<div class="partner-cell-2">
+								<p class="department">总部／产品技术中心／设计部</p>
+								<p class="join-date">2016-08-14</p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<div class="partner-cell-1">
+								<img class="user-avatar" src="../images/portal/avatar.jpg" width="60" height="60" alt="">
+								<h3 class="user-name">陈晓雪</h3>
+							</div>
+							<div class="partner-cell-2">
+								<p class="department">总部／产品技术中心／研发支持部／前端开发组</p>
+								<p class="join-date">2016-08-14</p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<div class="partner-cell-1">
+								<img class="user-avatar" src="../images/portal/avatar.jpg" width="60" height="60" alt="">
+								<h3 class="user-name">陈晓雪</h3>
+							</div>
+							<div class="partner-cell-2">
+								<p class="department">总部／产品技术中心／研发支持部／前端开发组</p>
+								<p class="join-date">2016-08-14</p>
+							</div>
+						</a>
+					</li> -->
+				</ul>
+			</div>
+		</div>
+
+		<!-- special -->
+		<!-- <div class="special mt-10">
+			<a href="#">
+				<h3 class="spe-tit">[总经办]品读《跟任何人都聊得来》，练就结构化东逻辑思维模式。</h3>
+				<p class="spe-time">2016-07-29</p>
+				<img src="../images/portal/special_thumb.jpg" width="280" height="260" alt="" class="spe-thumb">
+				<p class="spe-desc">未来嵊灿科技将会不断尝试打造创新的O2O解决方案和智慧运营模式，引领全国的“互联网+”发展大潮。</p>				
+			</a>
+		</div> -->
+	</div>
+	<!-- sidebar end -->
+</div>

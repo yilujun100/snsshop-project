@@ -1,0 +1,76 @@
+<!-- 积分详情 -->
+<div class="scrollable">
+	<div class="scrollable-content">
+		<div class="score-detail">
+			<div class="score-card">
+				<div class="score-card-avatar">
+					<img ng-src="{{userData.avatar}}" width="64" height="64" alt="">
+				</div>
+				<div class="score-card-info">
+					<p><em class="name">{{userData.name}}<i class="icon-avatar-w"></i></em></p>
+					<p class="score-department" ng-bind="userData.position"></p>
+					<p class="my-score clearfix"><em class="fl">我的积分：{{ scoreTotal.score }}</em><a href="javascript:;" class="btn-rule fr" ng-click="showRule()">积分规则</a></p>
+				</div>
+			</div>
+			<div class="score-list">
+				<h3>积分详情</h3>
+				<table>
+					<tbody>
+						<tr ng-repeat="scoreItem in scoreList">
+							<td ng-bind="scoreItem.from_desc"></td>
+							<td ng-bind="scoreItem.create_time * 1000 | date: 'yyyy-MM-dd'"></td>
+							<td ng-class="{'score-5': scoreItem.score == 5, 'score-1': scoreItem.score == 1}">+{{ scoreItem.score }}</td>
+						</tr>
+						<!-- <tr>
+							<td>发帖一篇文章</td>
+							<td>2016-06-05</td>
+							<td class="score-5">+5</td>
+						</tr>
+						<tr>
+							<td>发表一次评论</td>
+							<td>2016-06-05</td>
+							<td class="score-1">+1</td>
+						</tr>
+						<tr>
+							<td>发表一次评论</td>
+							<td>2016-06-05</td>
+							<td class="score-1">+1</td>
+						</tr>
+						<tr>
+							<td>发帖一篇文章</td>
+							<td>2016-06-05</td>
+							<td class="score-5">+5</td>
+						</tr> -->
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="popup-mask" ng-show="showPopup"></div>
+<div class="popup-rule" ng-show="showPopup">
+	<div class="popup-content">
+		<h3>BBS积分规则：</h3>
+		<p>1.发布帖子被加精奖励20积分</p>
+		<p>2.发帖奖励5积分</p>
+		<p>3.评论或点赞别人的帖子奖励1积分</p>
+		<p>积分奖励规则最终解释权归OA系统所有。</p>
+	</div>
+	<div class="popup-bott">
+		<a href="javascript:;" id="btnPopConfirm" ng-click="showPopup = false">确定</a>
+	</div>
+</div>
+
+
+<a href="#/post" class="btn-new-post">发帖</a>
+
+<!-- bottom nav	start -->
+<div class="navbar navbar-app navbar-absolute-bottom" ui-yield-to="bottom-button">
+    <div class="btn-group justified">
+        <a href="#/index" class="btn btn-navbar" ng-class="{active:setHighlight('/index,/search-result')}"><i class="icon-nav icon-nav-bbs"></i> BBS</a>
+        <a href="#/circle" class="btn btn-navbar" ng-class="{active:setHighlight('/circle')}"><i class="icon-nav icon-nav-circle"></i> 圈子</a>
+        <a href="#/personal-center" class="btn btn-navbar" ng-class="{active:setHighlight('/personal-center')}"><i class="icon-nav icon-nav-personal"></i> 个人</a>
+    </div>
+</div>
+<!-- bottom nav	end -->

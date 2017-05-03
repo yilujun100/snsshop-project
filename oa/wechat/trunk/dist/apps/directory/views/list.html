@@ -1,0 +1,21 @@
+<div class="scrollable">
+  <div class="scrollable-content" ui-scroll-bottom="bottomReached()">
+    <div class="list-group user-list">
+      <ul class="list-unstyled">
+          <li ng-repeat="item in users">
+              <span class="initial-letter" ng-if="$index == 0 || users[$index-1].initial_letter != item.initial_letter">{{item.initial_letter?item.initial_letter:'#'}}</span>
+              <a ng-href="#/detail/{{item.id}}" class="list-group-item">
+                  <div class="pull-left">
+                      <img class="avatar" ng-src="{{ item.avatar?item.avatar:'../../images/icon_avatar_default.png' }}">
+                  </div>
+                  <div class="pull-left">
+                      <p class="user-name">{{ item.name }}</p>
+                      <p class="user-field user-phone">{{item.mobile}}</p>
+                  </div>
+                  <i class="fa fa-angle-right pull-right user-field"></i><span class="pull-right user-field">{{item.position}}</span>
+              </a>
+          </li>
+      </ul>
+    </div>
+  </div>
+</div>

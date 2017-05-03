@@ -1,0 +1,99 @@
+<!-- 我要发文 -->
+<div class="container" set-main-min-height>
+	<!-- breadcrumb -->
+	<div class="breadcrumb">
+		<ul>
+			<li>当前位置：</li>
+			<li><a ui-sref="index.knowledge">知识库</a></li>
+			<li>&gt;我要发文</li>
+		</ul>
+	</div>
+
+	<!-- km publish -->
+	<div class="km-publish mt-10">
+		<div class="km-publish-hd">
+			<h3>我要发文</h3>
+		</div>
+		<div class="km-publish-con">
+			<form name="kmPublishForm" novalidate>
+				<div class="km-form-item">
+					<label for="kmArticleTitle"><em>*</em>标题：</label>
+					<input type="text" name="kmArticleTitle" id="kmArticleTitle" ng-model="kmArticleTitle" ng-blur="checkTitle()" required>
+					<b class="error-info" ng-show="showErrorTitle">请输入标题</b>
+				</div>
+				<div class="km-form-item">
+					<label for="belongColumn"><em>*</em>栏目：</label>
+					<select name="belongColumn" id="belongColumn" ng-model="belongColumn" ng-options="column as column.name for column in columnList">
+						<!-- <option value="">干货</option>
+						<option value="">干货</option>
+						<option value="">干货</option> -->
+					</select>
+					<input type="hidden" id="selectedColumnId" ng-value="columnId" ng-bind="columnId">
+				</div>
+				<div class="km-form-item">
+					<label for="kmArticleTag"><em>*</em>添加标签：</label>
+					<span>
+						<p ng-repeat="tag in tagList"><input type="checkbox" name="kmArticleTag" id="{{tag.id}}" data-corp-id="{{tag.corp_id}}" data-create-time="{{tag.create_time}}" data-en-name="{{tag.en_name}}" data-sort="{{tag.sort}}" data-update-time="{{tag.update_time}}" value="{{tag.name}}"><label for="{{tag.id}}" ng-bind="tag.name"></label></p>
+						<!-- <p><input type="checkbox" id="tag1"><label for="tag1">标签1</label></p>
+						<p><input type="checkbox" id="tag2"><label for="tag2">标签2</label></p>
+						<p><input type="checkbox" id="tag3"><label for="tag3">标签3</label></p> -->
+					</span>
+					<b class="error-info" ng-show="showErrorTag">请添加标签</b>
+				</div>
+				<div class="km-form-item">
+					<label for="kmArticleDesc"><em>*</em>描述摘要：</label>
+					<textarea name="kmArticleDesc" id="kmArticleDesc" ng-model="kmArticleDesc" ng-blur="checkDesc()" required></textarea>
+					<b class="error-info" ng-show="showErrorDesc">请输入文章摘要</b>
+				</div>
+				<div class="km-form-item">
+					<label for="kmArticleCon"><em>*</em>内容：</label>					
+					<div id="kmArticleCon" ng-model="kmArticleCon" contenteditable="true"></div>
+					<b class="error-info" ng-show="showErrorCon">请输入文章内容</b>
+				</div>
+				<div class="km-form-item item-file-upload">
+					<label for="attachmentUpload">附件上传：</label>
+					<!-- <input type="file" name="attachmentUpload" id="attachmentUpload"> -->
+					<a href="javascript:;" class="btn-input-file">									
+						<input type="file" name="file" class="input-file" id="uploadFile" nv-file-select uploader="uploader" multiple />
+					</a>
+					<div class="upload-tips" hover-tips>
+						<span>?</span>
+						<b>支持文件格式:<br>doc,docx,xls,xlsx,ppt,pptx,pdf,txt,zip,rar,tar,7z,html,htm,xml,js,css,java,php,sql,jpg,jpeg,gif,png,bmp,tif,mp3,m4a,midi,wma</b>						
+					</div>
+					<em ng-bind="annexes" class="response"></em>
+			        <ul>
+			            <li ng-repeat="item in uploader.queue">
+			                <div>文件名: {{ item.file.name }}</div>
+			                <div>文件大小: {{ item.file.size/1024/1024|number:2 }} Mb</div>
+			                <div ng-show="uploader.isHTML5">
+			                    上传进度: {{ item.progress }}
+			                    <div class="item-progress-box">
+			                        <div class="item-progress" ng-style="{ 'width': item.progress + '%' }"></div>
+			                    </div>
+			                </div>
+			                <div ng-if="controller.isImage(item._file)">
+			                    图片缩略图:
+			                        <!-- Image preview -->
+			                        <!--auto height-->
+			                        <!--<div ng-thumb="{ file: item.file, width: 100 }"></div>-->
+			                        <!--auto width-->
+			                        <div ng-thumb="{ file: item._file, height: 100 }" style="margin-top: 10px;"></div>
+			                        <!--fixed width and height -->
+			                        <!--<div ng-thumb="{ file: item.file, width: 100, height: 100 }"></div>-->
+			                </div>
+			                <div>
+			                    <button ng-click="item.upload()" ng-disabled="item.isReady || item.isUploading || item.isSuccess" class="btn-km-file-upload">上传</button>
+			                    <button ng-click="item.cancel()" class="btn-km-file-cancel">取消</button>
+			                    <!-- <button ng-click="item.remove()" class="btn-km-file-del">删除</button> -->
+			                </div>
+			            </li>
+			        </ul>
+				</div>
+				<div class="km-form-item">
+					<label></label>
+					<a href="javascript:;" class="btn-post-submit" ng-click="save()">提交</a>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

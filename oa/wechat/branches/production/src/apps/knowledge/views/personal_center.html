@@ -1,0 +1,50 @@
+<div class="scrollable">
+	<div class="scrollable-content">
+		<!-- personal center -->
+		<div class="personal-center">
+			<!-- head img -->
+			<div class="head-img">
+				<img src="images/bg_user_center.jpg" width="100%" height="auto" alt="">
+				<div class="my-info">
+					<div class="my-avatar">
+						<img ng-src="{{ myInfo[0].avatar }}" src="" err-src="images/avatar.jpg" width="84" height="84" alt="">
+					</div>
+					<div class="my-name" ng-bind="myInfo[0].name"></div>
+					<div class="my-department" ng-bind="myInfo[0].position"></div>
+				</div>
+			</div>
+
+			<div class="grid mt-15">
+				<ul>
+					<a href="#/my-comments">
+						<li class="my-item"><i class="icon-personal icon-itemin-comment"></i>我评论的<em>（{{ myInfo.comment || 0 }}）</em></li>
+					</a>
+					<a href="#/my-collection">
+						<li class="my-item"><i class="icon-personal icon-itemin-collect"></i>我收藏的<em>（{{ myInfo.collect || 0 }}）</em></li>
+					</a>					
+				</ul>
+			</div>
+
+			<div class="grid mt-15">
+				<ul>
+					<!-- <a href="#">
+						<li class="my-item"><i class="icon-personal icon-itemin-views"></i>最近浏览</li>
+					</a> -->
+					<a href="#/my-admire">
+						<li class="my-item"><i class="icon-personal icon-itemin-thumbs"></i>我赞过的<em>（{{ myInfo.admire || 0 }}）</em></li>
+					</a>					
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- bottom nav	start -->
+<div class="navbar navbar-app navbar-absolute-bottom" ui-yield-to="bottom-button">
+    <div class="btn-group justified">
+        <a href="#/index" class="btn btn-navbar" ng-class="{active:setHighlight('/index')}"><i class="icon-nav icon-nav-book"></i> 知识库</a>
+        <a href="#/my-collection" class="btn btn-navbar" ng-class="{active:setHighlight('/my-collection')}"><i class="icon-nav icon-nav-star"></i> 收藏</a>
+        <a href="#/personal-center" class="btn btn-navbar" ng-class="{active:setHighlight('/personal-center')}"><i class="icon-nav icon-nav-user"></i> 个人</a>
+    </div>
+</div>
+<!-- bottom nav	end -->

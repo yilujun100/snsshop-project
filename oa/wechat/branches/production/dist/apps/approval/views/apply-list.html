@@ -1,0 +1,48 @@
+<div class="scrollable">
+  <div class="scrollable-content approval-page my-application" ui-scroll-bottom="bottomReached()">
+      <section class="mod-application">
+          <ul class="application-list">
+              <li class="mod-type-approval clearfix" ng-repeat="record in records">
+                  <a ng-href="#/record/detail/{{record.id}}" class="clearfix">
+                      <div class="mod-left">
+                            <span class="name">
+                                <strong>{{record.form_name}}<i class="date">{{record.apply_time*1000|date:'MM/dd'}}</i></strong>
+                                <em ng-repeat="field in record.approvalRecordFields" ng-if="field.is_wechat_list_show == 1">[{{field.name}}] {{field.value}}</em>
+                            </span>
+                      </div>
+                      <div class="mod-right">
+                          <span ng-if="record.status == 1" class="status icon-examination">审批中</span>
+                          <span ng-if="record.status == 2" class="status icon-passed">已通过</span>
+                          <span ng-if="record.status == 3" class="status icon-fail">未通过</span>
+                          <span ng-if="record.status == 4" class="status icon-back">已退回</span>
+                          <span ng-if="record.status == 0" class="status icon-revocationk">已撤销</span>
+                      </div>
+                  </a>
+              </li>
+          </ul>
+      </section>
+  </div>
+</div>
+<div ui-content-for="top-bar">
+    <div class="btn-group justified nav-tabs">
+        <a class="btn btn-default btn-xs" href="javascript:;" ng-class="{'active':condition.status==''}" ng-click="setStatus('')">全部</a>
+        <a class="btn btn-default btn-xs" href="javascript:;" ng-class="{'active':condition.status==1}" ng-click="setStatus('1')">审批中</a>
+        <a class="btn btn-default btn-xs" href="javascript:;" ng-class="{'active':condition.status==2}" ng-click="setStatus('2')">已通过</a>
+        <a class="btn btn-default btn-xs" href="javascript:;" ng-class="{'active':condition.status==3}" ng-click="setStatus('3')">未通过</a>
+        <a class="btn btn-default btn-xs" href="javascript:;" ng-class="{'active':condition.status==4}" ng-click="setStatus('4')">已退回</a>
+        <a class="btn btn-default btn-xs" href="javascript:;" ng-class="{'active':condition.status==='0'}" ng-click="setStatus('0')">已撤销</a>
+
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <form ng-submit="search()">
+                <div class="input-group">
+                    <input type="search" class="form-control" ng-model="condition.keyword">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button" ng-click="search()"><i class="fa fa-search"></i></button>
+                        </span>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

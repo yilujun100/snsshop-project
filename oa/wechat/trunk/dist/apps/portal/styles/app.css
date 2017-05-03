@@ -1,0 +1,232 @@
+/*
+ * 门户app app.css
+ * author:yilj@snsshop.cn
+ * date:2016-8-25
+*/
+
+/*====================== reset style =======================*/
+article,
+aside,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section { display: block; margin: 0; padding: 0; border: 0; font-size: 100%; vertical-align: baseline }
+img { -ms-interpolation-mode: bicubic; vertical-align: top; }
+html { font-family: "Microsoft Yahei"; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; }
+body { margin: 0; padding: 0; }
+a { background: 0; text-decoration: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+a:active,
+a:hover { outline: 0; }
+a:hover { text-decoration: none; color: inherit; }
+h1 { font-size: 2em; margin: .67em 0; }
+b,
+strong { font-weight: 400; }
+img { border: 0; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+button,
+input,
+textarea { font-size: 100%; margin: 0; font-family: "Microsoft Yahei"; }
+textarea { resize: vertical; }
+button,
+input,
+textarea { line-height: normal; outline: none; }
+button,
+select { text-transform: none; }
+input[type=text] { -webkit-tap-highlight-color: rgba(0, 0, 0, 0); -webkit-appearance: none; }
+button,
+html input[type=button],
+input[type=reset],
+input[type=submit] { -webkit-appearance: button; cursor: pointer; }
+button[disabled],
+html input[disabled] { cursor: default; }
+input[type=checkbox],
+input[type=radio] { box-sizing: content-box; padding: 0; vertical-align: middle; }
+input[type=search] { -webkit-appearance: textfield; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
+input[type=search]::-webkit-search-cancel-button,
+input[type=search]::-webkit-search-decoration { -webkit-appearance: none; }
+button::-moz-focus-inner,
+input::-moz-focus-inner { border: 0; padding: 0; }
+button:focus,
+input[type=button]:focus,
+input[type=reset]:focus,
+input[type=submit]:focus { outline: 0; }
+textarea { overflow: auto; vertical-align: top; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+table { border-collapse: collapse; border-spacing: 0; }
+dl,
+ol,
+ul { list-style: none; margin: 0; padding: 0; }
+dl dd,
+dl dt,
+ol li,
+ul li { margin: 0; padding: 0; }
+label { display: inline-block; vertical-align: middle }
+em,
+i { font-style: normal; }
+b,
+strong { font-weight: normal; }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 { margin: 0; font-size: 100%; font-weight: normal; }
+.has-navbar-top .app-body { padding-top: 0; }
+p { margin: 0; }
+
+
+/*====================== common style =======================*/
+html,
+button, input, textarea { font-family: arial; }
+.clearfix:after { content: '\200B'; display: block; clear: both; height: 0; overflow: hidden; visibility: hidden; }
+.clearfix { zoom: 1; }
+.fl { float: left; }
+.fr { float: right; }
+.mt-10 { margin-top: 10px; }
+.mt-15 { margin-top: 15px; }
+
+.list { background: #fff; }
+.list-hd { padding: 10px; border-bottom: 1px solid #cccbcb; }
+.list-hd h3 { font-size: 15px; color: #111;  }
+.list-hd .icon-list { display: inline-block; vertical-align: -4px; margin-right: 6px; width: 20px; height: 20px; background-repeat: no-repeat; background-position: center center; background-size: 20px auto; }
+.icon-notice { background-image: url(../images/icon_notice_color.png); }
+.icon-events { background-image: url(../images/icon_events.png); }
+.icon-article { background-image: url(../images/icon_article.png); }
+.icon-partner { background-image: url(../images/icon_groups.png); }
+.list-more { position: relative; margin-top: 3px; padding-right: 8px; font-size: 13px; color: #999; }
+.list-more:after { position: absolute; top: 4px; right: 0; display: block; content: ''; width: 8px; height: 8px; border-top: 1px solid #9a9a9a; border-right: 1px solid #9a9a9a; -webkit-transform: rotate(45deg); }
+.list-con { padding: 6px 10px; }
+.list-con li:after { content: '\200B'; display: block; clear: both; height: 0; overflow: hidden; visibility: hidden; }
+.list-con li { padding: 10px 0; }
+.list-con li > a { float: left; font-size: 13px; color: #555; max-width: 72%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.list-con li > span { float: right; font-size: 11px; color: #999; }
+.icon-new { display: inline-block; vertical-align: -2px; margin-left: 4px; width: 26px; height: 14px; background: url(../images/icon_new.png) no-repeat; background-size: auto 14px; }
+.icon-hot { display: inline-block; vertical-align: -2px; margin-left: 4px; width: 26px; height: 14px; background: url(../images/icon_hot.png) no-repeat; background-size: auto 14px; }
+
+
+.banner { position: relative; }
+.rn-carousel-indicator { position: absolute; bottom: 0; left: 0; width: 100%; text-align: center; }
+.rn-carousel-indicator span { margin: 0 2px; color: rgba(255,255,255,.3) !important; }
+.rn-carousel-indicator span.active { color: #fff !important; }
+.thumb-pic { position: relative; width: 100%; height: auto; }
+.thumb-pic:after { position: relative; display: block; content: ''; padding-top: 50%; }
+.thumb-pic img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; } 
+
+
+
+
+/*====================== nav style =======================*/
+.navbar-absolute-top { display: none; }
+.has-navbar-bottom .app-body { padding-bottom: 55px; }
+.navbar-absolute-bottom { border-top: 1px solid #dadada; background: #fff; }
+.navbar-app .btn-navbar { padding-bottom: 4px; line-height: inherit; font-size: 13px; color: #666; }
+.navbar-app .btn-navbar.active, 
+.navbar-app .btn-navbar:hover, 
+.navbar-app .btn:hover { color: #0777d1; }
+.navbar-absolute-bottom .icon-nav { display: block; margin: 6px auto 2px; width: 24px; height: 24px; background-repeat: no-repeat; background-image: url(../images/sprite_navs.png); background-size: 48px 120px; }
+.icon-nav-home { background-position: 0 0;  }
+.icon-nav-system { background-position: -1px -25px; }
+.icon-nav-notice { background-position: 0px -48px; }
+.icon-nav-news { background-position: 0 -72px; }
+.icon-nav-person { background-position: 0 -96px;}
+.navbar-app .btn-navbar.active .icon-nav-home { background-position: -24px 0;}
+.navbar-app .btn-navbar.active .icon-nav-system { background-position: -24px -25px;}
+.navbar-app .btn-navbar.active .icon-nav-notice { background-position: -24px -48px;}
+.navbar-app .btn-navbar.active .icon-nav-news { background-position: -24px -72px;}
+.navbar-app .btn-navbar.active .icon-nav-person { background-position: -24px -96px;}
+
+
+/*====================== home style =======================*/
+.company-events-con li { height: 104px; border-top: 1px solid #eee; }
+.company-events-con li:first-child { border-top: 0; }
+.company-events-con dl { position: relative; min-height: 84px; }
+.company-events-con dt { position: absolute; top: 0; left: 0; }
+.company-events-con dd { margin-left: 120px; }
+.company-events .title-company-events { display: block; width: 100%; height: 38px; overflow: hidden; font-size: 15px; color: #333; font-weight: bold; }
+.company-events .desc-company-events { margin-top: 5px; height: 18px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 12px; color: #555; }
+.company-events .author-company-events,
+.company-events .publish-time { font-size: 11px; color: #999; }
+.welcome-con li { height: 80px; border-top: 1px solid #eee; }
+.welcome-con li:first-child { border-top: 0; }
+.welcome-con dl { position: relative; min-height: 52px; }
+.welcome-con dt { position: absolute; top: 0; left: 0; }
+.welcome-con dt img { display: block; -webkit-border-radius: 50%; -moz-border-radius: 50%; border-radius: 50%; }
+.welcome-con dd { margin-left: 68px; }
+.welcome-con dd .name { position: relative; font-size: 14px; color: #333; }
+.welcome-con dd .join-date { position: absolute; top: 0; right: 0; font-size: 11px; color: #999; }
+.welcome-con dd .department { margin-top: 4px; font-size: 13px; color: #555; }
+
+
+/*====================== notice list/system list/news list style =======================*/
+.notice-list ul,
+.system-list ul { padding: 0 10px; background: #fff; }
+.notice-list li,
+.system-list li { padding: 14px 0; border-bottom: 1px solid #eee; }
+.notice-list li a,
+.system-list li a { position: relative; display: block; padding-right: 62px; width: 100%; height: 20px; line-height: 20px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 13px; color: #555; }
+.notice-list li .publish-time,
+.system-list li .publish-time { position: absolute; top: 0; right: 0; line-height: 20px; font-size: 11px; color: #999; }
+
+
+/*====================== events list style =======================*/
+.events-list ul { padding: 10px; }
+.events-list li { margin-top: 15px; width: 100%; background: #fff; -webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px; }
+.events-list li:first-child { margin-top: 0; }
+.events-list li > a { display: block; }
+.events-list li .thumb-events { -webkit-border-radius: 8px 8px 0 0; -moz-border-radius: 8px 8px 0 0; border-radius: 8px 8px 0 0; }
+.events-list .events-info { padding: 8px; } 
+.events-list .events-title { font-size: 14px; color: #333; font-weight: bold; }
+.events-list .events-desc { margin-top: 6px; font-size: 12px; color: #555; }
+.events-list .events-bott { margin-top: 6px; font-size: 11px; color: #999; }
+.events-list .e-publish-time { margin-left: 20px; }
+
+
+/*====================== events detail style =======================*/
+.events-detail { padding: 10px; background: #fff; }
+.events-detail-hd .events-title { font-size: 15px; color: #111; font-weight: bold; }
+.events-detail-hd .events-others { margin-top: 8px; font-size: 12px; color: #999; }
+.events-detail-hd span,
+.events-detail-hd i { margin-left: 20px; }
+.events-detail-con img { margin-top: 10px; }
+.events-detail-con p { margin-top: 10px; font-size: 13px; color: #333; }
+
+
+/*====================== new people list style =======================*/
+.new-people-list { padding: 0 10px; background: #fff; }
+.new-people-list dl { position: relative; height: 80px; padding: 10px 0; border-bottom: 1px solid #eee; }
+.new-people-list a { display: block; height: 70px; }
+.new-people-list dt { position: absolute; top: 10px; left: 0; }
+.new-people-list dt img { display: block; -webkit-border-radius: 50%; -moz-border-radius: 50%; border-radius: 50%; }
+.new-people-list dd { margin-left: 68px; }
+.new-people-list dd .name { position: relative; font-size: 14px; color: #333; }
+.new-people-list dd .join-date { position: absolute; top: 0; right: 0; font-size: 11px; color: #999; }
+.new-people-list dd .department { margin-top: 4px; font-size: 13px; color: #555; }
+
+
+/*====================== new people intro style =======================*/
+.new-people-intro { padding: 10px; background: #fff; }
+.new-info-basic { position: relative; }
+.new-info-basic .p-name { font-size: 15px; color: #111; }
+.new-info-basic .p-department { margin-top: 6px; font-size: 13px; color: #333; }
+.new-info-basic .p-join-date { position: absolute; top: 0; right: 0; font-size: 12px; color: #999; }
+.intro-detail img { margin-top: 10px; }
+.intro-detail p { margin-top: 10px; font-size: 13px; color: #333; }
+
+
+/*====================== personal center style =======================*/
+.personal-center { height: 100%; background: #fff; }
+.area-avatar { position: relative; }
+.area-bg { height: 110px; background: #498bc7; }
+.user-info-basic { position: absolute; top: 30px; left: 0; width: 100%; text-align: center; }
+.user-avatar { margin: 0 auto; width: 100px; height: 100px; border: 3px solid #fff; overflow: hidden; -webkit-border-radius: 50%; -moz-border-radius: 50%; border-radius: 50%; }
+.user-name { margin-top: 10px; font-size: 15px; color: #498bc7; }
+.user-department { margin-top: 4px; font-size: 13px; color: #999; }
+.user-info-others { padding: 100px 10px 0; }
+.user-info-others p { padding: 10px 0; height: 50px; line-height: 30px; border-bottom: 1px solid #eee; font-size: 14px; }
+.user-info-others em { float: left; color: #999; }
+.user-info-others span { float: right; color: #555; }
+.icon-personal-center { display: inline-block; vertical-align: -4px; margin-right: 4px; width: 15px; height: 16px; background-repeat: no-repeat; background-size: 15px 16px; }
+.icon-position { background-image: url(../images/icon_bag.png); }
+.icon-leader { background-image: url(../images/icon_necktie.png); }
+.icon-calendar { background-image: url(../images/icon_calendar.png); }
+.icon-contact { background-image: url(../images/icon_tel.png); }

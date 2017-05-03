@@ -1,0 +1,111 @@
+<!-- 消息中心 -->
+<div class="container">	
+	<!-- breadcrumb -->
+	<div class="breadcrumb">
+		<ul>
+			<li>当前位置：</li>
+			<li><a ui-sref="index.personalCenter">个人中心</a></li>
+			<li>&gt;消息中心</li>
+		</ul>
+	</div>
+
+	<!-- message -->
+	<div class="msg-wrap mt-10">
+		<div class="msg-hd">
+			<h3 ng-if="showMsgAll">消息中心<strong>（共{{ statis.total }}封，其中{{ statis.unread }}封未读，<b ng-click="unread()">仅查看未读消息</b>）</strong></h3>
+			<h3 ng-if="showMsgUnread">消息中心<strong>（未读{{ statis.unread }}封，<b ng-click="readAll()">查看全部消息</b>）</strong></h3>
+			<div class="tab-hd-cell clearfix mt-10">
+				<ul class="tab-action-group fl">
+					<li><a href="javascript:;" class="btn-action btn-action-disabled" id="opera-del" ng-click="dataDel($event)">删除</a></li>
+					<li><a href="javascript:;" class="btn-action btn-action-disabled" id="opera-mark-read" ng-click="dataMarkRead($event)">标记为已读</a></li>
+					<li><a href="javascript:;" class="btn-action btn-action-primary" id="opera-mark-read-all" ng-click="dataMarkReadAll()">已读所有消息</a></li>
+				</ul>
+				<ul class="tab-title-1 fr" ng-if="showMsgAll">
+					<li ng-class="{'tab-active': page.fromApp == ''}" ng-click="msgCategory('all')">全部</li>
+					<li ng-class="{'tab-active': page.fromApp == 'portal'}" ng-click="msgCategory('portal')">门户</li>
+					<li ng-class="{'tab-active': page.fromApp == 'knowledge'}" ng-click="msgCategory('knowledge')">知识库</li>
+					<li ng-class="{'tab-active': page.fromApp == 'bbs'}" ng-click="msgCategory('bbs')">BBS</li>
+					<li ng-class="{'tab-active': page.fromApp == 'room'}" ng-click="msgCategory('room')">会议室</li>
+					<li ng-class="{'tab-active': page.fromApp == 'leave'}" ng-click="msgCategory('leave')">请假</li>
+					<li ng-class="{'tab-active': page.fromApp == 'approval'}" ng-click="msgCategory('approval')">流程</li>
+					<li ng-class="{'tab-active': page.fromApp == 'attendance'}" ng-click="msgCategory('attendance')">考勤</li>
+					<li ng-class="{'tab-active': page.fromApp == 'ticket'}" ng-click="msgCategory('ticket')">IT工单</li>
+					<li ng-class="{'tab-active': page.fromApp == 'other'}" ng-click="msgCategory('other')">其它</li>
+				</ul>
+				<ul class="tab-title-1 fr" ng-if="showMsgUnread">
+					<li ng-class="{'tab-active': pageUnread.fromAppUnread == ''}" ng-click="msgUnreadCategory('all')">全部</li>
+					<li ng-class="{'tab-active': pageUnread.fromAppUnread == 'portal'}" ng-click="msgUnreadCategory('portal')">门户</li>
+					<li ng-class="{'tab-active': pageUnread.fromAppUnread == 'knowledge'}" ng-click="msgUnreadCategory('knowledge')">知识库</li>
+					<li ng-class="{'tab-active': pageUnread.fromAppUnread == 'bbs'}" ng-click="msgUnreadCategory('bbs')">BBS</li>
+					<li ng-class="{'tab-active': pageUnread.fromAppUnread == 'room'}" ng-click="msgUnreadCategory('room')">会议室</li>
+					<li ng-class="{'tab-active': pageUnread.fromAppUnread == 'leave'}" ng-click="msgUnreadCategory('leave')">请假</li>
+					<li ng-class="{'tab-active': pageUnread.fromAppUnread == 'approval'}" ng-click="msgUnreadCategory('approval')">流程</li>
+					<li ng-class="{'tab-active': pageUnread.fromAppUnread == 'attendance'}" ng-click="msgUnreadCategory('attendance')">考勤</li>
+					<li ng-class="{'tab-active': pageUnread.fromAppUnread == 'ticket'}" ng-click="msgUnreadCategory('ticket')">IT工单</li>
+					<li ng-class="{'tab-active': pageUnread.fromAppUnread == 'other'}" ng-click="msgUnreadCategory('other')">其它</li>
+				</ul>
+			</div>
+		</div>
+		<div class="msg-con">
+			<div class="msg-all">
+				<table class="data-table">
+					<thead>
+						<tr>
+							<th width="10%">
+								<input type="checkbox" ng-click="selectAll($event)">
+							</th>
+							<th width="50%" class="text-left">消息内容</th>
+							<th width="20%" class="text-left">消息时间</th>
+							<th width="20%" class="text-left">消息应用</th>
+						</tr>
+					</thead>
+					<tbody>	
+						<!-- all -->
+						<tr ng-repeat="msg in msgList" ng-class="{'ms-visit': msg.is_read === 1}" ng-if="showMsgAll">
+							<td>
+								<input type="checkbox" ng-click="statusChange($event, msg)" data-isread="{{msg.is_read}}" data-msgid="{{msg.id}}">
+							</td>
+							<td class="text-left">
+								<i class="icon-envelop"></i>
+								<!-- <a ui-sref="index.personalCenter.msg.detail({msgId: msg.id})" class="data-link">{{ msg.title }}</a> -->
+								<a href="javascript:;" class="data-link" ng-click="jumpToDetail(msg)">{{ msg.title }}</a>
+							</td>
+							<td class="text-left"><span>{{ msg.create_time * 1000 | date: 'yyyy-MM-dd' }}</span></td>
+							<td class="text-left"><span>{{ msg.from_app | appNameToEn }}</span></td>
+						</tr>
+						<!-- unread -->
+						<tr ng-repeat="msg in msgUnreadList" ng-if="showMsgUnread">
+							<td>
+								<input type="checkbox" ng-click="statusChange($event, msg)" data-isread="{{msg.is_read}}" data-msgid="{{msg.id}}">
+							</td>
+							<td class="text-left">
+								<i class="icon-envelop"></i>
+								<a ng-href="msg.link" class="data-link">{{ msg.title }}</a>
+							</td>
+							<td class="text-left"><span>{{ msg.create_time * 1000 | date: 'yyyy-MM-dd' }}</span></td>
+							<td class="text-left"><span>{{ msg.from_app | appNameToEn }}</span></td>
+						</tr>
+					</tbody>
+					<tfoot>
+						<tr>
+							<td colspan="4" ng-if="showMsgAll">								
+								<div class="list-page">
+									<uib-pagination total-items="page.totalCount" ng-model="page.pageNo" items-per-page="page.pageSize" max-size="5" ng-change="doRequest(page.pageNo,page.pageSize,page.fromApp)" class="samplePage pagination-sm" boundary-link-numbers="true" previous-text="上一页" next-text="下一页">
+									</uib-pagination>
+									<span>共{{ page.totalPage }}页&nbsp;&nbsp;{{ page.totalCount }}条</span>
+								</div>
+							</td>
+							<td colspan="4" ng-if="showMsgUnread">								
+								<div class="list-page">
+									<uib-pagination total-items="pageUnread.totalCount" ng-model="pageUnread.pageNo" items-per-page="pageUnread.pageSize" max-size="5" ng-change="doUnreadRequest(pageUnread.pageNo,pageUnread.pageSize,pageUnread.fromAppUnread)" class="samplePage pagination-sm" boundary-link-numbers="true" previous-text="上一页" next-text="下一页">
+									</uib-pagination>
+									<span>共{{ pageUnread.totalPage }}页&nbsp;&nbsp;{{ pageUnread.totalCount }}条</span>
+								</div>
+							</td>
+						</tr>
+					</tfoot>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>

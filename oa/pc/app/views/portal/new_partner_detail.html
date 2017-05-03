@@ -1,0 +1,38 @@
+<!-- 文章 -->
+<div class="container">
+	<!-- breadcrumb -->
+	<div class="breadcrumb">
+		<ul>
+			<li>当前位置：</li>
+			<li><a ui-sref="index.portal">门户</a></li>
+			<li>&gt<a ui-sref="index.portal.newPartner">新伙伴</a></li>
+			<li>&gt新伙伴详情</li>
+		</ul>
+	</div>
+	
+	<!-- article -->
+	<div class="article mt-10">
+		<div class="article-hd">
+			<h3 class="article-tit" ng-bind="newPartnerDetail.name"></h3>
+			<p class="article-publish-time">{{ newPartnerDetail.department_path }}/{{ newPartnerDetail.position }}</p>
+		</div>
+		<div class="article-con" ng-bind-html="newPartnerDetail.content | trust:'html'">
+			<!-- <p>现在指的是公司或企业中从事文字工作的职位，就是以文字来表现已经制定的创意策略。文案它不同于设计师用画面或其他手段的表现手法，它是一个与广告创意先后相继的表现的过程、发展的过程、深化的过程， 多存在于广告公司，企业宣传，新闻策划等。</p>
+			<img src="../images/portal/new_pic.jpg" width="1300" height="639" alt="">
+			<p>设计师是对设计事物的人的一种泛称。通常是在某个特定的专门领域创造或提供创意的工作，从事艺术与商业结合在一起的人。这些人通常是利用绘画或其他各种以视觉传达的方式来表现他们的工作或作品。设计是把一种计划、规划、设想通过某种形式传达出来的活动过程。人类通过劳动改造世界，创造文明，创造物质财富和精神财富，而最基础、最主要的创造活动是造物。经过三年多的实践和反思，1688UED团队不仅确立了自己的设计观，也在此基础上尝试总结了岗位工作的思考过程及规律</p> -->
+		</div>
+		<!-- <div class="article-bott">
+			<a href="#" class="article-prev">上一篇：总部／产品技术中心／设计部——王伟</a>
+			<a href="#" class="article-next mt-10">下一篇：总部／产品技术中心／研发支持部／前端开发组——陈晓雪</a>			
+		</div> -->
+	</div>
+</div>
+<style>
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+</style>

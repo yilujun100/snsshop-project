@@ -1,0 +1,888 @@
+.navbar-absolute-top {
+  min-height: 45px;
+  background: #fff;
+  borde: none;
+  padding: 0px 20px;
+}
+.navbar-absolute-top .row {
+  padding: 5px 0px;
+}
+.navbar-absolute-top .nav-tabs {
+  width: 100%;
+  margin: 6px auto 3px auto;
+}
+.navbar-absolute-top .nav-tabs .btn {
+  line-height: 25px;
+  border: 1px solid #45c01a;
+  border-radius: 6px;
+}
+.navbar-absolute-top .nav-tabs .btn.active {
+  background-color: #45c01a;
+  border: 1px solid #45c01a;
+}
+.has-navbar-top .app-body {
+  padding-top: 84px;
+}
+.has-navbar-top .app-body.hide-navbar {
+  padding-top: 0px;
+}
+/*审批列表*/
+ul,
+li,
+h3,
+p {
+  padding: 0;
+  margin: 0;
+}
+ul,
+li {
+  list-style-type: none;
+}
+.approval-list li:first-child {
+  margin-top: 12px;
+}
+.approval-list li {
+  background: #fff;
+  margin-bottom: 12px;
+  border-style: solid;
+  border-color: #ccc;
+  border-width: 1px 0 1px 0;
+  padding: 12px 22px;
+}
+.approval-list .pic {
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+}
+.approval-list .pic,
+.approval-list .info {
+  display: inline-block;
+  vertical-align: middle;
+}
+.approval-list .info h3 {
+  font-size: 14px;
+  color: #333;
+}
+.approval-list .info p {
+  font-size: 12px;
+  color: #999;
+}
+/*我的申请*/
+.lineh35 {
+  line-height: 35px;
+}
+.mod-application {
+  background: #fff;
+}
+.mod-application .info {
+  padding: 10px 12px;
+}
+.mod-application .info .mod-left {
+  padding-top: 10px;
+}
+.mod-application .info .avatar {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  margin: 0 5px;
+  font-size: 14px;
+}
+.mod-application .info .avatar img {
+  border-radius: 50%;
+}
+.mod-application .info .avatar,
+.mod-application .info .name {
+  display: inline-block;
+  vertical-align: middle;
+}
+.mod-application .info .name strong {
+  font-size: 14px;
+  display: block;
+  color: #000;
+  font-weight: 200;
+}
+.mod-application .info .name em {
+  color: #999;
+  font-size: 11px;
+  font-style: normal;
+}
+.mod-application .application-list li {
+  padding: 15px 12px;
+  border-bottom: 1px solid #ccc;
+  font-size: 14px;
+  color: #666;
+  position: relative;
+}
+.mod-application .application-list a {
+  color: #666;
+}
+.mod-application .application-list a:hover {
+  text-decoration: none;
+}
+.mod-application .mod-left {
+  float: left;
+}
+.mod-application .mod-right {
+  float: right;
+  font-size: 14px;
+  color: #333333;
+}
+.mod-application .application-list li .time {
+  margin-right: 10px;
+}
+.mod-application .info .pass-btn {
+  position: absolute;
+  top: 25%;
+  right: 12px;
+  color: #fe4343;
+  border-radius: 4px;
+  border: 1px solid #fe4343;
+  padding: 2px 8px;
+}
+.mod-application .officers-box {
+  position: relative;
+  height: 54px;
+}
+.mod-application .full-line:before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  right: 25px;
+  left: 30px;
+  height: 2px;
+  width: calc(100% - 60px);
+  width: -webkit-calc(100% - 60px);
+  background: url(../images/full-line.png) no-repeat;
+  background-size: 100%;
+  z-index: 1;
+}
+.mod-application .imaginary-line:after {
+  content: "";
+  position: absolute;
+  top: 12px;
+  right: 25px;
+  left: 25px;
+  height: 2px;
+  width: calc(100% - 60px);
+  width: -webkit-calc(100% - 60px);
+  background: url(../images/imaginary-line.png) no-repeat;
+  background-size: 100%;
+  z-index: 1;
+}
+.mod-application .officers-box div {
+  position: absolute;
+  z-index: 10;
+  text-align: center;
+  width: 23%;
+}
+.mod-application .officers-box div {
+  color: #666;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.mod-application .officers-box div .name {
+  display: block;
+  padding: 5px 0;
+  font-size: 14px;
+}
+.mod-application .officers-box div:nth-of-type(1) {
+  left: 0;
+}
+.mod-application .officers-box div:nth-of-type(2) {
+  left: 25%;
+}
+.mod-application .officers-box div:nth-of-type(3) {
+  right: 25%;
+}
+.mod-application .officers-box div.middle {
+  left: 40%;
+}
+.mod-icon {
+  display: block;
+  margin: 0 auto;
+  background: url(../images/audit_icon.png) no-repeat;
+  background-size: cover;
+  background-position: 0 -185px;
+  width: 25px;
+  height: 26px;
+}
+.mod-icon.proposer {
+  background-position: 0 0;
+}
+.mod-icon.pass {
+  background-position: 0 -58px;
+}
+.mod-icon.fail {
+  background-position: 0 -120px;
+}
+.mod-application .officers-box div:nth-of-type(4) {
+  right: 0%;
+}
+.mod-application .opinion dt {
+  font-size: 14px;
+  color: #666;
+  font-weight: 200;
+  padding-bottom: 15px;
+}
+.mod-application .opinion .b-line {
+  border-bottom: 1px solid #ccc;
+}
+.mod-application .textarea-box {
+  position: relative;
+}
+.mod-application .opinion textarea {
+  color: #666;
+  width: 100%;
+  min-height: 100px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  text-align: left;
+  padding: 10px 10px 15px 10px;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+.mod-application .textarea-box .hint {
+  position: absolute;
+  right: 10px;
+  bottom: 5px;
+  font-size: 10px;
+  color: #d1d1d1;
+}
+.mod-application .opinion p {
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc;
+}
+.mod-application .opinion strong {
+  display: block;
+  font-weight: 200;
+}
+.mod-application .cf60 {
+  color: #ff6600;
+}
+/*--------审核详情-------------*/
+.mod_arrow {
+  position: absolute;
+  right: 12px;
+}
+.mod_arrow strong {
+  display: inline-block;
+  vertical-align: middle;
+}
+.mod_arrow:after {
+  background: #fff;
+  vertical-align: middle;
+  content: "";
+  display: inline-block;
+  border-color: #fff #ccc #ccc #fff;
+  border-style: solid;
+  border-width: 0 1px 1px 0;
+  height: 10px;
+  width: 10px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+}
+/*按钮*/
+.approval-btn-group {
+  padding: 0 15px;
+}
+.approval-btn {
+  width: 100%;
+  padding: 10px 15px;
+  line-height: 35px;
+  box-sizing: border-box;
+  text-align: center;
+}
+.approval-btn a {
+  background: #a0a0a0;
+  box-shadow: 0 1px 0 #909090;
+}
+.approval-btn-group .disabled a {
+  background: #a0a0a0;
+  box-shadow: 0 1px 0 #909090;
+  pointer-events: none;
+}
+.approval-btn-group .orange-btn a {
+  background: #ff6600;
+  box-shadow: 0 1px 0 #dc5800;
+}
+.approval-btn-group .green-btn a {
+  background: #45c01a;
+  box-shadow: 0 1px 0 #2ca900;
+}
+.approval-btn-group a {
+  display: block;
+  color: #fff;
+  font-size: 15px;
+  border-radius: 5px;
+}
+.approval-btn-group a:hover {
+  text-decoration: none;
+}
+.approval-btn-group .orange-btn a {
+  background: #ff6600;
+  box-shadow: 0 1px 0 #dc5800;
+}
+.approval-btn-group .green-btn a {
+  background: #45c01a;
+  box-shadow: 0 1px 0 #2ca900;
+}
+/*------表格提交---------*/
+.form-top {
+  background: #f0f0f0;
+  border-bottom: 1px solid #ccc;
+  padding: 15px 12px;
+  line-height: 16px;
+  font-size: 14px;
+  color: #666;
+}
+.w15 {
+  width: 15%;
+}
+.w20 {
+  width: 20%;
+}
+.w70 {
+  width: 70%;
+}
+.w80 {
+  width: 80%;
+}
+.w50 {
+  width: 50% !important;
+}
+.pt15 {
+  padding-top: 15px;
+}
+.p10 {
+  padding: 10px;
+}
+.mod-select {
+  text-align: right;
+  padding-right: 10px;
+}
+.mod-select strong {
+  color: #ff6600;
+  font-weight: normal;
+  padding: 0 5px;
+}
+.bordernone {
+  border: 0 none !important;
+}
+.m0 {
+  margin: 0;
+}
+.items-input,
+.mbsc-control {
+  border: 0 none;
+  background: none;
+  color: #333;
+  padding: 0;
+  width: 100%;
+}
+/*加班审批*/
+.mod-application .personnel span {
+  color: #ff6600;
+  padding: 0 5px;
+}
+.mod-application .icon-time {
+  color: #999;
+  margin-right: 5px;
+}
+.mod-application .time-quantum {
+  position: relative;
+}
+.mod-application .time-quantum:after {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: 0;
+  right: 0;
+  width: 25%;
+  margin: 0 auto;
+  height: 1px;
+  line-height: 22px;
+  background: #ccc;
+}
+.mod-application .time-quantum span {
+  display: block;
+}
+/*其他申请*/
+.mod-application .file-box {
+  position: relative;
+}
+.mod-application .file-box .remove {
+  position: absolute;
+  top: 25%;
+  right: 0;
+}
+.mod-application .file-box .icon-cuo {
+  color: #bababa;
+}
+.mod-application .file-box span {
+  display: inline-block;
+  vertical-align: middle;
+}
+.mod-application .file-box .icon-wenjian {
+  color: #ff6600;
+  font-size: 20px;
+}
+.mod-application em {
+  font-style: normal;
+}
+.mod-application .upload-box {
+  position: relative;
+}
+.mod-application .upload-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #cccccc;
+}
+.mod-application .upload-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.mod-application .upload-input {
+  height: 16px;
+  opacity: 0;
+}
+/*弹出列表*/
+.mod-popup-list {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: -100%;
+  z-index: 10;
+  width: 100%;
+  -moz-transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d0,0,0);
+}
+.mod-popup-list.open {
+  -webkit-transform: translate3d(-100%, 0, 0);
+  -moz-transform: translate3d(-100%, 0, 0);
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+.mod-popup-list.open:before {
+  content: "";
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9;
+}
+.mod-popup-list .popup-warp {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 80%;
+  background: #fff;
+  z-index: 11;
+}
+.mod-search-box {
+  background: #f0f0f0;
+  padding: 10px;
+  position: relative;
+}
+.mod-search-box .icon-box {
+  position: absolute;
+  top: 14px;
+  left: 15px;
+}
+.mod-search-box .icon-sousuo {
+  color: #999;
+}
+.mod-search-box input {
+  -webkit-appearance: none;
+  box-shadow: none;
+  padding: 5px 22px;
+  width: 100%;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  color: #666;
+  border-radius: 5px;
+}
+.mod-popup-list .informedi-box li {
+  background: #f0f0f0;
+}
+.mod-popup-list .user-list a {
+  height: auto;
+  padding: 0 15px;
+  border: 0 none;
+}
+.mod-popup-list .user-list a:last-child .list-group-box {
+  border: 0 none;
+}
+.mod-popup-list .user-list .list-group-box {
+  padding: 10px 0;
+  line-height: 25px;
+  border-bottom: 1px solid #f0f0f0;
+}
+.mod-popup-list .user-list .pull-right {
+  line-height: normal !important;
+}
+.mod-popup-list .accounting-top {
+  background: #f0f0f0;
+  line-height: 25px;
+  padding: 10px 15px;
+  border-bottom: 1px solid #ccc;
+}
+/*流程弹层*/
+.process-layer {
+  z-index: 991;
+  padding: 20px 0px;
+}
+.process-layer .process-box ul {
+  position: relative;
+}
+.process-layer .process-box ul:after {
+  content: "";
+  position: absolute;
+  top: 25px;
+  left: 50%;
+  bottom: 25px;
+  width: 1px;
+  height: calc(100% - 50px);
+  height: -webkit-calc(100% - 50px);
+  background: #ccc;
+  z-index: 1;
+}
+.process-layer .process-box li {
+  padding-bottom: 50px;
+  color: #ccc;
+  position: relative;
+  z-index: 2;
+}
+.process-layer .process-box li:last-child {
+  padding: 0;
+}
+.process-layer .process-box li span {
+  display: block;
+}
+.process-layer .process-box .proposer-box {
+  color: #f1d300;
+}
+.process-layer .process-box .proposer-box .mod-icon {
+  background-position: 0 0;
+}
+.process-layer .process-box .pass-box {
+  color: #45c01a;
+}
+.process-layer .process-box .pass-box .mod-icon {
+  background-position: 0 -58px;
+}
+.process-layer .process-box .fail-box {
+  color: #ff6600;
+}
+.process-layer .process-box .fail-box .mod-icon {
+  background-position: 0 -120px;
+}
+.process-layer .process-left,
+.process-layer .process-right {
+  width: calc(( 100% - 25px ) / 2);
+  width: -webkit-calc(( 100% - 25px ) / 2);
+}
+.process-layer .process-left {
+  float: left;
+  text-align: right;
+  padding-right: 10px;
+}
+.process-layer .process-middle {
+  width: 25px;
+  float: left;
+  position: relative;
+}
+.process-layer .process-right {
+  float: left;
+  text-align: left;
+  padding-left: 10px;
+}
+/**/
+.approval-index dl {
+  background: #fff;
+  margin: 10px;
+  color: #999;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+.approval-index dl .read-more {
+  padding: 10px;
+  border-top: 1px solid #ccc;
+  font-size: 14px;
+  font-weight: normal;
+  position: relative;
+}
+.approval-index dl .read-more a {
+  display: block;
+  color: #999;
+}
+.approval-index dl .read-more a:hover {
+  color: #999;
+  text-decoration: none;
+}
+.approval-index dl .mod_arrow {
+  top: 25%;
+}
+.approval-index dl dd {
+  padding: 10px;
+}
+.approval-index dl p {
+  padding-bottom: 10px;
+}
+.approval-index dl p em {
+  font-size: 10px;
+  font-style: normal;
+  padding: 0 10px;
+}
+.approval-index .new-text {
+  color: #ff7800;
+}
+.approval-index .pic {
+  width: 100%;
+  height: 94px;
+}
+.approval-index .pic img {
+  width: 100%;
+  height: 100%;
+}
+.approval-index dl strong {
+  color: #333;
+  display: inline-block;
+  width: 80px;
+}
+/**/
+.mod-tag {
+  border: 1px solid #45c01a;
+  margin: 10px 0;
+  border-radius: 5px;
+}
+.mod-tag a {
+  display: block;
+  width: 20%;
+  float: left;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+  color: #45c01a;
+  font-size: 14px;
+  position: relative;
+}
+.mod-tag a:hover {
+  text-decoration: none;
+}
+.mod-tag a.current {
+  background: #45c01a;
+  color: #fff;
+}
+.mod-tag a:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1px;
+  height: 100%;
+  background: #45c01a;
+}
+.mod-tag a:last-child:after {
+  width: 0;
+}
+.my-application .mod-search-box {
+  background: #fff;
+  padding: 10px 0;
+}
+.my-application .mod-search-box .icon-box {
+  left: 5px;
+}
+.my-approval-tag a {
+  width: 50%;
+}
+/*蒙层*/
+.mask-layer {
+  background: rgba(0, 0, 0, 0.8) none repeat scroll 0 0;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 990;
+}
+/*蒙层*/
+@media (device-height: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+  /* 兼容iphone4/4s */
+  .mod-application .officers-box:before {
+    background: #ccc;
+    height: 1px;
+  }
+  .process-layer {
+    top: 10%;
+  }
+}
+.mod-application .approval-process li {
+  padding: 10px 0;
+}
+.approval-process .date {
+  display: block;
+  text-align: right;
+  font-size: 12px;
+  color: #333;
+}
+.approval-process .name em {
+  display: block;
+}
+.mod-right .approval-btn {
+  display: block;
+  border: 1px solid #fe4343;
+  border-radius: 5px;
+  color: #fe4343;
+  padding: 0;
+  font-size: 10px;
+  width: 43px;
+  text-align: center;
+  height: 18px;
+  line-height: 18px;
+}
+.mod-application .info .avatar {
+  height: 50px;
+  width: 50px;
+}
+.mod-application .info .avatar img {
+  display: block;
+  width: 50px;
+  height: 50px;
+}
+.approval-process .form-info .pass-btn {
+  top: 30px;
+}
+.mod-color-black {
+  color: #333 !important;
+}
+.mtb15 {
+  margin-top: 15px;
+}
+.bg-f3f3f3 {
+  background: #f3f3f3;
+}
+.bg-fff {
+  background: #fff;
+}
+.border-b0 {
+  border-bottom: 0 !important;
+}
+.mod-pic-box .img-box {
+  float: left;
+  margin-right: 15px;
+  margin-top: 15px;
+  position: relative;
+}
+.mod-pic-box .img {
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+}
+.mod-pic-box .remove {
+  display: block;
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  margin: 0 auto;
+  background: url(../images/audit_icon.png) no-repeat 0 -58px;
+  background-size: cover;
+  -webkit-background-size: cover;
+  width: 12px;
+  height: 12px;
+  box-shadow: 0 0 0 1px  #fff;
+  border-radius: 100px;
+}
+.approving-officers .tit {
+  padding-bottom: 15px;
+}
+.mui-flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.mui-flex > .cell {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  width: 0;
+  -webkit-flex-basis: 0;
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+  max-width: 100%;
+  display: block;
+  padding: 0!important;
+  position: relative;
+}
+.mod-action-bar .support {
+  height: 51px;
+  line-height: 51px;
+  text-align: center;
+  font-size: 16px;
+}
+.mod-action-bar .support-green {
+  background: #45c01a;
+  color: #fff;
+}
+.mod-action-bar .support-white {
+  background: #fff;
+  color: #666;
+}
+.mod-action-bar a {
+  text-decoration: none;
+}
+.mod-type-approval .name strong {
+  display: block;
+  color: #333;
+  padding-bottom: 10px;
+  font-weight: normal;
+}
+.mod-type-approval .name strong span {
+  font-size: 15px;
+}
+.mod-type-approval .name em {
+  display: block;
+}
+.mod-type-approval i.date {
+  padding-left: 15px;
+  color: #999;
+  font-style: normal;
+}
+.mod-type-approval .status {
+  display: block;
+  background-image: url(../images/icon-status.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 65px;
+  height: 65px;
+  text-indent: -10000px;
+}
+.mod-type-approval .icon-passed {
+  background-position: 0 0;
+}
+.mod-type-approval .icon-fail {
+  background-position: 0 -65px;
+}
+.mod-type-approval .icon-back {
+  background-position: 0 -130px;
+}
+.mod-type-approval .icon-revocationk {
+  background-position: 0 -195px;
+}
+.mod-type-approval .icon-examination {
+  background-position: 0 -260px;
+}

@@ -1,0 +1,106 @@
+<div class="scrollable">
+	<div class="scrollable-content" ui-scroll-bottom="bottomReached()">
+
+		<!-- articles -->
+		<div class="articles">
+
+			<!-- article list -->
+			<div class="article-list">
+				<ul>
+					<li ng-repeat="collectItem in collectList" ng-swipe-left="fnShowDel(collectItem, true)" ng-swipe-right="fnShowDel(collectItem, false)" data-id="{{collectItem.article_id}}">
+						<div class="article-cell-up" ng-class="{'article-cell-move': collectItem.isDelete}">
+							<div class="article-cell-1 clearfix">
+								<div class="user-avatar fl">
+									<img ng-src="{{collectItem.article.user.avatar}}" width="32" height="32" alt="">
+								</div>
+								<div class="user-info fl">
+									<p><em class="user-name" ng-bind="collectItem.article.user.name"></em></p>
+									<p class="quote">{{ collectItem.article.user.position }}专门为您推荐的话题！</p>
+								</div>
+							</div>
+							<div class="article-cell-2">
+								<a href="#/article/detail/{{collectItem.article.id}}">
+									<h3 class="article-title"><em class="article-tag tag-article" ng-if="collectItem.article.type_id == 30">培训</em><em class="article-tag tag-process" ng-if="collectItem.article.type_id == 31">干货</em><em class="article-tag tag-standard" ng-if="collectItem.article.type_id == 32">规范</em>{{ collectItem.article.title }}</h3>
+									<p class="article-desc" ng-bind="collectItem.article.description"></p>				
+								</a>
+							</div>							
+						</div>
+						<div class="item-delete" ng-class="{'item-delete-show': collectItem.isDelete}" ng-click="deleteFn(collectItem)">
+							<i class="icon-delete"></i> 删除
+						</div>
+					</li>
+					<!-- <li>
+						<div class="article-cell-up">
+							<div class="article-cell-1 clearfix">
+								<div class="user-avatar fl">
+									<img src="images/avatar.jpg" width="32" height="32" alt="">
+								</div>
+								<div class="user-info fl">
+									<p><em class="user-name">李晓彤</em></p>
+									<p class="quote">现在最热门的话题.</p>
+								</div>
+							</div>
+							<div class="article-cell-2">
+								<a href="">
+									<h3 class="article-title"><em class="article-tag tag-essence">精华</em><em class="article-tag tag-process">流程</em>发现不为人发现的美最重要！</h3>
+									<p class="article-desc">美，是指能引起人们美感的客观事物的一种共同的本质属性。人类关于美的本质、定义、感觉、判断、应用的过程，是为美学</p>				
+								</a>
+							</div>							
+						</div>
+					</li>
+					<li>
+						<div class="article-cell-up">
+							<div class="article-cell-1 clearfix">
+								<div class="user-avatar fl">
+									<img src="images/avatar.jpg" width="32" height="32" alt="">
+								</div>
+								<div class="user-info fl">
+									<p><em class="user-name">王旭</em></p>
+									<p class="quote">设计灵感在哪里？</p>
+								</div>
+							</div>
+							<div class="article-cell-2">
+								<a href="">
+									<h3 class="article-title"><em class="article-tag tag-standard">规范</em>设计思路与想法创新！</h3>
+									<p class="article-desc">灵感（inspiration）是人们思维过程中认识飞跃的心理现象，一种新的思路突然接通</p>
+								</a>
+							</div>							
+						</div>
+					</li> -->
+					<!-- <li ng-swipe-left="actions = true" ng-swipe-right="actions = false">
+						<div class="article-cell-up" ng-class="{'article-cell-move': actions}">
+							<div class="article-cell-1 clearfix">
+								<div class="user-avatar fl">
+									<img src="images/avatar.jpg" width="32" height="32" alt="">
+								</div>
+								<div class="user-info fl">
+									<p><em class="user-name">李晓彤</em></p>
+									<p class="quote">现在最热门的话题.</p>
+								</div>
+							</div>
+							<div class="article-cell-2">
+								<a href="">
+									<h3 class="article-title"><em class="article-tag tag-essence">精华</em><em class="article-tag tag-process">流程</em>发现不为人发现的美最重要！</h3>
+									<p class="article-desc">美，是指能引起人们美感的客观事物的一种共同的本质属性。人类关于美的本质、定义、感觉、判断、应用的过程，是为美学</p>				
+								</a>
+							</div>							
+						</div>
+						<div class="item-delete" ng-class="{'item-delete-show': actions}">
+							<i class="icon-delete"></i> 删除
+						</div>
+					</li> -->
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- bottom nav	start -->
+<div class="navbar navbar-app navbar-absolute-bottom" ui-yield-to="bottom-button">
+    <div class="btn-group justified">
+        <a href="#/index" class="btn btn-navbar" ng-class="{active:setHighlight('/index')}"><i class="icon-nav icon-nav-book"></i> 知识库</a>
+        <a href="#/my-collection" class="btn btn-navbar" ng-class="{active:setHighlight('/my-collection')}"><i class="icon-nav icon-nav-star"></i> 收藏</a>
+        <a href="#/personal-center" class="btn btn-navbar" ng-class="{active:setHighlight('/personal-center')}"><i class="icon-nav icon-nav-user"></i> 个人</a>
+    </div>
+</div>
+<!-- bottom nav	end -->

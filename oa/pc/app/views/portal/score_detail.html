@@ -1,0 +1,69 @@
+<!-- 积分详情 -->
+<div class="container">
+	<!-- breadcrumb -->
+	<div class="breadcrumb">
+		<ul>
+			<li>当前位置：</li>
+			<li><a ui-sref="index.personalCenter">个人中心</a></li>
+			<li>&gt;积分详情</li>
+		</ul>
+	</div>	
+
+	<!-- score detail -->
+	<div class="score-detail mt-10">
+		<div class="score-detail-hd clearfix">
+			<h3>我的积分:<b ng-bind="scoreTotal.score"></b></h3>
+			<a href="javascript:;" class="btn-rule" rules-hover hover="hover">积分规则</a>
+			<div class="score-rules" ng-show="hover">				
+				<h3>BBS积分规则：</h3>
+				<p>1.发布帖子被加精奖励20积分</p>
+				<p>2.发帖奖励5积分</p>
+				<p>3.评论或点赞别人的帖子奖励1积分</p>
+				<p>积分奖励规则最终解释权归OA系统所有。</p>
+			</div>
+		</div>
+		<div class="score-detail-con">
+			<table class="data-table">				
+				<thead>
+					<tr>
+						<th width="60%" class="text-left">积分明细</th>
+						<th width="30%" >时间</th>
+						<th width="10%" >奖励积分</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="scoreItem in scoreList">
+						<td class="text-left" ng-bind="scoreItem.from_desc"></td>
+						<td ng-bind="scoreItem.create_time * 1000 | date: 'yyyy-MM-dd'"></td>
+						<td ng-class="{'score-20': scoreItem.score == 20,'score-5': scoreItem.score == 5, 'score-1': scoreItem.score == 1}">+{{ scoreItem.score }}</td>
+					</tr>					
+				</tbody>
+				<tfoot>
+					<tr>
+						<td colspan="3">								
+							<div class="list-page">
+								<uib-pagination total-items="page.totalCount" ng-model="page.pageNo" items-per-page="page.pageSize" max-size="5" ng-change="doRequest(page.pageNo,page.pageSize)" class="samplePage pagination-sm" boundary-link-numbers="true" previous-text="上一页" next-text="下一页">
+								</uib-pagination>
+								<span>共{{ page.totalPage }}页&nbsp;&nbsp;{{ page.totalCount }}条</span>
+							</div>
+						</td>
+					</tr>
+				</tfoot>
+			</table>
+		</div>
+	</div>
+</div>
+
+<!-- <div class="popup-mask" ng-show="showPopup"></div>
+<div class="popup-rule" ng-show="showPopup">
+	<div class="popup-content">
+		<h3>BBS积分规则：</h3>
+		<p>1.发布帖子被加精奖励20积分</p>
+		<p>2.发帖奖励5积分</p>
+		<p>3.评论或点赞别人的帖子奖励1积分</p>
+		<p>积分奖励规则最终解释权归OA系统所有。</p>
+	</div>
+	<div class="popup-bott">
+		<a href="javascript:;" id="btnPopConfirm" ng-click="showPopup = false">确定</a>
+	</div>
+</div> -->

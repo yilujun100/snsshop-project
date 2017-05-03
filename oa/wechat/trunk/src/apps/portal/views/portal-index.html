@@ -1,0 +1,101 @@
+<div class="scrollable">
+	<div class="scrollable-content">
+		<!-- banner -->
+		<div class="banner">
+			<ul rn-carousel rn-carousel-auto-slide rn-carousel-index="carouselIndex" class="image clearfix" style="height: 100%;">
+				<li ng-repeat="slider in sliderList" index-slider="setParentHeight">
+					<a ng-href="{{ slider.link }}">
+						<div class="thumb-pic">
+							<img ng-src="{{ slider.small_src }}" width="100%" height="auto" alt="">						
+						</div>
+					</a>
+					<!-- <a ng-href="{{ slider.link }}"><img ng-src="http://devqy.snsshop.net/{{ slider.small_src }}" width="100%" height="auto" alt=""></a> -->
+				</li>
+				<div style="padding-top:50%;"></div>
+			</ul>
+			<div rn-carousel-indicators ng-if="sliderList.length > 1" slides="sliderList" rn-carousel-index="carouselIndex"></div>
+		</div>
+		<!-- notice start -->
+		<div class="list notice">
+			<div class="list-hd notice-hd clearfix">
+				<h3 class="fl"><i class="icon-list icon-notice"></i>最新公告</h3>
+				<a href="#/notice/list" class="list-more fr">更多</a>
+			</div>
+			<div class="list-con notice-con">
+				<ul>
+					<li ng-repeat="news in newsList | limitTo: 4"><a ng-href="#/notice/detail/{{news.id}}" class="notice-title" data-id="{{news.id}}">{{ news.title }}<i ng-if="$first" class="icon-new"></i></a><span class="notice-date">{{ news.pulish_time * 1000 | date: 'yyyy-MM-dd' }}</span></li>
+				</ul>
+			</div>
+		</div>
+		<!-- notice end -->
+
+		<!-- company events start -->
+		<div class="list company-events mt-15">
+			<div class="list-hd clearfix">
+				<h3 class="fl"><i class="icon-list icon-events"></i>企业大事记</h3>
+				<a href="#/news/list" class="list-more fr">更多</a>
+			</div>
+			<div class="list-con company-events-con">
+				<ul>
+					<li ng-repeat="events in companyEventsList | limitTo: 3" data-id="{{events.id}}">
+						<dl>
+							<dt>
+								<a ng-href="#/news/detail/{{events.id}}"><img ng-src="{{ events.image }}" class="thumb-company-events" width="110" alt=""></a>
+							</dt>
+							<dd>
+								<a ng-href="#/news/detail/{{events.id}}" class="title-company-events">{{ events.title }}<i ng-if="$first" class="icon-hot"></i></a>
+								<p class="desc-company-events" ng-bind="events.description"></p>	
+								<p class="mt-10 clearfix">
+									<em class="author-company-events fl">作者：{{ events.author }}</em>
+									<span class="publish-time fr">{{ events.pulish_time * 1000 | date: 'yyyy-MM-dd' }}</span>
+								</p>
+							</dd>
+						</dl>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- company events end -->
+
+		<!-- admini system start -->
+		<div class="list admini-system mt-15">
+			<div class="list-hd clearfix">
+				<h3 class="fl"><i class="icon-list icon-article"></i>公司发文</h3>
+				<a href="#/system/list" class="list-more fr">更多</a>
+			</div>
+			<div class="list-con admini-system-con">
+				<ul>
+					<li ng-repeat="article in articles | limitTo: 4"><a ng-href="#/system/detail/{{article.id}}" class="article-title" data-id="{{article.id}}">{{ article.title }}</a><span class="article-date">{{ article.pulish_time * 1000 | date: 'yyyy-MM-dd' }}</span></li>
+				</ul>
+			</div>
+		</div>
+		<!-- admini system end -->
+
+		<!-- welcome join start	 -->
+		<div class="list welcome mt-15">
+			<div class="list-hd clearfix">
+				<h3 class="fl"><i class="icon-list icon-partner"></i>欢迎新伙伴加入！</h3>
+				<a href="#/new/list" class="list-more fr">更多</a>
+			</div>
+			<div class="list-con welcome-con">
+				<ul>
+					<li ng-repeat="people in peoples | limitTo: 3">
+						<dl>
+							<a ng-href="#/new/intro/{{people.id}}">
+								<dt>
+									<img ng-src="{{ people.avatar }}" class="people-avatar" width="60" height="60" alt="">
+								</dt>
+								<dd>
+									<p class="name">{{ people.name }}<em class="join-date">{{ people.join_time * 1000 | date: 'yyyy-MM-dd' }}</em></p>
+									<p class="department">{{ people.department_path }}/{{ people.position }}</p>
+									<!-- <p class="welcome-remarks"></p> -->
+								</dd>							
+							</a>
+						</dl>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- welcome join end -->
+	</div>
+</div>

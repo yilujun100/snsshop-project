@@ -1,0 +1,186 @@
+<!-- 推荐圈子首页 -->
+<div class="container">
+	<div class="main">
+		<!-- breadcrumb -->
+		<div class="breadcrumb">
+			<ul>
+				<li>当前位置：</li>
+				<li><a ui-sref="index.bbs">BBS</a></li>
+				<li>&gt;推荐圈子</li>
+			</ul>
+		</div>
+		
+		<!-- welcome -->
+		<div class="welcome mt-10 clearfix">
+			<div class="welcome-cell-1 fl">
+				<img ng-src="{{circleInfo.images}}" width="100" height="100" ng-if="isJoinedCircle" alt="">
+				<img ng-src="{{circleInfo.images}}" width="100" height="100" ng-if="!isJoinedCircle" alt="">
+			</div>
+			<div class="welcome-cell-2 fl">
+				<p><span ng-if="isJoinedCircle">欢迎加入</span><span ng-if="!isJoinedCircle">申请加入</span></p>
+				<p ng-if="isJoinedCircle">Hello,我的朋友,欢迎来到"{{ circleInfo.title }}"圈子！</p>
+				<p ng-if="!isJoinedCircle">Hello,您还没有加入"{{ circleInfo.title }}"圈子哦,小伙伴们在等你哦,快加入吧!</p>
+				<p ng-if="isJoinedCircle">版主：{{ circleInfo.manager.name || '' }}</p>
+				<p ng-if="!isJoinedCircle">版主：{{ circleInfo.manager.name || '' }}</p>
+			</div>
+			<div class="welcome-cell-3 fr">
+				<a href="javascript:;" class="btn-has-joined" ng-if="isJoinedCircle == true" ng-click="exit(circleInfo)" hover-event>已加入</a>
+				<a href="javascript:;" class="btn-apply-join" ng-if="isJoinedCircle == false" ng-click="join(circleInfo)">申请加入</a>
+			</div>
+		</div>
+
+		<!-- circle -->
+		<div class="circle-wrap mt-10">
+			<div class="circle-wrap-hd clearfix">
+				<div class="circle-filter fl">
+					<ul>
+						<li class="circle-on" ng-click="default()" sort-hightlight>默认</li>
+						<li ng-click="popularity()" sort-hightlight>人气</li>
+						<li ng-click="commentNum()" sort-hightlight>评论数</li>
+					</ul>
+				</div>	
+
+				<div class="w-cell-r fr">
+					<!-- search -->
+					<div class="post-search fl">
+						<p><input type="text" placeholder="搜索关键词" id="searchFiled" ng-model="keyword"><a href="javascript:;" class="btn-post-search" ng-click="searchFn(keyword)">搜索</a></p>
+					</div>
+					<a ui-sref="index.bbs.post" class="btn-post fr">我要发帖</a>					
+				</div>
+			</div>
+			<div class="circle-wrap-con">
+
+				<div class="post-list">
+					<ul>
+						<li ng-repeat="article in articleList">
+							<div class="user-avatar fl">
+								<img ng-if="article.is_anonymity == 0" ng-src="{{article.user.avatar}}" src="" err-src="images/user_avatar_default.jpg" width="68" height="68" alt="">
+								<img ng-if="article.is_anonymity == 1" src="images/bbs/avatar_anonymous.jpg" width="68" height="68" alt="">
+							</div>
+							<div class="post-info fl">
+								<h3 class="post-title">
+									<a ui-sref="index.bbs.detail({articleId:article.id})" target="_blank"><em ng-if="article.is_top == 1" class="post-tag post-tag-top">置顶</em><em ng-if="article.is_best == 1" class="post-tag post-tag-essence">精</em>{{ article.title }}<em class="post-img" ng-if="article.image != ''"></em></a>
+								</h3>
+								<div class="post-info-other mt-10">
+									<span class="post-author" ng-if="article.is_anonymity == 0" ng-bind="article.user.name">uyrugldsfh</span>
+									<span class="post-author" ng-if="article.is_anonymity == 1">匿名用户</span>
+									<span class="publish-time" ng-bind="article.create_time * 1000 | date: 'yyyy-MM-dd HH:mm'">58分钟前</span>
+									<span class="post-from">来自{{ circleInfo.title }}</span>
+								</div>
+							</div>
+							<div class="post-statis fr">
+								<span class="post-views"><i class="icon-post-statis icon-eye"></i>{{ article.view_count }}</span>
+								<span class="post-comments"><i class="icon-post-statis icon-comments"></i>{{ article.comment_count }}</span>
+							</div>
+						</li>
+					</ul>
+				</div>
+					
+				<div class="list-page">
+					<uib-pagination total-items="page.totalCount" ng-model="page.pageNo" items-per-page="page.pageSize" max-size="5" ng-change="sortDoRequest(page.pageNo,page.pageSize,circleId)" class="samplePage pagination-sm" boundary-link-numbers="true" previous-text="上一页" next-text="下一页">
+					</uib-pagination>
+					<span>共{{ page.totalPage }}页&nbsp;&nbsp;{{ page.totalCount }}条</span>
+				</div>
+				<!-- <table class="post-table">
+					<thead>
+						<tr>
+							<th width="70%">标题</th>
+							<th width="15%">浏览量</th>
+							<th width="15%">评论</th>
+							<th width="10%">板块</th>
+						</tr>
+					</thead>
+					<tbody>						
+						<tr ng-repeat="article in articleList" on-finished>
+							<td>
+								<div class="user-avatar fl">
+									<img ng-if="article.is_anonymity == 0" ng-src="{{article.user.avatar}}" src="" err-src="images/user_avatar_default.jpg" width="68" height="68" alt="">
+									<img ng-if="article.is_anonymity == 1" src="images/bbs/avatar_anonymous.jpg" width="68" height="68" alt="">
+								</div>
+								<div class="post-info fl">
+									<h3 class="post-title"><a ui-sref="index.bbs.detail({articleId:article.id})"><em ng-if="article.is_top == 1" class="post-tag post-tag-top">置顶</em><em ng-if="article.is_best == 1" class="post-tag post-tag-essence">精</em>{{ article.title }}<em class="post-img" ng-if="article.image != ''"></em></a></h3>
+									<div class="post-info-other mt-10">
+										<span class="post-author" ng-if="article.is_anonymity == 0">作者：{{ article.user.name }}</span>
+										<span class="post-author" ng-if="article.is_anonymity == 1">作者：匿名</span>
+										<span class="publish-time">时间：{{ article.create_time * 1000 | date: 'yyyy-MM-dd HH:mm' }}</span>
+									</div>
+								</div>
+							</td>
+							<td>{{ article.view_count }}</td>
+							<td>{{ article.comment_count }}</td>
+							<td>{{ article.coteries.title }}</td>
+						</tr>
+					</tbody>
+					<tfoot>
+						<tr>
+							<td colspan="4">								
+								pagenation
+								<div class="list-page">
+									<uib-pagination total-items="page.totalCount" ng-model="page.pageNo" items-per-page="page.pageSize" max-size="5" ng-change="sortDoRequest(page.pageNo,page.pageSize,circleId)" class="samplePage pagination-sm" boundary-link-numbers="true" previous-text="上一页" next-text="下一页">
+									</uib-pagination>
+									<span>共{{ page.totalPage }}页&nbsp;&nbsp;{{ page.totalCount }}条</span>
+								</div>
+							</td>
+						</tr>
+					</tfoot>
+				</table> -->
+			</div>
+		</div>
+	</div>
+	<div class="sidebar">
+		<!-- my card -->
+		<!-- <div class="my-card">
+			<div class="my-card-info">
+				<img ng-src="{{userInfo.avatar}}" width="70" height="70" alt="" class="my-card-avatar">
+				<p class="my-name">{{ userInfo.name }}<strong ng-if="isManager">（版主）</strong></p>
+				<p class="my-department">{{ userInfo.position }}</p>
+				<a ui-sref="index.bbs.post">我要发帖</a>
+			</div>
+			<div class="my-card-actions">
+				<ul class="clearfix">
+					<li><a href="javascript:;" ui-sref="index.bbs.myReply">{{ userInfo.comment_count }} <i class="icon-card icon-card-comment"></i></a></li>
+					<li><a href="javascript:;" ui-sref="index.bbs.myCollect">{{ userInfo.collect_count }} <i class="icon-card icon-card-collect"></i></a></li>
+					<li><a href="javascript:;">498 <i class="icon-card icon-card-views"></i></a></li>
+				</ul>
+			</div>
+		</div> -->
+
+		<!-- search -->
+		<!-- <div class="post-search">
+			<p><input type="text" placeholder="搜索关键词" id="searchFiled" ng-model="keyword"><a href="javascript:;" class="btn-post-search" ng-click="searchFn(keyword)">搜索</a></p>
+		</div> -->
+
+		<!-- circles -->
+		<div class="list circles">			
+			<div class="list-hd clearfix">
+				<h3 class="list-tit fl">所有圈子</h3>
+				<a ui-sref="index.bbs.allCircles" class="list-more fr">更多</a>
+			</div>
+			<div class="circles-con">
+				<ul class="clearfix">
+					<li ng-repeat="circle in circleList"><a ui-sref="index.bbs.circleRecommend({id:circle.id})" ng-bind="circle.title"></a></li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- recommend post -->
+		<div class="list recommend-post mt-10">			
+			<div class="list-hd clearfix">
+				<h3 class="list-tit fl">推荐话题</h3>
+				<a ui-sref="index.bbs.postRecommend" class="list-more fr">更多</a>
+			</div>
+			<div class="recommend-post-con">
+				<ul class="recommend-post-list">
+					<li ng-repeat="articleRecomm in articleRecommendList" ng-class="{'top-rank': $index <= 2}">
+						<a ui-sref="index.bbs.detail({articleId:articleRecomm.id})"><em>{{ $index + 1 }}</em>{{ articleRecomm.title }}</a>
+						<!-- <div class="post-recomm-info-other mt-10">
+							<span class="post-recomm-author" ng-if="articleRecomm.is_anonymity == 0">作者：{{ articleRecomm.user.name }}</span>
+							<span class="post-recomm-author" ng-if="articleRecomm.is_anonymity == 1">作者：匿名</span>
+							<span class="publish-time">时间：{{ articleRecomm.create_time * 1000 | date: 'yyyy-MM-dd HH:mm' }}</span>
+						</div> -->
+					</li>
+				</ul>
+			</div>	
+		</div>
+	</div>
+</div>

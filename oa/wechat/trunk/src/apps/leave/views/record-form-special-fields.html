@@ -1,0 +1,39 @@
+<li class="clearfix">
+    <div class="mod-left w20">请假类型</div>
+    <div class="mod-right w70" ng-class="{'select-empty':!special_fields.corp_type_id}">
+        <select ms-select class="items-input" ng-model="special_fields.corp_type_id">
+            <option value="">请选择请假类型</option>
+            <option ng-repeat="item in special_data.types" value="{{item.id}}" ng-selected="item.id == special_fields.corp_type_id">{{item.name}}</option>
+        </select>
+    </div>
+</li>
+<li class="clearfix">
+    <div class="mod-left w20">开始时间</div>
+    <div class="mod-right w70">
+        <input class="items-input" type="text"  ms-date-time ng-model="special_fields.start_time" placeholder="请选择开始时间">
+    </div>
+</li>
+<li class="clearfix">
+    <div class="mod-left w20">结束时间</div>
+    <div class="mod-right w70">
+        <input class="items-input" type="text"  ms-date-time ng-model="special_fields.end_time" placeholder="请选择结束时间">
+    </div>
+</li>
+<li class="clearfix">
+    <div class="mod-left w20">请假时长</div>
+    <div class="mod-right w70">
+        <input class="items-input" type="text" ng-model="special_fields.duration" placeholder="请输入请假时长" style="width: auto">
+        <span class="mod-right">小时</span>
+    </div>
+</li>
+<li class="opinion">
+    <dl class="m0">
+        <dt class="b-line">请假事由</dt>
+        <dd>
+            <div class="textarea-box">
+                <textarea class="bordernone" ng-model="special_fields.reason"  placeholder="请输入请假事由"></textarea>
+                <!--<div class="hint">加油，还差一个字！</div>-->
+            </div>
+        </dd>
+    </dl>
+</li>

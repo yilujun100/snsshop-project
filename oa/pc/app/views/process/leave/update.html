@@ -1,0 +1,101 @@
+<div class="apply-leave" ng-show="showPage" fixed-window-height>
+    <div class="apply-leave-head">
+        <h4>请假申请</h4></div>
+    <form class="" enctype="multipart/form-data">
+        <li class="apply-form-group-select clearfix">
+            <div class="apply-form-group-label">请假类型：</div>
+            <div class="apply-form-group-control">
+                <!-- <select ms-select class="items-input" convert-to-number ng-model="special_fields.corp_type_id">
+                    <option value="">请选择请假类型</option>
+                    <option ng-repeat="item in special_data.types" value="{{item.id}}" ng-selected="item.id == special_fields.corp_type_id">{{item.alias}}</option>
+                </select> -->
+                <ui-select ng-model="selectApply.type" ng-disabled="disabled" style="width: 200px;">
+                    <ui-select-match placeholder="选择请假类型">{{$select.selected.name}}</ui-select-match>
+                    <ui-select-choices repeat="item in special_data.types">
+                        <div>{{item.name}}</div>
+                    </ui-select-choices>
+                </ui-select>
+            </div>
+        </li>
+        <li class="apply-form-group clearfix">
+            <div class="apply-form-group-label">开始时间：</div>
+            <div class="apply-form-group-control">
+                <!-- <input class="items-input" type="text" ms-date-time ng-model="special_fields.start_time" placeholder="请选择开始时间"> -->
+                <input date-range-picker class="form-control date-picker" type="text" ng-model="special_fields.start_time" options="opts" required/>
+            </div>
+        </li>
+        <li class="apply-form-group clearfix">
+            <div class="apply-form-group-label">结束时间：</div>
+            <div class="apply-form-group-control">
+                <!-- <input class="items-input" type="text" ms-date-time ng-model="special_fields.end_time" placeholder="请选择结束时间"> -->
+                <input date-range-picker class="form-control date-picker" type="text" ng-model="special_fields.end_time" options="opts" required/>
+            </div>
+        </li>
+        <li class="apply-form-group clearfix">
+            <div class="apply-form-group-label">请假时长：</div>
+            <div class="apply-form-group-control">
+                <input class="items-input form-control" type="text" ng-model="special_fields.duration" placeholder="请输入请假时长" style="width: 200px">
+                <span class="mod-right">小时</span>
+            </div>
+        </li>
+        <li class="apply-form-group-textarea clearfix">
+            <div class="apply-form-group-label">请假事由：</div>
+            <div class="apply-form-group-control">
+                <textarea ng-model="special_fields.reason" placeholder="请输入请假事由" rows="6"></textarea>
+                <!--<div class="hint">加油，还差一个字！</div>-->
+            </div>
+        </li>
+        <section class="apply-form-group-upload clearfix">
+            <div class="clearfix">
+                <label class="apply-form-group-label" for="ap-upload">上传附件：</label>
+                <div class="apply-form-group-control">
+                    <a class="upload-pic" href="javascript:void(0)">
+                        <input class="upload-input-work" type="file" nv-file-select="" uploader="uploader" multiple />
+                    </a>
+                </div>
+            </div>
+            <br/>
+            <div class="upload-all-pic">
+                <ul>
+                    <li ng-repeat="item in uploader.queue">
+                        <td>
+                            <!-- <strong>{{ item.file.name }}</strong> -->
+                            <!-- Image preview -->
+                            <!--auto height-->
+                            <!--<div ng-thumb="{ file: item.file, width: 100 }"></div>-->
+                            <!--auto width-->
+                            <div ng-show="uploader.isHTML5" ng-thumb="{ file: item._file, height: 100 }"></div>
+                            <!--fixed width and height -->
+                            <!--<div ng-thumb="{ file: item.file, width: 100, height: 100 }"></div>-->
+                        </td>
+                        <!-- <td ng-show="uploader.isHTML5" nowrap>{{ item.file.size/1024/1024|number:2 }} MB</td> -->
+                        <td ng-show="uploader.isHTML5">
+                            <div class="progress" style="margin-bottom: 0;">
+                                <div class="progress-bar" role="progressbar" ng-style="{ 'width': item.progress + '%' }"></div>
+                            </div>
+                        </td>
+                        <td class="text-center">
+                            <span ng-show="item.isSuccess"><i class="glyphicon glyphicon-ok"></i></span>
+                            <span ng-show="item.isCancel"><i class="glyphicon glyphicon-ban-circle"></i></span>
+                            <span ng-show="item.isError"><i class="glyphicon glyphicon-remove"></i></span>
+                        </td>
+                        <td nowrap>
+                            <!-- <button type="button" class="btn btn-success btn-xs" ng-click="item.upload()" ng-disabled="item.isReady || item.isUploading || item.isSuccess">
+                                        <span class="glyphicon glyphicon-upload"></span> Upload
+                                    </button> -->
+                            <!--  <button type="button" class="btn btn-warning btn-xs" ng-click="item.cancel()" ng-disabled="!item.isUploading">
+                                        <span class="glyphicon glyphicon-ban-circle"></span> Cancel
+                                    </button> -->
+                            <button type="button" class="btn btn-danger btn-xs" ng-click="item.remove()">
+                                <span class="glyphicon glyphicon-trash"></span> 删除
+                            </button>
+                        </td>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="sec-btn">
+            <input class="sub" type="submit" value="提交" ng-click="submit()">
+        </section>
+    </form>
+</div>

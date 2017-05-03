@@ -1,0 +1,90 @@
+<div class="scrollable">
+    <!-- 编辑 -->
+    <div class="con-editing" ng-if="data.owner">
+        <a ng-href="#/record/update/{{data.id}}"><img src="./images/editing.png" alt="editing"></a>
+    </div>
+    <!-- end编辑 -->
+    <div class="scrollable-content approval-page my-application" style="margin: 0">
+        <section class="mod-application" style="background-color: #eee">
+            <ul class="con-record-list">
+                <li class="record-detail-item clearfix">
+                    <div class="mod-left">
+                        会议主题
+                    </div>
+                    <div class="mod-right">
+                        <input type="text" ng-model="data.book_name" ng-readonly="true">
+                    </div>
+                </li>
+                <li class="record-detail-item item-devide clearfix">
+                    <div class="mod-left">
+                        内容
+                    </div>
+                    <div class="mod-right">
+                        <input type="text" ng-model="data.book_content" ng-readonly="true">
+                    </div>
+                </li>
+                <li class="record-detail-item item-devide clearfix">
+                    <div class="mod-left">
+                        发起人
+                    </div>
+                    <div class="mod-right">
+                        <input type="text" ng-model="data.book_user.name" ng-readonly="true">
+                    </div>
+                </li>
+                <li class="record-detail-item clearfix">
+                    <div class="mod-left">
+                        会议室
+                    </div>
+                    <div class="mod-right">
+                        <input type="text" ng-model="data.room.name" ng-readonly="true">
+                    </div>
+                </li>
+                <li class="record-detail-item clearfix">
+                    <div class="mod-left">
+                        会议时间
+                    </div>
+                    <div class="mod-right">
+                        <input type="text" ng-model="data.bookDateTime" ng-readonly="true">
+                    </div>
+                </li>
+                <li class="record-detail-item item-devide clearfix">
+                    <div class="mod-left">
+                        会议提醒
+                    </div>
+                    <div class="mod-right">
+                        会议前<input style="width: 16px" type="text" ng-model="data.book_clock" ng-readonly="true">分钟提醒
+                    </div>
+                </li>
+                <!-- <li class="record-detail-item-content item-devide clearfix">
+                    <div class="instruction">
+                        说明
+                    </div>
+                    <div>
+                        <textarea ng-model="data.title" ng-readonly="true"></textarea>
+                    </div>
+                </li> -->
+                <li class="record-detail-item-content item-devide clearfix">
+                    <div class="instruction">
+                        邀请人员
+                    </div>
+                    <div>
+                        <ul class="clearfix">
+                            <li class="con-personnel" ng-repeat="item in data.room_book_user"><img ng-src="{{item.user.avatar}}" src="" err-src="./images/avatar.jpg" alt="personnel">
+                                <div>{{item.user.name}}</div>
+                            </li>
+                           
+                        </ul>
+                    </div>
+                </li>
+                <!-- <li class="record-detail-item clearfix">
+                    <div class="mod-left">
+                        会议记录
+                    </div>
+                    <div class="mod-right">
+                        <input type="text" ng-model="data.record" ng-readonly="true">
+                    </div>
+                </li> -->
+            </ul>
+        </section>
+    </div>
+</div>

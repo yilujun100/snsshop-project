@@ -1,0 +1,17 @@
+<div class="scrollable">
+	<div class="scrollable-content">
+		<!-- new people intro -->
+		<div class="new-people-intro">
+			<div class="new-info-basic">
+				<p class="p-name">{{ newPeopleIntro.name }}</p>
+				<p class="p-department">{{ newPeopleIntro.department_path }}/{{ newPeopleIntro.position }}</p>
+				<span class="p-join-date">{{ newPeopleIntro.join_date }}</span>
+			</div>
+			<div class="intro-detail" ng-bind-html="newPeopleIntro.content | trust:'html'">
+				<!-- <img src="images/intro.jpg" width="100%" alt="">
+				<p>我是一个对理想有着执着追求的人，坚信是金子总会发光。大学毕业后的工作，让我在文案策划方面有了很大的提高，文笔流畅，熟悉传媒工作、广告学制作与设计等工作方面。为人热情，活泼，大方， 本人好学上进，诚信、敬业、责任心强，有强烈的团体精神，对工作认真积极，严谨负责。</p> -->
+				<!-- {{ newPeopleIntro.content }} -->
+			</div>
+		</div>
+	</div>
+</div>

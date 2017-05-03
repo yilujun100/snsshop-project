@@ -1,0 +1,81 @@
+<!-- 公司制度 -->
+<div class="container">
+	<div class="main">
+		<!-- breadcrumb -->
+		<div class="breadcrumb">
+			<ul>
+				<li>当前位置：</li>
+				<li><a ui-sref="index.portal">门户</a></li>
+				<li>&gt;行政制度</li>
+			</ul>
+		</div>
+		
+		<!-- system list -->
+		<div class="list system mt-10">
+			<div class="list-hd">
+				<h3 class="list-tit fl">行政制度</h3>
+			</div>
+			<div class="system-con">
+				<ul class="system-list">
+					<li ng-repeat="system in systemList.contents">
+						<div class="thumb-system">
+							<img ng-src="{{system.image}}" src="" err-src="images/default.jpg" width="200" height="100">
+						</div>
+						<div class="system-info">
+							<a ui-sref="index.portal.systemDetail({id:system.id})" class="system-title" ng-bind="system.title"></a>
+							<p class="system-desc" ng-bind="system.description"></p>
+							<em class="list-publish-time" ng-bind="system.pulish_time * 1000 | date: 'yyyy-MM-dd'"></em>
+						</div>
+					</li>
+				</ul>
+
+				<!-- pagenation -->
+				<div class="list-page">
+					<uib-pagination total-items="page.totalCount" ng-model="page.pageNo" items-per-page="page.pageSize" max-size="5" ng-change="doRequest(systemList.status,page.pageNo,page.pageSize)" class="samplePage pagination-sm" boundary-link-numbers="true" previous-text="上一页" next-text="下一页">
+					</uib-pagination>
+					<span>共{{ page.totalPage }}页&nbsp;&nbsp;{{ page.totalCount }}条</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- sidebar start -->
+	<div class="sidebar">
+		<!-- ad -->
+		<div class="ad">
+			<ul>
+				<li ng-repeat="ad in adList">
+					<a ng-href="{{ad.link}}" target="_blank">
+						<img ng-src="{{ad.src}}" width="320" height="90" alt="">
+						<h3 class="ad-tit" ng-bind="ad.name"></h3>
+					</a>
+				</li>
+			</ul>
+		</div>
+
+		<!-- new partner -->
+		<div class="new-partner mt-10">
+			<div class="partner-hd">
+				<h3 class="fl">新伙伴</h3>
+				<a ui-sref="index.portal.newPartner" class="list-more fr">更多</a>
+			</div>
+			<div class="partner-con">
+				<ul>
+					<li ng-repeat="newPartner in newPartners | limitTo:9">
+						<a ui-sref="index.portal.newPartner.detail({userid:newPartner.id})">
+							<div class="partner-cell-1">
+								<img class="user-avatar" ng-src="{{newPartner.avatar}}" width="60" height="60" alt="">
+							</div>
+							<div class="partner-cell-2">
+								<h3 class="user-name" ng-bind="newPartner.name"></h3>
+								<p class="department">{{ newPartner.department_path }}/{{ newPartner.position }}</p>
+								<!-- <p class="join-date" ng-bind="newPartner.join_date"></p> -->
+							</div>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- sidebar end -->
+</div>

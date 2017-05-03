@@ -1,0 +1,52 @@
+<!-- 个人中心 -->
+<div class="personal-center">
+	<div class="my-card">
+		<div class="my-avatar">
+			<img ng-src="{{userData.avatar}}" width="64" height="64" alt="">
+		</div>
+		<div class="my-info">
+			<p class="clearfix"><em class="name fl">{{userData.name}}<i class="icon-avatar-w"></i></em><a class="score fr" href="#/score-detail">积分：{{scoreTotal.score}}</a>
+			</p><p class="department" ng-bind="userData.position">总部/产品技术中心/前端开发组</p>
+		</div>
+	</div>
+
+	<div class="grid mt-15">
+		<ul>
+			<li class="grid-item">
+				<a href="#/my-post"><i class="icon-personal icon-personal-file"></i>我的发帖<em>({{userData.article_count}})</em></a>
+			</li>
+			<li class="grid-item">
+				<a href="#/my-reply"><i class="icon-personal icon-personal-comment"></i>我的回帖<em>({{userData.comment_count}})</em></a>
+			</li>
+		</ul>
+	</div>
+
+	<div class="grid mt-15">
+		<ul>
+			<!-- <li class="grid-item">
+				<a href="#"><i class="icon-personal icon-personal-eye"></i>最近浏览<em>(708)</em></a>
+			</li> -->
+			<li class="grid-item">
+				<a href="#/my-collect"><i class="icon-personal icon-personal-collect"></i>我的收藏<em>({{userData.collect_count}})</em></a>
+			</li>
+		</ul>
+	</div>
+
+	<div class="grid mt-15">
+		<ul>
+			<li class="grid-item">
+				<a href="#/my-circle"><i class="icon-personal icon-personal-plus"></i>我加入的圈子<em>({{userData.coterie_count}})</em></a>
+			</li>
+		</ul>
+	</div>
+</div>
+
+<!-- bottom nav	start -->
+<div class="navbar navbar-app navbar-absolute-bottom" ui-yield-to="bottom-button">
+    <div class="btn-group justified">
+        <a href="#/index" class="btn btn-navbar" ng-class="{active:setHighlight('/index,/search-result')}"><i class="icon-nav icon-nav-bbs"></i> BBS</a>
+        <a href="#/circle" class="btn btn-navbar" ng-class="{active:setHighlight('/my-collection')}"><i class="icon-nav icon-nav-circle"></i> 圈子</a>
+        <a href="#/personal-center" class="btn btn-navbar" ng-class="{active:setHighlight('/personal-center')}"><i class="icon-nav icon-nav-personal"></i> 个人</a>
+    </div>
+</div>
+<!-- bottom nav	end -->
