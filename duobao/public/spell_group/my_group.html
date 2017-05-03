@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的团——拼团</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="author" content="">
+	<meta name="Copyright" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<!-- style base -->
+	<link rel="stylesheet" href="css/base.css">
+	<!-- style common -->
+	<link rel="stylesheet" href="css/common.css">
+	<!-- style layout -->
+	<link rel="stylesheet" href="css/layout.css">
+</head>
+<body>
+	<div class="viewport v-my-group">
+		<!-- my group start -->
+		<div class="my-group">
+			<div class="tab">
+				<div class="tab-hd">
+					<a href="#" class="tab-active">全部</a>
+					<a href="#">拼团中</a>
+					<a href="#">已成团</a>
+					<a href="#">拼团失败</a>
+				</div>
+				<div class="tab-con">
+					<!-- 全部 -->
+					<div class="content-all" style="display: block;">
+						<div class="grid group-item mt-10">
+							<div class="goods-info">						
+								<div class="goods-pic">
+									<img src="images/good_1.jpg" width="84" height="84" alt="">
+								</div>
+								<div class="goods-info-basic">
+									<div class="goods-name">云南新鲜水果无籽夏黑巨峰葡萄红提黑加仑黑提提子5斤</div>
+									<div class="goods-tag"><label>拼团</label></div>
+									<div class="goods-price clearfix"><span class="fl">总价：<strong>¥ 59.00</strong></span><span class="fr"><em class="status-group status-g-success">拼团成功</em></span></div>
+								</div>							
+							</div>	
+							<div class="group-item-bott">
+								<a href="#" class="btn-view-group">查看团</a>
+								<a href="#" class="btn-view-order">查看订单</a>
+							</div>
+						</div>
+						<div class="grid group-item mt-10">		
+							<div class="goods-info">				
+								<div class="goods-pic">
+									<img src="images/good_2.jpg" width="84" height="84" alt="">
+								</div>
+								<div class="goods-info-basic">
+									<div class="goods-name">预售现摘新鲜水果水蜜桃正宗山西特产大桃子</div>
+									<div class="goods-tag"><label>拼团</label></div>
+									<div class="goods-price clearfix"><span class="fl">总价：<strong>¥ 59.00</strong></span><span class="fr">还差<strong>2</strong>人<em class="status-group status-g-failure">拼团失败</em></span></div>
+								</div>							
+							</div>	
+							<div class="group-item-bott">
+								<a href="#" class="btn-view-group">查看团</a>
+								<a href="#" class="btn-view-order">查看订单</a>
+							</div>
+						</div>
+						<div class="grid group-item mt-10">		
+							<div class="goods-info">			
+								<div class="goods-pic">
+									<img src="images/good_3.jpg" width="84" height="84" alt="">
+								</div>
+								<div class="goods-info-basic">
+									<div class="goods-name">陕西大樱桃 车厘子 大红灯 纯天然无公害 2斤顺丰包邮</div>
+									<div class="goods-tag"><label>拼团</label></div>
+									<div class="goods-price clearfix"><span class="fl">总价：<strong>¥ 59.00</strong></span><span class="fr">还差<strong>1</strong>人<em class="status-group status-g-ongoing">拼团中</em></span></div>
+								</div>							
+							</div>	
+							<div class="group-item-bott">
+								<a href="#" class="btn-view-group">查看团</a>
+								<a href="#" class="btn-view-order">查看订单</a>
+							</div>
+						</div>						
+					</div>
+					<!-- 拼团中 -->
+					<div class="content-ongoing">
+						<div class="grid group-item mt-10">		
+							<div class="goods-info">			
+								<div class="goods-pic">
+									<img src="images/good_3.jpg" width="84" height="84" alt="">
+								</div>
+								<div class="goods-info-basic">
+									<div class="goods-name">陕西大樱桃 车厘子 大红灯 纯天然无公害 2斤顺丰包邮</div>
+									<div class="goods-tag"><label>拼团</label></div>
+									<div class="goods-price clearfix"><span class="fl">总价：<strong>¥ 59.00</strong></span><span class="fr">还差<strong>1</strong>人<em class="status-group status-g-ongoing">拼团中</em></span></div>
+								</div>							
+							</div>	
+							<div class="group-item-bott">
+								<a href="#" class="btn-view-group">查看团</a>
+								<a href="#" class="btn-view-order">查看订单</a>
+							</div>
+						</div>						
+					</div>
+					<!-- 已成团 -->
+					<div class="content-done content-empty">
+						<i class="icon-list"></i>
+						<p>您还没有任何拼团记录哦~</p>
+						<a href="#">去拼团</a>
+					</div>
+					<!-- 拼团失败 -->
+					<div class="content-failure"></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="fixed-bott-menu clearfix">
+			<a href="home.html">为爱拼团</a>
+			<a href="my_group.html" class="active">我的团</a>
+			<a href="my_order.html">我的订单</a>
+		</div>
+		<!-- my group end -->
+	</div>
+	<!-- jquery lib script -->
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+	<!-- common script -->
+	<script type="text/javascript" src="js/lib.js"></script>
+	<script>
+	$(function(){
+		// tab
+		PT.tab('.tab-hd a', '.tab-con > div');
+	})
+	</script>
+</body>
+</html>

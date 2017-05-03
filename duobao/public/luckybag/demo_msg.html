@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<a href="javascript:;" id="btn"></a>
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+	<script>
+	$(function(){
+		$('#btn').click(function(){
+			layer.msg('格式错误', function(){alert(111);});
+		});
+	});
+	var layer = layer || {};
+	layer.msg = function (msg, callback) {
+		var tmp = $('<div')
+	}
+	</script>
+</body>
+</html>

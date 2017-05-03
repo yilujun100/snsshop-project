@@ -1,0 +1,241 @@
+
+<ol id="top" class="breadcrumb">
+    <li><a href="#/">Home</a></li>
+    <li class="active">{{href}}</li>
+</ol>
+<div style="position: fixed; left: 0; top: 100px;" >
+    <div class="btn-group-vertical">
+        <button  class="btn btn-success" ng-click="add();" ng-show="WRITE_ABLE">Add</button>
+            <a ng-repeat="item in list" class="btn btn-default btn-xs" ng-href="#/api/{{href}}/{{item.name}}">{{item.name}}</a>
+    </div>
+</div>
+
+        <div style="position: fixed;right: 0; bottom: 20px;">
+            <button class="btn btn-info" ng-click="back();">回到顶部</button>
+        </div>
+
+<div>
+
+    <div ng-show="current" >
+        <form class="form-horizontal" name="apiForm" role="form">
+            <div class="form-group">
+                <label for="name" class="col-sm-2 control-label">接口名:</label>
+                <div class="col-sm-10">
+                    <input type="text" required class="form-control" name="name" ng-model="current.name" id="name" placeholder="接口名称">
+                    <span class=" error" ng-show="apiForm.name.$error.required">请填写分类名</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="url"  class="col-sm-2 control-label">url:</label>
+                <div class="col-sm-10">
+                    <input type="text" required class="form-control" name="url" id="url" ng-model="current.url" placeholder="url">
+                    <span class=" error" ng-show="apiForm.url.$error.required">请填写分类名</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="method"  class="col-sm-2 control-label">method:</label>
+                <div class="col-sm-10">
+                    <select id="method" ng-model="current.method">
+                        <option ng-repeat="item in METHODS" ng-selected="current.method == item" value="{{item}}">{{item}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <textarea name="description"  ng-model="current.description" style="width: 100%; height: 100px;"  placeholder="描述"></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">参数:</label>
+                <div class="col-sm-10">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>参数名</th>
+                            <th>默认值</th>
+                            <th>必传</th>
+                            <th>类型</th>
+                            <th>描述</th>
+                            <th>
+                                <button class="btn btn-success" ng-click="add_param(current)">新增</button>
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="param in current.params">
+                            <td><input type="text" ng-model="param.Name"/></td>
+                            <td><input type="text" ng-model="param.Default"/></td>
+                            <td><input type="checkbox" ng-true-value="Y" ng-false-value="N" ng-model="param.Required"/></td>
+                            <td>
+                                <select ng-model="param.Type">
+                                    <option ng-repeat="item in TYPES" ng-selected="param.Type == item" value="{{item}}">{{item}}</option>
+                                   </select>
+                            </td>
+                            <td><textarea style="width: 400px;" ng-model="param.Description"></textarea></td>
+                            <td>
+                                <button class="btn btn-danger" ng-click="remove(current.params, param)">删除</button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">参数:</label>
+                <div class="col-sm-10">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>参数名</th>
+                            <th>默认值</th>
+                            <th>必传</th>
+                            <th>类型</th>
+                            <th>描述</th>
+                            <th>
+                                <button class="btn btn-success" ng-click="add_response(current)">新增</button>
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="param in current.response">
+                            <td><input type="text" ng-model="param.Name"/></td>
+                            <td><input type="text" ng-model="param.Default"/></td>
+                            <td><input type="checkbox" ng-true-value="Y" ng-false-value="N" ng-model="param.Required"/></td>
+                            <td>
+                                <select ng-model="param.Type">
+                                    <option ng-repeat="item in TYPES" ng-selected="param.Type == item" value="{{item}}">{{item}}</option>
+                                </select>
+                            </td>
+                            <td><textarea style="width: 400px;" ng-model="param.Description"></textarea></td>
+                            <td>
+                                <button class="btn btn-danger" ng-click="remove(current.response, param)">删除</button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">测试代码:</label>
+                <div class="col-sm-offset-2 col-sm-10">
+                    <textarea ng-model="current.demo" style="width: 100%;height: 300px;"></textarea>
+                    </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">返回示例:</label>
+                <div class="col-sm-offset-2 col-sm-10">
+                    <textarea ng-model="current.response_demo" style="width: 100%;height: 300px;"></textarea>
+                    </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button ng-click="save();" type="submit" class="btn btn-success">保存</button>
+                    <button ng-click="cancel();" type="submit" class="btn btn-default">取消</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div ng-show="!current">
+        <div class="clearfix" style="margin: 5px;">
+            <label class="pull-right" for="search">
+                <input placeholder="search here" id="search" class="form-control input-sm " ng-model="search" style="width: 300px;" type="search"/>
+            </label>
+           </div>
+        <div class="panel panel-default" ng-repeat="item in list|filter: search">
+            <div id="{{item.name}}" class="panel-heading">
+                <h3 class="panel-title">
+                    {{item.name}}
+                    <button class="btn btn-info btn-xs pull-right" ng-click="edit(item);" ng-show="WRITE_ABLE">edit</button>
+                    <button class="btn btn-danger btn-xs pull-right" style="margin-right: 5px;" ng-click="remove(list, item); save_me();" ng-show="WRITE_ABLE">delete</button>
+                </h3>
+                <h4><kbd>{{item.method || 'GET'}}</kbd> - <kbd>{{item.url}}</kbd></h4>
+            </div>
+            <div class="panel-body">
+                <div class="alert alert-info">{{item.description}}</div>
+                <div ng-show="item.params.length > 0">
+                    <h5>请求参数</h5>
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>参数名</th>
+                            <th>必传</th>
+                            <th>默认值</th>
+                            <th>类型</th>
+                            <th>描述</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="param in item.params">
+                            <td>{{param.Name}}</td>
+                            <td>{{param.Required}}</td>
+                            <td>{{param.Default || "-"}}</td>
+                            <td>{{param.Type}}</td>
+                            <td>{{param.Description}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <h5 ng-show="item.demo">请求示例</h5>
+                <div ng-show="item.demo">
+                    <pre>{{item.demo}}</pre>
+                </div>
+                <br />
+                <div ng-show="item.response.length > 0">
+                <h5>返回值</h5>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>参数名</th>
+                        <th>必传</th>
+                        <th>默认值</th>
+                        <th>类型</th>
+                        <th>描述</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="param in item.response">
+                        <td>{{param.Name}}</td>
+                        <td>{{param.Required}}</td>
+                        <td>{{param.Default || "-"}}</td>
+                        <td>{{param.Type}}</td>
+                        <td>{{param.Description}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+                </div>
+                <h5 ng-show="item.response_demo">返回示例</h5>
+                <div ng-show="item.response_demo">
+                    <pre>{{item.response_demo}}</pre>
+                </div>
+                <br />
+                <div ng-show="item.params.length > 0">
+                    <h5>接口测试</h5>
+                    <form class="form-horizontal" name="testForm" method="{{item.method || 'GET'}}" target="_blank" action="{{DOMAIN + item.url}}">
+                        <div class="form-group">
+                            <div class="col-sm-10">
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th>参数名</th>
+                                        <th>值</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr ng-repeat="param in item.params">
+                                        <td>{{param.Name}}</td>
+                                        <td><input type="text" class="form-control" name="{{param.Name}}" value="{{param.Default}}"  /></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <p><button class="btn btn-primary">测试</button></p>
+                        <p>&nbsp;</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

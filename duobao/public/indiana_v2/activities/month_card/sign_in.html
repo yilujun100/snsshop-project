@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>月卡-签到</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="author" content="">
+	<meta name="Copyright" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<!-- style base -->
+	<link rel="stylesheet" href="../../css/base.css">
+	<!-- style common -->
+	<link rel="stylesheet" href="../../css/common.css">
+	<!-- style layout -->
+	<link rel="stylesheet" href="../../css/month_card.css">
+</head>
+<body style="background:#fefae0; height:100%;">
+	<div class="viewport">
+		<div class="month_card">
+			<div class="mthc_banner"><img src="../../images/bfhl_vip/banner.jpg" alt=""></div>
+			<!-- screen -->
+			<div class="screen">
+				<div class="w-marquee">					
+		            <p><strong>XXX</strong>充值了<strong>1000元</strong>卡</p>
+		            <p><strong>XXX</strong>充值了<strong>1000元</strong>卡</p>
+		            <p><strong>XXX</strong>充值了<strong>1000元</strong>卡</p>
+		            <p><strong>XXX</strong>充值了<strong>1000元</strong>卡</p>
+		            <p><strong>XXX</strong>充值了<strong>1000元</strong>卡</p>
+		            <p><strong>XXX</strong>充值了<strong>1000元</strong>卡</p>
+				</div>
+				<div class="w-marquee">					
+		            <p><strong>XXX</strong>充值了<strong>1000元</strong>卡</p>
+		            <p><strong>XXX</strong>充值了<strong>1000元</strong>卡</p>
+		            <p><strong>XXX</strong>充值了<strong>1000元</strong>卡</p>
+		            <p><strong>XXX</strong>充值了<strong>1000元</strong>卡</p>
+		            <p><strong>XXX</strong>充值了<strong>1000元</strong>卡</p>
+		            <p><strong>XXX</strong>充值了<strong>1000元</strong>卡</p>
+				</div>
+			</div>
+			<div class="sign_in">
+				<div class="user_msg_gcard clearfix">
+					<div class="cuser_pic"><img src="../../images/bfhl_vip/c.png" alt=""></div>
+					<div class="cuser_msg">
+						<span class="cuser_name">昵称：<b>钻石老王钻石老王钻石老王</b></span>
+						<span class="cuser_grade">黄金卡</span>
+						<a class="go_duobao">去夺宝</a>
+					</div>
+				</div>
+				<div class="user_in_date">
+					<div class="in_datett">您已领取2天</div>
+					<div class="in_adterecord">
+						<div class="mui_flex in_onbox">
+							<div class="cell in_yet"><span><i>1</i></span></div>
+							<div class="cell in_none"><span><i>2</i></span></div>
+							<div class="cell in_yet"><span><i>3</i></span></div>
+							<div class="cell"><span><i>4</i></span></div>
+							<div class="cell"><span><i>5</i></span></div>
+						</div>
+					</div>
+					<button class="ck_in">签到领取奖励</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="masked show"></div>
+	<!-- 领取提示 -->
+	<div class="popup-tips hide">
+	    <div class="pucen">
+	        <div class="in_tips">
+	        	<div class="tips-t">
+	        		<h3>恭喜拥有XX卡</h3>
+	                <p>额外赠送2000张夺宝券<br>已放入账户了哦~</p>
+	            </div>
+	            <div class="tips-q"><a>去夺宝</a></div>
+	            <div class="in_close">+</div>
+	        </div>
+	    </div>
+	</div>
+	<!-- 提示登录 -->
+	<div class="popup-tips2 show">
+	    <div class="pucen">
+	        <div class="in_tips">
+	        	<div class="tips-t">
+	                <p>亲，您有未领取的奖励哦</p>
+	            </div>
+	            <div class="tips-q"><a>去领取</a></div>
+	            <div class="in_close">+</div>
+	        </div>
+	    </div>
+	</div>
+	<!-- jquery lib script -->
+	<script type="text/javascript" src="../../js/jquery-2.1.4.min.js"></script>
+	<!-- jquery marquee script -->
+	<script type="text/javascript" src="../../js/jquery.marquee.js"></script>
+	<script>
+		$(function(){
+			//弹窗
+			$(".ck_in").one("click",function(){
+		    	$(".masked,.popup-tips").addClass("show");
+		    	$(".ck_in").addClass("yilingqu").html("已领取");
+		    	if($(".popup-tips").hasClass("show")){
+		    		$(".in_close").on("click",function(){
+		    			$(".popup-tips,.masked").removeClass("show");
+		    		})
+		    	}
+		    });
+		    //弹窗
+		
+		    	if($(".popup-tips2").hasClass("show")){
+		    		$(".in_close").on("click",function(){
+		    			$(".popup-tips2,.masked").removeClass("show");
+		    		})
+		    	}
+		  
+
+			
+ 			// barrage 			
+			var aMarquee = $('.w-marquee');
+			var aMarP = $('.w-marquee p');
+			aMarP.each(function(){
+				var randomNum = parseInt(Math.random()*(100-20+1) + 20);
+				$(this).css('margin-right', randomNum);
+			});
+			aMarquee.each(function(){
+				var _this = $(this);
+				if (_this.index() % 2 == 0) {
+					_this.marquee({
+						duration: 15000,
+						duplicated: true,
+						delayBeforeStart: 2000
+					});
+				} else {
+					_this.marquee({
+						duration: 15000,
+						duplicated: true
+					});					
+				}
+			}) 
+
+		})
+	</script>
+</body>
+</html>

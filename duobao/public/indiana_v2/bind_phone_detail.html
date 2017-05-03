@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>绑定手机号码——夺宝奇兵</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="author" content="">
+	<meta name="Copyright" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<!-- style base -->
+	<link rel="stylesheet" href="css/base.css">
+	<!-- style common -->
+	<link rel="stylesheet" href="css/common.css">
+	<!-- style layout account set -->
+	<link rel="stylesheet" href="css/layout_account_set.css">
+</head>
+<body>
+	<div class="viewport">
+		<div class="bind-phone">
+			<div class="set-title">
+				<h3><i class="icon-set-phone"></i>绑定手机号</h3>
+			</div>
+			<div class="set-content">
+				<div class="tips-set tips-info" id="tipsSet"><i class="icon-set-horn"></i><span>百分好礼希望在您中奖后第一时间联系您，赶快绑定手机号吧！</span></div>
+				<!-- <div class="tips-set tips-error"><i class="icon-set-info"></i>手机号码格式不正确，请核对后重新输入</div> -->
+				<form action="" class="form-bind-phone mt-15" id="formBindPhone">
+					<div class="form-box">
+						<p class="form-item-col2">
+							<label for="phoneNum">手机号</label>
+							<input type="number" name="phoneNum" id="phoneNum" placeholder="请填写您的手机号码（仅限中国大陆用户）">
+							<a href="javascript:;" class="btn-field-clear" id="clear">清除文本域</a>
+							<i class="icon-ok"></i>
+						</p>
+						<p class="form-item-col3">
+							<label for="verifyCode">验证码</label>
+							<input type="text" name="verifyCode" id="verifyCode" placeholder="请填写手机收到的验证码">
+							<a href="javascript:;" class="btn-set btn-send-code btn-set-disabled" id="btnSendCode">发送验证码</a>
+						</p>						
+					</div>
+					<input type="submit" class="btn-form-action btn-form-confirm btn-form-confirm-disabled" id="btnConfirm" value="">
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="bott-tips"><a href="#">暂不绑定</a></div>
+	<div class="fixed-nav">
+		<a href="home.html" class="active"><i class="icon-nav icon-home"></i>首页</a>
+		<a href="share.html"><i class="icon-nav icon-camera"></i>晒单</a>
+		<a href="#"><i class="icon-nav icon-gift"></i>活动</a>
+		<a href="cart.html"><i class="icon-nav icon-cart"></i>夺宝车</a>
+		<a href="personal_center.html"><i class="icon-nav icon-avatar"></i>个人中心</a>
+	</div>
+
+	<!-- 图形验证码提示框 start -->
+	<div class="pop-mask-set"></div>
+	<div class="pop-graph-verify">
+		<div class="content">
+			<h3>图形验证</h3>
+			<p><img src="images/v2/info/code.jpg" width="100" height="42" alt="" class="pic-verify-code"><a href="javascript:;" class="btn-refresh">刷新</a></p>
+			<p><input type="text" id="verifyCode1" placeholder="请输入图形验证码(区分大小写)"></p>
+			<!-- <div class="pop-tips-error"><i class="icon-error-info"></i><span>验证码错误,请重新输入</span></div> -->
+		</div>
+		<a href="javascript:;" class="btn-pop-set btn-verify-confirm btn-verify-confirm-disabled" id="btnPopConfirm">确认</a>
+		<a href="javascript:;" class="btn-pop-set-close" id="btnPopClose">关闭</a>
+	</div>
+	<!-- 图形验证码提示框 end -->
+
+	<!-- 跳出绑定提示框 start -->
+	<div class="pop-mask-notbind"></div>
+	<div class="pop-not-bind">
+		<div class="pop-not-bind-con">
+			<p>不绑定手机号码了吗？</p>
+			<div class="pop-not-bind-tips">温馨提示：亲爱的用户，为中奖后及时联系您，加快发货速度，建议您绑定手机号码</div>
+		</div>
+		<div class="pop-not-bind-bott">
+			<a href="javascript:;" class="btn-know" id="btnKnow">朕知道了</a>
+			<a href="javascript:;" class="btn-redo" id="btnRedo">继续绑定</a>			
+		</div>
+		<a href="javascript:;" class="btn-pop-set-close" id="btnPopClose1">关闭</a>		
+	</div>
+	<!-- 跳出绑定提示框 end -->
+
+
+	<!-- jquery lib script -->
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+	<!-- common script -->
+	<script type="text/javascript" src="js/lib.js"></script>
+	<!-- bind phone script -->
+	<script type="text/javascript" src="js/bind_phone.js"></script>
+</body>
+</html>

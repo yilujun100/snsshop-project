@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>满100送100</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no">
+		<!-- style base -->
+		<link rel="stylesheet" href="../../css/base.css">
+		<!-- style common -->
+		<link rel="stylesheet" href="../../css/common.css">
+		<!-- style layout turntable -->
+		<link rel="stylesheet" href="../../css/layout_meet_decrease.css">
+	</head>
+	<body style="background:url(../../images/meet_decrease/blbg.jpg); background-size: 2px 2px; min-height: 100%;">
+		<div class="viewport v-lucky-draw">
+			<!-- lucky draw start -->
+			<div class="lucky-draw">
+				<!-- banner -->
+				<div class="banner">
+					<img src="../../images/meet_decrease/banner_1.jpg" width="100%" height="auto" alt="">
+				</div>
+				<div class="fdbg">
+					<!-- bag area -->
+					<div class="bag-area">
+						<h3>恭喜您！获得X次抽奖机会~</h3>
+						<div class="bag">
+							<a href="javascript:;">
+								<img src="../../images/meet_decrease/bg_bag.png" width="100%" height="auto" alt="">
+							</a>
+						</div>
+					</div>
+
+					<!-- bottom btns -->
+					<div class="bott-btns clearfix">
+						<a href="#"><img src="../../images/meet_decrease/btn3.png" alt=""></a>
+						<a href="#"><img src="../../images/meet_decrease/btn4.png" alt=""></a>
+					</div>
+				</div>
+			</div>
+			<!-- lucky draw end -->
+		</div>
+
+		<!-- pop up start -->
+		<div class="pop-mask"></div>
+		<div class="pop-up" id="win">
+			<div class="pop-content">
+				恭喜您！获得100元夺宝劵的奖励<br>下次中奖几率为4%哦~
+			</div>
+			<div class="pop-bott mt-10">
+				<a href="lucky_draw.html" class="btn-pop"><img src="../../images/meet_decrease/btn7.png" alt=""></a>
+			</div>
+			<a href="javascript:;" class="btn-pop-close">关闭</a>
+		</div>
+		<div class="pop-up" id="notWin">
+			<div class="pop-content">
+				好伤心！没有中奖<br>下次中奖几率为20%，继续努力~~
+			</div>
+			<div class="pop-bott mt-10">
+				<a href="javascript:;" class="btn-pop btn-pop-know"><img src="../../images/meet_decrease/btn8.png" alt=""></a>
+			</div>
+			<a href="javascript:;" class="btn-pop-close">关闭</a>
+		</div>
+		<!-- pop up end -->
+		<!-- jquery lib script -->
+		<script src="../../js/jquery-2.1.4.min.js" type="text/javascript"></script>
+		<script>			
+			$(function(){
+				// 活动弹窗
+				var aBtns = $('.bott-btns a');
+				aBtns.eq(0).on('click', function(){
+					$('.pop-mask, #win').show();
+				});
+				aBtns.eq(1).on('click', function(){
+					$('.pop-mask, #notWin').show();
+				});
+
+				$('.btn-pop-close, .btn-pop-know').on('click', function(){
+					$('.pop-mask, .pop-up').hide();
+				});
+			});
+		</script>
+	</body>
+</html>

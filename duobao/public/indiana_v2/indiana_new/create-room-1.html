@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>百分好礼--创建房间</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<meta name="format-detection" content="telephone=no" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<link rel="stylesheet" type="text/css" href="css/base.css" />
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<link rel="stylesheet" type="text/css" href="css/former-renk.css" />
+		<link rel="stylesheet" type="text/css" href="css/create-room1.css" />
+		<script src="js/jquery-2.1.4.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div class="active-head">
+			<img src="img/create/create-top.png" />
+		</div>
+		<img src="img/formerrank/top-img.png" alt="" />
+		<div class="list-wrap create-wrap">
+			<div class="create-main">
+				<ul class="list-content create-content">
+					<li>
+						<div class="create-list-title">
+							<span>选择奖品：</span>
+							<span class="reselect" onclick="window.location='creat-room.html'">重新选择<i class="arrow-right"></i></span>
+						</div>
+					</li>
+					<li>
+						<div class="list-text">
+							<div class="list-img">
+								<div class="product-wrap">
+									<img src="img/formerrank/product-img.png" alt="">
+								</div>
+							</div>
+							<div class="list-info">
+								<div class="name">苹果专区 iPad pro small 颜色随机</div>
+								<div>定制期号：123456789</div>
+								<div>总需人次：3688</div>
+							</div>
+						</div>
+						<div class="hint">*支付创建房间48小时后，人数不足将自动退券</div>
+					</li>
+					<li>
+						<div class="participation">
+							<div class="tit">选择参与游戏人数：</div>
+							<div class="parti-number-con">
+								<div class="quantity-wrap">
+									<a href="javascript:;" class="quantity-decrease">-</a>
+									<input type="number" class="quantity" value="3" name="num">
+									<a href="javascript:;" class="quantity-increase">+</a>
+								</div>
+								<em class="each-limit">（每人次：<i>500</i>夺宝券）</em>
+							</div>
+
+						</div>
+					</li>
+					<li>
+						<div class="room-box">
+							<div class="tit">输入房间名称：</div>
+							<div class="room-input"><input type="text" placeholder="房间名称" name="" value=""></div>
+						</div>
+					</li>
+					<li>
+						<div class="payment-box">
+							<div class="tit"><span class="total">总计用券<i>1844</i>张</span>支付方式：</div>
+							<div class="my-voucher">
+								<a class="lack">券不足,请先充值</a>我的券（余X张）</div>
+							<div class="payment-btn">
+								<a><img src="img/create/payment-btn.png"></a>
+							</div>
+							<div class="payment-btn failure">
+								<a><img src="img/create/payment-btn-gray.png"></a>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<img src="img/formerrank/bottom-img.png" class="bottom-img" />
+		<!--底部tabbar-->
+		<div class="fixed-nav clearfix">
+			<a href="home.html"><i class="icon-nav icon-home"></i>首页</a>
+			<a href="share.html"><i class="icon-nav icon-camera"></i>晒单</a>
+			<a href="#"><i class="icon-nav icon-acti"></i>活动</a>
+			<a href="cart.html"><i class="icon-nav icon-cart"></i>清单</a>
+			<a href="personal_center.html"><i class="icon-nav icon-avatar"></i>个人中心</a>
+		</div>
+		<!--蒙层-->
+		<div class="layout-box" style="display: none;"></div>
+		<!--买券弹窗-->
+		<div class="buy-layer popup-box" style="display: none;">
+			<div class="close-btn"></div>
+			<div class="buy-layer-con">
+				<div class="tit">还需购买:</div>
+				<div class="parti-number-con">
+					<div class="quantity-wrap">
+						<a href="javascript:;" class="quantity-decrease">-</a>
+						<input type="number" class="quantity" value="3" name="num">
+						<a href="javascript:;" class="quantity-increase">+</a>
+					</div>
+					<em class="each-limit">需支付：<i>¥1888</i></em>
+				</div>
+				<div class="affirm-sub"><img class="affirm-btn" src="img/create/comfirm-btn.png"></div>
+			</div>
+		</div>
+		<!--提示弹窗-->
+		<div class="confirme-wrap popup-box" style="display: none;">
+			<div class="close-btn"></div>
+			<div class="confirme">本奖品最少需1人参与</div>
+		</div>
+
+		<!-- common script -->
+		<script type="text/javascript" src="js/lib.js"></script>
+		<!-- jquery layer script -->
+		<script>
+			$(function() {
+				DUOBAO.chooseQty.init();
+				$('.btn-prize-confirm').on('click', function() {
+					if($('.acti-name-con input').val() == '') {
+						alert(1111)
+					}
+				});
+				$(".lack").click(function() {
+					$(".buy-layer").show();
+					$(".layout-box").show();
+					bodyHidden();
+				})
+				$(".close-btn").click(function() {
+					bodyAuto();
+					$(".buy-layer").hide();
+					$(".layout-box").hide();
+				})
+
+				function bodyHidden() {
+					$("body").css('overflow', 'hidden');
+					$("html").css('overflow', 'hidden');
+				}
+
+				function bodyAuto() {
+					$("body").css('overflow', 'auto');
+					$("html").css('overflow', 'auto');
+				}
+			})
+		</script>
+	</body>
+
+</html>

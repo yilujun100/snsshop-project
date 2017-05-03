@@ -1,0 +1,65 @@
+/*
+ * 分享有礼活动样式 layout_share_gift.css
+ * author:yilj@snsshop.cn
+ * date:2016-5-20
+*/
+
+.share { position: relative; width: 100%; }
+.share-bg { position: absolute; top: 0; left: 0; z-index: 9; }
+.coupon-receive { position: relative; top: 0; left: 0; z-index: 10; padding-top: 90%; }
+.coupon-receive img.hands { position: absolute; top: 36%; left: 0; }
+.coupon { margin: 0 auto; width: 80%; }
+.coupon-obtain { margin-top: 8px; text-align: center; font-size: 13px; color: #510b03; }
+.coupon-obtain strong { margin: 0 4px; color: #e41333; font-weight: bold; }
+.btn-share,
+.btn-coupon,
+.btn-received,
+.btn-go-1 { display: block; margin: 20px auto 0; width: 156px; height: 39px; background-repeat: no-repeat; background-size: 156px 39px; text-indent: -999em; }
+.btn-share { background-image: url(../images/share/btn_share.png); }
+.btn-coupon { background-image: url(../images/share/btn_coupon.png); }
+.btn-received { background-image: url(../images/share/btn_received.png); }
+.btn-go-1 { background-image: url(../images/share/btn_go_1.png); }
+.btn-groups { margin-top: 10px; margin-left: -16px; width: 334px; text-align: center; }
+.btn-groups a { display: inline-block; }
+.btn-received,
+.btn-go-1 { margin: 0 4px; }
+.screen { position: absolute; top: 47%; left: 12%; z-index: 10; width: 76%; height: 80px; overflow: hidden; }
+.screen div { display: none; position: absolute; top: 0; left: 0; width: 300px; line-height: 20px; font-size: 12px; color: #fff; font-weight: bold; }
+.intro { position: relative; z-index: 10; margin-top: 20px; }
+.intro img { display: block; margin: 0 auto; }
+.intro ul { position: absolute; top: 0; left: 0; padding: 42px 20px 0; }
+.intro p { margin: 0; }
+.intro li.track { position: absolute; z-index: 9; top: 58px; left: 31px; width: 1px; height: 68%; background: #fa9e00; }
+.intro li.intro-item { position: relative; z-index: 10; margin-top: 8px; display: -webkit-box; display: -moz-box; display: box; }
+.intro li em { display: block; margin-right: 6px; width: 24px; height: 24px; line-height: 24px; text-align: center; background: url(../images/share/circle.png) no-repeat; background-size: 24px 24px; font-size: 16px; color: #622705; font-weight: bold; }
+.intro li span { display: block; margin-top: 4px; -webkit-box-flex: 1; -moz-box-flex: 1; box-flex: 1; }
+.intro li span p { font-size: 12px; color: #96681a; }
+.intro li span p:first-child { font-size: 13px; color: #b33505; }
+.intro .intro-other { margin: 0; margin-top: 10px; padding-right: 10px; text-align: right; font-size: 12px; color: #622705; }
+.popup { position: absolute; top: 0; left: 0; z-index: 100; width: 100%; display: none; }
+.popup-coupon { position: fixed; top: 50%; left: 50%; margin-top: -82px; margin-left: -155px; width: 309px; height: 163px; background: url(../images/share/bg_popup.png) no-repeat; background-size: 309px 163px; }
+.popup .popup-content { padding-top: 20px; }
+.popup-content img,
+.popup-content a { display: block; margin: 10px auto 0; }
+.popup-coupon .btn-use,
+.popup-coupon .btn-join,
+.popup-coupon .btn-share-immedia,
+.popup-coupon .btn-go { width: 115px; height: 39px; background-repeat: no-repeat; background-size: 115px 39px; text-indent: -999em; }
+.popup-coupon .btn-use { background-image: url(../images/share/btn_use.png); }
+.popup-coupon .btn-join { background-image: url(../images/share/btn_join.png); }
+.popup-coupon .btn-share-immedia { background-image: url(../images/share/btn_share_immedia.png); }
+.popup-coupon .btn-go { background-image: url(../images/share/btn_go.png); }
+.popup-coupon .btn-view-rules { text-align: center; font-size: 12px; color: #99131a; }
+.btn-close { position: absolute; top: -26px; right: -10px; z-index: 101; display: block; width: 30px; height: 30px; background: url(../images/share/icon_close.png) no-repeat center center; background-size: 25px 25px; text-indent: -999em; }
+.popup-coupon .pop-btns { text-align: center; }
+.popup-coupon .pop-btns a { display: inline-block; margin: 10px 4px; }
+
+
+@media screen and (max-width:320px) {
+	.intro ul { padding: 34px 16px 0; }
+	.intro li.track { left: 25px; height: 64%; }
+	.intro li em { width: 18px; height: 18px; line-height: 18px; background-size: 18px 18px; font-size: 13px; }
+	.intro li span { margin-top: 1px; }
+	.intro li span p,
+	.intro li span p:first-child { font-size: 10px; }
+}

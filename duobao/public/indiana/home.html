@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>夺宝奇兵</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="author" content="">
+	<meta name="Copyright" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<!-- style base -->
+	<link rel="stylesheet" href="css/base.css">
+	<!-- style common -->
+	<link rel="stylesheet" href="css/common.css">
+	<!-- style swiper -->
+	<link rel="stylesheet" href="js/swiper/swiper.min.css">
+	<!-- style layout -->
+	<link rel="stylesheet" href="css/layout.css">
+	<!-- style layout rules -->
+	<link rel="stylesheet" href="css/layout_rules.css">
+</head>
+<body>
+	<div class="viewport v-home">
+		<div class="home">
+			<div class="mask" id="homeMask"></div>
+			<!-- topbar -->
+			<div class="topbar">
+				<div class="category" id="category">
+					<a href="javascript:;"><i class="icon-category"></i>夺宝分类</a>
+					<div class="cate-sub">
+						<ul>
+							<li><a href="#"><i class="icon-category-sub icon-hot"></i>热门精选</a></li>
+							<li><a href="#"><i class="icon-category-sub icon-phone"></i>手机数码</a></li>
+							<li><a href="#"><i class="icon-category-sub icon-pc"></i>电脑平板</a></li>
+							<li><a href="#"><i class="icon-category-sub icon-electric"></i>家用电器</a></li>
+							<li><a href="#"><i class="icon-category-sub icon-bag"></i>品牌箱包</a></li>
+							<li><a href="#"><i class="icon-category-sub icon-ornament"></i>钟表饰品</a></li>
+							<li><a href="#"><i class="icon-category-sub icon-others"></i>其他商品</a></li>
+							<li><a href="#"><i class="icon-category-sub icon-view-all"></i>查看全部</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="search">
+					<p>
+						<input type="text" class="keyword" id="keyword" placeholder="请输入搜索关键词">
+						<input type="button" class="btn-search" />
+						<a href="javascript:;" class="btn-keyword-clear" style="display: none;">清除关键字</a>						
+					</p>
+				</div>
+			</div>
+
+			<!-- banner -->
+			<div class="swiper-container banner" id="slider">
+				<ul class="swiper-wrapper">
+					<li class="swiper-slide"><a href="#"><img src="images/banner.jpg" width="100%" alt=""></a></li>
+					<li class="swiper-slide"><a href="#"><img src="images/banner.jpg" width="100%" alt=""></a></li>
+					<li class="swiper-slide"><a href="#"><img src="images/banner.jpg" width="100%" alt=""></a></li>
+					<li class="swiper-slide"><a href="#"><img src="images/banner.jpg" width="100%" alt=""></a></li>
+				</ul>
+		        <!-- Add Pagination -->
+		        <div class="swiper-pagination"></div>
+			</div>
+			
+			<!-- scroll info -->
+			<div class="scroll-info">
+				<em class="icon-horn"></em>
+				<div class="msgs" id="scrollInfo">
+					<ul>
+						<li><a href="#">恭喜<strong>天上的月亮</strong>3分钟前获得<b>爱玛快速折叠自行车</b></a></li>
+						<li><a href="#">恭喜<strong>天上的月亮</strong>3分钟前获得<b>爱玛快速折叠自行车</b></a></li>
+						<li><a href="#">恭喜<strong>天上的月亮</strong>3分钟前获得<b>爱玛快速折叠自行车</b></a></li>
+					</ul>					
+				</div>
+			</div>
+
+			<!-- quick entry -->
+			<div class="quick-entry-nav">
+				<a href="#"><i class="icon-entry-nav icon-sign"></i>签到</a>
+				<a href="#"><i class="icon-entry-nav icon-lucky-bag"></i>发福袋</a>
+				<a href="buy_stamps.html"><i class="icon-entry-nav icon-indiana"></i>购买夺宝券</a>
+				<a href="javascript:;"><i class="icon-entry-nav icon-personal-center"></i>活动规则</a>
+			</div>
+
+			<!-- new reveal -->
+			<div class="tab index-newReveal mt-10">
+				<div class="tab-tit" id="tab1">
+					<a href="javascript:;" class="tab-active">已揭晓</a>
+					<a href="javascript:;">即将揭晓</a>
+					<a href="http://baidu.com" class="tab-more">更多&gt;&gt;</a>
+				</div>
+				<div class="tab-con" id="tabCon1">
+					<!-- 已揭晓 -->
+					<div class="swiper-container already-revealed" id="swiper-1" style="display: block;">
+						<ul class="swiper-wrapper clearfix">
+							<li class="swiper-slide">
+								<div class="prize-pic">
+									<img src="images/product_5.jpg" width="100%" alt="">
+									<div class="status status-success">即将揭晓</div>
+								</div>
+								<div class="prize-name">2016夏季新款潮流印花A字裙无袖圆领收腰显瘦连衣裙女</div>
+								<div class="countDown" data-start-time="2016/3/21 10:55:00" data-end-time="2016/3/21 11:00:00">
+									<!-- <label class="hour">01</label>:
+									<label class="min">28</label>:
+									<label class="sec">216</label> -->
+									<span class="ms"></span>
+								</div>
+							</li>
+							<li class="swiper-slide">
+								<div class="prize-pic">
+									<img src="images/product_6.jpg" width="100%" alt="">
+									<div class="status status-danger">已揭晓</div>
+								</div>
+								<div class="prize-name">多功能榨汁机</div>
+								<div class="winners">中奖者：金三胖嘟嘟</div>
+							</li>
+							<li class="swiper-slide">
+								<div class="prize-pic">
+									<img src="images/product_7.jpg" width="100%" alt="">
+									<div class="status status-danger">已揭晓</div>
+								</div>
+								<div class="prize-name">多功能榨汁机</div>
+								<div class="winners">中奖者：金三胖嘟嘟</div>
+							</li>
+							<li class="swiper-slide">
+								<div class="prize-pic">
+									<img src="images/product_8.jpg" width="100%" alt="">
+									<div class="status status-danger">已揭晓</div>
+								</div>
+								<div class="prize-name">多功能榨汁机</div>
+								<div class="winners">中奖者：金三胖嘟嘟</div>
+							</li>
+							<li class="swiper-slide">
+								<div class="prize-pic">
+									<img src="images/product_5.jpg" width="100%" alt="">
+									<div class="status status-danger">已揭晓</div>
+								</div>
+								<div class="prize-name">多功能榨汁机</div>
+								<div class="winners">中奖者：金三胖嘟嘟</div>
+							</li>
+						</ul>	
+					</div>
+					<!-- 即将揭晓 -->
+					<div class="empty" id="swiper-3" style="padding: 0;">
+						<!-- <img src="images/empty_pic.png" width="82" height="82" alt="">
+						<h3>暂无相关记录，敬请期待哦~</h3> -->						
+						<ul class="swiper-wrapper clearfix">
+							<li class="swiper-slide">
+								<div class="prize-pic">
+									<img src="images/product_5.jpg" width="100%" alt="">
+									<div class="status status-danger">已揭晓</div>
+								</div>
+								<div class="prize-name">多功能榨汁机</div>
+								<div class="winners">中奖者：金三胖嘟嘟</div>
+							</li>
+							<li class="swiper-slide">
+								<div class="prize-pic">
+									<img src="images/product_5.jpg" width="100%" alt="">
+									<div class="status status-danger">已揭晓</div>
+								</div>
+								<div class="prize-name">多功能榨汁机</div>
+								<div class="winners">中奖者：金三胖嘟嘟</div>
+							</li>
+							<li class="swiper-slide">
+								<div class="prize-pic">
+									<img src="images/product_5.jpg" width="100%" alt="">
+									<div class="status status-danger">已揭晓</div>
+								</div>
+								<div class="prize-name">多功能榨汁机</div>
+								<div class="winners">中奖者：金三胖嘟嘟</div>
+							</li>
+							<li class="swiper-slide">
+								<div class="prize-pic">
+									<img src="images/product_5.jpg" width="100%" alt="">
+									<div class="status status-danger">已揭晓</div>
+								</div>
+								<div class="prize-name">多功能榨汁机</div>
+								<div class="winners">中奖者：金三胖嘟嘟</div>
+							</li>
+						</ul>
+					</div>
+					<!-- 更多 -->
+					<!-- <div>更多</div> -->
+				</div>
+			</div>
+
+			<!-- snap up -->
+			<div class="snap-up mt-10">
+				<div class="snap-up-hd clearfix">
+					<h3 class="fl"><i class="icon-alarm"></i>最后疯抢</h3>
+					<a href="#" class="view-all fr">查看全部</a>
+				</div>
+				<div class="swiper-container snap-up-con" id="swiper-2">
+					<ul class="swiper-wrapper clearfix">
+						<li class="swiper-slide">
+							<div class="prize-pic">
+								<img src="images/product_3.jpg" width="100%" alt="">
+							</div>
+							<div class="prize-name"><a href="#">2016夏季新款潮流印花A字裙无袖圆领收腰显瘦连衣裙女</a></div>
+							<div class="lott-schedule" data-lott-schedule="50%">
+								<div class="progress-bar">
+									<span class="progress-bar-on"></span>
+								</div>
+								<em>50%</em>
+							</div>
+							<div class="prize-bott">
+								<a href="#" class="btn-parti btn-parti-1">立即参与</a>
+								<a href="#" class="add-to-cart">添加到购物车<span class="icon-plus">+</span></a>
+							</div>
+						</li>
+						<li class="swiper-slide">
+							<div class="prize-pic">
+								<img src="images/product_4.jpg" width="100%" alt="">
+							</div>
+							<div class="prize-name">多功能榨汁机</div>
+							<div class="lott-schedule" data-lott-schedule="50%">
+								<div class="progress-bar">
+									<span class="progress-bar-on"></span>
+								</div>
+								<em>50%</em>
+							</div>
+							<div class="prize-bott">
+								<a href="#" class="btn-parti btn-parti-1">立即参与</a>
+								<a href="#" class="add-to-cart">添加到购物车<span class="icon-plus">+</span></a>
+							</div>
+						</li>
+						<li class="swiper-slide">
+							<div class="prize-pic">
+								<img src="images/product_3.jpg" width="100%" alt="">
+							</div>
+							<div class="prize-name">多功能榨汁机</div>
+							<div class="lott-schedule" data-lott-schedule="50%">
+								<div class="progress-bar">
+									<span class="progress-bar-on"></span>
+								</div>
+								<em>50%</em>
+							</div>
+							<div class="prize-bott">
+								<a href="#" class="btn-parti btn-parti-1">立即参与</a>
+								<a href="#" class="add-to-cart">添加到购物车<span class="icon-plus">+</span></a>
+							</div>
+						</li>
+						<li class="swiper-slide">
+							<div class="prize-pic">
+								<img src="images/product_4.jpg" width="100%" alt="">
+							</div>
+							<div class="prize-name">多功能榨汁机</div>
+							<div class="lott-schedule" data-lott-schedule="50%">
+								<div class="progress-bar">
+									<span class="progress-bar-on"></span>
+								</div>
+								<em>50%</em>
+							</div>
+							<div class="prize-bott">
+								<a href="#" class="btn-parti btn-parti-1">立即参与</a>
+								<a href="#" class="add-to-cart">添加到购物车<span class="icon-plus">+</span></a>
+							</div>
+						</li>
+						<li class="swiper-slide">
+							<div class="prize-pic">
+								<img src="images/product_3.jpg" width="100%" alt="">
+							</div>
+							<div class="prize-name">多功能榨汁机</div>
+							<div class="lott-schedule" data-lott-schedule="50%">
+								<div class="progress-bar">
+									<span class="progress-bar-on"></span>
+								</div>
+								<em>50%</em>
+							</div>
+							<div class="prize-bott">
+								<a href="#" class="btn-parti btn-parti-1">立即参与</a>
+								<a href="#" class="add-to-cart">添加到购物车<span class="icon-plus">+</span></a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<!-- indiana area -->
+			<div class="tab indiana-area mt-10">
+				<div class="tab-tit" id="tab2">
+					<a href="javascript:;" class="tab-active">一元专区</a>
+					<a href="javascript:;">十元专区</a>
+					<a href="javascript:;">苹果专区</a>
+					<a href="javascript:;">最后疯抢</a>
+					<a href="http://qq.com" class="tab-more">更多&gt;&gt;</a>
+				</div>
+				<div class="tab-con indiana-area-con" id="tabCon2">
+					<!-- 一元专区 -->
+					<div class="area-one" style="display: block;">
+						<ul class="list clearfix" id="more">
+							<li>
+								<div class="prize-pic">
+									<img src="images/product_5.jpg" width="100%" alt="">
+									<em class="tag tag-area">一元<br>专区</em>
+								</div>
+								<div class="prize-name">美的 4升智能柴火饭电饭锅</div>
+								<div class="lott-schedule" data-lott-schedule="50%">
+									<div class="progress-bar">
+										<span class="progress-bar-on"></span>
+									</div>
+									<em>50%</em>
+								</div>
+								<div class="prize-bott">
+									<a href="#" class="btn-parti btn-parti-1">立即参与</a>
+									<a href="#" class="add-to-cart">添加到购物车<span class="icon-plus">+</span></a>
+								</div>
+								<!-- <div class="prize-bott-1">
+									<div class="lott-schedule-1" data-lott-schedule="45%">
+										<p class="clearfix"><em class="fl">开奖进度</em><span class="fr">45%</span></p>
+										<div class="progress-bar">
+											<span class="progress-bar-on"></span>
+										</div>
+									</div>
+									<a href="#" class="add-to-cart-1">加入夺宝车</a>
+								</div> -->
+							</li>
+							<li>
+								<div class="prize-pic">
+									<img src="images/product_6.jpg" width="100%" alt="">
+									<em class="tag tag-area">十元<br>专区</em>
+								</div>
+								<div class="prize-name">美的 4升智能柴火饭电饭锅</div>
+								<div class="lott-schedule" data-lott-schedule="50%">
+									<div class="progress-bar">
+										<span class="progress-bar-on"></span>
+									</div>
+									<em>50%</em>
+								</div>
+								<div class="prize-bott">
+									<a href="#" class="btn-parti btn-parti-1">立即参与</a>
+									<a href="#" class="add-to-cart">添加到购物车<span class="icon-plus">+</span></a>
+								</div>
+							</li>
+							<li>
+								<div class="prize-pic">
+									<img src="images/product_7.jpg" width="100%" alt="">
+									<div class="goods-tag">
+										<img src="images/goods_tag_default.png" width="40" height="36" alt="">
+										<span class="goods-tag-txt">十元<br>专区</span>
+									</div>
+									<!-- <em class="tag tag-apple"><img src="images/icon_reword.png" width="" height="" alt=""></em> -->
+								</div>
+								<div class="prize-name">美的 4升智能柴火饭电饭锅</div>
+								<div class="lott-schedule" data-lott-schedule="50%">
+									<div class="progress-bar">
+										<span class="progress-bar-on"></span>
+									</div>
+									<em>50%</em>
+								</div>
+								<div class="prize-bott">
+									<a href="#" class="btn-parti btn-parti-1">立即参与</a>
+									<a href="#" class="add-to-cart">添加到购物车<span class="icon-plus">+</span></a>
+								</div>
+							</li>
+							<li>
+								<div class="prize-pic">
+									<img src="images/product_8.jpg" width="100%" alt="">
+								</div>
+								<div class="prize-name">美的 4升智能柴火饭电饭锅</div>
+								<div class="lott-schedule" data-lott-schedule="50%">
+									<div class="progress-bar">
+										<span class="progress-bar-on"></span>
+									</div>
+									<em>50%</em>
+								</div>
+								<div class="prize-bott">
+									<a href="#" class="btn-parti btn-parti-1">立即参与</a>
+									<a href="#" class="add-to-cart">添加到购物车<span class="icon-plus">+</span></a>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<!-- 十元专区 -->
+					<div class="area-ten">						
+						<ul class="clearfix">
+							<li>
+								<div class="prize-pic">
+									<img src="images/default_goods_pic.jpg" width="100%" alt="">
+								</div>
+								<div class="prize-name">美的 4升智能柴火饭电饭锅</div>
+								<div class="lott-schedule" data-lott-schedule="50%">
+									<div class="progress-bar">
+										<span class="progress-bar-on"></span>
+									</div>
+									<em>50%</em>
+								</div>
+								<div class="prize-bott">
+									<a href="#" class="btn-parti btn-parti-1">立即参与</a>
+									<a href="#" class="add-to-cart">添加到购物车<span class="icon-plus">+</span></a>
+								</div>
+							</li>
+							<li>
+								<div class="prize-pic">
+									<img src="images/product_6.jpg" width="100%" alt="">
+								</div>
+								<div class="prize-name">美的 4升智能柴火饭电饭锅</div>
+								<div class="lott-schedule" data-lott-schedule="50%">
+									<div class="progress-bar">
+										<span class="progress-bar-on"></span>
+									</div>
+									<em>50%</em>
+								</div>
+								<div class="prize-bott">
+									<a href="#" class="btn-parti btn-parti-1">立即参与</a>
+									<a href="#" class="add-to-cart">添加到购物车<span class="icon-plus">+</span></a>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<!-- 苹果专区 -->
+					<div class="area-apple empty">						
+						<img src="images/empty_pic.png" width="82" height="82" alt="">
+						<h3>暂无相关记录，敬请期待哦~</h3>
+					</div>
+					<!-- 最后疯抢 -->
+					<div class="area-seckill">这里是最后疯抢相关产品</div>
+					<!-- 更多 -->
+					<!-- <div>更多</div> -->
+				</div>
+
+				<div id="loadMore" class="Fh_laod" style="display:none;"><i></i><span class="Fh_laod-text">加载中</span></div>
+				<div id="no-more" class="no-more">没有更多,逛逛其他吧!</div>	
+			</div>
+		</div>
+	</div>
+	
+	<div class="fixed-nav">
+		<a href="home.html" class="active"><i class="icon-nav icon-home"></i>首页</a>
+		<a href="share.html"><i class="icon-nav icon-camera"></i>晒单</a>
+		<!-- <a href="#"><i class="icon-nav icon-gift"></i>活动</a> -->
+		<a href="#"><span class="icon-nav icon-gift"><em class="dotted"></em></span>活动</a>
+		<a href="cart.html"><span class="icon-nav icon-cart"><em class="cart-num" id="cartNum">1</em></span>夺宝车</a>
+		<a href="personal_center.html"><i class="icon-nav icon-avatar"></i>个人中心</a>
+	</div>
+	<!-- activity rules start -->
+	<div class="mask-rules mask-win"></div>
+	<div class="scroll-wrap pop-acti-rules">
+		<!-- <iframe src="acti_rules_1.html" id="iframeActiRules" name="iframeActiRules" frameborder="0" width="320" height="400"></iframe>		 -->
+
+		<div class="viewport v-rules">
+			<div class="acti-instru">
+				<h3 class="title">活动说明</h3>
+				<div class="step-1">
+					<img src="images/rules/indiana_stamps.jpg" width="209" height="89" alt="">
+				</div>
+				<div class="arrow" style="margin-top: 6px;"></div>
+				<div class="box clearfix">
+					<div class="area area-1">
+						<div class="area-step-1">
+							<img src="images/rules/area_1.jpg" width="100%" alt="">
+						</div>
+						<div class="arrow"></div>
+						<div class="area-step-2">
+							<img src="images/rules/goods_1.jpg" width="100%" style="margin-left: 4%;" alt="">
+						</div>
+						<div class="arrow"></div>
+						<div class="area-step-3">
+							<img src="images/rules/step_1.jpg" width="100%" alt="">
+						</div>
+						<div class="arrow"></div>
+						<div class="area-step-4">
+							<img src="images/rules/step_3.jpg" width="100%" alt="">
+						</div>
+					</div>
+					<div class="area area-10">
+						<div class="area-step-1">
+							<img src="images/rules/area_10.jpg" width="100%" alt="">
+						</div>
+						<div class="arrow" style="margin-top: 10px;"></div>
+						<div class="area-step-2">
+							<img src="images/rules/goods_1.jpg" width="100%" style="margin-left: 7%;" alt="">
+						</div>
+						<div class="arrow"></div>
+						<div class="area-step-3">
+							<img src="images/rules/step_2.jpg" width="100%" alt="">
+						</div>
+						<div class="arrow"></div>
+						<div class="area-step-4">
+							<img src="images/rules/step_3.jpg" width="100%" alt="">
+						</div>					
+					</div>
+					<a href="javascript:;" class="btn-view-rules" id="btnViewRules">查看计算规则</a>
+				</div>
+				<div class="txt"></div>
+				<div class="rules-tips">
+					<img src="images/rules/tips.jpg" width="100%" alt="">
+				</div>
+				<div class="btn-groups-1">
+					<a href="javascript:;" class="btn-buy-stamps">立即购买夺宝券</a>
+					<a href="javascript:;" class="btn-parti">直接参与</a>
+				</div>
+			</div>
+		</div>
+		<a href="javascript:;" id="btnPopClose" class="btn-pop-close">关闭</a>
+	</div>
+	<!-- activity rules end -->
+	<!-- 活动规则 start -->
+	<div class="pop-mask"></div>
+	<div class="pop-acti-rules-new">
+		<div class="pop-acti-rules-new-content">
+			Hey，百分好礼已对幸运码计算规则进行全新升级，并引入中国福利彩票“重庆老时时彩”增强百分好礼活动的公平公正性，具体规则请前往帮助中心查看哦
+		</div>
+		<div class="pop-acti-rules-new-bott clearfix">
+			<a href="javascript:;" class="btn-know">朕知道了</a>
+			<a href="javascript:;" class="btn-rules-view">查看计算规则</a>
+		</div>
+	</div>
+	<!-- 活动规则 end -->
+	<!-- winning info start -->
+	<!-- <div class="pop-win-info">
+		<div class="pop-win-info-content">
+			<img src="images/bg_win.jpg" width="100%" alt="">
+			<div class="prize-wrap">
+				<img src="images/product_7.jpg" width="100%" alt="">
+				<div class="banner-win"></div>
+				<div class="pop-prize-info">
+					<p class="prize-no">期号：123456789</p>
+					<p class="prize-name">苹果专区 IPHONG 6S粉色</p>
+				</div>
+			</div>
+		</div>
+		<div class="pop-win-info-bott">
+			<a href="#" class="btn-exchange-prize">前往个人中心兑奖</a>
+		</div>
+		<a href="javascript:;" id="btnPopWinClose" class="btn-pop-win-close">关闭</a>
+	</div> -->
+	<!-- winning info end -->
+	<!-- jquery lib script -->
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+	<!-- common script -->
+	<script type="text/javascript" src="js/lib.js"></script>
+	<!-- swiper script -->
+	<script type="text/javascript" src="js/swiper/swiper.min.js"></script>
+	<!-- home script -->
+	<script type="text/javascript" src="js/home.js"></script>
+	<script>
+	$(function(){
+		$('.quick-entry-nav a:eq(1)').on('click', function(){
+			DUOBAO.reword.init(25, '恭喜获得签到积分!');
+		})
+
+		//即将揭晓
+			var swiper3 = new Swiper('#swiper-3', {
+				slidesPerView: 3,
+				spaceBetween: 10,
+				slidesOffsetBefore: 10,
+				freeMode: true
+			});
+		$('#tab1 a:eq(1)').on('click', function(){
+			var swiper4 = new Swiper('#swiper-3', {
+				slidesPerView: 3,
+				spaceBetween: 10,
+				slidesOffsetBefore: 10,
+				freeMode: true
+			});
+		});
+
+		// countDown
+		var aCountDown = $('.countDown');
+		for (var i=0; i<aCountDown.length; i++) {
+			var leftTime = (new Date($(aCountDown[i]).attr('data-end-time')).getTime() - new Date($(aCountDown[i]).attr('data-start-time')).getTime())/1000;
+			var ele = aCountDown[i];
+			DUOBAO.countDown(ele, leftTime);
+		}
+		/*var leftTime1 = (new Date($('#countDown1').attr('data-end-time')).getTime() - new Date($('#countDown1').attr('data-start-time')).getTime())/1000;
+		DUOBAO.countDown('countDown1', 60);*/
+
+		DUOBAO.initCartNum = $('#cartNum').text();
+		var aBtnCart = $('.add-to-cart');
+		aBtnCart.on('click', function(){
+			DUOBAO.initCartNum++;
+			$('#cartNum').text(DUOBAO.initCartNum);
+		});
+
+		// 活动规则		
+		/*if (!getCookie('activity_rules')) {
+			$('.mask-rules, .pop-acti-rules').show();
+			var d = new  Date();
+          	d.setTime(d.getTime() + (30*24*60*60*1000));
+          	var expires = 'expires='+ d.toUTCString();
+          	document.cookie = 'activity_rules=activity_rules_cookie;'+ expires;
+		}*/
+
+
+		$('#btnPopClose').on('click', function(){
+			$('.mask-rules, .pop-acti-rules').hide();
+
+			// 如果用户中奖
+			var prize = {
+				no: '1234567',
+				name: '苹果专区 IPHONG 6S粉色',
+				pic: './images/product_7.jpg',
+				url: 'http://baidu.com'
+			}
+			DUOBAO.popWin.init(prize.name, prize.no, prize.pic, prize.url);
+
+		});
+
+		// 活动规则
+		$('.quick-entry-nav a:last-child').on('click', function(){
+			$('.pop-mask, .pop-acti-rules-new').show();
+		});
+		$('.btn-know').on('click', function(){
+			$('.pop-mask, .pop-acti-rules-new').hide();
+		});
+
+
+		/*var aLink = {
+			rules: 'http://baidu.com', // 活动规则
+			stampsBuy: 'http://qq.com', // 购买夺宝券
+			parti: 'http://sina.com' // 立即参与
+		};*/
+
+		/*var iframe = $('#iframeActiRules').contents();
+		var linkRule = iframe.find('.btn-view-rules'),
+			linkStampsBuy = iframe.find('.btn-buy-stamps'),
+			linkParti = iframe.find('.btn-parti');*/
+		/*var linkRule = $(window.frames['iframeActiRules'].document).find('.btn-view-rules'),
+			linkStampsBuy = $(window.frames['iframeActiRules'].document).find('.btn-buy-stamps'),
+			linkParti = $(window.frames['iframeActiRules'].document).find('.btn-parti');
+
+		console.log(linkRule.attr('id'));*/
+		/*linkRule.on('click', function(){
+			alert(111);
+			window.parent.document.location.href = aLink.rules;
+		});*/
+	})
+
+
+	function getCookie(cname){
+		var name = cname+ '=';
+		var ca = document.cookie.split(';')
+		for(var i=0; i<ca.length; i++) {
+		    var c = ca[i];
+		    while (c.charAt(0)==' ') c = c.substring(1);
+		    if (c.indexOf(name) != -1) return c.substring(name.length, c.length);
+		}
+		return '';
+	}
+	</script>
+</body>
+</html>

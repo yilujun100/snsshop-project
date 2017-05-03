@@ -1,0 +1,41 @@
+/*
+ * 幸运抽奖活动页样式 layout_lucky_draw.css
+ * author:yilj@snsshop.cn
+ * date:2016-9-5
+ */
+
+
+body { padding-bottom: 30px; background-color: #ffda00; }
+.banner { position: relative; width: 100%; }
+.broadcast-msg { position: relative; padding-left: 10px; width: 100%; height: 42px; line-height: 42px; background: #fff;  font-size: 12px; color: #666; overflow: hidden; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+.broadcast-msg .icon-horn { display: inline-block; vertical-align: -4px; margin-right: 2px; width: 18px; height: 18px; background: url(../images/lucky_draw/icon_horn.png) no-repeat; background-size: 18px 18px; } 
+.table-proportion { padding: 16px; }
+.table-proportion table { width: 100%; border-collapse: collapse; background: #fff; -webkit-border-radius: 4px 4px 0 0; -moz-border-radius: 4px 4px 0 0; border-radius: 4px 4px 0 0; }
+.table-proportion th,
+.table-proportion td { padding: 6px 0; text-align: center; font-size: 13px; color: #333; font-family: arial }
+.table-proportion th { font-size: 15px; font-weight: normal; }
+.table-proportion tbody tr:nth-child(even) { background: #f8f8f8; }
+.table-proportion tbody tr td:first-child { color: #ffcb00; }
+.table-proportion tbody tr td:nth-child(3) { color: #fa7345; }
+.bott-btns { margin: 20px 20px 0; }
+.bott-btns a { float: left; display: block; margin-left: 20%; width: 40%; height: 42px; line-height: 42px; text-align: center; background: #ee5160; border: 1px solid #e1404f; font-size: 15px; color: #fff; font-weight: bold; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; }
+.bott-btns a:first-child { margin-left: 0; }
+
+.bag-area { position: relative; margin: -26% auto 0; width: 70%; }
+.bag-area h3 { text-align: center; font-size: 18px; color: #ec4a45; }
+.bag-area h3 strong { color: #fff; font-weight: bold; text-shadow: #ef4c47 1px 0 0, #ef4c47 0 1px 0, #ef4c47 -1px 0 0, #ef4c47 0 -1px 0; -webkit-text-shadow: #ef4c47 1px 0 0, #ef4c47 0 1px 0, #ef4c47 -1px 0 0, #ef4c47 0 -1px 0; -moz-text-shadow: #ef4c47 1px 0 0, #ef4c47 0 1px 0, #ef4c47 -1px 0 0, #ef4c47 0 -1px 0; *filter: Glow(color=#ef4c47, strength=1); font-family: arial; }
+.bag { position: relative; margin-top: 10px; }
+.btn-lottery { position: absolute; bottom: 18%; left: 50%; margin-left: -60px; display: block; width: 121px; height: 44px; background: url(../images/lucky_draw/btn_lottery.png) no-repeat; background-size: 121px 44px; text-indent: -999em; }
+
+.pop-up { display: none; position: fixed; top: 50%; left: 50%; z-index: 103; margin-top: -78px; margin-left: -140px; padding: 20px; width: 280px; height: 156px; background: #fff; -webkit-border-radius: 6px; -moz-border-radius: 6px; border-radius: 6px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+.pop-content { line-height: 30px; color: #666; }
+.btn-pop { display: block; width: 100%; height: 42px; line-height: 42px; text-align: center; background: #fbd439; border: 1px solid #e7c028; font-size: 15px; color: #fff;  -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+.btn-pop-close { position: absolute; top: 0; right: 0; z-index: 104; display: block; width: 30px; height: 30px; background: url(../images/lucky_draw/icon_close.png) no-repeat center center; background-size: 16px 16px; text-indent: -999em; }
+
+.rules { margin-top: 30px; padding: 16px; background: #ffea6b; }
+.rules p { margin: 0; margin-top: 4px; font-size: 13px; color: #5d0501; }
+
+
+@media screen and (max-width:640px) {
+	.btn-lottery { bottom: 10%; }
+}

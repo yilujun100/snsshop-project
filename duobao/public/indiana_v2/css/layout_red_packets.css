@@ -1,0 +1,41 @@
+/*
+ * 红包活动样式 layout_red_packets.css
+ * author:yilj@snsshop.cn
+ * date:2016-8-5
+*/
+
+.red-packets { padding-top: 50%; min-height: 800px; background: #312d44 url(../images/red_packets/bg.jpg) no-repeat top left; background-size: 100% auto; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+.screen { margin: 10px; height: 52px; border: 1px solid #dab589; background: #f5f1e5; overflow: hidden; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; }
+.w-marquee { height: 26px; }
+.w-marquee p{ display:inline-block; margin: 0; margin-right:25px; line-height: 26px; font-size: 12px; color: #7b4a10;}
+.w-marquee strong { color: #d5283c; }
+.grab-red-packets { margin: 100px auto 0; width: 284px; }
+.grab-red-packets .btn-grab { display: block; }
+.btn-opera { display: block; margin: 10px auto 0; width: 200px; height: 39px; background-repeat: no-repeat; background-size: 200px auto; text-indent: -999em; }
+.btn-go-card-pkg { background-image: url(../images/red_packets/btn_go.png); }
+.btn-use-ticket { background-image: url(../images/red_packets/btn_use.png); }
+.status-open { position: relative; }
+.amount-money,
+.pop-amount-money { position: absolute; top: 66px; left: 50%; width: 80px; text-align: center; margin-left: -46px; font-size: 34px; color: #d5283c; font-weight: bold; font-family: arial; }
+.pop-amount-money { top: 114px; }
+.use-ticket { margin-top: 10px; padding: 0 10px; text-align: right; font-size: 13px; color: #dab589; }
+.use-ticket .icon-info { display: inline-block; vertical-align: -4px; margin-right: 4px; width: 17px; height: 17px; background: url(../images/red_packets/icon_info.png) no-repeat; background-size: 17px 17px; }
+.rules { margin: 10px auto 0; padding: 54px 24px 10px; width: 354px; height: 249px; background: url(../images/red_packets/box_rules.png) no-repeat; background-size: 354px 249px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+.rules p { margin: 0; margin-top: 4px; font-size: 13px; color: #dab589; }
+.pop-mask-red-pkts,
+.pop-red-pkts { display: none; }
+.pop-mask-red-pkts { position: fixed; top: 0; left: 0; z-index: 102; width: 100%; height: 100%; background: #000; filter: alpha(opacity=60); opacity: .6; }
+.pop-red-pkts { position: fixed; top: 50%; left: 50%; z-index: 103; margin-top: -184px; margin-left: -142px; width: 284px; height: 368px; -webkit-animation: scale 0.5s ease-in-out; }
+.btn-pop-pkts { display: block; margin: 20px auto; width: 171px; height: 48px; background: url(../images/red_packets/btn_view.png) no-repeat; background-size: 171px 48px; text-indent: -999em; }
+.btn-pop-close { position: absolute; top: 0; right: 0; z-index: 104; display: block; width: 30px; height: 30px; background: url(../images/red_packets/btn_close.png) no-repeat; background-size: 30px auto; text-indent: -999em; }
+
+@keyframes scale {	
+	0% { -webkit-transform: scale(0) } 
+	100% { -webkit-transform: scale(1) }
+}
+
+
+@media screen and (max-width: 320px) {
+	.rules { padding: 40px 20px 10px; width: 300px; height: 212px; background-size: 300px auto;  }
+	.rules p { font-size: 11px; }
+}

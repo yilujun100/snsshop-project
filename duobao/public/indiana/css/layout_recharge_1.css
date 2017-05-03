@@ -1,0 +1,146 @@
+/*
+ * 充值活动样式 layout_recharge_1.css
+ * author:陈吉芳
+ * date:2016-6-1
+*/
+.v-recharge-1{
+	padding-bottom: 52px;
+	background: #db0a4c url(../images/recharge/body-bg.jpg) no-repeat top left;
+	background-size: 100% auto;
+}
+.wrap{
+	max-width: 640px;
+	min-width: 320px;
+	background: url(../images/recharge/body-bg.jpg) no-repeat left top;
+	background-size: 100% auto;
+	min-height: 100%;
+
+}
+.banner{
+	/*padding-top: 44px;*/
+}
+.time-wrap{
+	width: 300px;
+	height: 100px;
+	background: url(../images/recharge/time-bg.png) no-repeat center center;
+	background-size: 300px auto;
+	margin-bottom: 12px;
+	position: relative;
+	margin: 0 auto;
+	margin-top: -40px;
+}
+.time-inner{
+	width: 160px;
+	height: 24px;
+	position: absolute;
+	top: 52px;
+	right: 14px;
+	/*background-color: red;*/
+}
+
+.time-inner span{
+	display: inline-block;
+	width: 30px;
+	height: 24px;
+	line-height: 24px;
+	text-align: center;
+	font-size: 14px;
+	color: #fff;
+	font-weight: bold;
+	font-family: arial;
+	background: #333;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+.time-inner span.sepera { width: 4px; background: none; font-size: 16px; color: #333; }
+.marquee-wrap{
+	height: 80px;
+	margin: 0 auto;
+	background: url(../images/recharge/marque-bg.png) no-repeat center center;
+	background-size: 94% 100%;
+	padding: 16px 0 14px;
+	overflow: hidden;
+	font-size: 1.4rem;
+}
+.marquee-wrap .marquee-inner{
+	height: 100%;
+	margin: 0 20px;
+	overflow: hidden;
+	text-align: center;
+	position: relative;
+}
+.marquee { position: relative; overflow: hidden; height: 20px; }
+.marquee p{ float: left; margin: 0; margin-right: 32px; font-size: 12px; color: #fff; }
+
+.text-info{
+	color: #8a0f97;
+}
+.activity-content{
+	min-height: 798px;
+	background: url(../images/recharge/content-bg.png) no-repeat left top;
+	background-size: 100% auto;
+	padding-top: 16px;
+}
+.voucher-link{
+	display: block;
+	max-width: 269px;
+	height: 100px;
+	margin: 0 auto 20px;
+}
+.voucher-link100{
+	background: url(../images/recharge/voucher100.png) no-repeat center center;
+	background-size: 100% auto;
+}
+.voucher-link50{
+	background: url(../images/recharge/voucher50.png) no-repeat center center;
+	background-size: 100% auto;
+}
+.voucher-link30{
+	background: url(../images/recharge/voucher30.png) no-repeat center center;
+	background-size: 100% auto;
+}
+.voucher-link20{
+	background: url(../images/recharge/voucher20.png) no-repeat center center;
+	background-size: 100% auto;
+}
+.voucher-link10{
+	background: url(../images/recharge/voucher10.png) no-repeat center center;
+	background-size: 100% auto;
+	margin-bottom: 45px;
+}
+.rules-content{
+	height: 214px;
+	margin: 0 auto;
+	background: url(../images/recharge/rules-bg.png) no-repeat center center;
+	background-size: 94% 100% ;
+	overflow: hidden;
+}
+.rules-content .title{
+	width: 106px;
+	height: 28px;
+	line-height: 28px;
+	text-align: center;
+	background: -webkit-linear-gradient(top, #ffcc1f 0%,#faa819 100%);
+	border-radius: 20px;
+	box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+	margin: 10px 0 6px 50px;
+	text-shadow: 1px 1px 3px rgba(246,137,18,1);
+	font-size: 12px; 
+	color: #fff;
+}
+.rules-content .title:first-child {
+	margin-top: 18px;
+}
+.rules-content p{
+	margin: 0 0 0 52px;
+	font-size: 12px; 
+	color: #fff;
+}
+.copyright{
+	text-align: center;
+	height: 55px;
+	line-height: 55px;
+	font-size: 12px; 
+	color: #fff;
+}

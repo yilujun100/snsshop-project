@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的收藏——夺宝奇兵</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="author" content="">
+	<meta name="Copyright" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<!-- style base -->
+	<link rel="stylesheet" href="css/base.css">
+	<!-- style common -->
+	<link rel="stylesheet" href="css/common.css">
+	<!-- layer skin extend style -->
+	<link rel="stylesheet" href="css/layer_skin_extend.css">
+	<!-- style layout -->
+	<link rel="stylesheet" href="css/layout.css">
+</head>
+<body>
+	<div class="viewport v-collect">
+		<div class="grid collect-list">
+			<ul>				
+				<li>
+					<div class="items">
+						<!-- <div class="check-wrap">
+							<input type="checkbox" checked>
+						</div> -->
+						<div class="collect-item-core">
+							<div class="collect-product-cell-1 us-pic-bg"><img src="images/product_8.jpg" width="84" height="84" alt=""></div>
+							<div class="collect-product-cell-2">
+								<div class="collect-product-name">苹果专区 IPHONE 6S 粉色过年就换新手机</div>
+								<div class="collect-opt">
+									<span class="single-cost">单次<strong>￥1</strong></span>
+									<a href="#" class="btn-collect-item-del delFav">删除</a>
+                                    <button class="btn-detailed"><img src="images/btn/btn-jrqd.png" alt=""/></button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="items">
+						<!-- <div class="check-wrap">
+							<input type="checkbox" checked>
+						</div> -->
+						<div class="collect-item-core">
+							<div class="collect-product-cell-1 us-pic-bg"><img src="images/product_8.jpg" width="84" height="84" alt=""></div>
+							<div class="collect-product-cell-2">
+								<div class="collect-product-name">苹果专区 IPHONE 6S 粉色过年就换新手机</div>
+								<div class="collect-opt">
+									<span class="single-cost">单次<strong>￥10</strong></span>
+									<a href="#" class="btn-collect-item-del delFav">删除</a>
+                                    <button class="btn-detailed"><img src="images/btn/btn-jrqd.png" alt=""/></button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="items items-invalid">
+						<!-- <div class="check-wrap">
+							<label class="label-invalid">失效</label>
+						</div> -->
+						<div class="collect-item-core">
+							<div class="collect-product-cell-1 us-pic-bg"><img src="images/product_8.jpg" width="84" height="84" alt=""></div>
+							<div class="collect-product-cell-2">
+								<div class="collect-product-name">苹果专区 IPHONE 6S 粉色过年就换新手机</div>
+								<div class="collect-opt">
+									<a href="javascript:;" class="btn-collect-item-del delFav">删除</a>
+                                    <button class="btn-detailed"><img src="images/btn/btn-sx.png" alt=""/></button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="fixed-nav">
+        <a href="home.html"><i class="icon-nav icon-home"></i>首页</a>
+        <a href="share.html"><i class="icon-nav icon-camera"></i>晒单</a>
+        <a href="#"><i class="icon-nav icon-acti"></i>活动</a>
+        <a href="cart.html"><i class="icon-nav icon-cart"></i>清单</a>
+        <a href="personal_center.html"><i class="icon-nav icon-avatar"></i>个人中心</a>
+	</div>
+	<!-- jquery lib script -->
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+	<!-- common script -->
+	<script type="text/javascript" src="js/lib.js"></script>
+	<!-- jquery layer script -->
+	<script type="text/javascript" src="js/layer/layer.js"></script>
+	<script>
+		DUOBAO.collect = {
+			perTimes: 1, // 每件奖品参与的次数
+			totalPrize: 0, // 总的奖品件数
+			totalPartiTimes: 0, // 总的参与次数
+			cost: 0 // 总计支付金额
+		};
+
+		DUOBAO.url = {
+			'collect_url': 'http://duogebao.vikduo.com/duogebao/collect/del'
+		};
+
+		$(function(){
+			$('.delFav').click(function(){
+				var _this = $(this);
+				var act_id = _this.attr('id');
+				layer.confirm('确认删除所选项', {
+							title: false,
+							closeBtn: false
+						},
+						function(){
+							DUOBAO._get('http://duogebao.vikduo.com/duogebao/collect/del?act_id='+act_id,function(rs){
+								rs = 'string' === typeof rs ? $.parseJSON(rs) : rs;
+								if(rs.retCode != 0){
+									layer.msg('删除失败，请稍侯再试~');
+								}else{
+									_this.parents('li').remove();
+									DUOBAO.collect.init();
+									layer.msg('成功删除收藏~');
+								}
+							});
+						});
+			});
+
+			$('#quick-by').click(function(){
+				var len = $('input[name="fav[]"]:checked').length;
+				if(len <= 0) {
+					layer.msg('请选择收藏记录~');
+				} else {
+					$('#myform').submit();
+				}
+			})
+		})
+	</script>
+	<script type="text/javascript" src="js/my_collect.js"></script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>立即参与快捷支付——夺宝奇兵</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="author" content="">
+	<meta name="Copyright" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<!-- style base -->
+	<link rel="stylesheet" href="css/base.css">
+	<!-- style common -->
+	<link rel="stylesheet" href="css/common.css">
+	<!-- style swiper -->
+	<link rel="stylesheet" href="js/swiper/swiper.min.css">
+	<!-- style layout -->
+	<link rel="stylesheet" href="css/layout.css">
+</head>
+<body>
+	<div class="viewport v-quick-pay">
+		<!-- pay progress -->
+		<div class="grid-1 pay-progress">
+			<ul class="clearfix">
+				<li class="step-on">
+					<i class="icon-pay-step icon-pro-gift"></i>
+					<em class="icon-dotted"></em>
+					<h3>选择夺宝活动</h3>
+				</li>
+				<li class="step-on">
+					<i class="icon-pay-step icon-cash"></i>
+					<em class="icon-dotted"></em>
+					<h3>确认支付</h3>
+					<s></s>
+				</li>
+				<li>
+					<i class="icon-pay-step icon-codes"></i>
+					<em class="icon-dotted"></em>
+					<h3>系统发放夺宝码</h3>
+					<s></s>
+				</li>
+				<li>
+					<i class="icon-pay-step icon-cup-1"></i>
+					<em class="icon-dotted"></em>
+					<h3>集齐人数开奖</h3>
+					<s></s>
+				</li>
+			</ul>
+		</div>
+
+		<!-- indiana list -->
+		<div class="grid indiana-list mt-10">
+			<div class="grid-1 indiana-list-hd clearfix">
+				<h3 class="fl">夺宝列表</h3>
+				<span class="fr">单次价格</span>
+			</div>
+			<div class="indiana-list-con">
+				<ul>
+					<li>
+						<em class="indiana-name">苹果专区 IPHONE 6S 粉红色过年就买新手机过年就买新手机</em>
+						<span class="single-price">￥10</span>
+					</li>
+				</ul>
+				<div class="indiana-list-bott clearfix">
+					<div class="parti-number">
+						<em>参与次数：</em>
+						<div class="quantity-wrap">
+							<a href="javascript:;" class="quantity-decrease">-</a>
+							<input type="text" class="quantity" value="3" name="num">
+							<a href="javascript:;" class="quantity-increase">+</a>
+						</div>
+					</div>
+					<p class="total-cost">总计：<strong>￥30</strong></p>
+				</div>
+			</div>
+		</div>
+
+		<!-- stamps pay -->
+		<div class="grid stamps-pay mt-10">
+			<div class="grid-1 stamps-pay-hd">
+				<h3>夺宝券支付</h3>
+			</div>
+			<div class="stamps-pay-con">
+				<div class="stamps-pay-item clearfix">
+					<span class="fl">
+						<input type="checkbox" id="useStamps" checked>
+						<label for="useStamps">使用夺宝券</label>
+					</span>
+					<em class="stamps-remain fr">（余：<b>24</b>张）</em>
+				</div>
+				<div class="need-pay">还需支付：￥<strong>6</strong></div>
+			</div>
+		</div>
+		
+		<!-- pay type -->
+		<div class="grid column pay-type mt-10">
+			<div class="column-hd pay-type-hd">
+				<h3>支付方式</h3>
+			</div>
+			<div class="pay-type-con">
+				<div class="pay-type-item">
+					<input type="radio" name="payType" id="payWenxin" checked="">
+					<label for="payWenxin">微信支付</label>
+				</div>
+				<div class="pay-type-item">
+					<input type="radio" name="payType" id="payQQ">
+					<label for="payQQ">手Q支付</label>
+				</div>
+			</div>
+		</div>
+		
+		<a href="#" class="btn btn-block btn-red">确认支付</a>
+	</div>
+	<!-- jquery lib script -->
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+	<!-- common script -->
+	<script type="text/javascript" src="js/lib.js"></script>
+	<!-- jquery layer script -->
+	<script type="text/javascript" src="js/layer/layer.js"></script>
+	<script>
+	DUOBAO.payment = {
+		partiTimes: 0, // 参与次数
+		useStamps: true, // 默认使用夺宝券
+		stampsRemain: 20, // 剩余夺宝券
+		singleCost: 5, // 单次价格
+		total: 0, // 总计
+		cost: 0 // 支付金额
+	};
+	</script>
+	<!-- payment script -->
+	<script type="text/javascript" src="js/payment.js"></script>	
+</body>
+</html>

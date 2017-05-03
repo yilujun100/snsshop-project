@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>我的福袋</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="author" content="">
+		<meta name="Copyright" content="">
+		<meta name="Keywords" content="">
+		<meta name="Description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no">
+		<!-- style base -->
+		<link rel="stylesheet" href="css/base.css">
+		<!-- style common -->
+		<link rel="stylesheet" href="css/common.css">
+		<!-- style layout -->
+		<link rel="stylesheet" href="css/layout.css">		
+	</head>
+	<body onload="tabInit()">
+		<div class="viewport v-my-bag">
+			<!-- my bag start -->
+			<div class="my-bag">				
+				<div class="user-info">
+					<img src="images/bg.jpg" width="100%" alt="" />
+					<div class="user-info-inner user-info-inner-1">
+						<div class="avatar">
+							<img src="images/111.jpg" width="33" height="33" alt="" />						
+						</div>
+						<h3 class="nickname">金三胖</h3>
+						<a href="#" class="btn-my-send-bag">发福袋<i></i></a>
+					</div>
+				</div>
+
+				<div class="tab tab-my mt-10">
+					<div class="tab-tit" id="fixedTabTitle">
+						<a href="javascript:;">可发放福袋<br>（5）</a>
+						<a href="javascript:;" class="tab-active">我收到的福袋<br>（5）</a>
+						<a href="javascript:;">我送出的福袋<br>（5）</a>
+					</div>
+					<div class="tab-con">
+						<!-- 可发放福袋 -->
+						<div class="my-bag-content my-bag-available">
+							<div class="tab-con-tit">可发放福袋5个（含夺宝券58张）</div>
+							<ul class="user-record-list my-list my-list-bag-available">
+								<li>
+									<span>
+										<p class="record-desc">拼手气福袋</p>
+										<p class="record-time">16-01-12</p>
+									</span>
+									<em>50张夺宝券未领</em>
+									<a href="#">继续发&gt;</a>
+								</li>
+								<li>
+									<span>
+										<p class="record-desc">普通福袋</p>
+										<p class="record-time">16-01-12</p>
+									</span>
+									<em>5张夺宝券未领</em>
+									<a href="#">继续发&gt;</a>
+								</li>
+								<li>
+									<span>
+										<p class="record-desc">拼手气福袋</p>
+										<p class="record-time">16-01-12</p>
+									</span>
+									<em>50张夺宝券未领</em>
+									<a href="#">继续发&gt;</a>
+								</li>
+								<li>
+									<span>
+										<p class="record-desc">普通福袋</p>
+										<p class="record-time">16-01-12</p>
+									</span>
+									<em>5张夺宝券未领</em>
+									<a href="#">继续发&gt;</a>
+								</li>
+								<li>
+									<span>
+										<p class="record-desc">拼手气福袋</p>
+										<p class="record-time">16-01-12</p>
+									</span>
+									<em>50张夺宝券未领</em>
+									<a href="#">继续发&gt;</a>
+								</li>
+								<li>
+									<span>
+										<p class="record-desc">普通福袋</p>
+										<p class="record-time">16-01-12</p>
+									</span>
+									<em>5张夺宝券未领</em>
+									<a href="#">继续发&gt;</a>
+								</li>
+							</ul>
+						</div>
+						<!-- 我收到的福袋 -->
+						<div class="my-bag-content my-bag-received" style="display: block">
+							<div class="tab-con-tit">共收到福袋4个（含夺宝券30张）</div>
+							<ul class="user-record-list my-list my-list-bag-received">
+								<li>
+									<a href="#">
+										<span>
+											<p class="record-desc">金三胖</p>
+											<p class="record-time">16-01-12</p>
+										</span>
+										<em>5张夺宝券</em>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<span>
+											<p class="record-desc">金三胖<label class="tag-fight-luck">拼手气</label></p>
+											<p class="record-time">16-01-12</p>
+										</span>
+										<em>15张夺宝券</em>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<span>
+											<p class="record-desc">金三胖</p>
+											<p class="record-time">16-01-12</p>
+										</span>
+										<em>15张夺宝券</em>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<!-- 我送出的福袋 -->
+						<div class="my-bag-invoice">
+							<div class="tab-con-tit">共送出福袋4个（含夺宝券58张）</div>
+							<ul class="user-record-list my-list my-list-bag-send">
+								<li>
+									<a href="#">
+										<span>
+											<p class="record-desc">拼手气福袋</p>
+											<p class="record-time">16-01-12</p>
+										</span>
+										<em>5张夺宝券</em>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<span>
+											<p class="record-desc">普通福袋</p>
+											<p class="record-time">16-01-12</p>
+										</span>
+										<em>15张夺宝券</em>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<span>
+											<p class="record-desc">金三胖</p>
+											<p class="record-time">16-01-12</p>
+										</span>
+										<em>15张夺宝券</em>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!-- <div class="load-more">下拉加载更多</div> -->
+			</div>
+			<!-- my bag end -->
+		</div>
+		<!-- fixed bottom start -->
+		<!-- <div class="fixed nav">
+			<a href="#" class="nav-active">去夺宝</a>
+			<a href="#">发福袋</a>
+			<a href="#">个人中心</a>
+		</div> -->
+		
+		<div class="fixed-nav">
+			<a href="home.html"><i class="icon-nav icon-home"></i>首页</a>
+			<a href="share.html" class="active"><i class="icon-nav icon-camera"></i>晒单</a>
+			<a href="#"><i class="icon-nav icon-gift"></i>活动</a>
+			<a href="cart.html"><i class="icon-nav icon-cart"></i>夺宝车</a>
+			<a href="personal_center.html"><i class="icon-nav icon-avatar"></i>个人中心</a>
+		</div>
+		<!-- fixed bottom end -->
+
+
+		<!-- jquery lib script -->
+		<script src="js/jquery-2.1.4.min.js" type="text/javascript"></script>
+		<!-- common script -->
+		<script src="js/lib.js" type="text/javascript"></script>
+		<script>
+			$(function(){
+				// 滚动控制
+				// fnScrollListen();
+				
+				// tab
+				fnTab('.tab-tit a', '.tab-con > div');
+
+			})
+
+			// 跳转控制
+			function tabInit() {
+
+				var str = window.location.search;
+				if (str.indexOf('tab') != -1) {
+					var tabNum = str.substring(5);
+					setTab(tabNum);
+				}
+				
+			}
+
+			function setTab(n) {
+
+				var aTabTitle = $('.tab-tit a');
+				var aTabCon = $('.tab-con > div');
+				aTabTitle.each(function(n){
+					aTabTitle.removeClass('active');
+					aTabCon.hide();
+				});
+
+				aTabTitle.eq(n).addClass('active');
+				aTabCon.eq(n).show();
+
+			}
+		</script>
+	</body>
+</html>

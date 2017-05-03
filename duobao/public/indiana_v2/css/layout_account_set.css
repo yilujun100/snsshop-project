@@ -1,0 +1,211 @@
+/*
+ * 用户设置样式 layout_account_set.css
+ * author:yilj@snsshop.cn
+ * date:2016-7-25
+ */
+
+/*====================== bind phone style =======================*/
+.set-title { position: relative; width: 100%; height: 42px; background: #ffd634 url(../images/v2/wave_2.jpg) repeat-x bottom; background-size: 11px 5px; }
+.set-title h3 { padding-left: 10px; line-height: 42px; font-size: 15px; color: #333; }
+.set-title .icon-set-phone { display: inline-block; vertical-align: -6px; margin-right: 4px; width: 23px; height: 26px; background: url(../images/v2/info/icon_phone.png) no-repeat; background-size: 23px auto; }
+.set-content { padding: 10px; }
+
+.tips-set { position: relative; z-index: 9; padding: 0 10px; height: 22px; line-height: 20px; font-size: 11px; -webkit-border-radius: 11px; -moz-border-radius: 11px; border-radius: 11px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+.tips-info { border: 1px solid #ffd634; background: #fff8dc; color: #666; }
+.tips-info:before { position: absolute; z-index: 10; top: 7px; left: -17px; display: block; content: ''; width: 0; height: 0; border-style: dashed solid dashed dashed; border-width: 0 7px 7px 10px; border-color: transparent #ffd634 transparent transparent; }
+.tips-info:after { position: absolute; z-index: 11; top: 8px; left: -14px; display: block; content: ''; width: 0; height: 0; border-style: dashed solid dashed dashed; border-width: 0 5px 5px 10px; border-color: transparent #fff8dc transparent transparent; }
+.tips-info .icon-set-horn { display: inline-block; vertical-align: -3px; margin-right: 4px; width: 17px; height: 13px; background: url(../images/v2/info/icon_horn.png) no-repeat; background-size: 17px 13px; }
+.tips-error { border: 1px solid #ee5160; background: #ffc8cd; color: #ee5160; }
+.tips-error:before { position: absolute; z-index: 10; top: 7px; left: -17px; display: block; content: ''; width: 0; height: 0; border-style: dashed solid dashed dashed; border-width: 0 7px 7px 10px; border-color: transparent #ee5160 transparent transparent; }
+.tips-error:after { position: absolute; z-index: 11; top: 8px; left: -14px; display: block; content: ''; width: 0; height: 0; border-style: dashed solid dashed dashed; border-width: 0 5px 5px 10px; border-color: transparent #ffc8cd transparent transparent; }
+.tips-error .icon-set-info { display: inline-block; vertical-align: -3px; margin-right: 4px; width: 13px; height: 13px; background: url(../images/v2/info/icon_info.png) no-repeat; background-size: 13px 13px;  }
+.tips-success { border: 1px solid #000; background: #fff; color: #666; }
+.tips-success:before { position: absolute; z-index: 10; top: 7px; left: -17px; display: block; content: ''; width: 0; height: 0; border-style: dashed solid dashed dashed; border-width: 0 7px 7px 10px; border-color: transparent #000 transparent transparent; }
+.tips-success:after { position: absolute; z-index: 11; top: 8px; left: -14px; display: block; content: ''; width: 0; height: 0; border-style: dashed solid dashed dashed; border-width: 0 5px 5px 10px; border-color: transparent #fff transparent transparent; }
+.tips-success .icon-set-ok { display: inline-block; vertical-align: -3px; margin-right: 4px; width: 13px; height: 13px; background: url(../images/v2/info/icon_ok.png) no-repeat; background-size: 13px 13px;  }
+
+.form-box { padding: 0 10px; border: 1px solid #000; background: #fff; -webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px; }
+.form-box p { position: relative; margin: 0; padding: 10px 0; height: 22px; border-top: 1px solid #000; }
+.form-box p:first-child { border-top: 0; }
+.form-box input { height: 22px; font-size: 13px; color: #333; border: 0; }
+.form-box label { position: absolute; top: 10px; left: 0; line-height: 22px; font-size: 13px; color: #333; }
+.form-box .form-item-col2 input { display: block; padding-left: 60px; width: 100%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+.form-box .form-item-col3 input { display: block; padding-left: 60px; width: 60%; }
+.btn-set { position: absolute; top: 8px; right: 0; display: block; width: 80px; height: 26px; line-height: 26px; text-align: center; border: 1px solid #000; font-size: 13px; color: #fff; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; }
+.btn-send-code { background: #ee5160; }
+.btn-set-disabled { background: #9f9f9f; cursor: default; }
+.btn-form-action { display: block; margin: 30px auto 0; width: 155px; height: 45px; background-repeat: no-repeat; background-size: 155px 45px; border: 0; }
+.btn-form-confirm { background-image: url(../images/v2/info/btn_confirm.png); }
+.btn-form-confirm-disabled { background-image: url(../images/v2/info/btn_confirm_disabled.png); cursor: default !important; }
+
+.bott-tips { position: fixed; bottom: 60px; right: 0; padding: 0 10px; }
+.bott-tips a { font-size: 12px; color: #9f9f9f; text-decoration: underline; }
+.btn-field-clear { position: absolute; top: 14px; right: 0; display: block; width: 16px; height: 16px; background: url(../images/v2/info/icon_fork.png) no-repeat; background-size: 16px 16px; text-indent: -999em; display: none; }
+
+.icon-ok { position: absolute; top: 14px; right: 0; display: block; width: 16px; height: 16px; background: url(../images/v2/info/icon_ok.png) no-repeat; background-size: 16px 16px; display: none; }
+
+.pop-mask-set,
+.pop-graph-verify { display: none; }
+.pop-mask-set { position: fixed; top: 0; left: 0; z-index: 100; width: 100%; height: 100%; background: #000; opacity: .6; filter: alpha(opacity=60); }
+.pop-graph-verify { position: fixed; top: 50%; left: 50%; z-index: 101; margin-top: -110px; margin-left: -140px; width: 280px; height: 220px; background: #fff; -webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px; }
+.pop-graph-verify .content { position: relative; padding: 16px 16px 32px; background: #ffd634 url(../images/v2/wave_2.jpg) repeat-x bottom; background-size: 11px 5px; -webkit-border-radius: 8px 8px 0 0; -moz-border-radius: 8px 8px 0 0; border-radius: 8px 8px 0 0; }
+.pop-graph-verify h3 { text-align: center; font-size: 13px; color: #333; }
+.pop-graph-verify p { margin: 10px auto 0; padding: 4px; width: 166px; border: 1px solid #000; background: #fff; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; }
+.btn-refresh { display: inline-block; margin-left: 16px; width: 42px; height: 42px; background: url(../images/v2/info/update.jpg) no-repeat; background-size: 42px 42px; text-indent: -999em; }
+.pop-graph-verify input { display: block; border: 0; width: 100%; height: 22px; font-size: 12px; color: #333; }
+.btn-pop-set { display: block; margin: 10px auto 0; width: 110px; height: 32px; background-repeat: no-repeat; background-size: auto 32px; text-indent: -999em; }
+.btn-verify-confirm { background-image: url(../images/v2/info/btn_confirm.png); }
+.btn-verify-confirm-disabled { background-image: url(../images/v2/info/btn_confirm_disabled.png); }
+.btn-pop-set-close { position: absolute; top: -16px; right: -16px; width: 32px; height: 32px; display: block; background: url(../images/v2/info/icon_close_circle.png) no-repeat; background-size: 32px 32px; text-indent: -999em; }
+.pop-tips-error { position: absolute; bottom: 10px; left: 52px; font-size: 12px; color: #ee5160; }
+.pop-tips-error .icon-error-info { display: inline-block; vertical-align: -3px; margin-right: 4px; width: 13px; height: 13px; background: url(../images/v2/info/icon_info.png) no-repeat; background-size: 13px 13px; }
+
+
+/*====================== bind success style =======================*/
+.bind-success { position: fixed; top: 46%; left: 50%; margin-top: -100px; margin-left: -100px; width: 200px; height: 200px; }
+.bind-success img { display: block; margin: 0 auto; }
+.bind-success .btn-back-home { display: block; margin: 20px auto 0; width: 200px; height: 45px; background: url(../images/v2/info/btn_back.png) no-repeat; background-size: 200px 45px; text-indent: -999em; }
+.bott-tips-1 { position: fixed; bottom: 60px; left: 0; width: 100%; text-align: center; font-size: 12px; color: #343434; }
+.bott-tips-1 a { color: #ee5160; text-decoration: underline; }
+
+.pop-mask-notbind,
+.pop-not-bind,
+.pop-mask-pwd,
+.pop-pwd,
+.pop-mask-pwd-notset,
+.pop-pwd-notset { display: none; }
+.pop-mask-notbind,
+.pop-mask-pwd,
+.pop-mask-pwd-notset { position: fixed; top: 0; left: 0; z-index: 100; width: 100%; height: 100%; background: #000; opacity: .6; filter: alpha(opacity=60); }
+.pop-not-bind,
+.pop-pwd,
+.pop-pwd-notset { position: fixed; top: 50%; left: 50%; z-index: 101; margin-top: -88px; margin-left: -140px; width: 280px; height: 176px; background: #fff; -webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px; }
+.pop-pwd { margin-top: -80px; height: 160px; }
+.pop-pwd-notset { margin-top: -81px; height: 162px; }
+.pop-not-bind-con,
+.pop-pwd-con,
+.pop-pwd-notset-content { position: relative; padding: 16px; background: #ffd634 url(../images/v2/wave_2.jpg) repeat-x bottom; background-size: 11px 5px; -webkit-border-radius: 8px 8px 0 0; -moz-border-radius: 8px 8px 0 0; border-radius: 8px 8px 0 0; }
+.pop-not-bind-con p,
+.pop-pwd-con p,
+.pop-pwd-notset-content p { margin: 0; padding: 20px 0; text-align: center; font-size: 15px; color: #333; }
+.pop-not-bind-con .pop-not-bind-tips,
+.pop-pwd-con .pop-pwd-tips { font-size: 12px; color: #ee5160; }
+.pop-not-bind-bott,
+.pop-pwd-bott,
+.pop-pwd-notset-bott { padding: 10px 0; text-align: center; }
+.pop-not-bind-bott a,
+.pop-pwd-bott a,
+.pop-pwd-notset-bott a { display: inline-block; margin: 0 4px; width: 118px; height: 34px; background-repeat: no-repeat; background-size: 118px auto; text-indent: -999em; }
+.btn-know { background-image: url(../images/v2/info/btn_know.png); }
+.btn-redo { background-image: url(../images/v2/info/btn_redo.png); }
+.btn-cancel { background-image: url(../images/v2/info/btn_cancel.png); }
+.btn-confirm { background-image: url(../images/v2/info/btn_confirm_1.png); }
+.btn-know-1 { background-image: url(../images/v2/info/btn_know_1.png); }
+
+
+/*====================== modify phone style =======================*/
+.bind-modify-item span { margin-left: 100px; line-height: 22px; font-weight: bold; }
+.btn-set-modify { position: absolute; top: 6px; right: 0; display: block; width: 64px; height: 28px; line-height: 28px; text-align: center; border: 1px solid #000; background: #ee5160; font-size: 13px; color: #fff; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; }
+.modify-tips p { margin: 0; margin-bottom: 4px; font-size: 12px; color: #999; }
+
+
+/*====================== validate phone/pwd style =======================*/
+.set-title .icon-set-phone-1 { display: inline-block; vertical-align: -6px; margin-right: 4px; width: 23px; height: 26px; background: url(../images/v2/info/icon_phone_ok.png) no-repeat; background-size: 23px auto; }
+.validate-tips { margin-top: 20px; text-align: center; font-size: 12px; color: #999; }
+.validate-tips a { color: #ee5160; text-decoration: underline; }
+.set-title .icon-shield { display: inline-block; vertical-align: -6px; margin-right: 4px; width: 21px; height: 25px; background: url(../images/v2/info/icon_shield.png) no-repeat; background-size: 21px auto; }
+
+.pop-mask-validate,
+.pop-validate-pwd { display: none; }
+.pop-mask-validate { position: fixed; top: 0; left: 0; z-index: 100; width: 100%; height: 100%; background: #000; opacity: .6; filter: alpha(opacity=60); }
+.pop-validate-pwd { position: fixed; top: 50%; left: 50%; z-index: 101; margin-top: -73px; margin-left: -140px; width: 280px; height: 146px; background: #fff; -webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px; }
+.pop-validate-pwd-con { position: relative; padding: 16px; background: #ffd634 url(../images/v2/wave_2.jpg) repeat-x bottom; background-size: 11px 5px; -webkit-border-radius: 8px 8px 0 0; -moz-border-radius: 8px 8px 0 0; border-radius: 8px 8px 0 0; }
+.pop-validate-pwd-con p { margin: 0; padding: 20px 0; text-align: center; font-size: 15px; color: #333; }
+.pop-validate-pwd-bott { padding: 10px 0; text-align: center; }
+.pop-validate-pwd-bott a { display: inline-block; margin: 0 4px; width: 118px; height: 34px; background-repeat: no-repeat; background-size: 118px auto; text-indent: -999em; }
+.btn-pop-cancel { background-image: url(../images/v2/info/btn_cancel.png); }
+.btn-pop-confirm { background-image: url(../images/v2/info/btn_confirm_1.png); }
+
+
+/*====================== modify phone style =======================*/
+.set-title .icon-edit { display: inline-block; vertical-align: -6px; margin-right: 4px; width: 24px; height: 25px; background: url(../images/v2/info/icon_edit.png) no-repeat; background-size: 24px auto; }
+
+
+/*====================== register style =======================*/
+.set-title-1 h3 { padding-left: 0; text-align: center; }
+.btn-top-back { position: absolute; top: 0; left: 0; width: 42px; height: 42px; display: block; background: url(../images/v2/info/icon_arrow_back.png) no-repeat center 8px; background-size: 12px 21px; text-indent: -999em; }
+.other-opera a { font-size: 13px; color: #ee5160; }
+.btn-form-next { background-image: url(../images/v2/info/btn_next.png); }
+.btn-form-next-disabled { background-image: url(../images/v2/info/btn_next_disabled.png); cursor: default !important; }
+.user-agreement { padding-bottom: 62px; text-align: center; font-size: 12px; color: #9f9f9f; }
+.user-agreement a { color: #9f9f9f; text-decoration: underline; }
+.login-others { margin: 30px 20px 0; }
+.login-others-hd { position: relative; width: 100%; height: 30px; }
+.login-others-hd:before { position: absolute; top: 14px; left: 0; z-index: 9; display: block; content: ''; width: 100%; height: 1px; border-top: 1px solid #9f9f9f; }
+.login-others-hd h3 { position: absolute; top: 0; left: 50%; z-index: 10; margin-left: -90px; width: 180px; height: 30px; line-height: 30px; text-align: center; background: #f3f3f3; font-size: 15px; color: #7f7f7f; }
+.login-others-con a { float: left; display: block; width: 50%; text-align: center; }
+.login-others-con h3 { line-height: 30px; font-size: 13px; color: #9f9f9f; }
+.login-others-con i { display: block; margin: 0 auto; width: 52px; height: 52px; background-repeat: no-repeat; background-size: 52px 52px; }
+.icon-weixin { background-image: url(../images/v2/info/icon_weixin.png); }
+.icon-qq { background-image: url(../images/v2/info/icon_qq.png); }
+.ad { margin-top: 20px; }
+.user-agreement .set-title { position: fixed; top: 0; left: 0; }
+.user-agreement .set-content { padding-top: 52px; }
+.user-agreement b { text-decoration: underline; font-weight: bold; }
+.user-agreement strong { text-decoration: underline; }
+
+
+
+/*====================== register success style =======================*/
+.v-regi-success { /*background: #f2c12a;*/ background: url(../images/v2/info/bg_login_success.jpg) no-repeat; background-size: 100% 100%; }
+.register-success { position: relative; width: 100%; }
+.actions-btns { position: fixed; top: 74%; left: 0; width: 100%; text-align: center; }
+.actions-btns a { position: relative; display: inline-block; margin: 0 10px; width: 150px; height: 45px; background-repeat: no-repeat; background-size: 150px 45px; text-indent: -999em; }
+.btn-view-course { background-image: url(../images/v2/info/btn_educate.png); }
+.btn-perfect-info { background-image: url(../images/v2/info/btn_perfect_info.png); }
+.actions-btns span { position: absolute; top: -44px; right: 20px; width: 220px; height: 30px; line-height: 30px; text-align: center; background: #fff; border: 1px solid #ee5160; font-size: 13px; color: #333; text-indent: initial; -webkit-border-radius: 16px; -moz-border-radius: 16px; border-radius: 16px; }
+.actions-btns span:before, 
+.actions-btns span:after { position: absolute; display: block; content: ''; border-style: solid dashed dashed; }
+.actions-btns span:before { z-index: 10; bottom: -10px; right: 21px; border-width: 6px 2px 4px 8px; border-color: #fff transparent transparent; }
+.actions-btns span:after { z-index: 9; bottom: -11px; right: 20px; border-width: 6px 3px 4px 8px; border-color: #ee5160 transparent transparent; }
+
+
+/*====================== user agreement style =======================*/
+.user-agreement p { margin: 0; line-height: 18px; text-align: left; font-size: 13px; color: #333; }
+
+
+/*====================== login style =======================*/
+.btn-form-login { background-image: url(../images/v2/info/btn_login.png); }
+.btn-form-login-disabled { background-image: url(../images/v2/info/btn_login_disabled.png); cursor: default !important; }
+.login-auto { text-align: center; font-size: 12px; color: #9f9f9f; }
+.login-auto label { display: inline-block; margin-left: 4px; }
+
+
+/*====================== set pwd style =======================*/
+.set-title .icon-set { display: inline-block; vertical-align: -6px; margin-right: 4px; width: 23px; height: 23px; background: url(../images/v2/info/icon_set.png) no-repeat; background-size: 23px auto; }
+.btn-form-submit { background-image: url(../images/v2/info/btn_submit.png); }
+.btn-form-submit-disabled { background-image: url(../images/v2/info/btn_submit_disabled.png); cursor: default !important; }
+.btn-pwd-show { position: absolute; top: 6px; right: 0; display: block; width: 30px; height: 30px; background: url(../images/v2/info/icon_eye.png) no-repeat right center; background-size: 30px 21px; text-indent: -999em; }
+
+
+/*====================== view pwd style =======================*/
+.btn-modify-pwd { position: absolute; top: 5px; right: 0; display: block; width: 70px; height: 30px; line-height: 30px; text-align: center; border: 1px solid #000; background: #ee5160; font-size: 13px; color: #fff; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; }
+
+
+@media screen and (max-width: 320px) {
+	.form-box input { font-size: 12px; }
+	.form-box .form-item-col2 input,
+	.form-box .form-item-col3 input { padding-left: 46px; }
+	.actions-btns a { margin: 0 6px; width: 106px; height: 32px; background-size: 106px 32px; }
+	.actions-btns span { width: 192px; font-size: 11px; }
+}
+
+
+/*====================== 扫码登录 @2016-8-12 style =======================*/
+.login-qrcode { margin-top: 20px; }
+.login-qrcode h3 { text-align: center; font-weight: bold; font-size: 15px; color: #333; }
+.login-qrcode .qrcode-pic { position: relative; display: block; margin: 10px auto; padding: 8px; width: 160px; height: 160px; background: #fff; -webkit-box-shadow: 0 0 8px #ccc; -moz-box-shadow: 0 0 8px #ccc; box-shadow: 0 0 8px #ccc; }
+.login-qrcode p { margin: 0; margin-top: 8px; text-align: center; font-size: 13px; color: #666; }
+.login-qrcode .icon-scan { display: inline-block; vertical-align: -4px; margin-right: 4px; width: 16px; height: 16px; background: url(../images/v2/icon_scan.png) no-repeat; background-size: 16px auto; }
+.code-expired { width: 176px; height: 176px; line-height: 176px; }
+.icon-phone-circle { background: #3cd556 url(../images/v2/info/icon_phone_w.png) no-repeat center center !important; background-size: 38px 38px !important; -webkit-border-radius: 50%; -moz-border-radius: 50%; border-radius: 50%; }

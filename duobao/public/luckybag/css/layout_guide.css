@@ -1,0 +1,25 @@
+/*
+ * 活动引导页样式 layout_guide.css
+ * author:yilj@snsshop.cn
+ * date:2016-2-16
+*/
+
+.v-guide { background: #ffdebf; }
+.follow { position: absolute; top: 20%; left: 50%; margin-left: -190px; width: 375px; height: 280px; background: url(../images/bag_guide.png) no-repeat; background-size: 375px 280px; }
+.follow .follow-pic { position: absolute; bottom: 24px; left: 40%; display: block; width: 100px; height: 100px; }
+.follow .follow-pic img { display: block; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; }
+
+.guide-parti { position: absolute; bottom: 30px; left: 50%; margin-left: -140px; width: 280px; }
+.guide-parti .guide-parti-tit h3 { text-indent: -999em; margin: 0 auto; width: 194px; height: 65px; background: url(../images/guide_title.png) no-repeat; background-size: 194px 65px; }
+.guide-parti-con { margin-top: 10px; }
+.guide-parti-con li { float: left; width: 33%; }
+.guide-parti-con li h3 { text-align: center; font-size: 13px; color: #bc2825; }
+
+@media screen and (min-width:414px) {
+	.guide-parti { bottom: 12%; }
+}
+
+@media screen and (min-width:320px) {
+	.follow { margin-left: -160px; width: 320px; height: 240px; background-size: 320px auto; }
+	.follow .follow-pic { width: 82px; height: 82px; }
+}

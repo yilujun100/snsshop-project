@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>百分好礼</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="format-detection" content="telephone=no,email=no">
+		<link rel="stylesheet" type="text/css" href="css/base.css" />
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<link rel="stylesheet" type="text/css" href="css/creat-room.css" />
+		<!-- style swiper -->
+		<link rel="stylesheet" href="../js/swiper/swiper.min.css">
+		<script src="js/jquery-2.1.4.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/iscroll.js" type="text/javascript" charset="utf-8"></script>
+		<!-- swiper script -->
+		<script type="text/javascript" src="../js/swiper/swiper.min.js"></script>
+	</head>
+
+	<body onload="loaded()">
+		<div class="active-head">
+			<img src="img/creat-room/head-img.png" />										
+			<a href="play-way.html">查看规则></a>		
+		</div>
+		<img src="img/formerrank/top-img.png" alt="" />
+		<div class="list-wrap">
+			<div class="list-content">
+				<div class="box box-1">
+					<ul class="creat-path">
+						<li>
+							<div class="path-l">
+							<img src="img/creat-room/path-1.png" alt="" />
+							<p>选择奖品</p>
+							</div>
+							<div class="path-r">
+								<img src="img/creat-room/path-a.png" alt="" />
+							</div>
+						</li>
+						<li>
+							<div class="path-l">
+							<img src="img/creat-room/path-2.png" alt="" />
+							<p>选择参与人数</p>
+							</div>
+							<div class="path-r">
+								<img src="img/creat-room/path-a.png" alt="" />
+							</div>
+						</li>
+						<li>
+							<div class="path-l">
+							<img src="img/creat-room/path-3.png" alt="" />
+							<p>定制成功分享给好友参与</p>
+							</div>
+							<div class="path-r">
+								<img src="img/creat-room/path-a.png" alt="" />
+							</div>						
+						</li>
+						<li>
+							<div class="path-l">
+							<img src="img/creat-room/path-4.png" alt="" />
+							<p>凑齐人数开奖</p>
+							</div>
+				
+						</li>
+					</ul>
+				</div>
+				<div class="search-box">
+					<div class="input-box"><input type="text" /></div>
+					<!--点击模拟无数据效果-->
+					<div class="search-btn"><img src="img/creat-room/search-btn.png" alt="" /></div>
+				</div>
+				
+				<!--菜单-->
+				<div class="box box-2" >
+					<!-- <div id="wrapper">
+					<div id="scroller">
+					<ul class="tab-bar clearfix">
+						<li class="active">全部</li>
+						<li>手机数码</li>
+						<li>电脑平板</li>
+						<li>家用电器</li>
+						<li>品牌箱包</li>
+						<li>手机数码</li>
+						<li>电脑平板</li>
+						<li>家用电器</li>
+						<li>品牌箱包</li>
+					</ul>
+					</div>
+					</div> -->
+					<div id="wrapper" class="swiper-container">
+						<ul class="swiper-wrapper tab-bar clearfix">
+							<li class="swiper-slide active">全部</li>
+							<li class="swiper-slide">手机数码</li>
+							<li class="swiper-slide">电脑平板</li>
+							<li class="swiper-slide">家用电器</li>
+							<li class="swiper-slide">品牌箱包</li>
+							<li class="swiper-slide">手机数码</li>
+							<li class="swiper-slide">电脑平板</li>
+							<li class="swiper-slide">家用电器</li>
+							<li class="swiper-slide">品牌箱包</li>
+						</ul>						
+					</div>
+					<ul class="box-list clearfix">
+						<li>
+							<div class="product-content">
+								<div class="product-wrap">
+									<div class="product-img">
+										<img src="img/detail/product-img.png" />
+									</div>
+									
+								</div>
+								<div class="product-title">【苹果】12.9寸笔记本</div>
+							</div>		
+						</li>
+						<li>
+							<div class="product-content">
+								<div class="product-wrap">
+									<div class="product-img">
+										<img src="img/detail/product-img.png" />
+									</div>
+									
+								</div>
+								<div class="product-title">【苹果】12.9寸笔记本</div>
+							</div>		
+						</li>
+						<li>
+							<div class="product-content">
+								<div class="product-wrap">
+									<div class="product-img">
+										<img src="img/detail/product-img.png" />
+									</div>
+									
+								</div>
+								<div class="product-title">【苹果】12.9寸笔记本</div>
+							</div>		
+						</li>
+						
+					</ul>
+					<!--没有结果时候显示-->
+					<div class="no-data-wrap">
+					<div class="no-data">
+						<img src="img/join-room/no-data.png" />
+					</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<img src="img/formerrank/bottom-img.png" class="bottom-img" />
+		<!--底部tabbar-->
+		<div class="fixed-nav clearfix">
+			<a href="home.html"><i class="icon-nav icon-home"></i>首页</a>
+			<a href="share.html"><i class="icon-nav icon-camera"></i>晒单</a>
+			<a href="#"><i class="icon-nav icon-acti"></i>活动</a>
+			<a href="cart.html"><i class="icon-nav icon-cart"></i>清单</a>
+			<a href="personal_center.html"><i class="icon-nav icon-avatar"></i>个人中心</a>
+		</div>
+	</body>
+	<script type="text/javascript">
+		$(function() {
+			$(".tab-bar li").click(function() {
+				$(this).addClass('active').siblings().removeClass('active');
+			})
+			/*var myScroll;
+
+			function loaded () {
+	 			 myScroll = new IScroll('#wrapper', { eventPassthrough: true, scrollX: true, scrollY: false, preventDefault: false });
+			}*/
+			// 商品分类
+			var swiper = new Swiper('#wrapper', {
+				slidesPerView: 5,
+				spaceBetween: 10,
+				freeMode: true
+			});
+
+			$(".search-btn").click(function () {
+				$(".box-list").hide();
+				$(".no-data-wrap").show();
+			})			
+		});
+	</script>
+
+</html>

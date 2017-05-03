@@ -1,0 +1,142 @@
+/*
+ * 秒降活动页 layout_reduce_price.css
+ * author:yilj@snsshop.cn
+ * date:2016-11-10
+*/
+
+body { font-family: arial; }
+.v-reduce-price { padding-bottom: 52px; }
+.session li { float: left; padding: 8px 0; width: 33.33%; height: 60px; text-align: center; background: #2c2c2c; font-size: 15px; color: #fff; -webkit-box-sizing: border-box; box-sizing: border-box; }
+.session li a { display: block; color: #fff; }
+.session .session-highlight { background: #9602f8; }
+.count-down,
+.count-down-start1,
+.count-down-start2,
+.count-down-start3 { height: 30px; text-align: center; background: #590dd5; }
+.count-down em,
+.count-down-start1 em,
+.count-down-start2 em,
+.count-down-start3 em,
+.count-down ul,
+.count-down-start1 ul,
+.count-down-start2 ul,
+.count-down-start3 ul,
+.count-down li,
+.count-down-start1 li,
+.count-down-start2 li,
+.count-down-start3 li,
+.count-down a,
+.count-down-start1 a,
+.count-down-start2 a,
+.count-down-start3 a { display: inline-block; }
+.count-down em,
+.count-down-start1 em,
+.count-down-start2 em,
+.count-down-start3 em { line-height: 30px; font-size: 11px; color: #fff; }
+.count-down ul,
+.count-down-start1 ul,
+.count-down-start2 ul,
+.count-down-start3 ul { vertical-align: -1px; }
+.count-down .hour,
+.count-down .min,
+.count-down .sec,
+.count-down-start1 .hour,
+.count-down-start1 .min,
+.count-down-start1 .sec,
+.count-down-start2 .hour,
+.count-down-start2 .min,
+.count-down-start2 .sec,
+.count-down-start3 .hour,
+.count-down-start3 .min,
+.count-down-start3 .sec { width: 30px; height: 20px; line-height: 20px; text-align: center; background: #000; font-size: 16px; color: #fff; }
+.count-down .sepe { font-size: 16px; color: #000; }
+.btn-rules { margin-left: 10px; width: 70px; height: 20px; line-height: 20px; text-align: center; background: #fff; font-size: 13px; color: #590dd5; -webkit-border-radius: 10px; border-radius: 10px; }
+.count-down-start,
+.count-down-end { height: 30px; line-height: 30px; text-align: center; background: #590dd5; font-size: 13px; color: #fff; }
+.recharge { position: relative; padding: 20px 0; background: #fff; }
+.recharge:before { position: absolute; bottom: 0; left: 0; display: block; content: ''; width: 100%; height: 1px; background: #dcdcdc; -webkit-transform: scaleY(0.5); transform: scaleY(0.5); }
+.recharge-inner { margin: 0 auto; width: 260px; }
+.user-avatar { position: relative;  }
+.user-avatar h3 { margin-left: -5px; width: 50px; height: 20px; text-align: center; font-size: 11px; color: #a2a2a2; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+/*.user-avatar:after { position: absolute; bottom: -20px; left: -5px; display: block; content: '我是头像'; width: 50px; height: 20px; text-align: center; font-size: 11px; color: #a2a2a2; }*/
+.user-avatar img { display: block; width: 40px; height: 40px; -webkit-border-radius: 50%; border-radius: 50%; }
+.recharge-entry a { display: block; width: 190px; height: 40px; line-height: 40px; text-align: center; background: #590dd5; font-size: 15px; color: #dadada; -webkit-border-radius: 8px; border-radius: 8px; }
+.recharge-entry p { margin: 0; margin-top: 4px; font-size: 11px; color: #9b9b9b; }
+.goods { padding: 20px 0; background: #fff; }
+.goods-con { padding: 0 10px; }
+.goods-item { margin-top: 20px; }
+.goods-thumb { position: relative; padding: 10px 0; border: 1px solid #b2b2b2; }
+.goods-thumb img { display: block; margin: 0 auto; }
+.goods-thumb .goods-corner { position: absolute; top: 0; left: 0; padding-top: 4px; padding-left: 12px; width: 50px; height: 40px; line-height: 16px; background: url(../images/reduce_price/corner.png) no-repeat; background-size: 50px 40px; font-size: 11px; color: #fff; }
+.goods-info { margin: 10px auto 0; width: 240px; }
+.goods-title { font-size: 17px; color: #000; }
+.goods-price p { margin: 0; margin-top: 4px; font-size: 12px; color: #afafaf; }
+.goods-price p label { color: #000; }
+.goods-price p strong { font-size: 20px; color: #590dd5; }
+.goods-price a { color: #afafaf; }
+.goods-price span:last-child p:last-child { text-align: right; }
+.btn-buy { display: block; margin-top: 8px; width: 100%; height: 52px; line-height: 52px; text-align: center; background: #590dd5; font-size: 20px; color: #fff; -webkit-border-radius: 10px; border-radius: 10px; }
+.btn-start,
+.btn-end { display: block; margin-top: 8px; width: 100%; height: 52px; line-height: 52px; text-align: center; background: #dadada; font-size: 20px; color: #000; -webkit-border-radius: 10px; border-radius: 10px; }
+.rules { padding: 0 10px 20px; background: #fff; }
+.rules-hd h3 { margin: 0 auto; width: 203px; height: 35px; background: url(../images/reduce_price/title_rules.png) no-repeat; background-size: 203px 35px; text-indent: -999em; }
+.rules-con { padding: 12px; border: 1px solid #590dd5; -webkit-border-radius: 4px; border-radius: 4px; }
+.rules-con p { position: relative; margin: 0; margin-top: 8px; padding-left: 20px; font-size: 12px; color: #747474; }
+.rules-con p:first-child { margin-top: 0; }
+.rules-con em { position: absolute; top: 2px; left: 0; display: block; width: 16px; height: 16px; line-height: 16px; text-align: center; background: #590dd5; font-size: 11px; color: #fff; -webkit-border-radius: 50%; border-radius: 50%; }
+.rules-con b { color: #590dd5; }
+.rules-con a { display: inline-block; width: 56px; height: 16px; line-height: 16px; text-align: center; background: #590dd5; color: #fff; -webkit-border-radius: 8px; border-radius: 8px; }
+
+
+.view-detail-hd { height: 30px; background: #180daf; }
+.view-detail-hd li { float: left; line-height: 30px; text-align: left; font-size: 13px; color: #fff; }
+.view-detail-hd li:first-child { width: 20%; text-align: center; }
+.view-detail-hd li:nth-child(2) { width: 20%; }
+.view-detail-hd li:last-child { width: 60%; }
+.view-detail table { width: 100%; border-collapse: collapse; }
+.view-detail th,
+.view-detail td { padding: 6px 0; text-align: left; }
+.view-detail th { background: #180daf; font-size: 13px; color: #fff; }
+.view-detail td { position: relative; font-size: 11px; color: #333; }
+.view-detail tbody { height: 180px; overflow-y: auto; }
+.view-detail tbody td:after { position: absolute; bottom: 0; left: 0; display: block; content: ''; width: 100%; height: 1px; background: #d6d7d7; -webkit-transform: scaleY(0.5); transform: scaleY(0.5); }
+.view-detail tr th:first-child,
+.view-detail tr td:first-child { text-align: center; }
+.view-detail tr td:last-child { color: #56b8e1; }
+.btn-ok { display: block; margin: 10px auto 0; width: 50%; height: 32px; line-height: 32px; text-align: center; background: #590dd5; font-size: 14px; color: #fff; -webkit-border-radius: 4px; border-radius: 4px; }
+.view-detail-con { height: 180px; overflow-y: auto; }
+.view-detail tr td:first-child,
+.view-detail tr td:nth-child(2) { width: 20%; }
+.view-detail tr td:last-child { width: 60%; }
+
+.session-tab-con > div { display: none; }
+
+
+.popup-win { display: none; position: fixed; top: 50%; left: 50%; z-index: 104; margin-top: -90px; margin-left: -140px; width: 280px; height: 180px; border: 1px solid #590dd5; background: #fff; -webkit-border-radius: 8px; border-radius: 8px; }
+.popup-win:before,
+.popup-win:after { position: absolute; top: 20px; display: block; content: ''; width: 14px; height: 36px; background-repeat: no-repeat; background-size: 14px 36px; }
+.popup-win:before { left: -14px; background-image: url(../images/reduce_price/popup_l.png); }
+.popup-win:after { right: -14px; background-image: url(../images/reduce_price/popup_r.png); }
+.popup-hd { width: 100%; height: 30px; background: #590dd5; -webkit-border-radius: 6px 6px 0 0; border-radius: 6px 6px 0 0; }
+.popup-con { padding: 40px 0; }
+.popup-con p { margin: 0; text-align: center; font-size: 13px; color: #000; }
+.btn-popup { display: block; margin: 20px auto 0; width: 120px; height: 32px; line-height: 32px; text-align: center; background: #590dd5; font-size: 15px; color: #fff; -webkit-border-radius: 8px; border-radius: 8px; }
+.btn-popup-close { position: absolute; top: 0; right: 0; display: block; width: 30px; height: 30px; background: url(../images/reduce_price/popup_close.png) no-repeat center center; background-size: 18px 18px; text-indent: -999em; }
+.popup-detail { display: none; position: fixed; top: 50%; left: 50%; z-index: 104; margin-top: -132px; margin-left: -150px; width: 300px; height: 264px; background: #fff; }
+.popup-recharge-succ { display: none; position: fixed; top: 50%; left: 50%; z-index: 104; margin-top: -103px; margin-left: -150px; width: 300px; height: 206px; border: 1px solid #590dd5; background: #fff; -webkit-border-radius: 8px; border-radius: 8px; }
+.popup-recharge-succ img { display: block; -webkit-border-radius: 6px 6px 0 0; border-radius: 6px 6px 0 0; }
+.popup-recharge-bott { padding: 20px 42px; }
+.popup-recharge-bott a { display: inline-block; width: 95px; height: 32px; background-repeat: no-repeat; background-size: 95px 32px; text-indent: -999em; }
+.btn-thanks { background-image: url(../images/reduce_price/btn_thanks.png); }
+.btn-visit { margin-left: 20px; background-image: url(../images/reduce_price/btn_visit.png); }
+.btn-recharge-close { position: absolute; top: 0; right: 0; display: block; width: 30px; height: 30px; background: url(../images/reduce_price/popup_close.png) no-repeat center center; background-size: 18px 18px; text-indent: -999em; }
+
+
+.icon-camera-2 { background-image: url(../images/v2/icon_camera_2.png); }
+.icon-txt { background-image: url(../images/v2/icon_txt.png); }
+.icon-bell-1 { background-image: url(../images/v2/icon_bell_1.png); }
+.icon-bulb { background-image: url(../images/v2/icon_bulb.png); }
+
+@media screen and (min-width: 640px) {
+	.recharge-inner { width: 280px; }
+}

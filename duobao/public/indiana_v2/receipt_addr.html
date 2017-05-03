@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>选择收货地址——夺宝奇兵</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="author" content="">
+	<meta name="Copyright" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<!-- style base -->
+	<link rel="stylesheet" href="css/base.css">
+	<!-- style common -->
+	<link rel="stylesheet" href="css/common.css">
+	<!-- layer skin extend style -->
+	<link rel="stylesheet" href="css/layer_skin_extend.css">
+	<!-- mobiscroll style -->
+	<link rel="stylesheet" href="css/mobiscroll/mobiscroll.animation.css">
+	<link rel="stylesheet" href="css/mobiscroll/mobiscroll.icons.css">
+	<link rel="stylesheet" href="css/mobiscroll/mobiscroll.frame.css">
+	<link rel="stylesheet" href="css/mobiscroll/mobiscroll.scroller.css">
+	<!-- style layout -->
+	<link rel="stylesheet" href="css/layout.css">
+</head>
+<body>
+	<div class="viewport v-receipt-addr">	
+		<!-- address list -->
+		<!-- <div class="addr-manage addr-list">	
+			<div class="receiving-addr">
+				<dl>
+					<dt>
+						<input type="radio" name="receiving-addr" id="addr-1" checked />
+						<label for="addr-1">
+							<p>
+								<em class="addr-consignee">张三</em>
+								<span class="addr-tel">15818642768<i class="addr-default border-radius-4">默认</i></span>
+							</p>
+							<p class="addr-address">广东深圳市南山区科研路比克科技大厦901-A</p>
+						</label>
+					</dt>
+					<dd>
+						<a href="#" class="btn-addr-edit">编辑地址</a>
+					</dd>
+				</dl>
+				<dl>
+					<dt>
+						<input type="radio" name="receiving-addr" id="addr-2" />
+						<label for="addr-2">
+							<p>
+								<em class="addr-consignee">李五李五</em>
+								<span class="addr-tel">15818642768</span>
+							</p>
+							<p class="addr-address">广东深圳市宝安区西乡大道盐田新一村128栋B栋602</p>
+						</label>
+					</dt>
+					<dd>
+						<a href="#" class="btn-addr-edit">编辑地址</a>
+					</dd>
+				</dl>
+				<dl>
+					<dt>
+						<input type="radio" name="receiving-addr" id="addr-3" />
+						<label for="addr-3">
+							<p>
+								<em class="addr-consignee">李五</em>
+								<span class="addr-tel">15818642768</span>
+							</p>
+							<p class="addr-address">广东深圳市宝安区西乡大道盐田新一村128栋B栋602</p>
+						</label>
+					</dt>
+					<dd>
+						<a href="#" class="btn-addr-edit">编辑地址</a>
+					</dd>
+				</dl>
+				<dl>
+					<dt>
+						<input type="radio" name="receiving-addr" id="addr-4" />
+						<label for="addr-4">
+							<p>
+								<em class="addr-consignee">李四</em>
+								<span class="addr-tel">15818642768</span>
+							</p>
+							<p class="addr-address">广东深圳市南山区科研路比克科技大厦901-A</p>
+						</label>
+					</dt>
+					<dd>
+						<a href="javascript:;" class="btn-addr-edit">编辑地址</a>
+					</dd>
+				</dl>
+			</div>
+			<a href="javascript:;" class="btn btn-block btn-red btn-addr btn-addr-new" id="addrNew">新建地址</a>			
+		</div> -->
+		<input type="hidden" id="addrStatus" value="0"> <!-- 0: 地址为空 1：地址不为空 -->
+		<!-- address new -->
+		<div class="addr-manage addr-new">
+			<div class="grid receiving-addr-new">
+				<form action="" class="form-addr form-addr-new">
+					<p>
+						<input type="text" name="consignee" id="consignee" placeholder="收货人">
+					</p>
+					<p>
+						<input type="number" name="tel" id="tel" placeholder="联系电话">
+					</p>
+					<div class="item-addr-area">
+						<!-- <input type="text" name="area" id="area" placeholder="省、市、区"> -->						
+						<ul id="addrArea" style="display: none;"></ul>
+						<input type="hidden" name="addrArea" id="addrAreaClone" />
+					</div>
+					<p>
+						<input type="text" name="addrDetail" id="addrDetail" placeholder="详细地址">
+					</p>
+					<!-- <div class="item-set-default">
+						<label>设为默认</label>
+						<div class="switch-button switch-off">
+							<span class="slider-button"></span>
+							<input type="hidden" value="0">
+						</div>
+					</div> -->					
+				</form>
+			</div>
+			<a href="javascript:;" class="btn btn-block btn-error btn-addr btn-addr-save" id="addrNewSave"><span>保存</span></a>
+		</div>
+
+		<!-- address edit -->
+		<div class="addr-manage addr-edit" style="display: none;">
+			<div class="grid receiving-addr-edit">
+				<form action="" class="form-addr form-addr-edit">
+					<p>
+						<input type="text" name="consigneeEdit" id="consigneeEdit" placeholder="收货人" value="张三">
+					</p>
+					<p>
+						<input type="number" name="telEdit" id="telEdit" placeholder="联系电话" value="13622249285">
+					</p>
+					<div class="item-addr-area" id="itemAddrEditArea" data-area-edit="广东 深圳市 南山区">
+						<!-- <input type="text" name="areaEdit" id="areaEdit" placeholder="省、市、区" value="广东 深圳市 南山区"> -->						
+						<ul id="addrArea1" style="display: none;"></ul>
+						<input type="hidden" name="addrArea1" id="addrAreaClone1" />
+					</div>
+					<p>
+						<input type="text" name="addrDetailEdit" id="addrDetailEdit" placeholder="详细地址" value="科研路9号比克科技大厦">
+					</p>
+					<!-- <div class="item-set-default">
+						<label>设为默认</label>
+						<div class="switch-button switch-off">
+							<span class="slider-button"></span>
+							<input type="hidden" value="0">
+						</div>
+					</div>	
+					<div style="background: #f3f3f3;"></div>	
+					<div class="grid addr-del">
+						<a href="javascript:;" class="btn-addr-del">删除地址</a>
+					</div> -->			
+				</form>
+			</div>
+			<a href="javascript:;" class="btn btn-block btn-error btn-addr btn-addr-save" id="addrEditSave"><span>保存</span></a>
+		</div>
+
+	</div>	
+	<!-- jquery lib script -->
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+	<!-- common script -->
+	<script type="text/javascript" src="js/lib.js"></script>
+	<!-- jquery layer script -->
+	<script type="text/javascript" src="js/layer/layer.js"></script>
+	<!-- mobiscroll script -->
+	<script type="text/javascript" src="js/mobiscroll/mobiscroll.core.js"></script>
+	<script type="text/javascript" src="js/mobiscroll/mobiscroll.frame.js"></script>
+	<script type="text/javascript" src="js/mobiscroll/mobiscroll.scroller.js"></script>
+	<script type="text/javascript" src="js/mobiscroll/mobiscroll.select.js"></script>
+	<script type="text/javascript" src="js/mobiscroll/mobiscroll.listbase.js"></script>
+	<script type="text/javascript" src="js/mobiscroll/mobiscroll.treelist.js"></script>
+	<script type="text/javascript" src="js/mobiscroll/i18n/mobiscroll.i18n.zh.js"></script>	
+	<script type="text/javascript" src="js/addr_manage.js" type="text/javascript"></script>
+	<!-- regiondata script -->
+	<script src="js/regiondata.js" type="text/javascript"></script>
+	<script>
+	DUOBAO.isEmptyAddr = $('#addrStatus').val();
+	</script>
+</body>
+</html>

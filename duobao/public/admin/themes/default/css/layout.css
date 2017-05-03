@@ -1,0 +1,81 @@
+/*====================== 中奖/兑换查询 style =======================*/
+.form-item:after,
+.form-item p:after { content: '\200B'; display: block; clear: both; height: 0; overflow: hidden; visibility: hidden; }
+.form-item,
+.form-item p { zoom: 1; }
+.form-item { float: left; margin-top: 10px; }
+.form-filter .form-item:first-child,.form-filter .form-item.top-line { margin-top: 0; }
+.form-item p {  float: left; margin: 0; margin-left: 10px; }
+.form-item p:first-child { margin-left: 0; }
+.form-item p label,
+.form-item span,
+.form-item p input,
+.form-item p select { float: left; }
+.form-item p label { width: 68px; height: 30px; line-height: 30px; text-align: right; font-size: 13px; color: #333; }
+.form-item p input { margin-left: 10px; padding: 4px; width: 100px; height: 20px; border: 1px solid #ddd; background: #fff; }
+.form-item p select { margin-left: 10px; padding: 6px 4px 5px; width: 110px; height: 30px; border: 1px solid #ddd; }
+.form-item-date p input.date, .f-item input.date { padding-right: 20px; width: 100px; font-size: 13px; color: #333; background: #fff url(../images/icon_calendar.png) no-repeat 100px center; cursor: pointer}
+.form-item-date p input.datetime, .f-item input.datetime{width:140px;background-position:140px center;}
+.form-item span { margin-left: 20px; line-height: 30px; font-size: 13px; color: #333; }
+.form-item.form-item-btn { float: right; margin-right: 30px;}
+.form-item input.date { padding-right: 20px; width: 100px; font-size: 13px; color: #333; background: #fff url(../images/icon_calendar.png) no-repeat 100px center; cursor: pointer}
+
+.statistic { position: relative; margin-top: 20px; width: 100%; }
+.statistic .grid { position: relative; float: left; margin-left: 1%; padding: 10px; width: 13.4%; height: 82px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+.statistic .grid:first-child { margin-left: 0; }
+.statistic .grid .icon-statis { display: block; width: 60px; height: 60px; background-repeat: no-repeat; background-position: center center; -webkit-border-radius: 50%; -moz-border-radius: 50%; border-radius: 50%; }
+.icon-award { background: #80d4ff url(../images/icon_award_white.png); }
+.icon-gift-exchange { background: #bfe76b url(../images/icon_gift_white.png); }
+.icon-edit { background: #ff639a url(../images/icon_edit_white.png); }
+.icon-truck { background: #ff7f00 url(../images/icon_truck_white.png); }
+.icon-truck-1 { background: #ffd404 url(../images/icon_truck_white_1.png); }
+.icon-confirm { background: #75dfbb url(../images/icon_ok_white.png); }
+.icon-clock { background: #ea62e8 url(../images/icon_clock_white.png); }
+.statistic .grid label { position: absolute; top: 10px; right: 10px; font-size: 12px; color: #333; }
+.statistic .grid span { position: absolute; bottom: 10px; right: 10px; font-size: 20px; color: #333; }
+
+
+.data { margin-top: 20px; }
+.data-export { display: block; width: 78px; height: 28px; line-height: 28px; text-align: center; border: 1px solid #ddd; font-size: 13px; color: #666; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; }
+.data-export i.icon-export { display: inline-block; vertical-align: -4px; margin-right: 4px; width: 20px; height: 18px; background: url(../images/icon_export.png) no-repeat; }
+
+
+/*====================== 登录 style =======================*/
+.bg-login { background: #2e2e2e; }
+.login { position: fixed; top: 50%; left: 50%; margin-top: -208px; margin-left: -185px; width: 370px; height: 416px; }
+.login h1 { line-height: 110px; text-align: center; font-size: 40px; color: #fff; }
+.login .form-login { padding: 20px 30px; background: #fff; }
+.form-login h3 { text-align: center; font-size: 20px; color: #f03e42; }
+.form-login input { margin-top: 20px; padding: 15px 10px; width: 100%; height: 50px; border: 0; border: 1px solid #ddd; font-size: 12px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; }
+.form-login input:focus { border: 1px solid #f03e42; }
+.form-login button { margin: 30px 0 20px; width: 100%; height: 50px; border: 0; background: #f03e42; font-size: 16px; color: #fff; font-family: "微软雅黑"; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; }
+
+
+/*====================== 图片上传修改 @2016-3-21 style =======================*/
+.f-item .pics,
+.pic-upload-item { float: left; }
+.pic-upload-item { margin-left: 20px; }
+.pic-upload-item .upload-pic { width: 102px; height: 120px; }
+.pic-upload-item .upload-pic img { border: 1px solid #ddd; }
+.pic-upload-item .upload-pic span { display: block; margin-left: 0; width: 100%; height: 24px; line-height: 24px; text-align: center; font-size: 12px; color: #333; }
+.pic-upload-item .pic-actions { position: relative; margin-top: 10px; }
+.pic-actions a { display: block; margin: 0 18%; width: 64%; height: 30px; line-height: 30px; }
+.btn-pic-upload { background: #f03e42; color: #fff; }
+.btn-pic-modify { background: #337ab7; color: #fff; }
+.pic-actions .btn-pic-del { position: absolute; top: 2px; right: -8px; display: block; width: 27px; height: 27px; background: url(../images/icon_close.png) no-repeat; cursor: pointer; z-index: 1}
+.f-item .fileinput-button {display: block;}
+.f-item .fileinput-button .btn-goods-pic-upload, .f-item .fileinput-button .btn-upload {margin-left: 0; width: 200px; overflow: hidden;}
+
+/*====================== 授权 @2016-3-28 style =======================*/
+.f-item .treelist { float: left; margin-left: 20px; }
+.treelist-item p { float: none !important; height: 34px; }
+.treelist-item ul{padding-left:18px; /*display:none;*/}
+.treelist-item ul ul{/*display:none;*/ padding-left:36px;}
+.treelist-item ul li{margin-top:6px;}
+.treelist-item .icon-select{display:block; float:left; margin-top:12px; margin-right:4px; width:12px; height:12px; background-repeat:no-repeat; cursor:pointer;}
+.treelist-item .icon-fold{background-image:url(../images/ico_data_plus.png);}
+.treelist-item .icon-open{background-image:url(../images/ico_data_minus.png);}
+.treelist-item .treelist-item-inner li { float: left; margin-right: 20px; }
+.treelist-item > .has-sub label { font-size: 15px; color: #000; font-weight: bold; }
+.treelist-item > ul > li > p > label { font-size: 14px; }
+.treelist-item .treelist-item-inner label { font-size: 12px; }

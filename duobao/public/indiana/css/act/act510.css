@@ -1,0 +1,67 @@
+*{margin: 0;padding: 0;}
+html{font-size: 62.5%; height: 100%;}
+body {position:relative;color:#000;background: #da273d;font-family: 'Microsoft YaHei';font-size: 12px;overflow-x: hidden;}
+a{color: #000; text-decoration: none;-webkit-tap-highlight-color: #fff;}
+img{width: 100%;}
+.clear{clear: both;} 
+.fl{float: left;}
+.fr{float: right;}
+.inline{display: inline-block;}
+.bg{position: fixed;width: 100%;height: 100%;left: 0;top: 0;background-color: #000;opacity: .6;z-index: 7;}
+/*首页*/
+.main{position: relative;width: 100%;background: #da273d;}  
+.main .rule{position: absolute;width: 50px;top: 0;right: 30px;}
+.main .pic{position: relative;width: 100%;margin-top: -3px;} 
+.main .pic .btn{position: absolute;width: 90px;height: 37px;line-height: 37px;top: 0;right: 52px;border: 1px solid;text-align: center;opacity: 0;}
+
+.main .pic2 .btn{top: 0;}
+.main .pic3 .btn{height: 37.5px;line-height: 37.5px;top: -2px;}
+.main .pic4 .btn{top: 1px;}
+.main .pic5 .btn{width: 100px;top: -2px;right: 51px;}
+.main .pic6 .btn{width: 123px;top: -2px;right: 43px;}
+
+.back{position: fixed;width: 50px;height: 50px;right: 10px;top: 0px;z-index: 6;} 
+
+/* 兼容iphone4/4s */
+@media (device-height:480px) and (-webkit-min-device-pixel-ratio:2){ 
+	.back{width: 40px;height: 40px;} 
+	.main .pic .btn{width: 75px;height: 31px;right: 45px;}
+	.main .pic2 .btn{top: 0;}
+	.main .pic3 .btn{height: 32px;line-height: 32px;top: -2px;}
+	.main .pic4 .btn{top: 1px;}
+	.main .pic5 .btn{width: 90px;top: -1px;right: 42px;}
+	.main .pic6 .btn{width: 105px;top: -2px;right: 37px;}
+	.main .pic{margin-top: -4px;} 
+}
+/* 兼容iphone5 */ 
+@media (device-height:568px) and (-webkit-min-device-pixel-ratio:2){ 
+	.back{width: 40px;height: 40px;} 
+	.main .pic .btn{width: 75px;height: 31px;right: 45px;}
+	.main .pic2 .btn{top: 0;}
+	.main .pic3 .btn{height: 32px;line-height: 32px;top: -2px;}
+	.main .pic4 .btn{top: 1px;}
+	.main .pic5 .btn{width: 90px;top: -1px;right: 42px;}
+	.main .pic6 .btn{width: 105px;top: -2px;right: 37px;}
+	.main .pic{margin-top: -4px;} 
+}
+/* 兼容iphone6 */
+@media (device-height:667px) and (-webkit-min-device-pixel-ratio:2){ 
+	.back{width: 50px;height: 50px;} 
+	.main .pic .btn{width: 90px;}
+	.main .pic2 .btn{top: 0;}
+	.main .pic3 .btn{height: 37.5px;line-height: 37.5px;top: -2px;}
+	.main .pic4 .btn{top: 1px;}
+	.main .pic5 .btn{width: 100px;top: -2px;right: 51px;}
+	.main .pic6 .btn{width: 123px;top: -2px;right: 43px;}
+	.main .pic{margin-top: -4px;} 
+}
+/* 兼容iphone6 Plus */
+@media (device-height:736px) and (-webkit-min-device-pixel-ratio:2){ 
+	.back{width: 50px;height: 50px;}
+	.main .pic .btn{width: 105px;}
+	.main .pic2 .btn{top: 0;}
+	.main .pic3 .btn{height: 37.5px;line-height: 37.5px;top: -2px;}
+	.main .pic4 .btn{top: 1px;}
+	.main .pic5 .btn{width: 110px;top: 0px;right: 57px;}
+	.main .pic6 .btn{width: 135px;top: -1px;right: 48px;}
+}

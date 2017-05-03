@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>选择奖品——夺宝奇兵</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="author" content="">
+	<meta name="Copyright" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<!-- style base -->
+	<link rel="stylesheet" href="css/base.css">
+	<!-- style common -->
+	<link rel="stylesheet" href="css/common.css">
+	<!-- style swiper -->
+	<link rel="stylesheet" href="js/swiper/swiper.min.css">
+	<!-- style layout -->
+	<link rel="stylesheet" href="css/layout.css">
+</head>
+<body>
+	<div class="viewport v-choose-prize">
+		<div class="custom-process">
+			<div class="grid-1 custom-process-hd clearfix">
+				<h3 class="fl"><i class="icon-diamond"></i>定制私人夺宝</h3>
+				<a href="#" class="view-rule fr">查看规则</a>
+			</div>
+			<div class="grid custom-process-con">
+				<ul class="clearfix">
+					<li class="step-on"><i class="icon-custom-pro icon-custom-gift"></i><h3>1.选择奖品</h3></li>
+					<li class="step-on"><i class="icon-custom-pro icon-custom-users"></i><h3>2.选择参与人数</h3></li>
+					<li class="step-on"><i class="icon-custom-pro icon-custom-share-alt"></i><h3>3.定制成功<br>分享给好友参与</h3></li>
+					<li><i class="icon-custom-pro icon-custom-cup"></i><h3>4.集齐人数开奖</h3></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="search-prize">
+			<input type="text" class="search-prize-keyword" id="searchPrizeKeyword" value="电饭煲" placeholder="请输入搜索关键词">
+			<a href="javascript:;" class="btn-keyword-clear" style="display: none; right: 86px;">清除关键字</a>	
+			<a href="#" class="btn btn-red btn-search-prize">搜索奖品</a>
+		</div>
+
+		<div class="grid tab-choose-prize swiper-container" id="swiperCategory">
+			<div class="tab-tit swiper-wrapper clearfix">
+				<a href="javascript:;" class="swiper-slide tab-active">全部</a>
+				<a href="javascript:;" class="swiper-slide">手机数码</a>
+				<a href="javascript:;" class="swiper-slide">电脑平板</a>
+				<a href="javascript:;" class="swiper-slide">家用电器</a>
+				<a href="javascript:;" class="swiper-slide">品牌箱包</a>
+				<a href="javascript:;" class="swiper-slide">钟表饰品</a>
+				<a href="javascript:;" class="swiper-slide">其他商品</a>
+			</div>
+			<div class="tab-con">
+				<!-- 全部 -->
+				<div class="category-all" style="display: block;">
+					<ul class="clearfix">
+						<li>
+							<div class="prize-pic">
+								<img src="images/mall_2.jpg" width="100%" alt="">
+							</div>
+							<div class="prize-name">美的 4升智能柴火饭电饭锅</div>
+							<div class="prize-actions" style="visibility: hidden;">
+								<a href="javascript:;" class="btn-prize-opera btn-prize-choose">已选定</a>
+							</div>
+							<div class="selected-box">
+								<em class="icon-selected"></em>
+							</div>
+						</li>
+						<li>
+							<div class="prize-pic">
+								<img src="images/mall_1.jpg" width="100%" alt="">
+							</div>
+							<div class="prize-name">美的 4升智能柴火饭电饭锅</div>
+							<div class="prize-actions">
+								<a href="javascript:;" class="btn-prize-opera btn-prize-choose">选择</a>
+							</div>
+						</li>
+						<li>
+							<div class="prize-pic">
+								<img src="images/mall_2.jpg" width="100%" alt="">
+							</div>
+							<div class="prize-name">美的 4升智能柴火饭电饭锅</div>
+							<div class="prize-actions">
+								<a href="javascript:;" class="btn-prize-opera btn-prize-choose">选择</a>
+							</div>
+						</li>
+						<li>
+							<div class="prize-pic">
+								<img src="images/mall_1.jpg" width="100%" alt="">
+							</div>
+							<div class="prize-name">美的 4升智能柴火饭电饭锅</div>
+							<div class="prize-actions">
+								<a href="javascript:;" class="btn-prize-opera btn-prize-choose">选择</a>
+							</div>
+						</li>
+					</ul>					
+				</div>
+				<!-- 手机数码 -->
+				<div class="category-phone">
+					<ul class="clearfix">
+						<li>
+							<div class="prize-pic">
+								<img src="images/mall_2.jpg" width="100%" alt="">
+							</div>
+							<div class="prize-name">美的 4升智能柴火饭电饭锅</div>
+							<div class="prize-actions">
+								<a href="javascript:;" class="btn-prize-opera btn-prize-selected">已选定</a>
+							</div>
+						</li>
+						<li>
+							<div class="prize-pic">
+								<img src="images/mall_1.jpg" width="100%" alt="">
+							</div>
+							<div class="prize-name">美的 4升智能柴火饭电饭锅</div>
+							<div class="prize-actions">
+								<a href="javascript:;" class="btn-prize-opera btn-prize-choose">选择</a>
+							</div>
+						</li>
+					</ul>					
+				</div>
+				<!-- 电脑平板 -->
+				<div class="category-pc">
+					电脑平板相关产品列表
+				</div>
+				<!-- 家用电器 -->
+				<div class="category-electric">
+					家用电器相关产品列表
+				</div>
+				<!-- 品牌箱包 -->
+				<div class="category-bag">
+					品牌箱包相关产品列表
+				</div>	
+				<!-- 钟表饰品 -->
+				<div class="category-bag">
+					钟表饰品相关产品列表
+				</div>	
+				<!-- 其他商品 -->
+				<div class="category-others">
+					其他商品相关产品列表
+				</div>					
+			</div>
+		</div>
+		<div class="bott-prize-actions">
+			<a href="indiana_custom.html" class="btn-prize-action btn-prize-cancel">取消</a>
+			<a href="#" class="btn-prize-action btn-prize-confirm">确认奖品</a>
+		</div>
+	</div>
+	<!-- jquery lib script -->
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+	<!-- common script -->
+	<script type="text/javascript" src="js/lib.js"></script>
+	<!-- swiper script -->
+	<script type="text/javascript" src="js/swiper/swiper.min.js"></script>
+	<!-- indiana custom script -->
+	<script type="text/javascript" src="js/indiana_custom.js"></script>	
+</body>

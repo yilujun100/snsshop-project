@@ -1,0 +1,14 @@
+body{background:#97642d url(../img/index/html-bg-light.png);color: #e3b27d;}
+.active-head {position: relative;}
+.head-nav {width: 100%;top: 0;left: 0;right: 0;bottom: 0;position: absolute;display: flex;display: -webkit-flex;}
+img{width: 100%;}
+.btn-wrap-back {flex:1.5;-webkit-flex:1.5;padding:2%;}
+.btn-wrap {flex: 3;-webkit-flex:3;font-size: 40px;line-height: 2;color: #e3b27d;}
+.head-nav .back-btn {width:60%;}
+.three-tips-title,.play-tips {position: relative;}
+.three-tips-title {margin-top: 15px;}
+.three-tips-title p,.play-tips p {position: absolute;}
+.play-tips p {position: absolute;top: 8%;left: 0;right: 0;bottom: 0;padding: 10%;color: #452b0e;}
+.three-tips-title p {top: 0;left: 0;text-align: center;width: 100%;font-size: 14px;line-height: 1;}
+.three-tips {padding:20px 0 80px;}
+.three-tips img {margin: 5px 0;}

@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>购买夺宝券——夺宝奇兵</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="author" content="">
+	<meta name="Copyright" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<!-- style base -->
+	<link rel="stylesheet" href="css/base.css">
+	<!-- style common -->
+	<link rel="stylesheet" href="css/common.css">
+	<!-- layer skin extend style -->
+	<link rel="stylesheet" href="css/layer_skin_extend.css">
+	<!-- style layout -->
+	<link rel="stylesheet" href="css/layout.css">
+</head>
+<body>
+	<div class="viewport v-buy-stamps">
+		<!-- buy stamps start -->
+		<div class="buy-stamps">
+			<div class="buy-stamps-hd buy-stamps-hd-1">
+				<h3><i class="icon-dollar"></i>购买券</h3>
+			</div>
+
+			<div class="bg-gray">
+				<div class="card-box" >
+					<div class="card-box-inner">
+						<div class="card-scene">	
+							<div class="scene-hd clearfix">
+								<h3 class="fl"><i class="icon-card-package"></i>卡包</h3>
+								<a href="javascript:;" class="btn-fold fr" id="btnCardFold"></a>								
+								<div class="switch-button switch-on fr">
+									<span class="slider-button on"></span>
+									<input type="hidden" value="1">
+								</div>	
+							</div>
+							<div class="scene-con">
+								<div class="scene-1-con" id="s1">
+									<div class="card-list clearfix">
+										<div class="card-item"><input type="hidden" data-recharge-num="20" data-recharge-giving="2">购券 20 赠<strong>2</strong></div>
+										<div class="card-item"><input type="hidden" data-recharge-num="20" data-recharge-giving="2">购券 20 赠<strong>2</strong></div>
+										<a href="javascript:;" class="card-more" id="btnCardMore">查看更多</a>
+									</div>								
+								</div>
+
+								<div class="scene-2-con" id="s2" style="display: none;">
+									<ul class="coupon-list">
+										<li>
+											<input type="hidden" data-recharge-num="50" data-recharge-giving="5">							
+											<input type="radio" name="cardPackageSelected">	
+											<div class="coupon-item coupon-item-error">
+												<div class="coupon-cell-1 clearfix">
+													<span class="coupon-name fl">购券满赠卡</span>
+													<span class="coupon-desc fr">周年回馈</span>
+												</div>
+												<div class="coupon-cell-2 clearfix">
+													<div class="coupon-cell-3 fl">
+														<h3 class="coupon-num"><b>2</b>张</h3>
+														<p>购券满50使用</p>
+													</div>
+													<div class="coupon-cell-4 fl">
+														<p>2016.07.12早10点~07.15晚10点</p>
+														<p>购买券时使用</p>
+													</div>
+												</div>	
+												<div class="triangle-l"></div>
+												<div class="triangle-r"></div>							
+											</div>										
+										</li>	
+										<li>
+											<input type="hidden" data-recharge-num="20" data-recharge-giving="2">	
+											<input type="radio" name="cardPackageSelected">								
+											<div class="coupon-item coupon-item-error">
+												<div class="coupon-cell-1 clearfix">
+													<span class="coupon-name fl">购券满赠卡</span>
+													<span class="coupon-desc fr">周年回馈</span>
+												</div>
+												<div class="coupon-cell-2 clearfix">
+													<div class="coupon-cell-3 fl">
+														<h3 class="coupon-num"><b>2</b>张</h3>
+														<p>购券满50使用</p>
+													</div>
+													<div class="coupon-cell-4 fl">
+														<p>2016.07.12早10点~07.15晚10点</p>
+														<p>购买券时使用</p>
+													</div>
+												</div>	
+												<div class="triangle-l"></div>
+												<div class="triangle-r"></div>							
+											</div>										
+										</li>
+										<li>
+											<input type="hidden" data-recharge-num="40" data-recharge-giving="4">	
+											<input type="radio" name="cardPackageSelected">								
+											<div class="coupon-item coupon-item-error">
+												<div class="coupon-cell-1 clearfix">
+													<span class="coupon-name fl">购券满赠卡</span>
+													<span class="coupon-desc fr">周年回馈</span>
+												</div>
+												<div class="coupon-cell-2 clearfix">
+													<div class="coupon-cell-3 fl">
+														<h3 class="coupon-num"><b>2</b>张</h3>
+														<p>购券满50使用</p>
+													</div>
+													<div class="coupon-cell-4 fl">
+														<p>2016.07.12早10点~07.15晚10点</p>
+														<p>购买券时使用</p>
+													</div>
+												</div>	
+												<div class="triangle-l"></div>
+												<div class="triangle-r"></div>							
+											</div>										
+										</li>
+									</ul>
+								</div>
+
+								<div class="scene-3-con" id="s3" style="display: none;">
+									<input type="radio" checked>
+									<div class="card-list clearfix">
+										<div class="card-item">充值 20 赠<strong>2</strong></div>
+										<a href="javascript:;" class="btn-reselect fr" id="btnReselect">重新选择</a>	
+									</div>						 	
+								</div>								
+							</div>
+						</div>
+						<!-- scene 1 -->
+						<!-- <div class="card-scene card-scene-1" id="s1">	
+							<p>您的卡包中有卡可以使用，快来使用吧~</p>
+							<div class="scene-1-hd clearfix">
+								<h3 class="fl"><i class="icon-card-package"></i>卡包</h3>
+								<a href="javascript:;" class="btn-fold fr" id="btnCardFold"></a>								
+								<div class="switch-button switch-on fr">
+									<span class="slider-button on"></span>
+									<input type="hidden" value="1">
+								</div>	
+							</div>
+							<div class="scene-1-con">
+								<div class="card-list clearfix">
+									<div class="card-item"><input type="hidden" data-recharge-num="20" data-recharge-giving="2">购券 20 赠<strong>2</strong></div>
+									<div class="card-item"><input type="hidden" data-recharge-num="20" data-recharge-giving="2">购券 20 赠<strong>2</strong></div>
+									<a href="javascript:;" class="card-more" id="btnCardMore">查看更多</a>
+								</div>								
+							</div>
+						</div> -->
+						<!-- scene 2 -->
+						<!-- <div class="card-scene card-scene-2" id="s2" style="display: none;">
+							<div class="scene-2-hd clearfix">
+								<h3 class="fl"><i class="icon-card-package"></i>卡包</h3>
+								<a href="javascript:;" class="btn-fold fr" id="btnCardFold"></a>								
+								<div class="switch-button switch-on fr">
+									<span class="slider-button on"></span>
+									<input type="hidden" value="1">
+								</div>	
+							</div>
+							<div class="scene-2-con">
+								<ul class="coupon-list">
+									<li>
+										<input type="hidden" data-recharge-num="50" data-recharge-giving="5">							
+										<input type="radio" name="cardPackageSelected">	
+										<div class="coupon-item coupon-item-error">
+											<div class="coupon-cell-1 clearfix">
+												<span class="coupon-name fl">购券满赠卡</span>
+												<span class="coupon-desc fr">周年回馈</span>
+											</div>
+											<div class="coupon-cell-2 clearfix">
+												<div class="coupon-cell-3 fl">
+													<h3 class="coupon-num"><b>2</b>张</h3>
+													<p>购券满50使用</p>
+												</div>
+												<div class="coupon-cell-4 fl">
+													<p>2016.07.12早10点~07.15晚10点</p>
+													<p>购买券时使用</p>
+												</div>
+											</div>	
+											<div class="triangle-l"></div>
+											<div class="triangle-r"></div>							
+										</div>										
+									</li>	
+									<li>
+										<input type="hidden" data-recharge-num="20" data-recharge-giving="2">	
+										<input type="radio" name="cardPackageSelected">								
+										<div class="coupon-item coupon-item-error">
+											<div class="coupon-cell-1 clearfix">
+												<span class="coupon-name fl">购券满赠卡</span>
+												<span class="coupon-desc fr">周年回馈</span>
+											</div>
+											<div class="coupon-cell-2 clearfix">
+												<div class="coupon-cell-3 fl">
+													<h3 class="coupon-num"><b>2</b>张</h3>
+													<p>购券满50使用</p>
+												</div>
+												<div class="coupon-cell-4 fl">
+													<p>2016.07.12早10点~07.15晚10点</p>
+													<p>购买券时使用</p>
+												</div>
+											</div>	
+											<div class="triangle-l"></div>
+											<div class="triangle-r"></div>							
+										</div>										
+									</li>
+									<li>
+										<input type="hidden" data-recharge-num="40" data-recharge-giving="4">	
+										<input type="radio" name="cardPackageSelected">								
+										<div class="coupon-item coupon-item-error">
+											<div class="coupon-cell-1 clearfix">
+												<span class="coupon-name fl">购券满赠卡</span>
+												<span class="coupon-desc fr">周年回馈</span>
+											</div>
+											<div class="coupon-cell-2 clearfix">
+												<div class="coupon-cell-3 fl">
+													<h3 class="coupon-num"><b>2</b>张</h3>
+													<p>购券满50使用</p>
+												</div>
+												<div class="coupon-cell-4 fl">
+													<p>2016.07.12早10点~07.15晚10点</p>
+													<p>购买券时使用</p>
+												</div>
+											</div>	
+											<div class="triangle-l"></div>
+											<div class="triangle-r"></div>							
+										</div>										
+									</li>
+								</ul>
+							</div>
+						</div> -->
+						<!-- scene 3 -->
+						<!-- <div class="card-scene card-scene-3" id="s3" style="display: none;">
+							<div class="scene-3-hd clearfix">
+								<h3 class="fl"><i class="icon-card-package"></i>卡包</h3>								
+								<div class="switch-button switch-on fr">
+									<span class="slider-button on"></span>
+									<input type="hidden" value="1">
+								</div>	
+							</div>	
+							<div class="scene-3-con">
+								<input type="radio" checked>
+								<div class="card-list clearfix">
+									<div class="card-item">充值 20 赠<strong>2</strong></div>
+									<a href="javascript:;" class="btn-reselect fr" id="btnReselect">重新选择</a>	
+								</div>						 	
+							</div>						
+						</div> -->
+					</div>
+				</div>				
+			</div>
+
+			<div class="buy-stamps-con clearfix">
+				<!-- <p><input type="radio" name="stampsNumber" checked id="number20"><label for="number20">20张</label></p>
+				<p><input type="radio" name="stampsNumber" id="number50"><label for="number50">50张</label></p>
+				<p><input type="radio" name="stampsNumber" id="number100"><label for="number100">100张</label><strong>赠2张</strong></p>
+				<p><input type="radio" name="stampsNumber" id="number200"><label for="number200">200张<strong>赠5张</strong></label></p>
+				<p><input type="radio" name="stampsNumber" id="number350"><label for="number350">350张<strong>赠10张</strong></label></p>
+				<p><input type="radio" name="stampsNumber" id="number500"><label for="number500">500张<strong>赠15张</strong></label></p>
+				<p class="num-other"><input type="number" id="numberOther" placeholder="可输入其他数量，最低2张起充"><em class="num-other-giving">赠<b>15</b>张</em></p> -->
+
+				<p><span class="recharge-item-selected" data-number="20">20张</span><em>赠2张</em></p>
+				<p><span data-number="50">50张</span><em>赠2张</em></p>
+				<p><span data-number="100">100张</span><em>赠2张</em></p>
+				<p><span data-number="150">150张</span><em>赠2张</em></p>
+				<p><span data-number="200">200张</span><em>赠2张</em></p>
+				<p><input type="number" id="numberOther" placeholder="2张起充"><!-- <em>赠2张</em> --></p>
+				<div class="wave-bott"></div>
+			</div>
+		</div>
+
+		<div class="stamps-cost">需支付：<strong>￥50</strong></div>
+
+		<!-- pay type -->
+		<div class="grid column pay-type">
+			<div class="column-hd pay-type-hd">
+				<h3>支付方式</h3>
+			</div>
+			<div class="pay-type-con">
+				<div class="pay-type-item">
+					<input type="radio" name="payType" id="payWenxin" checked>
+					<label for="payWenxin">微信支付</label>
+				</div>
+				<!-- <div class="pay-type-item">
+					<input type="radio" name="payType" id="payQQ">
+					<label for="payQQ">手Q支付</label>
+				</div> -->
+			</div>
+		</div>
+
+		<a href="#" class="btn btn-block btn-error btn-pay" id="order-submit"><span>确认支付</span></a>
+		<!-- buy stamps end -->
+	</div>
+	
+	<div class="fixed-nav">
+		<a href="#"><i class="icon-nav icon-home"></i>首页</a>
+		<a href="#"><i class="icon-nav icon-camera"></i>晒单</a>
+		<a href="#"><i class="icon-nav icon-acti"></i>活动</a>
+		<a href="cart.html"><i class="icon-nav icon-cart"></i>清单</a>
+		<a href="personal_center.html"><i class="icon-nav icon-avatar"></i>个人中心</a>
+	</div>
+
+	<!-- pop recharge start -->
+	<div class="pop-recharge-mask"></div>
+	<div class="pop-recharge-wrap pop-recharge-succ">
+		<div class="pop-recharge-con">
+			<div class="recharge-status">
+				<img src="images/popWin/recharge_succ.jpg" width="159" height="100" alt="">
+				<div class="wave-bott"></div>
+			</div>
+			<p>本次支付￥20元</p>
+			<p>获得50券 赠1券</p>
+		</div>
+	</div>
+	<div class="pop-recharge-wrap pop-recharge-fail">
+		<div class="pop-recharge-con">
+			<div class="recharge-status">
+				<img src="images/popWin/recharge_fail.jpg" width="159" height="100" alt="">
+				<div class="wave-bott"></div>
+			</div>
+			<p>网络出问题啦~请刷新重试~</p>
+			<p>注：如有任何问题，请联系客服0755-86721139</p>
+		</div>
+		<div class="pop-recharge-bott clearfix">
+			<a href="javascript:;" class="btn btn-default"><span>取消</span></a>
+			<a href="#" class="btn btn-error"><span>重新购券</span></a>
+		</div>
+	</div>
+	<!-- pop recharge end -->
+
+	<!-- pop scan pay pc端扫码支付 start -->
+	<div class="pop-pay-code-mask"></div>
+	<div class="pop-pay-code">
+		<div class="pop-pay-code-hd">
+			<h3><i class="icon-pay-wx"></i>微信支付</h3>
+		</div>
+		<div class="pop-pay-code-con">
+			<div class="code-pic">
+				<img src="images/popWin/pay_code.jpg" width="124" height="124" alt="">
+				<div class="code-expired">二维码已过期，请<a href="#">刷新</a></div>
+			</div>
+			<dl class="code-instruct-1 clearfix">
+				<dt>
+					<img src="images/popWin/icon_scan.png" width="28" height="28" alt="">
+				</dt>
+				<dd>
+					<p>请使用微信扫描</p>
+					<p>二维码以完成支付</p>
+				</dd>
+			</dl>
+			<div class="code-instruct-2">
+				<img src="images/popWin/pay_instruct.jpg" width="84" height="111" alt="">
+			</div>
+		</div>
+		<div class="pop-pay-code-bott">
+			<a href="#" class="btn btn-error btn-pop-pay-succ"><span>支付成功</span></a>
+			<a href="javascript:;" class="btn btn-default btn-pop-pay-cancel"><span>取消</span></a>
+		</div>
+		<a href="javascript:;" class="btn-pop-pay-code-close">关闭</a>
+	</div>
+	<!-- pop scan pay pc端扫码支付 end -->
+
+
+	<!-- pop amount limit start -->
+	<div class="pop-amount-limit-mask"></div>
+	<div class="pop-amount-limit">
+		<div class="pop-amount-limit-con">
+			每笔支付金额不能大于50000.00元
+		</div>
+		<div class="pop-amount-limit-bott">
+			<a href="javascript:;">确定</a>
+		</div>
+	</div>
+	<!-- pop amount limit end -->
+
+	<!-- jquery lib script -->
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+	<!-- common script -->
+	<script type="text/javascript" src="js/lib.js"></script>
+	<!-- browser script -->
+	<script type="text/javascript" src="js/jquery.browser.min.js"></script>
+	<!-- jquery layer script -->
+	<script src="js/layer/layer.js" type="text/javascript"></script>
+	<script>
+		$(function(){
+			/*$('#numberOther').on('focus', function(){
+				$('.buy-stamps-con').find('input[type="radio"]').prop('checked', false);
+			});
+
+			$('#order-submit').on('click', function(){
+				if ($('#numberOther').val() == 1) { // 最低夺宝券购买数量
+					layer.alert('夺宝券购买数量最少2张,请重新输入', {title: false, closeBtn: 0}, function(index){
+						$('#numberOther').focus();
+						$('#numberOther').val(2);
+						layer.close(index);
+					});
+				}
+			});*/
+			$('.stamps-cost strong').text('￥' + $('.recharge-item-selected').attr('data-number'));
+			var aRechargeItem = $('.buy-stamps-con span'),
+				oInputNumOther = $('#numberOther');
+
+			aRechargeItem.each(function(){
+				var _this = $(this);
+				_this.on('click', function(){
+					var itemNum = _this.attr('data-number');
+
+					_this.addClass('recharge-item-selected').parent().siblings().find('span').removeClass('recharge-item-selected');
+					oInputNumOther.removeClass('recharge-item-selected');				
+					$('.buy-stamps-con p').not(':last').find('em').show();
+					$('.stamps-cost strong').text('￥' + itemNum);
+
+					oBtnSwitch.removeClass('switch-on').addClass('switch-off');
+					oBtnSwitch.find('span').removeClass('on');
+					$('#s2, #s3').hide();
+					$('#s1').show();
+					_this.parent().parent().find('span').removeClass('recharge-item-disabled');
+					oInputNumOther.removeClass('recharge-item-selected').val('');
+					oInputNumOther.parent().find('em').remove();					
+				})
+			});
+
+			oInputNumOther.on({
+				'focus': function(){
+					var e = $(this);
+					e.addClass('recharge-item-selected').parent().siblings().find('span').removeClass('recharge-item-selected');					
+				},
+				'keyup': function(){
+					var e = $(this),
+						itemNumOtherVal = e.val(),
+						regNum = /^[1-9]\d*$/;
+
+					if (isEmpty('#numberOther')) {
+						/*DUOBAO.popWinTips.init('请输入购券数量');
+						e.blur();*/
+						$(this).parent().find('em').remove();
+						$('.stamps-cost strong').text('￥0');
+						// e.focus();
+					} else if (!regNum.test(itemNumOtherVal)) {
+						// DUOBAO.popWinTips.init('输入有误');
+					} else if (itemNumOtherVal == 1) {
+						// DUOBAO.popWinTips.init('夺宝券购买数量最少2张,请重新输入');
+						// e.focus().val(2);
+						e.blur();
+						e.val(2);
+						$(this).parent().append('<em>赠5张</em>');
+						$('.stamps-cost strong').text('￥' + $(this).val());
+					} else {
+						$('.stamps-cost strong').text('￥' + itemNumOtherVal);
+						$(this).parent().append('<em>赠5张</em>');
+					}
+				}
+			});
+			/*oInputNumOther.on('focus', function(){
+				$(this).addClass('recharge-item-selected').parent().siblings().find('span').removeClass('recharge-item-selected');
+			});*/
+
+			// 充值成功
+			$('.fixed-nav a').eq(0).on('click', function(){
+				$('.pop-recharge-mask, .pop-recharge-succ').show();
+				setTimeout(function(){
+					$('.pop-recharge-mask, .pop-recharge-succ').hide();
+				}, 3000);
+			});
+			// 充值失败
+			$('.fixed-nav a').eq(1).on('click', function(){
+				$('.pop-recharge-mask, .pop-recharge-fail').show();
+			});
+			$('.pop-recharge-bott a:first-child').on('click', function(){
+				$('.pop-recharge-mask, .pop-recharge-fail').hide();
+			});
+
+
+			// 卡包
+			var cardItem = $('#s1 .card-item');
+			var aInputRadio = $('#s2 input');
+			var _win = $(window);
+			var oBtnSwitch = $('.switch-button');
+			// scene 1
+			$('#btnCardMore').on('click', function(){
+				oBtnSwitch.removeClass('switch-off').addClass('switch-on');
+				oBtnSwitch.find('span').addClass('on');
+				$('#s1').hide();
+				$('#s2').show();	
+			});
+			cardItem.each(function(){
+				var _this = $(this);
+				_this.off('click').on('click', function(){
+					var itemRechargeNum = $(this).find('input[type="hidden"]').attr('data-recharge-num'),
+						itemRechargeGiv = $(this).find('input[type="hidden"]').attr('data-recharge-giving');
+					
+					oBtnSwitch.removeClass('switch-off').addClass('switch-on');
+					oBtnSwitch.find('span').addClass('on');
+					$('#s1').hide();
+					$('#s3 .card-list').find('.card-item').remove();
+					$('#s3 .card-list').prepend('<div class="card-item" data-recharge-num="'+ itemRechargeNum +'" data-recharge-giving="'+ itemRechargeGiv +'">购券 '+ itemRechargeNum +' 赠<strong>'+ itemRechargeGiv +'</strong></div>');
+					$('#s3').show();
+					aRechargeItem.removeClass('recharge-item-selected').addClass('recharge-item-disabled');						
+					$('.buy-stamps-con p').not(':last').find('em').hide();
+					oInputNumOther.addClass('recharge-item-selected').val(itemRechargeNum);
+					oInputNumOther.parent().append('<em>赠'+ itemRechargeGiv +'张</em>');
+					$('.stamps-cost strong').text('￥' + itemRechargeNum);	
+					$('#s3 input').prop('checked', true);						
+				});
+			});
+			// scene 2
+			$('#btnCardFold').on('click', function(){
+				$('#s2').hide();
+				$('#s1').show();
+			});
+			aInputRadio.each(function(){
+				var _this = $(this);
+				_this.on('change click', function(){
+					if (oBtnSwitch.hasClass('switch-on')) {
+						if (_this.prop('checked') == true) {
+							var itemRechargeNum = $(this).parent().find('input[type="hidden"]').attr('data-recharge-num'),
+								itemRechargeGiv = $(this).parent().find('input[type="hidden"]').attr('data-recharge-giving');
+							$('#s2').hide();
+							$('#s3 .card-list').find('.card-item').remove();
+							$('#s3 .card-list').prepend('<div class="card-item" data-recharge-num="'+ itemRechargeNum +'" data-recharge-giving="'+ itemRechargeGiv +'">购券 '+ itemRechargeNum +' 赠<strong>'+ itemRechargeGiv +'</strong></div>');
+							$('#s3').show();
+							aRechargeItem.removeClass('recharge-item-selected').addClass('recharge-item-disabled');						
+							$('.buy-stamps-con p').not(':last').find('em').hide();
+							oInputNumOther.addClass('recharge-item-selected').val(itemRechargeNum);
+							oInputNumOther.parent().append('<em>赠'+ itemRechargeGiv +'张</em>');
+							$('.stamps-cost strong').text('￥' + itemRechargeNum);
+							$('#s3 input').prop('checked', true);						
+						}						
+					}
+				});
+			});
+			// scene 3
+			$('#btnReselect').on('click', function(){
+				$('#s3').hide();
+				$('#s2').show();
+			});
+
+			// 是否使用卡包
+			switchButton();
+			$('.slider-button').on('click', function(){
+				if (!$(this).parent().hasClass('switch-on')) { // 不使用卡包
+					$('#s2, #s3').find('input[type="radio"]').prop('checked', false);
+					$('#s2, #s3').hide();
+					$('#s1').show();
+					aRechargeItem.removeClass('recharge-item-disabled');						
+					$('.buy-stamps-con p').not(':last').find('em').show();
+					oInputNumOther.removeClass('recharge-item-selected').val('');
+					oInputNumOther.parent().parent().find('span').removeClass('recharge-item-selected');
+					oInputNumOther.parent().parent().find('p:eq(0) span').addClass('recharge-item-selected');
+					oInputNumOther.parent().find('em').remove();
+					$('.stamps-cost strong').text('￥' + $('.recharge-item-selected').attr('data-number'));					
+				} else {
+					$('#s1, #s3').hide();
+					$('#s2').show();					
+				}
+			});
+
+			// 卡包选择区域 @2016-8-3
+			var aCouponItem = $('.coupon-list .coupon-item');
+			aCouponItem.each(function(){
+				var _this = $(this);
+				_this.on('click', function(){
+					if (oBtnSwitch.hasClass('switch-on')) {
+						var itemRechargeNum = $(this).parent().find('input[type="hidden"]').attr('data-recharge-num'),
+							itemRechargeGiv = $(this).parent().find('input[type="hidden"]').attr('data-recharge-giving');
+						$('#s2').hide();
+						$('#s3 .card-list').find('.card-item').remove();
+						$('#s3 .card-list').prepend('<div class="card-item" data-recharge-num="'+ itemRechargeNum +'" data-recharge-giving="'+ itemRechargeGiv +'">购券 '+ itemRechargeNum +' 赠<strong>'+ itemRechargeGiv +'</strong></div>');
+						$('#s3').show();
+						aRechargeItem.removeClass('recharge-item-selected').addClass('recharge-item-disabled');						
+						$('.buy-stamps-con p').not(':last').find('em').hide();
+						oInputNumOther.addClass('recharge-item-selected').val(itemRechargeNum);
+						oInputNumOther.parent().append('<em>赠'+ itemRechargeGiv +'张</em>');
+						$('.stamps-cost strong').text('￥' + itemRechargeNum);
+						_this.prev('input[type="radio"]').prop('checked', true);
+						$('#s3 input').prop('checked', true);						
+					}
+				});
+			});
+
+			//============================
+			//    转换开关
+			//============================
+			function switchButton(){
+				$('.slider-button').on('click', function(){
+					if($(this).hasClass('on')){
+						$(this).removeClass('on').parent().removeClass('switch-on').addClass('switch-off');
+						$(this).next('input[type="hidden"]').val(0);
+					}else{
+						$(this).addClass('on').parent().removeClass('switch-off').addClass('switch-on');
+						$(this).next('input[type="hidden"]').val(1);
+					}		
+				})
+			}
+
+
+			// pc扫码支付
+			$('#order-submit').on('click', function(){
+				// console.log($.browser.desktop);
+				if ($.browser.desktop) {
+					$('.pop-pay-code-mask, .pop-pay-code').show();
+				}
+				if (oInputNumOther.val() > 50000) { // 充值金额限制
+					$('.pop-amount-limit-mask, .pop-amount-limit').show();
+				}
+			});
+			$('.btn-pop-pay-cancel, .btn-pop-pay-code-close').on('click', function(){
+				$('.pop-pay-code-mask, .pop-pay-code').hide();
+			});
+
+			// 充值金额限制
+			$('.pop-amount-limit-bott a').on('click', function(){
+				$('.pop-amount-limit-mask, .pop-amount-limit').hide();
+				oInputNumOther.val('50000');
+				$('.stamps-cost strong').text('￥50000');
+			});
+		})
+	</script>
+</body>
+</html>

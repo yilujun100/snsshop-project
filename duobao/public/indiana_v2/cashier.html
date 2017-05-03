@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>收银台——夺宝奇兵</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="author" content="">
+	<meta name="Copyright" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<!-- style base -->
+	<link rel="stylesheet" href="css/base.css">
+	<!-- style common -->
+	<link rel="stylesheet" href="css/common.css">
+	<!-- style swiper -->
+	<link rel="stylesheet" href="js/swiper/swiper.min.css">
+	<!-- style layout -->
+	<link rel="stylesheet" href="css/layout.css">
+</head>
+<body>
+	<div class="viewport v-cashier">
+		<div class="grid cashier-wrap">
+			<div class="cashier-hd">
+				<h3>收银台</h3>
+			</div>
+			<div class="cashier-con">
+				<div class="cash-order-id">订单号：49309589587894377</div>
+				<div class="cash-total-cost">总计：<strong>￥89.00</strong></div>
+				<div class="cash-list clearfix">
+					<div class="cash-list-hd">
+						<span>订单列表</span>
+						<b>数量</b>
+						<em>价格</em>
+					</div>
+					<ul>
+						<li><span>[夺宝]商品名称标题最多12个字</span><b>x1</b><em>￥100</em></li>
+						<li class="item-coupon-giving"><span>[赠券券]10张</span><b>x10</b><em>￥0</em></li>
+						<li><span>[兑换]商品名称标题最多12个字</span><b>x1</b><em>￥10</em></li>
+						<li><span>[夺宝]商品名称标题最多12个字</span><b>x1</b><em>￥100</em></li>
+						<li><span>[夺宝券]10张</span><b>x1</b><em>￥10</em></li>
+						<li><span>[兑换]商品名称标题最多12个字</span><b>x1</b><em>￥10</em></li>
+					</ul>
+					<a href="javascript:;" class="cash-view-all" id="cashViewAll">查看全部<i class="icon-arrow-dw"></i></a>
+				</div>
+			</div>
+		</div>
+
+		<div class="grid cashier-pay mt-10">
+			<div class="cash-pay-type cash-pay-type-1 clearfix">
+				<h3 class="fl">夺宝券支付（余<strong class="stamps-remain">80</strong>张）</h3>
+				<span class="fr">
+					<label for="stampsNum" id="stampsNumAvai">￥80</label>
+					<label class="recommend-selected">推荐勾选</label>
+					<input type="checkbox" id="stampsNum" checked />
+					<a href="buy_stamps.html" class="btn-buy-stamps-entry">夺宝券有买有赠，夺宝更优惠哦</a>
+				</span>
+			</div>
+			<div class="cash-pay-type cash-pay-type-other">
+				<div class="pay-other-hd clearfix">
+					<h3 class="fl">其他支付方式</h3>
+					<span class="cash-need-pay fr" id="cashNeedPay">￥9</span>
+				</div>
+				<div class="pay-other-con">
+					<ul>
+						<li><input type="radio" name="payOther" id="payWeixin" checked><label for="payWeixin"><i class="icon-weixin"></i>微信支付</label></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<a href="#" class="btn btn-block btn-red" id="cashierPay">确认支付</a>
+	</div>
+	
+	<div class="fixed-nav">
+		<a href="home.html" class="active"><i class="icon-nav icon-home"></i>首页</a>
+		<a href="share.html"><i class="icon-nav icon-camera"></i>晒单</a>
+		<a href="#"><i class="icon-nav icon-gift"></i>活动</a>
+		<a href="cart.html"><i class="icon-nav icon-cart"></i>夺宝车</a>
+		<a href="personal_center.html"><i class="icon-nav icon-avatar"></i>个人中心</a>
+	</div>	
+	
+	<style>
+	</style>
+	<!-- buy stamps start -->
+	<div class="mask mask-buy-stamps"></div>
+	<div class="pop-buy-stamps grid column buy-stamps">
+		<div class="column-hd">
+			<h3>购买夺宝券</h3>	
+			<a href="javascript:;" id="btnClose">关闭</a>		
+		</div>
+		<div class="pop-content buy-stamps-con clearfix">			
+			<p><input type="radio" name="stampsNumber" checked id="number20"><label for="number20">20张</label></p>
+			<p><input type="radio" name="stampsNumber" id="number50"><label for="number50">50张</label></p>
+			<p><input type="radio" name="stampsNumber" id="number100"><label for="number100">100张（赠2张）</label></p>
+			<p><input type="radio" name="stampsNumber" id="number200"><label for="number200">200张（赠5张）</label></p>
+			<p><input type="radio" name="stampsNumber" id="number350"><label for="number350">350张（赠10张）</label></p>
+			<p><input type="radio" name="stampsNumber" id="number500"><label for="number500">500张（赠15张）</label></p>
+			<p><input type="radio" name="stampsNumber" id="number1000"><label for="number1000">1000张（赠30张）</label></p>
+			<p><input type="text" id="numberOther" placeholder="其他数量"></p>
+		</div>
+		<a href="#" class="btn btn-block btn-red">确认支付</a>
+	</div>
+	<!-- buy stamps end -->
+	<!-- jquery lib script -->
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+	<!-- common script -->
+	<script type="text/javascript" src="js/lib.js"></script>
+	<script>
+	$(function(){
+
+		// 查看全部
+		$('#cashViewAll').on('click', function(){
+			if ($(this).find('i').hasClass('icon-arrow-dw')) {
+				$(this).prev('ul').addClass('cash-list-toggle');
+				$(this).find('i').removeClass('icon-arrow-dw').addClass('icon-arrow-up');
+			} else {
+				$(this).prev('ul').removeClass('cash-list-toggle');
+				$(this).find('i').removeClass('icon-arrow-up').addClass('icon-arrow-dw');				
+			}
+		});
+
+		// 夺宝券支付状态
+		DUOBAO.useStamps = true;		
+		DUOBAO.cashier = {
+			stampsRemain: 0 // 剩余夺宝券
+		};
+		DUOBAO.cashier.totalCost = 89;
+		DUOBAO.cashier.needPay = null;
+
+		cashierInit();
+		function cashierInit() {
+			if (DUOBAO.cashier.stampsRemain == 0) {
+				$('#stampsNumAvai, .recommend-selected, #stampsNum').hide();
+				$('.stamps-remain').text(0)
+			} else {
+				$('.recommend-selected, .btn-buy-stamps-entry').hide();
+				$('.stamps-remain').text(DUOBAO.cashier.stampsRemain);
+				$('#stampsNumAvai').text('￥'+ DUOBAO.cashier.stampsRemain);
+			}
+			DUOBAO.cashier.needPay = parseInt(DUOBAO.cashier.totalCost) - parseInt(DUOBAO.cashier.stampsRemain);
+			$('#cashNeedPay').html('￥'+ DUOBAO.cashier.needPay);
+		}
+
+		$('#stampsNum').on('change', function(){
+			if ($(this).is(':checked')) {
+				DUOBAO.useStamps = true;
+				DUOBAO.cashier.needPay = parseInt(DUOBAO.cashier.totalCost) - parseInt(DUOBAO.cashier.stampsRemain);
+				$('#cashNeedPay').html('￥'+ DUOBAO.cashier.needPay);
+				$('.recommend-selected, .btn-buy-stamps-entry').hide();
+				$('#stampsNumAvai').show();
+			} else {
+				DUOBAO.useStamps = false;
+				DUOBAO.cashier.needPay = DUOBAO.cashier.totalCost;
+				$('#cashNeedPay').html('￥'+ DUOBAO.cashier.needPay);
+				$('#stampsNumAvai, .btn-buy-stamps-entry').hide();
+				$('.recommend-selected').show();
+			}
+		});
+
+		// 支付购买夺宝券 @后台:判断夺宝券数
+		$('#cashierPay').on('click', function(){
+			$('.mask, .pop-buy-stamps').show();
+		});
+		$('#btnClose').on('click', function(){
+			$('.mask, .pop-buy-stamps').hide();
+		});
+
+	})
+	</script>
+</body>
+</html>

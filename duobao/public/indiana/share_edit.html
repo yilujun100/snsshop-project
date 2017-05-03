@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>晒单编辑——夺宝奇兵</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="author" content="">
+	<meta name="Copyright" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<!-- style base -->
+	<link rel="stylesheet" href="css/base.css">
+	<!-- style common -->
+	<link rel="stylesheet" href="css/common.css">
+	<!-- layer skin extend style -->
+	<link rel="stylesheet" href="css/layer_skin_extend.css">
+	<!-- style layout -->
+	<link rel="stylesheet" href="css/layout.css">
+</head>
+<body>
+	<div class="viewport v-share">
+		<div class="grid column">
+			<div class="column-hd">
+				<h3>奖品信息</h3>
+			</div>
+			<div class="share-prize-1">					
+				<div class="share-prize-info">
+					<div class="share-prize-pic">
+						<img src="images/share_1.jpg" width="52" height="52" alt="">
+					</div>
+					<div class="share-prize-cell">
+						<h3 class="share-prize-name">苹果专区 IPHONG 6S粉色过年就买新手机过年就买新手机</h3>
+						<p>期号：<strong>1234567890</strong></p>
+					</div>
+				</div>
+				<form action="" class="form-share-edit" id="formShareEdit">
+					<textarea name="shareContent" id="shareContent" cols="30" rows="10" placeholder="请填写晒单内容（不少于10个字，最多500字）">请填写晒单内容（不少于10个字，最多500字）请填写晒单内容（不少于10个字，最多500字）请填写晒单内容（不少于10个字，最多500字）请填写晒单内容（不少于10个字，最多500字）</textarea>
+					<div class="pics clearfix">
+						<img class="mimg" onclick="DUOBAO.photo.parsePhoto($(this).index());" src="images/share_1.jpg" width="62" height="62" alt="">
+						<img class="mimg" onclick="DUOBAO.photo.parsePhoto($(this).index());" src="images/share_2.jpg" width="62" height="62" alt="">
+						<img class="mimg" onclick="DUOBAO.photo.parsePhoto($(this).index());" src="images/share_3.jpg" width="62" height="62" alt="">
+						<!-- <a href="#" class="btn-pic-add">新增图片</a> -->
+						<div class="file-box">
+							<a href="javascript:;" class="btn-pic-add">新增图片</a>
+							<input type="file" name="upload-pic" id="upload-pic">
+						</div>
+					</div>
+					<em class="word-limit">226</em>
+				</form>
+			</div>
+		</div>
+		<input type="submit" id="shareEditConfirm" class="btn btn-block btn-red btn-share-submit" form="formShareEdit" value="提交">
+		<div class="tips-share">晒单赢积分 查看规则</div>
+		<!-- photo start -->
+		<div class="bg" style="display: none;"></div>
+		<div class="pic-large" style="display: none;">
+			<div class="container">
+				<div class="dleft">上一张</div>
+				<div class="dimg">
+					<div style="display: none;"><img src="images/share_1.jpg" width="220" height="220"></div>
+					<div style="display: none;"><img src="images/share_2.jpg" width="220" height="220"></div>
+					<div style="display: none;"><img src="images/share_3.jpg" width="220" height="220"></div>
+				</div>
+				<div class="dright">下一张</div>
+			</div>
+			<div class="clearfix"></div>
+			<div class="del">删除此图</div>
+			<div class="back-edit">返回编辑</div>
+		</div>
+		<!-- photo end -->
+	</div>
+
+	<div class="fixed-nav">
+		<a href="home.html"><i class="icon-nav icon-home"></i>首页</a>
+		<a href="share.html" class="active"><i class="icon-nav icon-camera"></i>晒单</a>
+		<a href="#"><i class="icon-nav icon-gift"></i>活动</a>
+		<a href="cart.html"><i class="icon-nav icon-cart"></i>夺宝车</a>
+		<a href="personal_center.html"><i class="icon-nav icon-avatar"></i>个人中心</a>
+	</div>
+	<!-- jquery lib script -->
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+	<!-- common script -->
+	<script type="text/javascript" src="js/lib.js"></script>
+	<!-- jquery layer script -->
+	<script type="text/javascript" src="js/layer/layer.js"></script>
+	<script type="text/javascript" src="js/photo.js"></script>
+	<script>
+	$(function(){
+		$('#shareEditConfirm').on('click', function(){
+			layer.msg('发布成功', {icon: 1}, function(){
+				$('#shareEditConfirm').attr('disabled', 'disabled');
+			});
+			return false;
+		});
+	})
+	</script>
+</body>
+</html>

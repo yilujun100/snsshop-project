@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>开福袋(好友)</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="author" content="">
+		<meta name="Copyright" content="">
+		<meta name="Keywords" content="">
+		<meta name="Description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no">
+		<!-- style base -->
+		<link rel="stylesheet" href="css/base.css">
+		<!-- style common -->
+		<link rel="stylesheet" href="css/common.css">
+		<!-- style swiper -->
+		<link rel="stylesheet" href="js/swiper/swiper.min.css">
+		<!-- style layout -->
+		<link rel="stylesheet" href="css/layout.css">		
+	</head>
+	<body>
+		<div class="viewport v-open-bag">
+			<!-- open bag start -->
+			<div class="open-bag">
+				<div class="banner-open-bag">
+					<img src="images/bag_1.jpg" width="100%" alt="" />
+					<div class="banner">
+						好友一掷千金，给你发了价值<br>千元的新年福袋，快拆开看看！
+					</div>
+					<div class="opera-open">
+						<p><strong id="issuer">晨晨</strong>送你一份千元豪礼！</p>
+						<a href="#" class="btn-open-bag" id="btnOpenBag">开福袋</a>
+					</div>
+				</div>
+				<!-- win info -->
+				<div class="win-info clearfix" id="scrollInfo">
+					<i class="icon-horn"></i>					
+					<ul>
+						<li><a href="#">恭喜<b class="winner">天上的月亮</b>3分钟前获得<strong class="prize">Apple iPhone 6s 16GB</strong></a></li>
+						<li><a href="#">恭喜<b class="winner">天上的月亮</b>3分钟前获得<strong class="prize">Apple iPhone 6s 16GB 1</strong></a></li>
+						<li><a href="#">恭喜<b class="winner">天上的月亮</b>3分钟前获得<strong class="prize">Apple iPhone 6s 16GB 2</strong></a></li>
+					</ul>
+				</div>
+				<!-- receive list -->
+				<div class="receive">
+					<div class="receive-hd clearfix">
+						<h3 class="already-receive fl">共<b id="totalNum">10</b>个福袋，已领取<strong id="receivedNum">4</strong>/<b id="totalNum">10</b>个</h3>
+						<a href="#" class="view-more fr">查看更多豪礼</a>
+					</div>
+					<div class="receive-con">
+						<ul>
+							<li>
+								<em>金三胖</em>
+								<span>领到2张夺宝券</span>
+								<b>恭喜发财</b>
+							</li>
+							<li>
+								<em>金三胖</em>
+								<span>领到100张夺宝券</span>
+								<a href="#" class="status status-success">等待开奖</a>
+							</li>
+							<li>
+								<em>金三胖</em>
+								<span>领到98张夺宝券</span>
+								<a href="#" class="status status-error">我中奖啦</a>
+							</li>
+							<li>
+								<em>金三胖</em>
+								<span>领到100张夺宝券</span>
+								<a href="#" class="status status-defualt">夺宝中</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!-- goods recommend -->
+				<div class="goods-recommend">
+					<div class="g-recommend-hd clearfix">
+						<h3 class="fl">领福袋，兑豪礼  Lets go~</h3>
+						<a href="#" class="view-more fr">查看更多豪礼</a>
+					</div>
+					<div class="g-recommend-con swiper-container" id="swiper-1">
+						<ul class="swiper-wrapper clearfix">
+							<li class="swiper-slide">
+								<a href="#">
+									<img src="images/thumb_goods.jpg" width="100%" height="" alt="" />
+									<h3 class="goods-name">iPhone6S</h3>
+								</a>
+							</li>
+							<li class="swiper-slide">
+								<a href="#">
+									<img src="images/thumb_goods.jpg" width="100%" height="" alt="" />
+									<h3 class="goods-name">iPhone6S</h3>
+								</a>
+							</li>
+							<li class="swiper-slide">
+								<a href="#">
+									<img src="images/thumb_goods.jpg" width="100%" height="" alt="" />
+									<h3 class="goods-name">iPhone6S</h3>
+								</a>
+							</li>
+							<li class="swiper-slide">
+								<a href="#">
+									<img src="images/thumb_goods.jpg" width="100%" height="" alt="" />
+									<h3 class="goods-name">iPhone6S</h3>
+								</a>
+							</li>
+							<li class="swiper-slide">
+								<a href="#">
+									<img src="images/thumb_goods.jpg" width="100%" height="" alt="" />
+									<h3 class="goods-name">iPhone6S</h3>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!-- activity intro -->
+				<div class="acti-intro">
+					<div class="acti-intro-hd clearfix">
+						<h3>福袋活动介绍图</h3>
+						<i class="arrow-down"></i>
+					</div>
+					<div class="acti-intro-con">
+						<div class="h-acti-intro-con">
+							<ul class="clearfix">
+								<li>
+									<img src="images/acti_2.png" width="100%" alt="">
+									<h3>1张夺宝券</h3>
+								</li>
+								<li class="sepera-equal">
+									<img src="images/acti_5.png" width="100%" alt="">
+								</li>
+								<li>
+									<img src="images/acti_3.png" width="100%" alt="">
+									<h3>1个夺宝码</h3>
+								</li>
+								<li class="sepera-equal">
+									<img src="images/acti_5.png" width="100%" alt="">
+								</li>
+								<li>
+									<img src="images/acti_4.png" width="100%" alt="">
+									<h3>1份千元豪礼</h3>
+								</li>
+							</ul>
+						</div>
+						
+						<div class="process-con mt-15">
+							<ul class="clearfix">
+								<li>
+									<img src="images/acti_6.png" width="100%" alt="">
+									<h3>装福袋</h3>
+								</li>
+								<li>
+									<img src="images/acti_7.png" width="100%" alt="">
+									<h3>发福袋</h3>
+								</li>
+								<li>
+									<img src="images/acti_8.png" width="100%" alt="">
+									<h3>领福袋</h3>
+								</li>
+								<li>
+									<img src="images/acti_9.png" width="100%" alt="">
+									<h3>夺宝领豪礼</h3>
+								</li>
+							</ul>
+						</div>
+					
+						<p>1.活动时间：2016年2月7日~2月29日；</p>
+						<p>2.每个用户可购买1元夺宝券作为新年礼物赠予好友，用户在赠送好友夺宝券时可个性化选择普通福袋和拼手气福袋（操作类似于微信红包），自主编辑赠予的人数、夺宝券张数，并填写祝福语；</p>
+						<p>3.获得夺宝券的用户可在夺宝奇兵活动中购买时抵扣现金，例如： 1元夺宝券可抵扣1元。也可用现有的夺宝券直接兑换奖品；</p>
+						<p>4.48小时之内，已发送出去的福袋中如有夺宝券未被及时领取，可在【个人中心】中找到【可发放福袋】入口，选择继续发放；48小时之后，已发送出去的福袋中如有夺宝券未被及时领取，则系统将会把未被领取的夺宝券退回至您的账户中 ；</p>
+						<p>5.夺宝券从购买到账之日起永久有效；</p>
+						<p>6.1张夺宝券可兑换一个夺宝码， 更多夺宝及相关计算规则请详见夺宝奇兵活动页面；</p>
+						<p>7.本活动最终解释权归微团购所有。</p>
+					</div>
+				</div>
+			</div>
+			<!-- open bag end -->		
+		</div>
+		<!-- fixed bottom start -->
+		<!-- <div class="fixed nav">
+			<a href="#" class="nav-active">去夺宝</a>
+			<a href="#">发福袋</a>
+			<a href="#">个人中心</a>
+		</div> -->
+		
+		<div class="fixed-nav">
+			<a href="home.html"><i class="icon-nav icon-home"></i>首页</a>
+			<a href="share.html" class="active"><i class="icon-nav icon-camera"></i>晒单</a>
+			<a href="#"><i class="icon-nav icon-gift"></i>活动</a>
+			<a href="cart.html"><i class="icon-nav icon-cart"></i>夺宝车</a>
+			<a href="personal_center.html"><i class="icon-nav icon-avatar"></i>个人中心</a>
+		</div>
+		<!-- fixed bottom end -->
+
+		<div class="mask"></div>
+		<!-- 开福袋提示层 start -->
+		<div class="popup popup-open-bag">
+			<div class="popup-tit">大王真是手气爆棚！<br>领到15张夺宝券</div>
+			<div class="popup-con">
+				<p class="popup-desc">快去选个千元豪礼！</p>
+				<div class="popup-btns">
+					<a href="#" class="btn-popup btn-popup-1">带朕去选豪礼</a>
+					<a href="#" class="btn-popup btn-popup-2 mt-10">朕也要发福袋</a>
+				</div>
+				<p class="popup-tips">*福袋中的夺宝券如未被领取, 将于48小时内退还至您的账户</p>
+			</div>
+			<a href="javascript:;" class="btn-popup-close" id="btnPopupClose">关闭</a>
+		</div>
+		<!-- 开福袋提示层 end -->
+
+		<!-- 福袋已领取提示层 start -->
+		<div class="popup popup-bag-received">
+			<div class="popup-tit">大王已领过此福袋了</div>
+			<div class="popup-con">
+				<div class="popup-btns">
+					<a href="#" class="btn-popup btn-popup-1">带朕去选豪礼</a>
+					<a href="#" class="btn-popup btn-popup-2 mt-10">朕也要发福袋</a>
+				</div>
+				<p class="popup-tips">*福袋中的夺宝券如未被领取, 将于48小时内退还至您的账户</p>
+			</div>
+			<a href="javascript:;" class="btn-popup-close" id="btnPopupClose1">关闭</a>
+		</div>		
+		<!-- 福袋已领取提示层 end -->
+
+		<!-- 分享 start -->
+		<div class="popup popup-share"></div>
+		<!-- 分享 end -->
+
+
+		<!-- jquery lib script -->
+		<script src="js/jquery-2.1.4.min.js" type="text/javascript"></script>
+		<!-- common script -->
+		<script src="js/lib.js" type="text/javascript"></script>	
+		<!-- swiper script -->
+		<script src="js/swiper/swiper.min.js" type="text/javascript"></script>
+		<script>
+			$(function(){	
+
+				// 分享引导提示层
+				$('.mask, .popup-share').show();
+				$('.mask, .popup-share').on('click', function(){
+					$('.mask, .popup-share').hide();
+				});
+				
+				// 折叠菜单
+				toggleMenu('.acti-intro i.arrow-down');
+				
+				// 推荐商品
+				var swiper1 = new Swiper('#swiper-1', {
+					slidesPerView: 3.5,
+					spaceBetween: 10,
+					freeMode: true
+				});
+				
+				// 中奖信息
+				setInterval(function(){
+					scrollInfo('#scrollInfo');
+				}, 3000);
+				
+				// 开福袋提示层
+				$('#btnOpenBag').on('click', function(){
+					$('.mask, .popup-open-bag').show();
+					return false;					
+				});
+				$('.btn-popup-close').on('click', function(){
+					$('.mask, .popup').hide();
+				});	
+
+				// 福袋已领取提示层
+				/*$('.nav a:eq(0)').on('click', function(){					
+					$('.mask, .popup-bag-received').show();
+					return false;	
+				});*/
+			})
+		</script>
+	</body>
+</html>

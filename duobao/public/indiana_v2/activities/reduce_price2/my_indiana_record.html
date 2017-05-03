@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的夺宝记录——夺宝奇兵</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="author" content="">
+	<meta name="Copyright" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<!-- style base -->
+	<link rel="stylesheet" href="../../css/base.css">
+	<!-- style common -->
+	<link rel="stylesheet" href="../../css/common.css">
+	<!-- style layout -->
+	<link rel="stylesheet" href="../../css/layout.css">
+	<link rel="stylesheet" href="../../css/layout_reduce_price2.css">
+</head>
+<body>
+	<div class="viewport v-indiana-record">
+		<div class="grid tab tab-record">
+			<div class="tab-tit clearfix" id="indianaRecordTit">
+				<a href="javascript:;" class="tab-active">全部</a>
+				<a href="javascript:;">进行中</a>
+				<a href="javascript:;">已揭晓</a>
+				<a href="javascript:;">已中奖</a>
+				<a href="javascript:;">兑换记录</a>
+			</div>
+			<div class="tab-con" id="indianaRecordCon">
+				<!-- 全部 -->
+				<div class="record-all" style="display: block;">
+					<div class="grid-1 record-item record-item-failure">
+						<div class="prize-pic">
+							<img src="images/product_8.jpg" width="84" height="84" alt="">
+							<em class="tag-prize-win-failure">中奖<br>失效</em>
+							<!-- <a href="#" class="prize-detail">奖品详情</a> -->
+						</div>
+						<div class="record-core-cell-1">
+							<div class="prize-name">苹果专区 IPHONE 6S 粉色过年就换新手机</div>
+							<div class="record-core-cell-4" style="display: block;">
+							</div>	
+							<div class="record-core-opt clearfix">
+								<a href="#" class="btn btn-error"><span>填写地址</span></a>
+								<a href="#" class="btn btn-default btn-default-2"><span>返回活动</span></a>
+								<a href="#" class="btn btn-error"><span>确认收货</span></a>
+								<a href="#" class="btn btn-default btn-default-2"><span>返回活动</span></a>
+								<a href="#" class="btn btn-error"><span>商品代发货</span></a>
+								<a href="#" class="btn btn-default btn-default-2"><span>返回活动</span></a>
+								<a href="#" class="btn btn-error"><span>已完成</span></a>
+								<a href="#" class="btn btn-default btn-default-2"><span>返回活动</span></a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- 进行中 -->
+				<div class="record-ongoing">
+								
+				</div>
+				<!-- 已揭晓 -->
+				<div class="record-announced">
+								
+				</div>
+				<!-- 已中奖 -->
+				<div class="record-winning win-failure">
+					<div class="grid-1 record-item record-item-failure">
+						<div class="prize-pic">
+							<img src="images/product_8.jpg" width="84" height="84" alt="">
+							<em class="tag-prize-win-failure">中奖<br>失效</em>
+							<!-- <a href="#" class="prize-detail">奖品详情</a> -->
+						</div>
+						<div class="record-core-cell-1">
+							<div class="prize-name">苹果专区 IPHONE 6S 粉色过年就换新手机</div>
+							<div class="record-core-cell-4" style="display: block;">
+								<span class="stamp-expired"></span>
+							</div>	
+							<div class="record-core-opt clearfix">
+								<a href="#" class="btn btn-default btn-default-2"><span>返回活动</span></a>
+							</div>
+						</div>
+					</div>					
+				</div>
+				<!-- 兑换记录 -->
+				<div class="record-exchange india-record-empty">
+					<i class="icon-nail"></i>
+					<p>暂无参与记录<br>参与越多积分越多哦~</p>
+					<a href="#" class="btn btn-error btn-e-join-now"><span>立即参与</span></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="fixed-nav">
+		<a href="home.html"><i class="icon-nav icon-home"></i>首页</a>
+		<a href="share.html"><i class="icon-nav icon-camera"></i>晒单</a>
+		<a href="#"><i class="icon-nav icon-acti"></i>活动</a>
+		<a href="cart.html"><i class="icon-nav icon-cart"></i>清单</a>
+		<a href="personal_center.html"><i class="icon-nav icon-avatar"></i>个人中心</a>
+	</div>
+	<!-- jquery lib script -->
+	<script type="text/javascript" src="../../js/jquery-2.1.4.min.js"></script>
+	<!-- common script -->
+	<script type="text/javascript" src="../../js/lib.js"></script>
+	<script>
+	$(function(){
+
+		$('.list-progress-bar').each(function () {
+			var _percent = $(this).parent().attr('data-lott-schedule');
+			_percent = _percent.substring(0, _percent.length - 1);
+			$(this).find('span.list-progress-bar-on').animate({'width': _percent + '%'}, 600);
+		});
+
+		$('.countDown').each(function() {
+			var aCountDown = $(this),
+					time = (new Date($(aCountDown).attr('data-end-time')).getTime() - new Date($(aCountDown).attr('data-start-time')).getTime())/1000;
+			DUOBAO.countDown(this, time);
+		});
+
+		// fnTab('#indianaRecordTit a', '#indianaRecordCon > div');
+		var aTit = $('#indianaRecordTit a');
+
+	    aTit.each(function(i){
+
+	        var _this = $(this);
+	        _this.on('click', function(){
+	            _this.addClass('tab-active').siblings().removeClass('tab-active');
+	            $('#indianaRecordCon > div').eq(i).show().siblings().hide();
+	            return false;
+	        });
+
+	    });
+
+	    // 查看我的码
+	    var aBtnViewCode = $('.btn-view-my-code');
+	    aBtnViewCode.each(function(){
+	    	var _this = $(this);
+	    	_this.on('click', function(){
+	    		var dataCode = $(this).closest('.record-item').attr('data-code');
+	    		DUOBAO.popWinAlert.init(dataCode, '我的参与码');
+	    		$('.pop-alert').css({'height': '240px', 'margin-top': '-120px'})
+	    		$('.pop-alert .pop-content').css({'padding': '0 6px','line-height': '20px', 'height': '200px', 'overflow-y': 'auto', 'margin-top': '40px', 'word-break': 'break-all'});
+	    	});
+	    });
+	})
+	</script>
+
+</body>
+</html>

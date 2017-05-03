@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>VIP客户回馈大转盘</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no">
+		<!-- style base -->
+		<link rel="stylesheet" href="../../css/base.css">
+		<!-- style common -->
+		<link rel="stylesheet" href="../../css/common.css">
+		<!-- style layout turntable -->
+		<link rel="stylesheet" href="../../css/layout_vip_turntable.css">
+	</head>
+	<body>
+		<div class="viewport v-turntable">
+			<!-- turntable start -->
+			<div class="turntable">
+				<!-- turntable area -->
+				<div class="turntable-area">
+					<div class="table" id="wheelcanvas">
+						<img src="../../images/vip_turntable/bg_table.png" width="100%" height="auto" alt="" />
+						<div class="prize-list">
+							<div class="prize prize-1"><img src="../../images/vip_turntable/ticket_1.png" width="100%" height="auto" alt=""></div>
+							<div class="prize prize-2"><img src="../../images/vip_turntable/ticket_2.png" width="100%" height="auto" alt=""></div>
+							<div class="prize prize-3"><img src="../../images/vip_turntable/ticket_3.png" width="100%" height="auto" alt=""></div>
+							<div class="prize prize-4"><img src="../../images/vip_turntable/ticket_4.png" width="100%" height="auto" alt=""></div>
+							<div class="prize prize-5"><img src="../../images/vip_turntable/ticket_5.png" width="100%" height="auto" alt=""></div>
+							<div class="prize prize-6"><img src="../../images/vip_turntable/ticket_6.png" width="100%" height="auto" alt=""></div>
+						</div>
+					</div>
+					<div class="ecc">
+						<img src="../../images/vip_turntable/bg_ellipse.png" width="100%" height="auto" alt="" />
+					</div>
+					<div class="arrow-box">
+						<a href="javascript:;" class="btn-start" id="btnStart">开始抽奖</a>
+					</div>
+				</div>
+
+				<!-- rules -->
+				<div class="rules">
+					<div class="rules-hd">
+						<h3>活动规则</h3>
+					</div>
+					<div class="rules-con">
+						<p><i>1.</i>本活动每个ID限参加1次，所有奖品有效期为24小时请尽快使用。</p>
+						<p><i>2.</i>中奖奖品5分钟内发放至个人中心卡包。</p>
+						<p><i>3.</i>法律范围内，本活动解释权归百分好礼所有。</p>
+					</div>
+				</div>
+			</div>
+			<!-- turntable end -->
+		</div>
+		<!-- popup start -->
+		<!-- 遮罩层 -->
+		<div class="mask"></div>
+		<!-- 中奖 -->
+		<div class="popup pop-win">
+			<div class="pop-win-tit">
+				<h3>恭喜你!中奖啦</h3>
+			</div>
+			<div class="pop-con pop-win-con">
+				<p><b class="award">￥300夺宝劵</b>的奖品<br>已放入您的"卡包"</p>
+			</div>
+			<div class="pop-bott">
+				<a href="#">查看我的卡包</a>
+			</div>
+		</div>
+		<!-- 已参加 -->
+		<div class="popup pop-confirm already-parti">
+			<div class="pop-con">
+				<p>亲，您参加过此活动哦！<br>贪心的人会长胖呢！</p>
+			</div>
+			<div class="pop-bott">
+				<a href="#">返回首页</a>
+			</div>
+		</div>
+		<!-- 已结束 -->
+		<div class="popup pop-confirm over">
+			<div class="pop-con">
+				<p>活动已结束哦！<br>下次趁早来</p>
+			</div>
+			<div class="pop-bott">
+				<a href="#">返回首页</a>
+			</div>
+		</div>
+		<!-- popup end -->
+		<!-- jquery lib script -->
+		<script src="../../js/jquery-2.1.4.min.js" type="text/javascript"></script>
+		<!-- jquery common script -->
+		<script src="../../js/lib.js" type="text/javascript"></script>
+		<!-- award rotate script -->
+		<script src="../../js/awardRotate.js" type="text/javascript"></script>
+		<script>
+				
+			// rotary table
+			var isVip = true; // 是否是vip会员
+			var turnplate={
+					restaraunts: [],			//大转盘奖品名称
+					startAngle: 0,				//开始角度					
+					bRotate: false				//false:停止;ture:旋转
+			};
+
+			$(function(){
+				turnplate.restaraunts = ["充500送30", "￥10夺宝劵", "￥100夺宝劵", "￥50夺宝券", "￥300夺宝劵", "充200送10"];
+
+				
+				var rotateTimeOut = function (){
+					$('#wheelcanvas').rotate({
+						angle: 0,
+						animateTo: 2160,
+						duration: 8000,
+						callback: function (){
+							alert('网络超时，请检查您的网络设置！');
+						}
+					});
+				};
+
+				//旋转转盘 item:奖品位置; txt：提示语;
+				var rotateFn = function (item, txt){
+					var angles = item * (360 / turnplate.restaraunts.length) - (360 / (turnplate.restaraunts.length*2));
+					if(angles<270){
+						angles = 270 - angles; 
+					}else{
+						angles = 360 - angles + 270;
+					}
+					$('#wheelcanvas').stopRotate();
+					$('#wheelcanvas').rotate({
+						angle:0,
+						animateTo:angles+1800,
+						duration:8000,
+						callback:function (){
+							$('.mask, .pop-win').show();
+							$('.award').text(txt);
+							turnplate.bRotate = !turnplate.bRotate;
+							isVip = false;
+						}
+					});
+				};
+
+				$('#btnStart').on('click', function(){
+					if (isVip) {
+
+						if (turnplate.bRotate) return;
+						turnplate.bRotate = !turnplate.bRotate;
+						// 获取随机数(奖品个数范围内)
+						var item = rnd(1,turnplate.restaraunts.length);
+						// 奖品数量等于6,指针落在对应奖品区域的中心角度[360, 180, 120, 60, 240, 300]
+						rotateFn(item, turnplate.restaraunts[item-1]);
+
+					} else {
+						$('.mask, .already-parti').show();
+					}
+				})
+			});
+
+			function rnd(n, m){
+			
+				var random = Math.floor(Math.random()*(m-n+1)+n);
+				return random;
+				
+			}
+		</script>
+	</body>
+</html>

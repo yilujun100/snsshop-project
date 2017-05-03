@@ -1,0 +1,85 @@
+/*
+ * 0元中奖活动页 layout_0_yuan_buy.css
+ * author:yilj@snsshop.cn
+ * date:2016-7-11
+*/
+
+body { font-family: arial; }
+.gradient-wrap { position: relative; background: url(../images/0yuan_1123/bg_heart.jpg) no-repeat; background-size: cover; }
+.count-down { position: relative; width: 100%; }
+.count-down-hd h3 { position: absolute; top: -40px; left: 50%; margin-left: -50px; width: 100px; height: 50px; line-height: 50px; text-align: center; background: #d83645; font-size: 15px; color: #fff; -webkit-border-radius: 50px 50px 0 0; }
+.count-down-con { position: relative; padding: 10px 0; height: 30px; text-align: center; background: #d83645; }
+.count-down-box label { display: inline-block; }
+.count-down-box .hour,
+.count-down-box .min,
+.count-down-box .sec { width: 50px; height: 30px; line-height: 30px; text-align: center; background: #fff; font-size: 32px; color: #d83645; font-weight: bold; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; }
+.count-down-box .sepe { font-size: 20px; color: #d83645; font-weight: bold; }
+.btn-acti-rules { position: absolute; top: 10px; right: 20px; display: block; width: 64px; height: 30px; line-height: 30px; text-align: center; background: #ffb14b; font-size: 13px; color: #fff; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; }
+.screen { padding: 10px; height: 40px; background: #5f1f1d; }
+.w-marquee { position: relative; width: 100%; height: 20px; overflow: hidden; }
+.w-marquee p { float: left; margin: 0; line-height: 20px; font-size: 12px; color: #fff; }
+.w-marquee strong { color: #ffe34b; }
+.goods-wrap { margin: 0 auto; padding: 10px 0; width: 300px; }
+.goods-term { font-size: 12px; color: #fff; }
+.goods-pic { width: 110px; }
+.goods-pic img { -webkit-border-radius: 4px 4px 0 0; -moz-border-radius: 4px 4px 0 0; border-radius: 4px 4px 0 0; }
+.goods-pic h4 { width: 100%; height: 24px; line-height: 24px; text-align: center; background: #ffb14b; font-size: 11px; color: #7d4a2e; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; -webkit-border-radius: 0 0 4px 4px; -moz-border-radius: 0 0 4px 4px; border-radius: 0 0 4px 4px; }
+.goods-price { margin-top: 6px; text-align: center; font-size: 13px; color: #fff; }
+.goods-info { margin-left: 16px; }
+.goods-info p { margin: 0; margin-top: 6px; font-size: 12px; color: #fff; }
+.goods-info p:first-child { margin-top: 0; }
+.goods-info i { display: inline-block; vertical-align: -4px; margin-right: 4px; width: 16px; height: 16px; background-repeat: no-repeat; background-size: 16px 16px; }
+.icon-wallet { background-image: url(../images/0yuan_1123/icon_wallet.png); }
+.icon-hourglass { background-image: url(../images/0yuan_1123/icon_hourglass.png); }
+.icon-time { background-image: url(../images/0yuan_1123/icon_clock.png); }
+.btn-yellow { display: inline-block; width: 94px; height: 28px; line-height: 28px; text-align: center; background: #ffb14b; font-size: 13px; color: #7d4a2e; font-weight: bold; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; }
+.btn-parti-free { margin-top: 20px; }
+.receive-steps { padding: 16px 10px 20px; border-top: 1px solid #701412; }
+.receive-steps h3 { margin: 0 auto 10px; width: 242px; height: 24px; background: url(../images/0yuan_1123/title.png) no-repeat; background-size: 242px auto; text-indent: -999em; }
+.btn-recharge { display: block; margin: 0 auto; margin-top: 10px; }
+.rules { padding: 10px 20px; background: #d83645; }
+.rules h3,
+.rules p { margin: 0; font-size: 12px; color: #fff; }
+.rules p { margin-top: 6px; }
+.goods-recommend { padding: 10px 20px; background: #c33139; }
+.goods-recommend h3 { font-size: 15px; color: #fff; }
+.goods-recommend ul { margin-top: 10px; }
+.goods-recommend li { float: left; width: 30%; margin-left: 5%; }
+.goods-recommend li:first-child { margin-left: 0; }
+.goods-recommend li .goods-r-pic { border: 1px solid #ffb14b; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; overflow: hidden; }
+.goods-recommend li a { display: block; margin-top: 10px;  width: 100%; height: 28px; line-height: 28px; text-align: center; background: #ffb14b; font-size: 13px; color: #7d4a2e; font-weight: bold; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; }
+
+.popWin-mask { position: fixed; top: 0; left: 0; z-index: 100; width: 100%; height: 100%; background: #000; filter: alpha(opacity=60); opacity: .6; }
+.popWin-end { position: fixed; top: 50%; left: 50%; z-index: 101; margin-top: -115px; margin-left: -150px; padding: 20px; width: 260px; height: 230px; background: #fff; -webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px; }
+.popWin-end h1,
+.popWin-end h3 { text-align: center; color: #e62754; font-weight: bold; }
+.popWin-end h1 { font-size: 16px; }
+.popWin-end h3 { margin-top: 8px; font-size: 11px; }
+.acti-goods-pic { position: relative; }
+.icon-express { position: absolute; top: 50%; left: 50%; margin-top: -38px; margin-left: -38px; display: block; width: 75px; height: 75px; background: url(../images/0yuan_1123/icon_expression.png) no-repeat; background-size: 75px 75px; }
+.popWin-end p { margin: 0; margin-top: 8px; padding-left: 38px; font-size: 13px; color: #383838; }
+
+.popWin-end dl { margin-top: 10px; }
+.popWin-end dt,
+.popWin-end dd { float: left; }
+.win-user-avatar { position: relative; width: 76px; height: 76px; }
+.arrow-win { margin: 20px 12px; }
+
+.user-avatar { position: absolute; top: 50%; left: 50%; margin-top: -38px; margin-left: -38px; display: block; width: 74px; height: 74px; border: 1px solid #000; overflow: hidden; -webkit-border-radius: 50%; -moz-border-radius: 50%; border-radius: 50%; }
+
+
+.pop-dialog { position: fixed; top: 50%; left: 50%; z-index: 101; margin-top: -51px; margin-left: -130px; width: 260px; height: 102px; background: #fff; -webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px; }
+.pop-dialog h1 { line-height: 42px; text-align: center; font-size: 15px; color: #333; font-weight: bold; }
+.pop-dialog .pop-dialog-btns { padding: 10px; }
+.pop-dialog .pop-dialog-btns a { float: left; display: block; width: 48%; height: 40px; line-height: 40px; text-align: center; font-size: 15px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+#popBtnConfirm { background: #d83645; color: #fff; }
+#popBtnCancel { margin-left: 4%; background: #ccc; color: #333; }
+
+
+@media screen and (max-width: 320px) {
+	.count-down-con { height: 24px; }
+	.count-down-box .hour,
+	.count-down-box .min,
+	.count-down-box .sec { width: 42px; height: 24px; line-height: 24px; font-size: 20px; }
+	.btn-acti-rules { right: 10px; height: 24px; line-height: 24px; }
+}

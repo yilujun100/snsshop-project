@@ -1,0 +1,162 @@
+/*reset css*/
+body, div, h1, h2, h3, h4, p, input, ul, li, img, span, a, dl, dt, dd{margin: 0;padding:0;}
+h1, h2, h3, h4{font-weight: normal;}
+html{font-size: 62.5%; height:100%;}
+body {background-size: 100% auto; -webkit-background-size:100% auto;background-color:#fff;color:#fff;font-family: "microsoft yahei", Arial, Helvetica, sans-serif;font-size:1.2rem; position:relative;}
+a{ color:#333; text-decoration:none;}
+i,em{ font-style:normal;}
+img{max-width:100%; vertical-align:top; border:0;}
+ul,li{ list-style-type:none;}
+.clearfix:after{clear:both;content:".";display:block;font-size:0;height:0;line-height:0;visibility:hidden;}
+.clearfix{zoom:1;}
+.hide{ display:none;}
+.show{ display:block;}
+body{ min-width:320px; max-width:640px; margin:0 auto; height:100%;}
+input[type="text"],input[type="number"],input[type="button"],input[type="submit"], input[type="reset"],textarea,button{-webkit-appearance: none;outline:none;}
+button:active{-webkit-appearance: none;}
+a, input, a:focus, input:focus{-webkit-tap-highlight-color: rgba(0,0,0,0);}
+/*去掉input[type='number']默认样式*/
+input::-webkit-textfield-decoration-container {
+    background-color: #fff; 
+}
+input::-webkit-inner-spin-button {
+     -webkit-appearance: none;
+}
+input::-webkit-outer-spin-button {
+     -webkit-appearance: none;  
+}
+
+.v-recharge{
+
+	background: #e8fdea url(../images/recharge_spring/banner.jpg) no-repeat;
+	background-size: 100% auto;
+	min-height: 100%;
+	padding-top: 60%;
+}
+.time-wrap{
+	width: 300px;
+	height: 100px;
+	background: url(../images/recharge_spring/bg_time.png) no-repeat center center;
+	background-size: 300px auto;
+	margin-bottom: 12px;
+	position: relative;
+	margin: 0 auto;
+	margin-top: -40px;
+}
+.time-inner{
+	width: 128px;
+	height: 23px;
+	position: absolute;
+	top: 51px;
+	right: 16%;
+}
+
+.time-inner span{
+	display: inline-block;
+	width: 26px;
+	height: 24px;
+	line-height: 24px;
+	text-align: center;
+	margin-right: 3px;
+}
+.marquee-wrap{
+	max-width: 351px;
+	height: 60px;
+	margin: 20px auto 0;
+	background: url(../images/recharge_spring/bg_marquee.png) no-repeat center center;
+	background-size: auto 100%;
+	overflow: hidden;
+	font-size: 1.4rem;
+}
+.marquee-wrap .marquee-inner{
+	height: 100%;
+	margin: 8px 20px 0;
+	overflow: hidden;
+	text-align: center;
+	position: relative;
+}
+#marquee1,#marquee2{position:absolute;top:0;left:0px;width:308px;height:20px;overflow:hidden; }
+#marquee2{top: 20px;}
+#marquee1 li,#marquee2 li{float:left; padding:0 15px; line-height:20px; font-size: 12px; color: #fff;}
+#marquee2 li{padding: 0 30px;}
+#marquee3 li{padding: 0 25px;}
+#marquee4 li{padding: 0 20px;}
+.marquee-wrap li strong { color: #fcd214; }
+.activity-content{
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+.voucher-link{
+	display: block;
+	max-width: 289px;
+	height: 102px;
+	margin: 0 auto 20px;
+}
+.voucher-link500{
+	background: url(../images/recharge_spring/voucher_1.png) no-repeat center center;
+	background-size: 100% auto;
+}
+.voucher-link100{
+	background: url(../images/recharge_spring/voucher_2.png) no-repeat center center;
+	background-size: 100% auto;
+}
+.voucher-link50{
+	background: url(../images/recharge_spring/voucher_3.png) no-repeat center center;
+	background-size: 100% auto;
+}
+.voucher-link30{
+	background: url(../images/recharge_spring/voucher_4.png) no-repeat center center;
+	background-size: 100% auto;
+	margin-bottom: 45px;
+}
+.rules-content{
+	max-width: 300px;
+	height: 260px;
+	margin: 0 auto;
+	background: url(../images/recharge_spring/bg_rules.png) no-repeat center center;
+	background-size: 100% 100% ;
+	overflow: hidden;
+}
+.rules-content .title{
+	width: 106px;
+	height: 28px;
+	line-height: 28px;
+	text-align: center;
+	margin: 20px 0 6px 20px;
+	background: url(../images/recharge_spring/bg_title.png) no-repeat;
+	background-size: 106px auto;
+	font-size: 15px;
+}
+.rules-content p{
+	margin: 0 10px 14px 20px;
+}
+
+.flower-1 { position: absolute; top: 20%; right: 0; width: 23px; height: 29px; background: url(../images/recharge_spring/flower_1.png) no-repeat; background-size: 23px 29px; }
+.flower-2 { position: absolute; top: 56%; right: 0; width: 28px; height: 65px; background: url(../images/recharge_spring/flower_2.png) no-repeat; background-size: 28px 65px; }
+.flower-3 { position: absolute; top: 74%; left: 0; width: 27px; height: 38px; background: url(../images/recharge_spring/flower_3.png) no-repeat; background-size: 27px 38px; }
+.grass-1 { position: absolute; top: 37%; left: 0; width: 19px; height: 75px; background: url(../images/recharge_spring/grass_1.png) no-repeat; background-size: 19px 75px; }
+.grass-2 { position: absolute; top: 49%; left: 0; width: 10px; height: 36px; background: url(../images/recharge_spring/grass_2.png) no-repeat; background-size: 10px 36px; }
+.grass-3 { position: absolute; top: 72%; right: 0; width: 22px; height: 74px; background: url(../images/recharge_spring/grass_3.png) no-repeat; background-size: 22px 74px; }
+.grass-4 { position: absolute; top: 88%; right: 0; width: 12px; height: 38px; background: url(../images/recharge_spring/grass_4.png) no-repeat; background-size: 12px 38px; }
+.decorate-1 { position: absolute; top: 41%; right: 0; width: 21px; height: 30px; background: url(../images/recharge_spring/decorate_1.png) no-repeat; background-size: 21px 30px; }
+.decorate-2 { position: absolute; top: 62%; left: 0; width: 25px; height: 40px; background: url(../images/recharge_spring/decorate_2.png) no-repeat; background-size: 25px 40px; }
+.decorate-3 { position: absolute; bottom: 0; right: 0; width: 42px; height: 38px; background: url(../images/recharge_spring/decorate_3.png) no-repeat; background-size: 42px 38px; }
+.decorate-4 { position: absolute; bottom: 0; left: 0; width: 31px; height: 28px; background: url(../images/recharge_spring/decorate_4.png) no-repeat; background-size: 31px 28px; }
+
+@media screen and (max-width:640px) {
+	.v-recharge { padding-top: 64%; }
+}
+
+@media screen and (max-width:320px) {
+	.v-recharge { padding-top: 64%; padding-bottom: 0; }
+	.time-wrap { width: 280px; height: 94px; background-size: 280px auto; }
+	.time-inner { top: 47px; right: 13%; }
+	.time-inner span { width: 24px; }
+	.marquee-wrap { margin-top: 10px; max-width: 280px; height: 45px; }
+	.marquee-wrap .marquee-inner { margin-top: 2px; }
+	.activity-content { padding-top: 16px; padding-bottom: 16px; }
+	.voucher-link { max-width: 240px; height: 84px; }
+	.voucher-link { margin-bottom: 10px; }
+	.flower-3 { top: 70%; }
+	.grass-3 { top: 68%; }
+}

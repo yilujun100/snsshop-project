@@ -1,0 +1,463 @@
+/*
+ * 页面样式 layout.css
+ * author:yilj@snsshop.cn
+ * date:2016-1-27
+*/
+
+/*====================== send lucky bag 发福袋 style =======================*/
+.v-send-bag { padding: 10px; min-height: 460px; background: #fdf08a url(../images/bag.png) no-repeat right 130px; background-size: 317px 269px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+.send-bag-hd { padding: 15px 0; }
+.send-bag-hd h3.tit-bag { margin: 0 auto; width: 178px; height: 26px; background: url(../images/title_send_bag.png) no-repeat; background-size: 178px 26px; text-indent: -999em; }
+.f-item { padding: 10px 6px; font-size: 13px; color: #333; display: -webkit-box; display: -moz-box; display: box; background: rgba(252,252,194,.7); -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; }
+.f-item label { display: block; text-align: left;  }
+.f-item input { display: block; margin-right: 10px; padding: 0; height: 20px; line-height: 20px; text-align: right; border: 0; background: transparent; -webkit-box-flex: 1; -moz-box-flex: 1; box-flex: 1; }
+.f-item s.f-unit { display: block; text-decoration: none; }
+.f-item label,
+.f-item s.f-unit { line-height: 20px; }
+
+.tab-tit { display: -webkit-box; display: -moz-box; display: box; }
+.tab-tit a { display: block; height: 32px; line-height: 32px; text-align: center; background: #b0b0b0; font-size: 13px; color: #434343; -webkit-box-flex: 1; -moz-box-flex: 1; box-flex: 1; }
+.tab-tit a.tab-active { background: #dc2815; color: #fff; }
+.tab-con > div { display: none; position: relative; }
+.wishes .pay-tips { position: absolute; bottom: -20px; right: 0; }
+.tab-send-bag  .tab-tit { margin: 0 auto; width: 160px; }
+.tab-send-bag  .tab-tit a { width: 80px; }
+.tab-send-bag  .tab-tit a:first-child { border-radius: 4px 0 0 4px; }
+.tab-send-bag  .tab-tit a:last-child { border-radius: 0 4px 4px 0; }
+.f-send-bag textarea { display: block; padding: 10px 6px; width: 100%; height: 40px; border: 0; overflow: hidden; outline: none; resize: none; background: rgba(252,252,194,.7); font-size: 13px; color: #333; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+.f-send-bag input[type="submit"] { margin-top: 51px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+.need-pay { margin-top: 51px; text-align: center; font-size: 24px; color: #e52200; }
+.btn { display: block; margin: 0; padding: 0; border: 0; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; }
+.btn-block { width: 100%; height: 42px; line-height: 42px; text-align: center; }
+.btn-red { background: #e3502c; font-size: 15px; color: #fff; }
+.instructions { position: absolute;  left: 0; padding: 10px; width: 100%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+.instructions p { margin: 0; margin-top: 6px; font-size: 12px; color: #555; }
+.instructions p strong,
+.instructions p a { color: #dc2815; }
+.instructions p a { margin-left: 6px; }
+.pay-tips { margin: 0; margin-top: 6px; text-align: right; font-size: 12px; color: #333; }
+
+
+/*====================== buy indiana stamps 购买夺宝券 style =======================*/
+.v-buy-indiana-stamps { padding: 10px; min-height: 460px; background: #fdf08a url(../images/bag.png) no-repeat right 130px; background-size: 317px 269px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+.buy-indiana-stamps-hd { padding: 15px 0; }
+.buy-indiana-stamps-hd h3.tit-buy-indiana-stamps { margin: 0 auto; width: 178px; height: 26px; background: url(../images/title_buy_stamps.png) no-repeat; background-size: 178px 26px; text-indent: -999em; }
+.pay-amount { margin: 0; margin-top: 6px; text-align: right; font-size: 12px; color: #333; }
+.f-buy-stamps input[type="submit"] { margin-top: 51px; }
+
+
+/*====================== stamps use record 夺宝券使用记录 style =======================*/
+.v-stamps-use-record { background: #efefef; }
+.stamps-use-record { padding-bottom: 52px; }
+.stamps-use-record-hd,
+.stamps-use-record-con { background: #fff; }
+.stamps-use-record-hd { padding: 10px; border-bottom: 1px solid #dadada; }
+.stamps-use-record-hd .tit-buy-indiana-stamps { line-height: 30px; font-size: 14px; color: #dc2815; }
+.stamps-use-record-hd .btn-send-bag { display: block; padding: 0 6px; height: 30px; line-height: 30px; background: #dc2815; font-size: 12px; color: #fcf2c2; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; }
+.user-record-list { padding: 0 10px 20px; }
+.user-record-list li { padding: 10px 0 6px; border-bottom: 1px solid #dadada; display: -webkit-box; display: -moz-box; display: box; }
+.user-record-list li p { margin: 0; }
+.user-record-list li span { display: block; -webkit-box-flex: 1; -moz-box-flex: 1; box-flex: 1; }
+.user-record-list li .record-desc { font-size: 14px; color: #333; }
+.user-record-list li .record-time { font-size: 12px; color: #666; }
+.user-record-list li em { display: block; line-height: 35px; font-size: 13px; color: #444; }
+
+.load-more { position: fixed; bottom: 60px; left: 50%; margin-left: -117px; width: 234px; text-align: center; font-size: 13px; color: #666; }
+.load-more:before,
+.load-more:after { position: absolute; top: 6px; display: block; content: ''; width: 68px; height: 1px; background: #c7c7c7; }
+.load-more:before { left: 0; }
+.load-more:after { right: 0; }
+
+
+/*====================== open lucky bag 开福袋 style =======================*/
+.v-open-bag { padding-bottom: 62px; }
+.banner-open-bag { position: relative; }
+.banner { position: absolute; top: 6px; left: 50%; margin-left: -120px; padding-top: 10px; width: 239px; height: 53px; text-align: center; background: url(../images/banner.png) no-repeat; background-size: 239px 53px; font-size: 13px; color: #ffeb1f; }
+.opera-open { position: absolute; top: 50%; left: 50%; margin-left: -70px; width: 130px; }
+.opera-open p { margin: 0; text-align: center; font-size: 14px; color: #fcf2c2; }
+.opera-open p strong { display: block; }
+.btn-open-bag { display: block; margin: 10px auto 0; width: 106px; height: 37px; line-height: 37px; text-align: center; background: url(../images/btn_yellow.png) no-repeat; background-size: 106px 37px; font-size: 15px; color: #cb211f; }
+
+.win-info { padding: 10px; background: #fffbe6; border-top: 1px solid #dadada; border-bottom: 1px solid #dadada; display: -webkit-box; display: -moz-box; display: box; }
+.win-info .icon-horn { display: block; margin-right: 6px; width: 23px; height: 22px; background: url(../images/icon_horn.png) no-repeat; background-size: 23px 22px; }
+.win-info ul { display: block; height: 22px; overflow: hidden; -webkit-box-flex: 1; -moz-box-flex: 1; box-flex: 1; }
+.win-info li { height: 22px; line-height: 22px; overflow: hidden; }
+.win-info li a { position: relative; display: block; font-size: 13px; color: #666; }
+.win-info li a:after { position: absolute; top: 4px; right: 6px; display: block; content: ''; width: 10px; height: 10px; border-top: 1px solid #333; border-right: 1px solid #333; -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); transform: rotate(45deg); }
+.win-info li b.winner { color: #dc2815; }
+.win-info li strong.prize { color: #333; }
+
+.receive { padding: 0 10px;  }
+.receive .receive-hd,
+.receive-con li { padding: 10px 0; border-bottom: 1px solid #dadada; }
+.receive-hd h3.already-receive { line-height: 20px; font-size: 14px; color: #333; }
+.receive-hd .view-more { line-height: 20px; font-size: 13px; color: #666; }
+.g-recommend-hd .view-more,
+.status { position: relative; display: block; padding-right: 20px; }
+.g-recommend-hd .view-more:after,
+.status:after { position: absolute; top: 4px; right: 10px; display: block; content: ''; width: 6px; height: 6px; border-top: 1px solid #333; border-right: 1px solid #333; -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); transform: rotate(45deg); }
+.g-recommend-hd .view-more { line-height: 30px; font-size: 13px; color: #666; }
+.g-recommend-hd .view-more:after { top: 10px; }
+/* .receive-con li { display: -webkit-box; display: -moz-box; display: box; } */
+.receive-con li:after { content: '\200B'; display: block; clear: both; height: 0; overflow: hidden; visibility: hidden; }
+.receive-con li { zoom: 1; }
+.receive-con li em,
+.receive-con li span,
+.receive-con li b,
+.receive-con li a { float: left; display: block; width: 33.33%; font-size: 13px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; /* -webkit-box-flex: 1; -moz-box-flex: 1; box-flex: 1; */ }
+/* .receive-con li span { text-align: center; } */
+.receive-con li b,
+.receive-con li a { text-align: right; }
+.status-defualt { color: #333; }
+.status-error { color: #dc2815; }
+.status-success { color: #46a23d; }
+.receive-con li b { padding-right: 20px; color: #444; }
+
+.goods-recommend { margin: 0 10px; padding: 10px 0; border-bottom: 1px solid #dadada; }
+.g-recommend-hd h3 { line-height: 30px; color: #d80100; }
+.g-recommend-con li { float: left; /*margin-left: 10px;*/ }
+.g-recommend-con li:first-child { margin-left: 0; }
+.g-recommend-con li .goods-name { line-height: 24px; text-align: center; font-size: 13px; color: #333; }
+
+.acti-intro { margin: 15px 10px 0; }
+.acti-intro-hd { padding: 0 10px; height: 42px; background: #d80100; -webkit-border-radius: 4px 4px 0 0; -moz-border-radius: 4px 4px 0 0; border-radius: 4px 4px 0 0; }
+.acti-intro-hd h3 { float: left; line-height: 42px; font-size: 15px; color: #fff; }
+.acti-intro-hd .arrow-down { float: right; margin-top: 12px; display: block; width: 20px; height: 20px; background: url(../images/arrow_down.png) no-repeat; background-size: 20px 20px; }
+.acti-intro-con { padding: 10px; background: #f2f2f2; }
+.acti-intro-con p { margin: 0; margin-top: 4px; font-size: 12px; color: #333; }
+.acti-intro-con h4 { margin-top: 20px; text-align: center; color: #d80100; }
+/*.acti-intro-con p:last-child { margin-top: 20px; font-size: 12px; color: #777; }*/
+
+
+/*====================== open lucky bag 开福袋(已领完) style =======================*/
+.banner-column-1 { padding-top: 0; line-height: 53px; font-size: 15px; }
+.opera-open .brought-up { display: block; margin: 10px auto; width: 89px; height: 34px; line-height: 34px; text-align: center; font-size: 16px; color: #fcf2c2; background: url(../images/bg_decorate_1.png) no-repeat; background-size: 89px 34px; }
+.btn-groups { position: absolute; bottom: 20px; left: 50%; margin-left: -176px; width: 352px; }
+.btn-group { float: left; display: block; margin: 0 20px; width: 136px; height: 37px; line-height: 37px; text-align: center; font-size: 15px; background-repeat: no-repeat; background-size: 136px 37px; }
+.btn-group-1 { background-image: url(../images/btn_popup_1.png); color: #cb211f; }
+.btn-group-2 { background-image: url(../images/btn_popup_2.png); color: #ffe91d; }
+.opera-open-1 { top: 46%; margin-left: -65px; }
+
+
+/*====================== open lucky bag 开福袋(领取中) style =======================*/
+.opera-open .receive-in { display: block; margin: 10px auto; width: 89px; height: 34px; line-height: 34px; text-align: center; font-size: 16px; color: #fcf2c2; background: url(../images/bg_decorate_1.png) no-repeat; background-size: 89px 34px; }
+.count-down-1 { position: absolute; bottom: 48px; width: 100%; }
+.count-down-1 ul.count { margin: 0 auto; width: 120px; }
+.tips-countdown { margin: 0; margin-top: 4px; text-align: center; font-size: 12px; color: #333; }
+.banner-open-bag-1 .opera-open-1 { top: 42%; margin-left: -70px; }
+.banner-open-bag-1 .btn-groups { bottom: 6px; }
+.count-down-1 .count li.time { background: url(../images/bg_time_1.png) no-repeat; background-size: auto 20px; color: #cf0c16; }
+
+
+/*====================== open lucky bag 开福袋(全部领取) style =======================*/
+.opera-open .receive-all { display: block; margin: 10px auto; width: 89px; height: 34px; line-height: 34px; text-align: center; font-size: 16px; color: #fcf2c2; background: url(../images/bg_decorate_1.png) no-repeat; background-size: 89px 34px; }
+.btn-groups-1 { margin-left: -68px; width: 136px; }
+.btn-groups-1 .btn-group { margin: 0; }
+
+
+/*====================== open lucky bag 开福袋(已过期) style =======================*/
+.opera-open .expired { display: block; margin: 10px auto; width: 89px; height: 34px; line-height: 34px; text-align: center; font-size: 16px; color: #333; background: url(../images/bg_decorate_1.png) no-repeat; background-size: 89px 34px; }
+.tips-countdown { position: absolute; bottom: 62px; width: 100%; text-align: center; font-size: 12px; color: #333; }
+
+
+
+
+
+/*====================== record 记录 style =======================*/
+.v-record { padding-bottom: 40px; background: #efefef; }
+.user-info { position: relative; }
+.user-info-inner { position: absolute; top: 50%; left: 50%; margin-top: -50px; margin-left: -35px; height: 100px; }
+.avatar { position: relative; width: 70px; height: 70px; background: url(../images/bg_avatar.png) no-repeat; background-size: 70px 70px; }
+.avatar img { position: absolute; top: 12px; left: 12px; -webkit-border-radius: 50%; -moz-border-radius: 50%; border-radius: 50%; }
+.user-info .nickname { margin-top: 6px; width: 100%; line-height: 24px; text-align: center; font-size: 13px; color: #fcf2c2; }
+
+.tab-record .tab-tit { border-bottom: 1px solid #dadada; }
+.tab-record .tab-tit a { position: relative; height: 40px; line-height: 40px; background: #fff; font-size: 15px; color: #333; }
+.tab-record .tab-tit a:before { position: absolute; top: 8px; left: 0; display: block; content: ''; width: 1px; height: 26px; background: #f2f2f2; }
+.tab-record .tab-tit a:first-child:before { width: 0; }
+.tab-record .tab-tit a.active { color: #dc2815; }
+.tab-record .tab-tit a.active:after { position: absolute; bottom: -1px; left: 0; display: block; content: ''; width: 100%; height: 1px; background: #dc2815; }
+
+.record-item { padding: 10px; border-top: 1px solid #dadada; border-bottom: 1px solid #dadada; background: #fff; }
+.ongoing { border-top: 0; }
+.goods-info { display: -webkit-box; display: -moz-box; display: box; }
+.goods-info .goods-pic { position: relative; width: 72px; height: 54px; border: 1px solid #dadada; }
+.goods-info div.goods-name { margin-left: 10px; -webkit-box-flex: 1; -moz-box-flex: 1; box-flex: 1; }
+.goods-others p { margin: 0; }
+.goods-others .periods { line-height: 28px; }
+.lottery-schedule { margin-left: 10px; color: #d80100; }
+.goods-others .btn-buy { display: block; width: 46px; height: 28px; line-height: 28px; text-align: center; background: #dc2815; font-size: 13px; color: #fff; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; }
+
+.progress-bar { position: relative; width: 100%; height: 8px; background: #eff3f6; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; }
+.progress-bar span.progress-on { position: absolute; top: 0; left: 0;  width: 0%; height: 8px; background: #d80100; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; }
+
+.goods-info-1 .goods-related { margin-left: 10px; -webkit-box-flex: 1; -moz-box-flex: 1; box-flex: 1; }
+.goods-info-1 .goods-related p { margin: 0; }
+.goods-info-1 .goods-related p:first-child { margin-bottom: 10px; }
+.goods-info-1 .periods-1 { vertical-align: -1px; font-size: 13px; }
+.goods-info-1 .unit-price { margin-left: 8px; line-height: 20px; font-size: 12px; color: #666; }
+.goods-info-1 .participa-num { font-size: 12px; }
+.goods-info-1 .participa-num strong { color: #d80100; }
+.goods-others-1 { margin-top: 10px; padding: 10px 6px; background: #f7f7f7; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; }
+.goods-others-1 p { margin: 0; float: left; width: 40%; font-size: 12px; color: #333; }
+.goods-others-1 p:nth-child(2n) { width: 60%; }
+.goods-others-1 p strong { color: #d80100; }
+
+
+.count-down em { font-size: 12px; color: #d80100; }
+.count li { float:left; }
+.count li.time { position: relative; width: 26px; height: 20px; line-height: 22px; text-align: center; background: url(../images/bg_time.png) no-repeat; background-size: 26px 20px; font-size: 10pt; color: #fff; }
+.count li.separator { width: 5px; height: 20px; background: url(../images/sepe_colon.png) no-repeat; background-size: 5px 20px; text-indent: -999em;}
+
+.g-status { position: absolute; bottom: -1px; left: -1px; width: 74px; height: 18px; line-height: 18px; text-align: center; font-size: 11px; color: #fff; text-decoration: none; }
+.g-status-ongoing { background: #dc2815; }
+.g-status-announced,
+.g-status-won { background: #dc2815; }
+.g-status-upcoming { background: #0da979 ; }
+
+
+/*====================== success participation 成功参与夺宝 style =======================*/
+.success-partici { margin: 0 10px; padding: 20px 0; border-bottom: 1px solid #dadada; }
+.success-partici i.icon-success { display: block; margin: 0 auto; width: 36px; height: 36px; background: url(../images/icon_ok.png) no-repeat; background-size: 36px 36px; }
+.success-partici h3 { margin-top: 20px; text-align: center; font-size: 20px; color: #333; }
+.success-partici p { text-align: center; font-size: 13px; color: #333; }
+.success-partici p a { margin-left: 10px; color: #dc2815; }
+.btn-groups-success { position: static; left: inherit; bottom: inherit; margin: 0 auto; padding: 20px 0; }
+
+.my-indiana-stamps { margin: 0 10px; padding: 10px; background: #f7f7f7; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; }
+.my-indiana-stamps p { margin: 0; margin-top: 6px; }
+.my-indiana-stamps-hd { padding-bottom: 8px; border-bottom: 1px solid #dadada; }
+.my-indiana-stamps-hd b { color: #dc2815; }
+.my-indiana-stamps-con p:last-child { display: -webkit-box; display: -moz-box; display: box; }
+.my-indiana-stamps-con p:last-child em { display: block; }
+.my-indiana-stamps-con p:last-child span { display: block; -webkit-box-flex: 1; -moz-box-flex: 1; box-flex: 1;  }
+.v-success-partici .goods-recommend { border-bottom: 0; }
+.v-success-partici .goods-recommend .g-recommend-hd { border-bottom: 1px solid #dadada; }
+.v-success-partici .goods-recommend .g-recommend-con { padding: 10px 0; }
+.goods-view-more { line-height: 30px; font-size: 12px; color: #666; }
+
+
+/*====================== participate number 选择参与数量 style =======================*/
+.participate-num { margin: 0 10px; }
+.parti-num-hd h3 { padding: 10px 0; font-size: 15px; color: #333; }
+.choose-item { padding: 8px 0; border-top: 1px solid #dadada; }
+.use-stamps { margin-top: 6px; }
+.use-stamps input,
+.use-stamps label,
+.use-stamps span { float: left; }
+.use-stamps input { margin-top: 1px; margin-right: 6px; }
+.use-stamps label { font-size: 14px; color: #333; }
+.use-stamps span { font-size: 13px; color: #666; }
+.choose-item-pay p { margin: 0; text-align: right; font-size: 12px; color: #444; }
+.total-pay { padding: 30px 0; text-align: center; font-size: 24px; color: #e52200; }
+.tips-instruct { position: absolute; bottom: 62px; left: 0; margin: 0; width: 100%; text-align: center; font-size: 13px; color: #666; }
+
+
+/*====================== exchange number 选择兑换数量 style =======================*/
+.v-exchange-num { padding-bottom: 62px; background: #efefef; }
+.grid { background: #fff; border-top: 1px solid #dadada; border-bottom: 1px solid #dadada; }
+.grid-hd h3 { padding: 10px 0; font-size: 15px; color: #333; }
+.exchange-num .grid:first-child { border-top: 0; }
+.exchange-num .grid-hd,
+.exchange-num .gird-item { margin: 0 10px; }
+.receive-info { position: relative; cursor: pointer; }
+.receive-info:after { position: absolute; top: 24px; right: 4px; display: block; content: ''; width: 10px; height: 10px; border-top: 1px solid #333; border-right: 1px solid #333; -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); transform: rotate(45deg); }
+.receive-info p { margin: 0; margin-top: 6px; font-size: 13px; color: #555; }
+.receive-info p:first-child { margin-top: 0; }
+.need-pay-amount { margin: 8px 10px 0 0; text-align: right; font-size: 12px; color: #444; }
+.column { background: #fff; padding: 10px; }
+
+.goods-name-1 { height: 30px; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; font-size: 13px; }
+
+
+/*====================== personal center 个人中心 style =======================*/
+.v-personal-center { padding-bottom: 62px; background: #efefef; }
+.per-center-top { position: relative; width: 100%; height: 132px; background: -webkit-gradient(linear,left center,right center,from(#d35400), to(#f4b350)); }
+.per-center-top .per-info-basic { position: absolute; top: 50%; left: 50%; margin-top: -56px; margin-left: -50%; padding: 0 10px; width: 100%; height: 112px; display: -webkit-box; display: -moz-box; display: box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+.per-info-basic .user-avatar { margin-top: 21px; width: 70px; height: 70px; }
+.per-info-basic .per-other-info { -webkit-box-flex: 1; -moz-box-flex: 1; box-flex: 1; }
+.per-other-info { margin-left: 10px; }
+.per-other-info div { position: relative; padding: 6px 0; font-size: 13px; color: #fcf2c2; }
+.per-other-info div:before { position: absolute; top: 0; left: 0; display: block; content: ''; width: 100%; height: 1px; background: rgba(255,242,190,.3); }
+.per-other-info div:first-child:before { background: none; }
+.per-other-info a { display: block; width: 92px; height: 28px; line-height: 28px; text-align: center; border: 1px solid #dc2815;  /*background: url(../images/btn_yellow_1.png) no-repeat; background-size: auto 30px;*/ font-size: 13px; color: #dc2815; -webkit-border-radius: 15px; -moz-border-radius: 15px; border-radius: 15px; }
+.dd-bag em,
+.dd-stamps em { margin-top: 6px; }
+
+.entry { height: 44px; background: #dc2815; display: -webkit-box; display: -moz-box; display: box; } 
+.entry .btn-entry { position: relative; display: block; line-height: 44px; text-align: center; background-size: contain; -webkit-box-flex: 1; -moz-box-flex: 1; box-flex: 1; }
+.entry .btn-entry i { position: absolute; top: 50%; left: 70%; margin-top: -8px; display: block; width: 16px; height: 16px; background-repeat: no-repeat; background-size: 16px 16px; }
+.entry .btn-entry-send-bag i { background-image: url(../images/arrow_rgt_white.png); }
+.entry .btn-entry-indiana i { background-image: url(../images/arrow_rgt_black.png); }
+.btn-entry-send-bag { background: #dc2815; /*background: #f9a505 url(../images/bg_decorate.png) no-repeat;*/ color: #fff; }
+.btn-entry-indiana { margin-left: 2px; background: #fff; /*background: #dc2815 url(../images/bg_decorate.png) no-repeat;*/ color: #000; }
+
+.per-center-menu { padding: 20px 0; border-top: 1px solid #dadada; border-bottom: 1px solid #dadada; background: #fff; display: -webkit-box; display: -moz-box; display: box; }
+.per-center-menu a { display: block; text-align: center; font-size: 13px; color: #555; -webkit-box-flex: 1; -moz-box-flex: 1; box-flex: 1; }
+.per-center-menu i.icon-menu { display: block; margin: 0 auto 10px; width: 28px; height: 24px; background-repeat: no-repeat; background-position: center; background-size: auto 24px; }
+.icon-cup { background-image: url(../images/icon_cup.png); }
+.icon-bag { background-image: url(../images/icon_bag.png); }
+.icon-ticket { background-image: url(../images/icon_ticket.png); }
+.icon-gift { background-image: url(../images/icon_gift.png); }
+
+.goods-info .goods-info-other { margin-left: 10px; -webkit-box-flex: 1; -moz-box-flex: 1; box-flex: 1; }
+.goods-info-other p { margin: 0; margin-top: 6px; }
+.goods-info-other p:first-child { margin-top: 0; }
+.goods-info .partici-times { font-size: 12px; color: #333; }
+.goods-info .partici-times strong,
+.goods-info .partici-times a,
+.participa-num a { margin-left: 10px; color: #d80100; }
+
+.goods-info .tag-exchange { position: absolute; top:-1px; left: -1px; display: block; content: ''; width: 0; height: 0; border-style: dashed dashed dashed solid; border-width: 0px 34px 34px; border-color: transparent transparent transparent #d80100; }
+.goods-info .tag-exchange s { position: absolute; top: 1px; left: -35px; display: block; width: 32px; font-size: 11px; color: #fff; text-decoration: none; -webkit-transform: rotate(-45deg); -moz-transform: rotate(-45deg); transform: rotate(-45deg); }
+.exchange .exchange-info { margin: 0; margin-top: 6px; }
+.exchange-info span { font-size: 12px; color: #333; }
+.exchange-info .view-order { font-size: 12px; color: #09bb07; }
+
+
+/*====================== my lucky bag 我的福袋 style =======================*/
+.v-my-bag { padding-bottom: 62px; background: #efefef; }
+.user-info .user-info-inner-1 .nickname { margin-top: 3px; line-height: 20px; font-size: 12px; }
+.user-info-inner-1 { height: 102px; margin-top: -51px; }
+.user-info-inner-1 .avatar { margin: 0 auto; width: 50px; height: 50px; background-size: 50px 50px; }
+.user-info-inner-1 .avatar img { top: 9px; left: 9px; }
+.btn-my-send-bag { display: block; margin: 3px auto 0; width: 88px; height: 26px; line-height: 26px; text-align: center; font-size: 13px; color: #dc2815; background: url(../images/btn_yellow_1.png) no-repeat; background-size: auto 26px; }
+.btn-my-send-bag i { position: relative; display: inline-block; vertical-align: -1px; margin-left: 6px; width: 14px; height: 14px; background: #dc2815; font-size: 11px; color: #f7cd10; -webkit-border-radius: 50%; -moz-border-radius: 50%; border-radius: 50%; }
+.btn-my-send-bag i:after { position: absolute; top: 4px; left: 2px; display: block; content: ''; width: 6px; height: 6px; border-top: 1px solid #f7cd10; border-right: 1px solid #f7cd10; -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); transform: rotate(45deg); }
+.tab-my .tab-tit { border-top: 1px solid #dadada; border-bottom: 1px solid #dadada; }
+.tab-my a { padding-top: 4px; height: 36px; line-height: inherit; background: #fff; color: #333; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+.tab-my .tab-tit a { height: 42px; }
+
+.tab-con-tit { margin: 0 10px; padding: 10px 0; border-bottom: 1px solid #dc2815; font-size: 15px; color: #dc2815; }
+.tab-my .tab-con,
+.my-list,
+.my-list li { background: #fff; }
+.my-list-bag-available li,
+.my-list-bag-received li a,
+.my-list-bag-send li a { padding: 0; position: relative; display: -webkit-box; display: -moz-box; display: box; width: 100%; }
+.my-list-bag-received li a:after,
+.my-list-bag-send li a:after { position: absolute; top: 13px; right: 4px; display: block; content: ''; width: 10px; height: 10px; border-top: 1px solid #333; border-right: 1px solid #333; -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); transform: rotate(45deg); }
+.my-list li em { margin-right: 20px; }
+
+.my-list-bag-available li { padding: 10px 0 6px; }
+.my-list-bag-available li a { display: block; margin-top: 4px; padding: 0; width: 52px; height: 24px; line-height: 24px; text-align: center; background: #dc2815; font-size: 12px; color: #fff; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; }
+.my-bag-content label.tag-fight-luck { display: inline-block; vertical-align: 1px; margin-left: 4px; width: 42px; height: 20px; line-height: 20px; text-align: center; background: #f05912; font-size: 11px; color: #fff; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; }
+
+.my-bag .tab-con { padding-bottom: 42px; }
+
+
+
+/*====================== 数量 style =======================*/
+.qty-box li { float: left; height: 26px; line-height: 26px; text-align: center; background: #f0f0f0; font-size: 16px; color: #555; }
+.qty-box li.qty-minus,
+.qty-box li.qty-plus { width: 30px; cursor: pointer; border: 1px solid #dadada; }
+.qty-box li.qty-num { width: 40px; border-top: 1px solid #dadada; border-bottom: 1px solid #dadada; }
+.qty-box li.qty-num input { padding: 0; border: 0; background: none; width: 40px; text-align: center; font-size: 16px; color: #555; }
+.qty-box li.qty-minus { -webkit-border-radius: 4px 0 0 4px; -moz-border-radius: 4px 0 0 4px; border-radius: 4px 0 0 4px; }
+.qty-box li.qty-plus { -webkit-border-radius: 0 4px 4px 0; -moz-border-radius: 0 4px 4px 0; border-radius: 0 4px 4px 0; }
+.statistic { margin-top: 12px; font-size: 12px; color: #444; }
+.statistic b { color: #dc2815; }
+
+
+/*====================== 滚动监听 style =======================*/
+.scroll-fixed { position: fixed; top: 0; left: 0; z-index: 101; width: 100%; }
+
+
+/*====================== 活动首页 style =======================*/
+.v-home { padding-bottom: 60px; background: #fab33b; }
+.h-acti-intro { margin-top: -16%; }
+.h-acti-intro .h-acti-intro-con { margin: 20px 10px; padding: 10px; border: 1px solid #fbc664; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; }
+.h-acti-intro-con li { float: left; width: 26%; }
+.h-acti-intro-con li.sepera-equal { margin-top: 8%; width: 11%; }
+.h-acti-intro-con li h3 { text-align: center; font-size: 13px; color: #bc2825; }
+.process { margin: 20px 10px; padding: 10px; border: 1px solid #fbc664; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; }
+.process .process-tit h3 { font-size: 15px; color: #bc2825; }
+.process-con li { float: left; width: 25%; }
+.process-con li h3 { text-align: center; font-size: 13px; color: #bc2825; }
+.acti-rules { display: block; text-align: center; font-size: 13px; color: #e12a2c; }
+.btn-h-send-bag { position: fixed; bottom: 0; left: 0; z-index: 102; -webkit-border-radius: 0; -moz-border-radius: 0; border-radius: 0;  }
+
+.pop-guide { position: fixed; bottom: 20%; left: 50%; margin-left: -170px; z-index: 101; width: 340px; }
+.guide-intro,
+.guide-process { margin: 20px 0; padding: 10px; border: 1px dashed #fbc664; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; }
+.guide-intro h3,
+.guide-process h3 { color: #fcf2c2 !important; }
+
+
+/*====================== 地址管理 style =======================*/
+.v-addr-manage { background: #efefef; }
+.addr-manage { display: none; }
+.form-addr-manage p,
+.form-addr-manage .item-area { position: relative; margin: 0; padding: 10px; border-bottom: 1px solid #e2e2e2; background: #fff; display: -webkit-box; display: -moz-box; display: box; }
+.form-addr-manage p input,
+.form-addr-manage .item-area input,
+.form-addr-manage p select { padding: 0; border: 0; display: block; height: 20px; font-size: 13px; color: #333; -webkit-box-flex: 1; -moz-box-flex: 1; box-flex: 1; }
+.addr-manage input[type="submit"] { position: absolute; bottom: 30px; left: 50%; margin-left: -45%; width: 90%; }
+.form-addr-manage .item-area:after,
+.form-addr-manage .item-street:after { position: absolute; top: 14px; right: 14px; display: block; content: ''; width: 10px; height: 10px; border-top: 1px solid #333; border-right: 1px solid #333; -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); transform: rotate(45deg); }
+
+
+.addr-empty { position: relative; cursor: pointer; }
+.addr-empty:after { position: absolute; top: 14px; right: 14px; display: block; content: ''; width: 10px; height: 10px; border-top: 1px solid #333; border-right: 1px solid #333; -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); transform: rotate(45deg); }
+
+
+/*====================== mobiscroll 扩展 style =======================*/
+.form-addr-manage input:disabled { background: transparent; }
+.mbsc-mobiscroll .dwb1 { color: #333; }
+.mbsc-mobiscroll .dwb0 { color: #dc2815; }
+.mbsc-mobiscroll .dwfl { padding: 0; }
+.mbsc-mobiscroll .dwwol { border-top: 1px solid #ddd; border-bottom: 1px solid #ddd; }
+
+
+/*====================== record empty 暂无记录 style =======================*/
+.record-empty { margin: 0; padding: 40px 0; text-align: center; background: #fff; font-size: 15px; color: #dc2815; }
+
+@media screen and (min-width:375px) {
+	.tips-countdown { bottom: 24px; }	
+	.tips-countdown-1 { bottom: 58px; }
+	.count-down-1 { bottom: 52px; }
+	.banner-open-bag-1 .btn-groups { bottom: 10px; }
+	.btn-groups-1 { bottom: 10px; }
+}
+
+@media screen and (min-width:360px) and (max-width:374px) {
+	.tips-countdown { bottom: 24px; }	
+	.tips-countdown-1 { bottom: 54px; }
+	.btn-groups-1 { bottom: 10px; }
+	.need-pay,
+	.f-send-bag input[type="submit"] { margin-top: 30px; }
+}
+
+@media screen and (max-width:320px) {
+	.v-send-bag,
+	.v-buy-indiana-stamps { background-size: 254px auto; }
+	.need-pay { margin-top: 18px; }
+	.f-send-bag input[type="submit"] { margin-top: 10px; }
+	.need-pay { font-size: 20px; }
+	.f-send-bag input[type="submit"] { height: 30px; line-height: 30px; font-size: 13px; }
+	.instructions p { font-size: 11px; }
+	
+	.goods-name-1 { height: 32px; font-size: 12px; }
+	.use-stamps { margin-top: 2px; }
+	.total-pay { padding: 10px 0; }
+	.column { padding-bottom: 30px; }
+	.statistic { margin-top: 4px; }
+
+	.qty-box li { height: 20px; line-height: 20px; }
+	.qty-box li.qty-minus,
+	.qty-box li.qty-plus { width: 20px; }
+	.qty-box li.qty-num { width: 30px; font-size: 12px; }
+
+	.per-other-info div { padding: 3px 0; font-size: 11px; }
+	.entry { height: 30px; }
+	.entry .btn-entry { line-height: 30px; }
+	.per-center-top .per-info-basic { margin-top: -42px; height: 84px; }
+	.per-info-basic .user-avatar { margin-top: 8px; }
+	.per-other-info a { width: 82px; height: 24px; line-height: 24px; background-size: auto 24px; }
+
+	.goods-others-1 { margin-left: 82px; }
+	.goods-others-1 p { width: 100%; }
+	.goods-others-1 p:nth-child(2n) { width: 100%; }
+
+	.pop-guide { margin-left: -150px; width: 300px; }
+}

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>夺宝列表页——夺宝奇兵</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="author" content="">
+	<meta name="Copyright" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<!-- style base -->
+	<link rel="stylesheet" href="css/base.css">
+	<!-- style common -->
+	<link rel="stylesheet" href="css/common.css">
+	<!-- style layout -->
+	<link rel="stylesheet" href="css/layout.css">
+</head>
+<body>
+	<div class="viewport v-list">
+		<div class="list-container">	
+			<div class="mask" id="mask"></div>		
+			<!-- topbar -->
+			<div class="topbar">				
+				<div class="category" id="category">
+					<a href="javascript:;"><i class="icon-category"></i>夺宝分类</a>
+					<div class="cate-sub">
+						<ul>
+							<li><a href="#"><i class="icon-category-sub icon-hot"></i>热门精选</a></li>
+							<li><a href="#"><i class="icon-category-sub icon-phone"></i>手机数码</a></li>
+							<li><a href="#"><i class="icon-category-sub icon-pc"></i>电脑平板</a></li>
+							<li><a href="#"><i class="icon-category-sub icon-electric"></i>家用电器</a></li>
+							<li><a href="#"><i class="icon-category-sub icon-bag"></i>品牌箱包</a></li>
+							<li><a href="#"><i class="icon-category-sub icon-ornament"></i>钟表饰品</a></li>
+							<li><a href="#"><i class="icon-category-sub icon-others"></i>其他商品</a></li>
+							<li><a href="#"><i class="icon-category-sub icon-view-all"></i>查看全部</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="list-sort">
+					<a href="javascript:;" class="curr">人气</a>
+					<a href="javascript:;">最新</a>
+					<a href="javascript:;">进度<i class="arrow-asc"></i></a>
+					<a href="javascript:;">高价优先</a>
+				</div>
+			</div>
+
+			<!-- search -->
+			<div class="list-search">
+				<input type="text" id="listKeywords" placeholder="搜索关键词“IPHONE”">
+				<input type="button" class="btn-search">				
+				<a href="javascript:;" class="btn-keyword-clear" style="top: 5px; right: 32px; display: none;">清除关键字</a>		
+			</div>
+
+			<!-- list wrap -->
+			<div class="list-wrap">
+				<ul class="list clearfix" id="more">
+					<li>
+						<div class="prize-pic">
+							<img src="images/product_5.jpg" width="100%" alt="">
+							<em class="tag tag-area">十元<br>专区</em>
+						</div>
+						<div class="prize-name">美的 4升智能柴火饭电饭锅</div>	
+						<div class="lott-schedule" data-lott-schedule="50%">
+							<div class="progress-bar">
+								<span class="progress-bar-on" style="width: 50%"></span>
+							</div>
+							<em>50%</em>
+						</div>
+						<div class="prize-bott">
+							<a href="#" class="btn-parti btn-parti-1">立即参与</a>
+							<a href="#" class="add-to-cart">添加到购物车<span class="icon-plus">+</span></a>
+						</div>					
+						<!-- <div class="prize-bott-1">
+							<div class="lott-schedule-1">
+								<p class="clearfix"><em class="fl">开奖进度</em><span class="fr">45%</span></p>
+								<div class="progress-bar">
+									<span class="progress-bar-on" style="width: 45%"></span>
+								</div>
+							</div>
+							<a href="#" class="add-to-cart-1">加入夺宝车</a>
+						</div> -->
+					</li>
+					<li>
+						<div class="prize-pic">
+							<img src="images/product_6.jpg" width="100%" alt="">
+							<em class="tag tag-new">HOT</em>
+						</div>
+						<div class="prize-name">美的 4升智能柴火饭电饭锅</div>
+						<div class="lott-schedule" data-lott-schedule="50%">
+							<div class="progress-bar">
+								<span class="progress-bar-on" style="width: 50%"></span>
+							</div>
+							<em>50%</em>
+						</div>
+						<div class="prize-bott">
+							<a href="#" class="btn-parti btn-parti-1">立即参与</a>
+							<a href="#" class="add-to-cart">添加到购物车<span class="icon-plus">+</span></a>
+						</div>	
+					</li>
+					<li>
+						<div class="prize-pic">
+							<img src="images/product_7.jpg" width="100%" alt="">
+						</div>
+						<div class="prize-name">美的 4升智能柴火饭电饭锅</div>	
+						<div class="lott-schedule" data-lott-schedule="50%">
+							<div class="progress-bar">
+								<span class="progress-bar-on" style="width: 50%"></span>
+							</div>
+							<em>50%</em>
+						</div>
+						<div class="prize-bott">
+							<a href="#" class="btn-parti btn-parti-1">立即参与</a>
+							<a href="#" class="add-to-cart">添加到购物车<span class="icon-plus">+</span></a>
+						</div>	
+					</li>
+					<li>
+						<div class="prize-pic">
+							<img src="images/product_8.jpg" width="100%" alt="">
+							<em class="tag tag-apple">苹果专区</em>
+						</div>
+						<div class="prize-name">美的 4升智能柴火饭电饭锅</div>
+						<div class="lott-schedule" data-lott-schedule="50%">
+							<div class="progress-bar">
+								<span class="progress-bar-on" style="width: 50%"></span>
+							</div>
+							<em>50%</em>
+						</div>
+						<div class="prize-bott">
+							<a href="#" class="btn-parti btn-parti-1">立即参与</a>
+							<a href="#" class="add-to-cart">添加到购物车<span class="icon-plus">+</span></a>
+						</div>	
+					</li>
+				</ul>
+			</div>
+
+			<div id="loadMore" class="Fh_laod" style="display:none;"><i></i><span class="Fh_laod-text">加载中</span></div>
+			<div id="no-more" class="no-more">没有更多,逛逛其他吧!</div>
+		</div>	
+	</div>
+	
+	<div class="fixed-nav">
+		<a href="home.html"><i class="icon-nav icon-home"></i>首页</a>
+		<a href="share.html"><i class="icon-nav icon-camera"></i>晒单</a>
+		<a href="#"><i class="icon-nav icon-gift"></i>活动</a>
+		<a href="cart.html"><i class="icon-nav icon-cart"></i>夺宝车</a>
+		<a href="personal_center.html"><i class="icon-nav icon-avatar"></i>个人中心</a>
+	</div>
+	<!-- jquery lib script -->
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+	<!-- common script -->
+	<script type="text/javascript" src="js/lib.js"></script>
+	<!-- list script -->
+	<script type="text/javascript" src="js/list.js"></script>	
+</body>
+</html>

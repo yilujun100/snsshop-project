@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>为爱拼团——拼团</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<!-- style base -->
+	<link rel="stylesheet" href="css/base.css">
+	<!-- style common -->
+	<link rel="stylesheet" href="css/common.css">	
+	<!-- style layout -->
+	<link rel="stylesheet" href="css/layout.css">
+</head>
+<body>
+	<div class="viewport v-detail v-home">
+		<!-- home start -->
+		<div class="detail home">
+			<div class="banner">
+				<img src="images/banner.jpg" width="100%" alt="">
+				<a href="#" class="btn-entry btn-entry-mall"><i class="icon-home-1"></i>微商城</a>
+				<a href="rules.html" class="btn-entry btn-entry-rules">活动<br>规则</a>
+			</div>
+
+			<div class="prd-pic">
+				<img src="images/thumb_good.jpg" width="100%" alt="">
+			</div>
+			<div class="prd-info grid">
+				<div class="prd-name">山东大樱桃 时令现摘 新鲜味甜<strong>包邮89元</strong></div>
+				<div class="prd-tags mt-10 clearfix">
+					<span class="tag-1">3斤装<em></em></span>
+					<i class="tag-2">新鲜甜美</i>
+					<i class="tag-2">营养丰富</i>
+					<i class="tag-2">绿色有机</i>
+				</div>
+				<div class="prd-desc mt-10">
+					<p>樱桃红了，只能你来摘，冰袋保鲜、100%新鲜、现摘现发、纯正口感脆甜，富含铁、维C、钙磷等营养元素。只有在适当的时候吃最时令的水果才是一个有品味的吃货。</p>
+				</div>
+			</div>
+
+			<div class="grid prd-info-basic mt-10">
+				<div class="clearfix">
+					<div class="fl">
+						<label>3人团</label>
+						<em class="prd-price-dis">￥89</em>
+						<span class="prd-price-original">原价<s>￥128</s></span>
+					</div>
+					<a href="#" class="btn-group-open fr">去开团</a>					
+				</div>
+				<div class="clearfix">
+					<div class="fl">
+						<label>3人团</label>
+						<em class="prd-price-dis">￥89</em>
+						<span class="prd-price-original">原价<s>￥128</s></span>
+					</div>
+					<a href="#" class="btn-group-open fr">去开团</a>					
+				</div>
+			</div>
+
+			<p class="txt">已有<strong>586</strong>人成功拼团，快去开团吧！</p>
+
+			<div class="prd-detail mt-10">
+				<!-- <a href="#"><img src="images/ad_1.jpg" width="100%" alt=""></a> -->
+				<dl>
+					<dt>产品详情</dt>
+					<dd>
+						<img src="images/detail.jpg" width="100%" alt="">
+					</dd>
+				</dl>
+			</div>	
+
+			<div class="ad mt-10">
+				<a href="#"><img src="images/ad_2.jpg" width="100%" alt=""></a>
+			</div>
+		</div>
+		<div class="fixed-bott-menu clearfix">
+			<a href="home.html" class="active">为爱拼团</a>
+			<a href="my_group.html">我的团</a>
+			<a href="my_order.html">我的订单</a>
+		</div>
+		<!-- home end -->
+		
+		<!-- acti end start -->
+		<div class="pop-mask"></div>
+		<div class="pop-window pop-acti-end">
+			<div class="pop-acti-end-content">
+				<p>活动已结束，<br>敬请关注微团购其他活动。</p>
+			</div>
+			<div class="pop-acti-end-btns">
+				<a href="#">&nbsp;&nbsp;微商城&nbsp;&nbsp;</a>
+				<a href="#">百分好礼</a>
+			</div>
+			<!-- <a href="javascript:;" class="btn-pop-close" id="btnPopActiEndClose">关闭</a> -->
+		</div>
+		<!-- acti end end -->
+
+		<a href="javascript:;" class="back-top" id="backTop"><i class="arrow-up"></i>回到顶部</a>
+	</div>
+	<!-- jquery lib script -->
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+	<!-- common script -->
+	<script type="text/javascript" src="js/lib.js"></script>
+	<script>
+	$(function(){
+		// 活动结束
+		$('.pop-mask, .pop-acti-end').show();		
+	})
+	</script>
+</body>
+</html>

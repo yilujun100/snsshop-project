@@ -1,0 +1,101 @@
+*{margin:0;padding:0;}
+html{font-size:62.5%;min-height:100%;-webkit-text-size-adjust:100%;}
+body{color:#555;font-family:Arial,Helvetica,sans-serif;font-size:1.4rem;position:relative;}
+a{color:#666;text-decoration:none;}
+i,em{font-style:normal;}
+img{max-width:100%;vertical-align:top;border:0;}
+ul,li{list-style-type:none;}
+.clearfix:after{clear:both;content:".";display:block;font-size:0;height:0;line-height:0;visibility:hidden;}
+.clearfix{zoom:1;}
+body{min-width:320px;max-width:640px;margin:0 auto;background-color:#351d05;}
+input[type="text"],input[type="button"],input[type="submit"],input[type="reset"],textarea{-webkit-appearance:none;outline:none;}
+button:active{-webkit-appearance:none;}
+a,input,a:focus,input:focus{-webkit-tap-highlight-color:rgba(0,0,0,0);-webkit-tap-highlight-color:transparent; /* For some Androids */}
+*:focus{outline:none;}
+
+/*浮动*/
+.fl{float:left;}
+.fr{float:right;}
+
+/*上下居中-伪表格*/
+.tabcte{ display:table;}
+.tebcte-son{display:table-cell; vertical-align:middle;}
+
+/*显示隐藏*/
+.hide{display:none;}
+.show{display:block!important;}
+.banner img{ display:block;}
+
+.time-rule{ height:28px; line-height:28px; background:#f7b634; padding:0 15px;}
+.time-rule span{ display:inline-block; font-size:9px; color:#2b1807;}
+.time-rule a{ float:right;width:56px; height:15px; line-height:15px; font-size:11px; color:#fff; text-align:center; border-radius:5px; background:#754312; box-shadow: 0 3px 10px #4a2a0b inset; margin-top:6.5px;}
+.disclose{ height:33px; width:100%; background:url(../images/local_tyrants_v2/dmbg.jpg); background-size:4px 4px; overflow:hidden; padding:8px 0; position:relative;}
+.disclose p{ font-size:10px; line-height:16px; display:inline-block;margin-right:25px; color:#fff;}
+.disclose p em{ color:#ffdb7b;}
+.disclose .ovhd{ height:20px; overflow:hidden;}
+/*tab*/
+.topup-tab{}
+.topup-tab .t{ width:100%;background:url(../images/local_tyrants_v2/dmbg.jpg); background-size:4px 4px;}
+.topup-tab .m{ width:100%;background:url(../images/local_tyrants_v2/dmbg2.jpg); background-size:4px 4px;}
+.topup-tab .t span{ width:50%; height:38px; line-height:38px; background:#fff;float:left; color:#999; font-size:13px; text-align:center; cursor: pointer; }
+.topup-tab .t span.bod-r { border-radius:0 10px 0 0; }
+.topup-tab .t span.bod-l { border-radius:10px 0 0 0; }
+.topup-tab .t span.choose{ background:#f7b634; color:#351d05;}
+.topup-tab .t_pad{ width:100%;}
+.topup-tab .medal ul{ padding:3%;}
+.topup-tab .medal li{ width:44%; margin:3%; float:left;}
+.topup-tab .medal li a{ display:block;}
+.ls-b-yellowbg{ height:15px; width:100%; background:#f7b634; border-radius:0 0 5px 5px; overflow:hidden;}
+/*rule*/
+.rule{ background:#351d05; padding:6%;}
+.rule h3{ font-size:15px; color:#f7b634; font-weight:bold; margin-bottom:6px; }
+.rule strong{ display:block; font-weight:normal; margin-bottom:9px; color:#ecca72;}
+.rule em{ float:left; width:1.5em; float:left;font-size:10px; line-height:12px;}
+.rule p{ margin-left:1.5em; font-size:10px; line-height:12px;}
+/*copy*/
+.copy{ font-size:9px; color:#f7b634; text-align:center; height:28px; line-height:28px; width:100%; background:#261503;}
+.copy em{ display:inline-block; width:8px; height:8px; background:#f7b634; -webkit-transform:rotate(45deg); margin-right:5px; vertical-align:middle; margin-top:-2px;}
+
+/*榜单*/
+.bd-user{ background:#351d05; position:relative;}
+.user-msg{ position:absolute; top:10px; left:26.5%; right:0; margin:auto; width:68%;}
+.msg-top-left{ float:left;}
+.msg-top-left em{ display:inline-block; width:72px; height:72px; border:1px #fff solid; border-radius:5px; overflow:hidden;}
+.msg-top-left h3{ font-size:10px; color:#eccb72; text-align:center; width:100%; height:15px; line-height:15px; overflow:hidden; margin:auto; margin-top:3px;}
+.msg-top-right{ margin-left:83px;}
+.msg-top-right p{ font-size:10px; color:#eccb72; line-height:15px;}
+.msg-top-right a{ display:block; width:85.5px; height:24px; margin-top:20px;}
+.uscz-tips{ position:absolute; bottom:10px; text-align:center; width:100%; font-size:10px; color:#eccb72;}
+.uscz-tips img{ width:14.5px; height:14.5px; margin-right:3px; vertical-align:middle; margin-top:-2px;}
+.rank-list{ background:#351d05;}
+.rank-list dt{ padding:5px 3%; height:20px; display: -moz-box; display: -webkit-box; display: box; background:#f7b634 }
+.rank-list .flex{-moz-box-flex: 1; -webkit-box-flex: 1;  box-flex: 1; text-align:center;}
+.rank-list .flex2{-moz-box-flex: 2; -webkit-box-flex: 2;  box-flex: 2; text-align:center;}
+.rank-list .flex3{-moz-box-flex: 3; -webkit-box-flex: 3;  box-flex: 3; text-align:center;width:80px;}
+.rank-list .flex4{-moz-box-flex: 4; -webkit-box-flex: 4;  box-flex: 4; text-align:center;}
+.rank-list .flex5{-moz-box-flex: 5; -webkit-box-flex: 5;  box-flex: 5; text-align:center;}
+.rank-list dt em{ display:inline-block;color:#fff; font-size:11px; line-height:20px; padding:0 7px;text-align: center;border-radius: 5px;background: #754312;box-shadow: 0 3px 10px #4a2a0b inset;}
+.rank-list dd{ padding:2.5px 3%; height:16px; display: -moz-box; display: -webkit-box; display: box; height:45px;background: #fff;}
+.rank-list dd:nth-child(2n+1){ background: #e1e1e1;}
+.rank-uspcc{text-align: left;}
+.rank-list dd p{ font-size:12px; color:#000; margin:auto; line-height:45px;text-overflow: ellipsis;white-space: nowrap;}
+.rank-uspcc em{ display:inline-block; width:40px; height:40px; border-radius:50%; overflow:hidden;}
+.rank-uspcc i{ display:inline-block; font-size:15px; color:#000; vertical-align:top; width:15px; margin:10px 5px 0 5px;}
+.rank-name{ line-height:45px; overflow:hidden; max-width:5em;width:60px;}
+.rank-money{line-height:45px;}
+.rank-goods span{ display:block;font-size:12px; color:#000; margin:auto; margin-top:8px;}
+.rank-goods h4{ display:block;font-size:12px; color:#000; margin:auto; font-weight:normal;text-overflow: ellipsis;white-space: nowrap;}
+.rank-gpic{ width:44px; height:44px; border:1px #683c10 solid; border-radius:5px; overflow:hidden; margin:auto; float: right;}
+
+@media (device-height:480px) and (-webkit-min-device-pixel-ratio:2){/* 兼容iphone4/4s */
+
+}
+@media (device-height:568px) and (-webkit-min-device-pixel-ratio:2){/* 兼容iphone5 */
+
+}
+@media (device-height:667px) and (-webkit-min-device-pixel-ratio:2){/* 兼容iphone6 */
+
+}
+@media (device-height:736px) and (-webkit-min-device-pixel-ratio:2){/* 兼容iphone6 Plus */
+
+}

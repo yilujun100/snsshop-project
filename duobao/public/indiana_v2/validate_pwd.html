@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>密码验证——夺宝奇兵</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="author" content="">
+	<meta name="Copyright" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<!-- style base -->
+	<link rel="stylesheet" href="css/base.css">
+	<!-- style common -->
+	<link rel="stylesheet" href="css/common.css">
+	<!-- style layout account set -->
+	<link rel="stylesheet" href="css/layout_account_set.css">
+</head>
+<body>
+	<div class="viewport">
+		<div class="validate-phone">		
+			<div class="set-title">
+				<h3><i class="icon-shield"></i>密码验证</h3>
+			</div>
+			<div class="set-content">
+				<div class="tips-set tips-info" id="tipsSet"><i class="icon-set-horn"></i><span>请进行身份验证</span></div>
+				<!-- <div class="tips-set tips-error"><i class="icon-set-info"></i>手机号码格式不正确，请核对后重新输入</div> -->
+				<form action="" class="form-validate-pwd mt-15" id="formValidatePwd">
+					<div class="form-box">
+						<p class="form-item-col2">
+							<label for="pwd">登录密码</label>
+							<input type="password" name="pwd" id="pwd" placeholder="请填写您的登录密码">
+						</p>						
+					</div>
+					<input type="submit" class="btn-form-action btn-form-confirm btn-form-confirm-disabled" id="btnConfirm" value="">
+				</form>
+				<div class="validate-tips">使用<a href="#">手机号验证</a></div>
+			</div>	
+		</div>
+	</div>
+	<div class="fixed-nav">
+		<a href="#"><i class="icon-nav icon-home"></i>首页</a>
+		<a href="#"><i class="icon-nav icon-camera"></i>晒单</a>
+		<a href="#"><i class="icon-nav icon-acti"></i>活动</a>
+		<a href="cart.html"><i class="icon-nav icon-cart"></i>清单</a>
+		<a href="personal_center.html"><i class="icon-nav icon-avatar"></i>个人中心</a>
+	</div>
+
+	<!-- 密码错误提示框 start -->
+	<div class="pop-mask-validate"></div>
+	<div class="pop-validate-pwd">
+		<div class="pop-validate-pwd-con">
+			<p>密码错误，请重新输入</p>
+		</div>
+		<div class="pop-validate-pwd-bott">
+			<a href="javascript:;" class="btn-pop-cancel" id="btnPopCancel">取消</a>
+			<a href="javascript:;" class="btn-pop-confirm" id="btnPopConfirm">确定</a>			
+		</div>
+		<a href="javascript:;" class="btn-pop-set-close" id="btnPopClose">关闭</a>		
+	</div>
+	<!-- 密码错误提示框 end -->
+
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+	<!-- common script -->
+	<script type="text/javascript" src="js/lib.js"></script>
+	<script>
+		$(function(){
+			$('#btnConfirm').on('click', function(){
+				$('.pop-mask-validate, .pop-validate-pwd').show();
+				return false;
+			});
+			$('#btnPopCancel, #btnPopClose').on('click', function(){
+				$('.pop-mask-validate, .pop-validate-pwd').hide();
+			});
+			$('#btnPopConfirm').on('click', function(){
+				$('.pop-mask-validate, .pop-validate-pwd').hide();
+				$('#pwd').focus();
+			});
+		})
+	</script>
+</body>
+</html>

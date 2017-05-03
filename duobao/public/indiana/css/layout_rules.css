@@ -1,0 +1,39 @@
+/*
+ * 充值活动样式 layout_rules.css
+ * author:yilj@snsshop.cn
+ * date:2016-5-5
+*/
+
+.acti-instru { padding-top: 20px; padding-bottom: 20px; }
+.v-rules { background: #e43942; }
+.title { margin: 0 auto; width: 147px; height: 46px; background: url(../images/rules/title_1.jpg) no-repeat; background-size: 147px 46px; text-indent: -999em; }
+.step-1 { margin: 20px auto 0; width: 209px; height: 89px; }
+.arrow { margin: 10px auto 0; width: 18px; height: 13px; background: url(../images/rules/arrow.jpg) no-repeat; background-size: 18px 13px; }
+.box { position: relative; margin: 10px; padding: 6px 0; border: 1px dotted #fff; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; }
+.box:before { position: absolute; top: 10px; left: 50%; display: block; content: ''; width: 1px; height: 96%; border-left: 1px dotted #fff; }
+.area { float: left; width: 49%; }
+.box .area:nth-child(2n) { margin-left: 2%; }
+.area-step-2 { margin-top: 10px; overflow: hidden; }
+.area-step-3 { margin-top: 10px; }
+.area-step-4 { margin-top: 80px; }
+.box .btn-view-rules { position: absolute; bottom: 20%; left: 50%; z-index: 10; margin-left: -111px; padding: 10px 0; display: block; width: 222px; height: 42px; background: #e43942 url(../images/rules/btn_rules.jpg) no-repeat center center; background-size: 222px auto; text-indent: -999em; }
+.txt { margin: 20px auto 10px; width: 290px; height: 41px; background: url(../images/rules/txt.jpg) no-repeat; background-size: 290px 41px; }
+.btn-groups-1 { margin: 20px auto 0; width: 295px; height: 104px; }
+.btn-groups-1 a { display: block; margin-top: 14px; width: 295px; height: 42px; background-repeat: no-repeat; background-size: auto 42px; text-indent: -999em; }
+.btn-buy-stamps { margin-top: 0; background-image: url(../images/rules/btn_buy_stamps.jpg); }
+.btn-parti { background-image: url(../images/rules/btn_participate.jpg); }
+.acti-explain,
+.calculate-rules { margin-top: 20px; }
+.title-1 { margin: 0 auto; width: 147px; height: 42px; background: url(../images/rules/title_2.jpg) no-repeat; background-size: auto 42px; text-indent: -999em; }
+.title-2 { margin: 0 auto; width: 145px; height: 45px; background: url(../images/rules/title_3.jpg) no-repeat; background-size: 145px 45px; text-indent: -999em; }
+.acti-explain .acti-explain-con,
+.calculate-rules .calculate-con { position: relative; margin: 20px 10px 10px; padding: 30px; padding-bottom: 50px; background: #fcf2cc; }
+.acti-explain .acti-explain-con h3 { margin: 0 auto 20px; width: 125px; height: 22px; background: url(../images/rules/title_4.jpg) no-repeat; background-size: 125px 22px; text-indent: -999em; }
+.calculate-rules .calculate-con h3 { margin: 0 auto 20px; width: 85px; height: 24px; background: url(../images/rules/title_5.jpg) no-repeat; background-size: 85px 24px; text-indent: -999em; }
+.acti-explain .acti-explain-con p,
+.calculate-rules .calculate-con p { margin: 0; font-size: 13px; color: #b14c09; }
+.deco-1 { position: absolute; top: 20px; left: 0; width: 40px; height: 52px; background: url(../images/rules/bg_1.jpg) no-repeat; background-size: auto 52px; }
+.deco-2 { position: absolute; top: 20px; right: 0; width: 27px; height: 74px; background: url(../images/rules/bg_2.jpg) no-repeat; background-size: 27px 74px; }
+.deco-3 { position: absolute; top: 254px; left: 0; width: 30px; height: 80px; background: url(../images/rules/bg_3.jpg) no-repeat; background-size: 30px 80px; }
+.deco-4 { position: absolute; bottom: 40px; right: 0; width: 40px; height: 50px; background: url(../images/rules/bg_4.jpg) no-repeat; background-size: 40px 50px; }
+.deco-5 { position: absolute; bottom: 0; left: 0; width: 100%; }

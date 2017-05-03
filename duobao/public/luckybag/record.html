@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>记录</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="author" content="">
+		<meta name="Copyright" content="">
+		<meta name="Keywords" content="">
+		<meta name="Description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no">
+		<!-- style base -->
+		<link rel="stylesheet" href="css/base.css">
+		<!-- style common -->
+		<link rel="stylesheet" href="css/common.css">
+		<!-- style layout -->
+		<link rel="stylesheet" href="css/layout.css">		
+	</head>
+	<body>
+		<div class="viewport v-record">
+			<!-- record start -->
+			<div class="record">
+				<div class="user-info">
+					<img src="images/bg.jpg" width="100%" alt="" />
+					<div class="user-info-inner">
+						<div class="avatar">
+							<img src="images/111.jpg" width="46" height="46" alt="" />						
+						</div>
+						<h3 class="nickname">金三胖</h3>
+					</div>
+				</div>
+				<div class="tab tab-record">
+					<div class="tab-tit" id="fixedTabTitle">
+						<a href="javascript:;" class="active">夺宝记录</a>
+						<a href="javascript:;">中奖记录</a>
+					</div>
+					<div class="tab-con">
+						<!-- 夺宝记录 -->
+						<div class="indiana-record" style="display: block;">
+							<!-- 夺宝中 -->
+							<div class="record-item ongoing">
+								<div class="goods-info">
+									<div class="goods-pic">
+										<img src="images/iphone.jpg" width="72" height="60" alt="" />
+										<s class="g-status g-status-ongoing">夺宝中</s>									
+									</div>
+									<div class="goods-name">苹果专区IPHONE 6S粉红色过年就买新手机过年就买新手机啦！</div>									
+								</div>
+								<div class="goods-others">
+									<p class="clearfix">
+										<span class="periods fl">期号：237439384<em class="lottery-schedule">45%</em></span>
+										<a href="#" class="btn-buy fr">跟买</a>
+									</p>
+									<div class="progress-bar mt-10"><span class="progress-on"></span></div>
+								</div>
+							</div>
+							<!-- 已揭晓 -->
+							<div class="record-item announced mt-10">
+								<div class="goods-info goods-info-1">
+									<div class="goods-pic">
+										<img src="images/iphone.jpg" width="72" height="60" alt="" />
+										<s class="g-status g-status-announced">已揭晓</s>									
+									</div>
+									<div class="goods-related">
+										<p class="goods-name-1">苹果专区IPHONE 6S粉红色过年就买新手机过年就买新手机啦！</p>
+										<p class="clearfix">
+											<label class="periods-1 fl">期号：23749385</label>
+											<span class="participa-num fr">您已参与<strong>138</strong>人次</span>
+										</p>
+										
+									</div>									
+								</div>
+								<div class="goods-others-1 clearfix">
+									<p>获奖者：大王叫我来夺宝</p>
+									<p>幸运码：128397900</p>
+									<p>本期购买：<strong>239</strong>人次</p>
+									<p>揭晓时间：2016-1-19  14:00:37:128</p>
+								</div>
+							</div>
+							<!-- 已中奖 -->
+							<div class="record-item has-won mt-10">
+								<div class="goods-info goods-info-1">
+									<div class="goods-pic">
+										<img src="images/iphone.jpg" width="72" height="60" alt="" />
+										<s class="g-status g-status-won">已中奖</s>									
+									</div>
+									<div class="goods-related">
+										<p class="goods-name-1">苹果专区IPHONE 6S粉红色过年就买新手机过年就买新手机啦！</p>
+										<p class="clearfix">
+											<label class="periods-1 fl">期号：23749385</label>
+											<span class="participa-num fr">您已参与<strong>138</strong>人次</span>
+										</p>
+										
+									</div>									
+								</div>
+							</div>
+							<!-- 即将揭晓 -->
+							<div class="record-item upcoming mt-10">
+								<div class="goods-info goods-info-1">
+									<div class="goods-pic">
+										<img src="images/iphone.jpg" width="72" height="60" alt="" />
+										<s class="g-status g-status-upcoming">即将揭晓</s>									
+									</div>
+									<div class="goods-related">
+										<p class="goods-name-1">苹果专区IPHONE 6S粉红色过年就买新手机过年就买新手机啦！</p>
+										<div class="clearfix">
+											<label class="periods-1 fl">期号：23749385</label>
+											<div class="count-down fr">
+												<em class="fl">倒计时：</em>
+												<ul class="count fr" id="fnTimeCountDown">
+													<li class="time t-hour hour">00</li>
+													<li class="separator">:</li>
+													<li class="time t-min mini">20</li>
+													<li class="separator">:</li>
+													<li class="time t-sec sec">18</li>
+												</ul>
+											</div>
+										</div>
+										
+									</div>									
+								</div>
+							</div>
+						</div>
+						<!-- 中奖记录 -->
+						<div class="win-record">
+							<p class="record-empty">您暂时没有记录快去夺宝吧~</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- record end -->		
+		</div>
+		<!-- fixed bottom start -->
+		<!-- <div class="fixed nav">
+			<a href="#" class="nav-active">去夺宝</a>
+			<a href="#">发福袋</a>
+			<a href="#">个人中心</a>
+		</div> -->
+		
+		<div class="fixed-nav">
+			<a href="home.html"><i class="icon-nav icon-home"></i>首页</a>
+			<a href="share.html" class="active"><i class="icon-nav icon-camera"></i>晒单</a>
+			<a href="#"><i class="icon-nav icon-gift"></i>活动</a>
+			<a href="cart.html"><i class="icon-nav icon-cart"></i>夺宝车</a>
+			<a href="personal_center.html"><i class="icon-nav icon-avatar"></i>个人中心</a>
+		</div>
+		<!-- fixed bottom end -->
+
+
+		<!-- jquery lib script -->
+		<script src="js/jquery-2.1.4.min.js" type="text/javascript"></script>
+		<!-- common script -->
+		<script src="js/lib.js" type="text/javascript"></script>
+		<!-- count down script -->
+		<script src="js/fnCountDown.js" type="text/javascript"></script>
+		<script>
+			$(function(){	
+			
+				// tab
+				fnTab('.tab-tit a', '.tab-con > div');
+				
+				// 滚动监听
+				fnScrollListen();	
+				
+				// 倒计时
+				$('#fnTimeCountDown').fnTimeCountDown('2018/07/08 18:45:13');
+				
+				// 进度条
+				var percent = $('.lottery-schedule').text();
+				percent = percent.substring(0, percent.length - 1);
+				fnProgressBar(percent);	
+			})
+		</script>
+	</body>
+</html>

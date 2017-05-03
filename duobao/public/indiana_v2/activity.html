@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>活动——夺宝奇兵</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="author" content="">
+	<meta name="Copyright" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<!-- style base -->
+	<link rel="stylesheet" href="css/base.css">
+	<!-- style common -->
+	<link rel="stylesheet" href="css/common.css">
+	<!-- style layout -->
+	<link rel="stylesheet" href="css/layout.css">
+</head>
+<body>
+	<div class="viewport v-activity">
+		<div class="mask"></div>
+		<div class="calendar">
+			<div class="calendar-hd">
+				<a href="javascript:;" class="m-prev" id="monthPrev">&lt;</a>
+				<a href="javascript:;" class="m-curr" id="monthCurr" data-y-m="2016-7">2016年7月</a>
+				<a href="javascript:;" class="m-next" id="monthNext">&gt;</a>
+			</div>
+			<div class="calendar-con hide">
+				<ul class="list-days" id="list-days">
+				</ul>
+			</div>
+		</div>		
+        <div class="acti-data">2016年3月12日 00:00:00</div>
+		<div class="acti-item">
+			<a href="#">
+				<div class="acti-thumb">
+					<img src="images/activity_1.jpg" width="100%" alt="">
+				</div>
+				<div class="acti-info">
+					<h3 class="acti-name">超级夺宝邀你来玩！</h3>
+					<p class="acti-time">活动时间：2016年3月12日-8月31日</p>				
+					<p class="acti-desc">情人节主体夺宝区看这里情人节主体夺宝区看这里情人节主体夺宝</p>
+				</div>				
+			</a>
+			<div class="acti-item-slash"></div>
+		</div>
+        <div class="acti-data">2016年3月12日 00:00:00</div>
+		<div class="acti-item acti-end mt-10">
+			<a href="#">
+				<div class="acti-thumb">
+					<img src="images/activity_2.jpg" width="100%" alt="">
+					<div class="acti-end-tips">
+						<h3>活动已结束</h3>
+					</div>
+				</div>
+				<div class="acti-info">
+					<h3 class="acti-name">超级夺宝邀你来玩！</h3>
+					<p class="acti-time">活动时间：2016年3月12日-8月31日</p>				
+					<p class="acti-desc">情人节主体夺宝区看这里情人节主体夺宝区看这里情人节主体夺宝</p>
+				</div>				
+			</a>
+			<div class="acti-item-slash"></div>
+		</div>
+	</div>	
+	
+	<div class="fixed-nav clearfix">
+		<a href="home.html"><i class="icon-nav icon-home"></i>首页</a>
+		<a href="share.html"><i class="icon-nav icon-camera"></i>晒单</a>
+		<a href="#"><i class="icon-nav icon-acti"></i>活动</a>
+		<a href="cart.html"><i class="icon-nav icon-cart"></i>清单</a>
+		<a href="personal_center.html"><i class="icon-nav icon-avatar"></i>个人中心</a>
+	</div>
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+	<script>
+	(function($){
+		var d_date = new Date();
+		var _date = {
+			year: d_date.getFullYear(),
+			month: d_date.getMonth() + 1,
+			day: d_date.getDate()
+		};
+		var oBtnNext = $('#monthNext'),
+			oBtnPrev = $('#monthPrev'),
+			oBtnCurr = $('#monthCurr');
+
+
+		var aActiDate = ['2016-7-1', '2016-7-15', '2016-8-10'];
+		init();
+		addEvent(aActiDate);
+
+		// @后台
+		var aItemEvent = $('#list-days .has-event');
+		aItemEvent.each(function(){
+			var _self = $(this);
+			_self.on('click', function(){
+				parseFn();
+			});
+		});
+
+		function parseFn(){
+			alert('后台查询相关活动并展示列表');
+		}
+
+
+		// 获取当月天数
+		function getDays(year, month){
+			month = parseInt(month,10);
+			var temp = new Date(year,month,0); 
+			return temp.getDate(); 
+		}
+
+		function tmpl(days){
+			var html = [];
+			var len = days;
+			var month = $('#monthCurr').attr('data-y-m').split('-')[1];
+			for (var i=1; i<=len; i++) {			
+				html.push('<li data-index="'+ _date.year + '-' + month + '-' + i +'">'+ i +'</li>');
+			}
+			return html.join('');
+		}
+
+		function init(){
+			var str;
+			var currMonthDays = getDays(_date.year, _date.month);
+			str = tmpl(currMonthDays);
+			$('#monthCurr').attr('data-y-m', _date.year + '-' + _date.month);
+			$('#monthCurr').text(_date.year + '年' + _date.month + '月');
+			$('#monthPrev').addClass('disabled');
+			$('#list-days').append(str);
+			$('#list-days li[data-index="'+ _date.year + '-' + _date.month + '-' + _date.day +'"]').addClass('day-active');
+		}
+
+		function updateTmpl(month, tmpl){
+			$('#monthCurr').text(_date.year + '年' + month + '月');
+			$('#monthCurr').attr('data-y-m', _date.year + '-' + month);
+			$('#list-days').empty().append(tmpl);		
+		}
+
+		function addEvent(aDate){
+			for (var i in aDate) {
+				var aItemDay = $('#list-days li');
+				aItemDay.each(function(index){
+					if (aItemDay.eq(index).attr('data-index') == aDate[i]) {
+						aItemDay.eq(index).addClass('has-event');
+					}
+				});
+			}
+		}
+
+		// next
+		oBtnNext.on('click', function(){
+			var _self = $(this);
+			if (!_self.hasClass('disabled')) {
+				var _currDate = _self.parent().find('#monthCurr').attr('data-y-m');
+				var _currMonth = _currDate.split('-')[1];
+				_currMonth++;
+
+				if (_currMonth >= 12) {
+					_currMonth = 12;
+					$('#monthNext').addClass('disabled');
+				}
+				if (_currMonth > _date.month) {
+					$('#monthPrev').removeClass('disabled');
+				}
+				var nextMonthDays = getDays(_date.year, _currMonth);
+				var str;
+				$('#monthCurr').attr('data-y-m', _date.year + '-' + _currMonth);
+				str = tmpl(nextMonthDays);
+				updateTmpl(_currMonth, str);
+				addEvent(aActiDate);
+				$('#list-days .has-event').each(function(){
+					var _self = $(this);
+					_self.on('click', function(){
+						parseFn();
+					});
+				});
+			} else {
+				return;
+			}
+		});
+
+		// prev
+		oBtnPrev.on('click', function(){
+			var _self = $(this);
+			if (!_self.hasClass('disabled')) {
+				var _currDate = _self.parent().find('#monthCurr').attr('data-y-m');
+				var _currMonth = _currDate.split('-')[1];
+				_currMonth--;
+
+				if (_currMonth <= 1) {
+					_currMonth = 1;
+					$('#monthPrev').addClass('disabled');
+				}
+				if (_currMonth <= _date.month) {
+					$('#monthPrev').addClass('disabled');
+				} else {
+					$('#monthNext').removeClass('disabled');
+				}
+				var prevMonthDays = getDays(_date.year, _currMonth);
+				var str;
+				$('#monthCurr').attr('data-y-m', _date.year + '-' + _currMonth);
+				str = tmpl(prevMonthDays);
+				updateTmpl(_currMonth, str);
+				addEvent(aActiDate);
+				$('#list-days .has-event').each(function(){
+					var _self = $(this);
+					_self.on('click', function(){
+						parseFn();
+					});
+				});
+				if (_currMonth <= _date.month) {
+					$('#list-days li[data-index="'+ _date.year + '-' + _date.month + '-' + _date.day +'"]').addClass('day-active');
+				}
+			} else {
+				return;
+			}
+		});
+
+		// currMonth
+		oBtnCurr.on('click', function(){
+			if ($('.calendar-con').hasClass('hide')) {
+				$('.calendar-con').removeClass('hide');
+				$('.mask').show();
+			} else {
+				$('.calendar-con').addClass('hide');
+				$('.mask').hide();
+			}
+			// $('.calendar-con').toggleClass('hide');
+		});
+
+	})(jQuery);
+	</script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+/*
+ * iphone7 iphone7.css
+ * author:cais@snsshop.cn
+ * date:2016-9-2
+*/
+
+img{ max-width: 100%; }
+.ip7_banner{ text-align: center;  max-width: 750px; margin: auto;}
+.ip7_list{ max-width: 750px; margin: auto; }
+.ip7_list li{ float: left; width: 45.5%; padding: 0 1.5%; overflow:hidden;text-align: center; background: #ffffcd; }
+.ip7_list li:nth-child(1n+1){ padding: 10px 1.5% 0 3%;}
+.ip7_list li:nth-child(2n+2){ padding: 10px 3% 0 1.5%;}
+.item_name{ text-align: center; font-size: 16px; color: #3b3b3b; line-height: 30px; overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
+.ipt_btn{ display: block; margin: auto; width: 60%; height: 30px; margin-bottom: 30px; line-height: 30px; font-size: 15px; color: #fff; border:1px #c06c12 solid; text-align: center; background-image:-webkit-linear-gradient(top,#e7942c,#e04100); border-radius: 5px;}
+.rules-con { padding: 20px 3%; background: #cf511f; }
+.rules-con h3{ font-size: 15px; color: #fff;}
+.rules-con p { position: relative; margin: 6px 0; padding-left: 24px; font-size: 12px; color: #765422; color: #fff; }
+.rules-con p i { position: absolute; top: -2px; left: 0; display: block; width: 18px; height: 18px; line-height: 18px; text-align: center;color: #fff;  }

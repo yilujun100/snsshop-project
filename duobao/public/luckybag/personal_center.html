@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>个人中心</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="author" content="">
+		<meta name="Copyright" content="">
+		<meta name="Keywords" content="">
+		<meta name="Description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no">
+		<!-- style base -->
+		<link rel="stylesheet" href="css/base.css">
+		<!-- style common -->
+		<link rel="stylesheet" href="css/common.css">
+		<!-- style layout -->
+		<link rel="stylesheet" href="css/layout.css">		
+	</head>
+	<body>
+		<div class="viewport v-personal-center">
+			<!-- personal center start -->
+			<div class="per-center">
+				<div class="per-center-top">
+					<!-- <img src="images/bg.jpg" width="100%" alt="" /> -->
+					<div class="per-info-basic">
+						<div class="user-avatar">
+							<div class="avatar">
+								<img src="images/111.jpg" width="46" height="46" alt="">						
+							</div>
+						</div>
+						<div class="per-other-info">
+							<div class="dd-nickname">金三胖</div>
+							<div class="dd-bag clearfix">
+								<em class="fl">可发放福袋  10个</em>
+								<a href="my_lucky_bag.html?tab=0" class="btn-per-send-bag fr">继续发福袋 &gt;</a>
+							</div>
+							<div class="dd-stamps clearfix">
+								<em class="fl">剩余夺宝券  10张</em>
+								<a href="#" class="btn-use-send-bag fr">用来发福袋 &gt;</a>
+							</div>							
+						</div>
+					</div>
+				</div>
+
+				<div class="entry">
+					<a href="#" class="btn-entry btn-entry-send-bag">发福袋<i></i></a>
+					<a href="#" class="btn-entry btn-entry-indiana">去夺宝<i></i></a>
+				</div>
+
+				<div class="per-center-menu mt-10">
+					<a href="#"><i class="icon-menu icon-cup"></i>夺宝专区</a>
+					<a href="#"><i class="icon-menu icon-bag"></i>我的福袋</a>
+					<a href="#"><i class="icon-menu icon-ticket"></i>购买夺宝券</a>
+					<a href="#"><i class="icon-menu icon-gift"></i>夺宝券记录</a>
+				</div>
+
+				<div class="tab tab-record mt-10">
+					<div class="tab-tit" id="fixedTabTitle">
+						<a href="javascript:;" class="active">全部记录</a>
+						<a href="javascript:;">进行中</a>
+						<a href="javascript:;">已揭晓</a>
+						<a href="javascript:;">我兑换的</a>
+					</div>
+					<div class="tab-con">
+						<!-- 全部记录 -->
+						<div class="indiana-record" style="display: block;">
+							<!-- 夺宝中 -->
+							<div class="record-item ongoing">
+								<div class="goods-info">
+									<div class="goods-pic">
+										<img src="images/iphone.jpg" width="72" height="54" alt="" />					
+									</div>
+									<div class="goods-info-other">
+										<p class="goods-name-1">苹果专区IPHONE 6S粉红色过年就买新手机过年就买新手机啦！</p>	
+										<p class="partici-times">您已参与<strong>138</strong>人次<a href="#">参与详情 &gt;</a></p>										
+									</div>
+								</div>
+								<div class="goods-others">
+									<p class="clearfix">
+										<span class="periods">期号：237439384<em class="lottery-schedule">45%</em></span>
+									</p>
+									<div class="progress-bar mt-10" attr-percent="45"><span class="progress-on"></span></div>
+								</div>
+								<div class="goods-others">
+									<p class="clearfix">
+										<span class="periods">期号：237439384<em class="lottery-schedule">60%</em></span>
+									</p>
+									<div class="progress-bar mt-10" attr-percent="60"><span class="progress-on"></span></div>
+								</div>
+							</div>
+							<!-- 即将揭晓 -->
+							<div class="record-item upcoming mt-10">
+								<div class="goods-info goods-info-1">
+									<div class="goods-pic">
+										<img src="images/iphone.jpg" width="72" height="54" alt="" />
+										<s class="g-status g-status-upcoming">即将揭晓</s>									
+									</div>
+									<div class="goods-related">
+										<p class="goods-name-1">苹果专区IPHONE 6S粉红色过年就买新手机过年就买新手机啦！</p>
+										<div class="count-down clearfix">
+											<em class="fl">倒计时：</em>
+											<ul class="count fl" id="fnTimeCountDown">
+												<li class="time t-hour hour">00</li>
+												<li class="separator">:</li>
+												<li class="time t-min mini">20</li>
+												<li class="separator">:</li>
+												<li class="time t-sec sec">18</li>
+											</ul>
+										</div>	
+										<span class="partici-times">您已参与<strong>138</strong>人次<a href="#">参与详情 &gt;</a></span>								
+									</div>										
+								</div>
+							</div>
+							<!-- 已揭晓 -->
+							<div class="record-item announced mt-10">
+								<div class="goods-info goods-info-1">
+									<div class="goods-pic">
+										<img src="images/iphone.jpg" width="72" height="54" alt="" />					
+									</div>
+									<div class="goods-related">
+										<p class="goods-name-1">苹果专区IPHONE 6S粉红色过年就买新手机过年就买新手机啦！</p>
+										<p><label class="periods-1">期号：23749385</label></p>
+										<p><span class="participa-num">您已参与<strong>138</strong>人次<a href="#">参与详情 &gt;</a></span></p>	
+										
+									</div>									
+								</div>
+								<div class="goods-others-1 clearfix">
+									<p>获奖者：大王叫我来夺宝</p>
+									<p>幸运码：128397900</p>
+									<p>本期购买：<strong>239</strong>人次</p>
+									<p>揭晓时间：2016-1-19  14:00:37:128</p>
+								</div>
+							</div>
+							<!-- 已中奖 -->
+							<div class="record-item has-won mt-10">
+								<div class="goods-info goods-info-1">
+									<div class="goods-pic">
+										<img src="images/iphone.jpg" width="72" height="54" alt="" />
+										<s class="g-status g-status-won">恭喜中奖</s>									
+									</div>
+									<div class="goods-related">
+										<p class="goods-name-1">苹果专区IPHONE 6S粉红色过年就买新手机过年就买新手机啦！</p>
+										<p><label class="periods-1">期号：23749385</label></p>
+										<p><span class="participa-num">您已参与<strong>138</strong>人次<a href="#">参与详情 &gt;</a></span></p>										
+									</div>									
+								</div>
+								<div class="goods-others-1 clearfix">
+									<p>获奖者：金三胖</p>
+									<p>幸运码：128397900</p>
+									<p>本期购买：<strong>239</strong>人次</p>
+									<p>揭晓时间：2016-1-19  14:00:37:128</p>
+								</div>
+							</div>
+							<!-- 兑换 -->
+							<div class="record-item exchange mt-10">
+								<div class="goods-info goods-info-1">
+									<div class="goods-pic">
+										<img src="images/iphone.jpg" width="72" height="54" alt="" />
+										<span class="tag-exchange"><s>兑换</s></span>									
+									</div>
+									<div class="goods-related">
+										<p class="goods-name-1">苹果专区IPHONE 6S粉红色过年就买新手机过年就买新手机啦！</p>								
+									</div>									
+								</div>
+								<p class="exchange-info clearfix">
+									<span class="fl">兑换数量：1 使用夺宝券：300券 支付：￥4938</span>
+									<a href="#" class="view-order fr">查看订单 &gt;</a>
+								</p>
+							</div>
+						</div>
+						<!-- 进行中 -->
+						<div class="win-record"></div>
+						<!-- 已揭晓 -->
+						<div></div>
+						<!-- 我兑换的 -->
+						<div></div>
+					</div>
+				</div>
+			</div>
+			<!-- personal center end -->
+		</div>
+		<!-- fixed bottom start -->
+		<!-- <div class="fixed nav">
+			<a href="#" class="nav-active">去夺宝</a>
+			<a href="#">发福袋</a>
+			<a href="#">个人中心</a>
+		</div> -->
+		<div class="fixed-nav">
+			<a href="home.html"><i class="icon-nav icon-home"></i>首页</a>
+			<a href="share.html" class="active"><i class="icon-nav icon-camera"></i>晒单</a>
+			<a href="#"><i class="icon-nav icon-gift"></i>活动</a>
+			<a href="cart.html"><i class="icon-nav icon-cart"></i>夺宝车</a>
+			<a href="personal_center.html"><i class="icon-nav icon-avatar"></i>个人中心</a>
+		</div>
+		<!-- fixed bottom end -->
+		
+		<!-- @后台： 这里有两个弹出框 未发送的福袋和夺宝券退回 根据需要显示(当前显示为夺宝券退回弹出框) -->
+		<div class="mask"></div>
+		<!-- 夺宝券退回弹出框 start -->
+		<div class="popup pop-stamps-return">
+			<div class="popup-tit">28张夺宝券已退回</div>
+			<div class="popup-con">
+				<div class="popup-desc">您的福袋中有夺宝券超时未被领取<br>请前往个人中心查看退回的夺宝券</div>
+				<div class="popup-btns">
+					<a href="#" class="btn-popup btn-popup-1">发新福袋</a>
+					<a href="#" class="btn-popup btn-popup-2 mt-10">去夺宝</a>
+				</div>
+				<p class="popup-tips">*福袋中的夺宝券如未被领取, 将于48小时内退还至您的账户</p>
+			</div>
+			<a href="javascript:;" class="btn-popup-close" id="btnPopupClose">关闭</a>
+		</div>
+		<!-- 夺宝券退回弹出框 end -->
+		<!-- 未发送的福袋弹出框 start -->
+		<div class="popup pop-bag-unsent">
+			<div class="popup-tit">您有未发送的福袋<br>要继续发送吗？</div>
+			<div class="popup-con">
+				<div class="popup-desc">此福袋中有：28张夺宝券</div>
+				<div class="popup-btns">
+					<a href="#" class="btn-popup btn-popup-1">去发此福袋</a>
+					<a href="#" class="btn-popup btn-popup-2 mt-10">发新福袋</a>
+				</div>
+				<p class="popup-tips">*福袋中的夺宝券如未被领取, 将于48小时内退还至您的账户</p>
+			</div>
+			<a href="javascript:;" class="btn-popup-close" id="btnPopupClose1">关闭</a>
+		</div>
+		<!-- 未发送的福袋弹出框 end -->
+
+		<!-- jquery lib script -->
+		<script src="js/jquery-2.1.4.min.js" type="text/javascript"></script>
+		<!-- common script -->
+		<script src="js/lib.js" type="text/javascript"></script>
+		<!-- count down script -->
+		<!-- <script src="js/fnCountDown.js" type="text/javascript"></script> -->
+		<script>
+			$(function(){	
+				// tab
+				fnTab('.tab-tit a', '.tab-con > div');
+				
+				// 滚动监听
+				fnScrollListen();
+				
+				// 倒计时
+				// $('#fnTimeCountDown').fnTimeCountDown('2018/07/08 18:45:13');
+				
+				// 进度条
+				$('.progress-bar').each(function(){
+					var _percent = $(this).parent().find('.lottery-schedule').text();
+					_percent =  _percent.substring(0, _percent.length - 1);
+					$(this).find('span.progress-on').animate({'width': _percent +'%'}, 600);
+				});
+				/*var percent = $('.lottery-schedule').text();
+				percent = percent.substring(0, percent.length - 1);
+				fnProgressBar(percent);	*/
+				
+				// 夺宝券退回弹出框
+				/*$('.mask, .pop-stamps-return').show();
+				$('#btnPopupClose').on('click', function(){
+					$('.mask, .pop-stamps-return').hide();
+				});*/
+			})
+		</script>
+	</body>
+</html>

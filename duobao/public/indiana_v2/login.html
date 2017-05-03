@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>登录首页——夺宝奇兵</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="author" content="">
+	<meta name="Copyright" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<!-- style base -->
+	<link rel="stylesheet" href="css/base.css">
+	<!-- style common -->
+	<link rel="stylesheet" href="css/common.css">
+	<!-- style layout account set -->
+	<link rel="stylesheet" href="css/layout_account_set.css">
+</head>
+<body>
+	<div class="viewport">
+		<!-- login start -->
+		<div class="login">
+			<div class="set-title set-title-1">
+				<h3>登录百分好礼</h3>
+				<a href="#" class="btn-top-back">返回</a>
+			</div>
+			<div class="set-content">
+				<div class="tips-set" id="tipsSet"></div>
+				<!-- <div class="tips-set tips-error"><i class="icon-set-info"></i>手机号码格式不正确，请核对后重新输入</div> -->
+				<form action="" class="form-login mt-15" id="formLogin">
+					<div class="form-box">
+						<p class="form-item-col2">
+							<label for="phoneNum">手机号</label>
+							<input type="number" name="phoneNum" id="phoneNum" placeholder="请填写您的手机号码">
+							<a href="javascript:;" class="btn-field-clear" id="clear">清除文本域</a>
+							<i class="icon-ok"></i>
+						</p>
+						<p class="form-item-col2">
+							<label for="pwd">密码</label>
+							<input type="password" name="pwd" id="pwd" placeholder="请填写登录密码">
+						</p>					
+					</div>
+					<div class="other-opera mt-10 clearfix">
+						<a href="#" class="fl">使用手机验证码登录</a>
+						<a href="register.html" class="fr">免费注册&gt;</a>
+					</div>
+					<input type="submit" class="btn-form-action btn-form-login btn-form-login-disabled" id="btnLogin" value="">
+					<div class="login-auto mt-10">
+						<input type="checkbox" id="loginAuto" checked><label for="loginAuto">下次自动登录</label>
+					</div>
+				</form>
+			</div>
+		</div>
+		<!-- login end -->
+
+		<!-- login others start -->
+		<div class="login-others">
+			<div class="login-others-hd">
+				<h3>用其他账号登录</h3>
+			</div>
+			<div class="login-others-con clearfix mt-15">
+				<a href="#">
+					<i class="icon-weixin"></i>
+					<h3>微信登录</h3>
+				</a>
+				<a href="#">
+					<i class="icon-qq"></i>
+					<h3>QQ登录</h3>
+				</a>
+			</div>
+		</div>
+		<!-- login others end -->
+
+		<!-- ad start -->
+		<div class="ad">
+			<ul>
+				<li><img src="images/v2/info/banner.jpg" width="100%" height="auto" alt=""></li>
+			</ul>
+		</div>
+		<!-- ad end -->
+	</div>
+
+	<!-- 密码错误提示框 start -->
+	<div class="pop-mask-pwd"></div>
+	<div class="pop-pwd">
+		<div class="pop-pwd-con">
+			<p>密码错误，请重新输入</p>
+			<div class="pop-pwd-tips">温馨提示：忘记密码可使用手机验证码登录</div>
+		</div>
+		<div class="pop-pwd-bott">
+			<a href="javascript:;" class="btn-cancel" id="btnCancel">取消</a>
+			<a href="javascript:;" class="btn-confirm" id="btnConfirm">确定</a>			
+		</div>
+		<a href="javascript:;" class="btn-pop-set-close" id="btnPopClose">关闭</a>		
+	</div>
+	<!-- 密码错误提示框 end -->
+
+	<!-- jquery lib script -->
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+	<!-- common script -->
+	<script type="text/javascript" src="js/lib.js"></script>
+	<!-- register script -->
+	<script type="text/javascript" src="js/login.js"></script>
+</body>
+</html>

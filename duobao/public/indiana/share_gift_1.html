@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>分享有礼——夺宝奇兵</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="author" content="">
+	<meta name="Copyright" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<!-- style base -->
+	<link rel="stylesheet" href="css/base.css">
+	<!-- style common -->
+	<link rel="stylesheet" href="css/common.css">
+	<!-- style rules -->
+	<link rel="stylesheet" href="css/layout_share_gift.css">
+</head>
+<body>
+	<div class="viewport v-share">
+		<!-- share start -->
+		<div class="share">
+			<div class="share-bg">
+				<img src="images/share/bg_share.jpg" width="100%" alt="">
+			</div>
+
+			<div class="coupon-receive">
+				<div class="coupon">
+					<img src="images/share/ticket.png" width="100%" alt="">
+					<div class="txt-1">
+						<img src="images/share/txt_2.png" width="100%" alt="">
+					</div>
+					<a href="javascript:;" class="btn-coupon" id="btnCoupon">免费领券</a>
+				</div>
+				<img src="images/share/hands.png" class="hands" width="100%" alt="">
+				<div class="screen" id="dShow">					
+					<div>小明要求小芳两人各得一张夺宝券</div>
+					<div>小明要求小芳两人各得一张夺宝券</div>
+					<div>小明要求小芳两人各得一张夺宝券</div>
+					<div>小明要求小芳两人各得一张夺宝券</div>					
+					<div>小明要求小芳两人各得一张夺宝券</div>
+					<div>小明要求小芳两人各得一张夺宝券</div>
+					<div>小明要求小芳两人各得一张夺宝券</div>
+					<div>小明要求小芳两人各得一张夺宝券</div>
+					<div>小明要求小芳两人各得一张夺宝券</div>
+					<div>小明要求小芳两人各得一张夺宝券</div>
+				</div>
+			</div>
+
+			<div class="intro">
+				<img src="images/share/bg_intro.png" width="96%" alt="">
+				<ul>
+					<li class="track"></li>
+					<li class="intro-item">
+						<em>1</em>
+						<span>
+							<p><strong>活动时间：2016.5.26-2016.6.1</strong></p>
+						</span>
+					</li>
+					<li class="intro-item">
+						<em>2</em>
+						<span>
+							<p><strong>怎么获得券？</strong></p>
+							<p>您分享当前活动页面 ，邀请新用户首次进入“百分好礼”后，两人均可获得一张券。</p>
+						</span>
+					</li>
+					<li class="intro-item">
+						<em>3</em>
+						<span>
+							<p>本活动只对分享新用户有效，同一微信号视为同一个用户；</p>
+						</span>
+					</li>
+					<li class="intro-item">
+						<em>4</em>
+						<span>
+							<p>用户所获券可在个人中心"可用券"进行查看；仅用于参加百分好礼</p>
+						</span>
+					</li>
+				</ul>
+				<p class="intro-other">在法律允许的范围内，微团购保留最终解释权</p>
+			</div>
+		</div>
+		<!-- share end -->
+	</div>
+	<!-- popup start -->
+	<div class="mask"></div>
+	<div class="popup popup-coupon">
+		<div class="popup-content">
+			<img src="images/share/txt_3.png" class="popup-txt" width="202" height="33" alt="">
+			<a href="#" class="btn-use">马上使用</a>
+			<a href="#" class="btn-view-rules">查看"葵花宝典"&gt;&gt;</a>
+		</div>
+		<a href="javascript:;" class="btn-close" id="btnPopClose">关闭</a>
+	</div>
+	<div class="popup popup-coupon">
+		<div class="popup-content">
+			<img src="images/share/txt_4.png" class="popup-txt" width="244" height="50" alt="">
+			<div class="pop-btns">
+				<a href="#" class="btn-share-immedia">立即分享</a>
+				<a href="#" class="btn-go">去百分好礼</a>				
+			</div>
+		</div>
+		<a href="javascript:;" class="btn-close" id="btnPopClose">关闭</a>
+	</div>
+	<!-- popup end -->
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+	<script>
+		$(function(){
+			// popup
+			$('#btnCoupon').on('click', function(){
+
+			});
+
+			// 弹幕
+			initScreen();
+			setTimeout(function(){
+				initScreen();
+			}, 70000);
+		})
+
+
+
+
+		function initScreen(){
+			for (var i=0,len=$('#dShow').find('div').length; i<len; i++) {
+				
+			}
+			var _top = 0;
+			$('#dShow').find('div').show().each(function(i){
+				var _left = $(window).width() - $(this).width() + 210;
+				var _height = $(window).height() + 100;
+				
+				_top = _top + 16;
+				if (_top >= _height - 100) {
+					_top = 0;
+				}
+				if ($(this).index() % 4 == 0) {
+					_top = 16;
+				}
+				$(this).css({left: _left, top: _top, color: getRandomColor()});
+				var time = 10000;
+				if ($(this).index() % 1 == 0) {
+					time = 15000;
+				}
+				if ($(this).index() % 2 == 0) {
+					time = 20000;
+				}
+				if ($(this).index() % 3 == 0) {
+					time = 25000;
+				}
+				if ($(this).index() % 4 == 0) {
+					time = 30000;
+				}
+				if ($(this).index() % 5 == 0) {
+					time = 55000;
+				}
+				if ($(this).index() % 6 == 0) {
+					time = 60000;
+				}
+				if ($(this).index() % 7 == 0) {
+					time = 65000;
+				}
+				if ($(this).index() % 8 == 0) {
+					time = 70000;
+				}
+				$(this).animate({left: '-' + _left + 'px'}, time, function(){});
+			});
+		}
+		function getRandomColor(){
+			return '#' + (function(h){
+				return new Array(7 - h.length).join("0") + h
+			})((Math.random() * 0x1000000 << 0).toString(16));
+		}
+	</script>
+</body>
+</html>

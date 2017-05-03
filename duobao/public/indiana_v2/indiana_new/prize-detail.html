@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>百分好礼</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="format-detection" content="telephone=no,email=no">
+		<link rel="stylesheet" type="text/css" href="css/base.css" />
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<link rel="stylesheet" type="text/css" href="css/prize-detail.css" />
+		<script src="js/jquery-2.1.4.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/ellipsis.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div class="content-box">
+			<img src="img/detail/title-img.png" alt="" />
+			<div class="box-wrap">
+				<div class="box-wrap-bg">
+					<div class="box-title">
+						奖品状态
+					</div>
+					<div class="box-1 box">
+						<ul class="prize-status">
+							<li>
+								<span class="circle"></span>
+								<div class="status-text"><span>获得奖品</span><span>2016-1-19 14:00:38</span></div>
+							</li>
+							<li class="active clearfix">
+								<span class="circle"></span>
+								<div class="status-text"><span>填写收货信息</span></div>
+								<div class="status-addr">广东省深圳市南山区高新科技园科研路9号比克科技大厦 13楼1301-A
+								</div>
+								<img src="img/prize-detail/take-over-btn.png" class="take-over" />
+							</li>
+							<li>
+								<span class="circle"></span>
+								<div class="status-text"><span>奖品待发货</span><span>2016-1-19 14:00:38</span></div>
+							</li>
+							<li>
+								<span class="circle"></span>
+								<div class="status-text"><span>奖品已发货</span><span>2016-1-19 14:00:38</span></div>
+							</li>
+							<li>
+								<span class="circle"></span>
+								<div class="status-text"><span>确认收货</span><span>2016-1-19 14:00:38</span></div>
+							</li>
+							<li>
+								<span class="circle"></span>
+								<div class="status-text clearfix"><span>奖品已签收</span><span><img src="img/prize-detail/share-deal.png" alt="" /></span></div>
+							</li>
+						</ul>
+					</div>
+					<div class="box-title">
+						奖品信息
+					</div>
+					<div class="box-2 box">
+						<div class="list-img">
+							<div class="product-wrap">
+								<img src="img/formerrank/product-img.png" alt="" />
+							</div>
+						</div>
+						<div class="list-info">
+							<div class="info-wrap">
+								<p>苹果专区 iPad pro small 颜色随机</p>
+								<p>期号:<span>1026665034</span></p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<img src="img/detail/footer-img.png" />
+		</div>
+		<!--确认成功弹窗-->
+		<div class="layout-box"></div>
+		<div class="confirme-wrap popup-box">
+			<div class="close-btn"></div>
+			<div class="confirme">确认成功</div>
+		</div>
+		<!--底部tabbar-->
+		<div class="fixed-nav clearfix">
+			<a href="home.html"><i class="icon-nav icon-home"></i>首页</a>
+			<a href="share.html"><i class="icon-nav icon-camera"></i>晒单</a>
+			<a href="#"><i class="icon-nav icon-acti"></i>活动</a>
+			<a href="cart.html"><i class="icon-nav icon-cart"></i>清单</a>
+			<a href="personal_center.html"><i class="icon-nav icon-avatar"></i>个人中心</a>
+		</div>
+		<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+	<script type="text/javascript">
+		$(".take-over").click(function() {
+			$(".layout-box").show();
+			$(".confirme-wrap").show();
+			bodyHidden();
+		})
+		$(".close-btn").click(function() {
+			$(".layout-box").hide();
+			$(".confirme-wrap").hide();
+			 bodyAuto();
+		})
+
+
+	</script>
+
+</html>

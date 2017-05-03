@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>发夺宝福袋</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="">
+    <meta name="Copyright" content="">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <!-- style base -->
+    <link rel="stylesheet" href="css/base.css">
+    <!-- style common -->
+    <link rel="stylesheet" href="css/common.css">
+    <!-- layer skin extend style -->
+    <link rel="stylesheet" href="css/layer_skin_extend.css">
+    <!-- style layout -->
+    <link rel="stylesheet" href="css/layout.css">
+</head>
+
+<body>
+    <div class="viewport v-send-bag">
+        <!-- send lucky bag start -->
+        <div class="send-bag">
+            <div class="send-bag-hd">
+                <h3 class="tit-bag">送夺宝福袋</h3>
+            </div>
+            <div class="send-bag-con">
+                <form action="" method="" class="form f-send-bag" id="f-send-bag">
+                    <div class="f-item">
+                        <label for="number">发放人数</label>
+                        <input type="text" name="number" id="number" placeholder="点击输入个数" />
+                        <s class="f-unit">人</s>
+                    </div>
+                    <div class="f-item f-item-ordinary-number" style="display: none;">
+                        <label for="numberOrdinary">发放人数</label>
+                        <input type="text" name="numberOrdinary" id="numberOrdinary" placeholder="点击输入个数" />
+                        <s class="f-unit">人</s>
+                    </div>
+                    <div class="f-item f-item-fight-luck mt-15">
+                        <label for="vouchersSum">夺宝券总数</label>
+                        <input type="text" name="vouchersSum" id="vouchersSum" placeholder="点击输入张数" />
+                        <s class="f-unit">张</s>
+                    </div>
+                    <div class="f-item f-item-ordinary mt-15" style="display: none;">
+                        <label for="vouchersEach">每人夺宝券张数</label>
+                        <input type="text" name="vouchersEach" id="vouchersEach" placeholder="点击输入张数" />
+                        <s class="f-unit">张</s>
+                    </div>
+                    <div class="tab tab-send-bag mt-15">
+                        <div class="tab-tit">
+                            <a href="javascript:;" class="tit-fight-luck active">拼手气</a>
+                            <a href="javascript:;" class="tit-ordinary">普通</a>
+                        </div>
+                        <div class="tab-con mt-15">
+                            <!-- 拼手气 -->
+                            <div class="wishes wishes-fight-luck" style="display: block;">
+                                <textarea name="wishesFightLuck" placeholder="送你一份千元豪礼！"></textarea>
+                                <!-- <p class="pay-tips" id="payTips">使用夺宝券<em id="voucherNum">8</em>张，还需支付￥<span id="payAmount">20</span></p> -->
+                            </div>
+                            <!-- 普通 -->
+                            <div class="wishes wishes-ordinary">
+                                <textarea name="wishesFightLuck" placeholder="送你一份千元豪礼！"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="need-pay" id="needPay">￥0</div>
+                    <input type="submit" class="btn btn-block btn-red" value="朕确认了" id="btnConfirm" />
+                </form>
+            </div>
+        </div>
+        <!-- instructions -->
+        <div class="instructions">
+            <p><strong>*</strong>1张夺宝券可以兑换1个1元夺宝码<a href="javascript:;" class="learn-more">了解更多&gt;</a></p>
+            <p><strong>*</strong>福袋有效期48小时，夺宝券如未被领取将退还至您的账户，您可以继续用其参与夺宝或发福袋</p>
+        </div>
+        <!-- send lucky bag end -->
+		<div class="fixed-nav">
+			<a href="home.html"><i class="icon-nav icon-home"></i>首页</a>
+			<a href="share.html" class="active"><i class="icon-nav icon-camera"></i>晒单</a>
+			<a href="#"><i class="icon-nav icon-gift"></i>活动</a>
+			<a href="cart.html"><i class="icon-nav icon-cart"></i>夺宝车</a>
+			<a href="personal_center.html"><i class="icon-nav icon-avatar"></i>个人中心</a>
+		</div>
+    </div>
+    <!-- 发福袋提示层 start -->
+    <div class="mask"></div>
+    <div class="popup popup-send-bag popup-to-center" id="popupToCenter">
+        <div class="popup-tit">禀大王，可前往夺宝
+            <br>个人中心找到福袋</div>
+        <div class="popup-con">
+            <div class="popup-btns">
+                <a href="personal_center.html" class="btn-popup btn-popup-1">朕知道了</a>
+                <a href="javascript:;" class="btn-popup btn-popup-2 mt-10" id="sendContinue">继续发此福袋</a>
+            </div>
+            <p class="popup-tips">*福袋中的夺宝券如未被领取, 将于48小时内退还至您的账户</p>
+        </div>
+        <a href="javascript:;" class="btn-popup-close" id="btnPopupClose">关闭</a>
+    </div>
+    <div class="popup popup-send-bag" id="popupInstalled">
+        <div class="popup-tit">回大王
+            <br>福袋已转好</div>
+        <div class="popup-con">
+            <div class="popup-btns">
+                <a href="javascript:;" class="btn-popup btn-popup-1" id="btnPopSend">朕要去发福袋</a>
+            </div>
+            <p class="popup-tips">*福袋中的夺宝券如未被领取, 将于48小时内退还至您的账户</p>
+        </div>
+        <a href="javascript:;" class="btn-popup-close" id="btnPopupClose1">关闭</a>
+    </div>
+    <!-- 发福袋提示层 end -->
+    <!-- 活动规则弹出层 start -->
+    <div class="pop-rules" id="popRules">
+        <div class="pop-rules-hd">
+            <h3>活动规则</h3>
+        </div>
+        <div class="pop-rules-con">
+            <p><i>1.</i>活动时间：2016年2月7日~2月29日；</p>
+            <p><i>2.</i>每个用户可购买1元夺宝券作为新年礼物赠予好友，用户在赠送好友夺宝券时可个性化选择普通福袋和拼手气福袋（操作类似于微信红包），自主编辑赠予的人数、夺宝券张数，并填写祝福语；</p>
+            <p><i>3.</i>获得夺宝券的用户可在夺宝奇兵活动中购买时抵扣现金，例如： 1元夺宝券可抵扣1元。也可用现有的夺宝券直接兑换奖品；</p>
+            <p><i>4.</i>48小时之内，已发送出去的福袋中如有夺宝券未被及时领取，可在【个人中心】中找到【可发放福袋】入口，选择继续发放；48小时之后，已发送出去的福袋中如有夺宝券未被及时领取，则系统将会把未被领取的夺宝券退回至您的账户中 ；</p>
+            <p><i>5.</i>夺宝券从购买到账之日起永久有效；</p>
+            <p><i>6.</i>1张夺宝券可兑换一个夺宝码， 更多夺宝及相关计算规则请详见夺宝奇兵活动页面；</p>
+            <p><i>7.</i>本活动最终解释权归微团购所有。</p>
+        </div>
+        <a href="javascript:;" class="btn-popup-close" id="btnPopupCloseRules">关闭</a>
+    </div>
+    <!-- 活动规则弹出层 end -->
+    <!-- 分享 start -->
+    <div class="popup popup-share"></div>
+    <!-- 分享 end -->
+    <!-- jquery lib script -->
+    <script src="js/jquery-2.1.4.min.js" type="text/javascript"></script>
+    <!-- common script -->
+    <script src="js/lib.js" type="text/javascript"></script>
+    <!-- jquery layer script -->
+    <script src="js/layer/layer.js" type="text/javascript"></script>
+    <!-- jquery layer mobile script -->
+    <!-- <script src="js/layer/mobile/layer.js" type="text/javascript"></script> -->
+    <!-- send bag script -->
+    <script src="js/send_bag.js" type="text/javascript"></script>
+    <script>
+    var luckyBag = luckyBag || {};
+    luckyBag.remainVoucherNum = 8; // 剩余券张数
+    /*luckyBag.url = {
+    	fight_lucky: '111.html',
+    	ordinary: '222.html'
+    };
+    luckyBag.data = {
+    	fight_lucky: {num: $('#number').val(), vouchersSum: $('#vouchersSum').val()}
+    }*/
+    $(function() {
+
+        // 活动规则
+        $('.learn-more').on('click', function() {
+            $('.mask, #popRules').show();
+        });
+        $('#btnPopupCloseRules').on('click', function() {
+            $('.mask, #popRules').hide();
+        });
+
+        // 发福袋底部提示信息
+        /*var aInputText = $('#f-send-bag input[type="text"]');
+        var aTextarea = $('#f-send-bag textarea');
+
+        aInputText.on({
+            focus: function() {
+                $('.instructions').hide();
+            },
+            blur: function() {
+                $('.instructions').show();
+            }
+        });
+
+        aTextarea.on({
+            focus: function() {
+                $('.instructions').hide();
+            },
+            blur: function() {
+                $('.instructions').show();
+            }
+        });*/
+    })
+    </script>
+</body>
+
+</html>

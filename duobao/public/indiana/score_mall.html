@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>积分商城——夺宝奇兵</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="author" content="">
+	<meta name="Copyright" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<!-- style base -->
+	<link rel="stylesheet" href="css/base.css">
+	<!-- style common -->
+	<link rel="stylesheet" href="css/common.css">
+	<!-- layer skin extend style -->
+	<link rel="stylesheet" href="css/layer_skin_extend.css">
+	<!-- style swiper -->
+	<link rel="stylesheet" href="js/swiper/swiper.min.css">
+	<!-- style layout -->
+	<link rel="stylesheet" href="css/layout.css">
+</head>
+<body>
+	<div class="viewport v-score-mall">
+		<div class="score-balance">
+			您的积分余额：23500
+		</div>
+
+		<div class="grid-1 mall-list">
+			<ul class="clearfix">
+				<li class="mall-list-item">
+					<div class="goods-pic">
+						<img src="images/mall_1.jpg" width="100%" alt="">
+					</div>
+					<div class="goods-name">美的 4升智能柴火饭电饭锅</div>
+					<div class="need-score">总需积分<strong>1000</strong></div>
+					<a href="#" class="btn btn-mall-exchange">立即兑换</a>
+				</li>
+				<li class="mall-list-item">
+					<div class="goods-pic">
+						<img src="images/mall_2.jpg" width="100%" alt="">
+						<em class="tag tag-discount">优惠</em>
+					</div>
+					<div class="goods-name">美的 4升智能柴火饭电饭锅</div>
+					<div class="need-score">总需积分<s>1000</s><strong>800</strong></div>
+					<a href="#" class="btn btn-mall-exchange">立即兑换</a>
+				</li>
+				<li class="mall-list-item">
+					<div class="goods-pic">
+						<img src="images/mall_3.jpg" width="100%" alt="">
+					</div>
+					<div class="goods-name">美的 4升智能柴火饭电饭锅</div>
+					<div class="need-score">总需积分<strong>1000</strong></div>
+					<a href="#" class="btn btn-mall-exchange">立即兑换</a>
+				</li>
+				<li class="mall-list-item">
+					<div class="goods-pic">
+						<img src="images/mall_4.jpg" width="100%" alt="">
+					</div>
+					<div class="goods-name">美的 4升智能柴火饭电饭锅</div>
+					<div class="need-score">总需积分<strong>800</strong></div>
+					<a href="#" class="btn btn-mall-exchange">立即兑换</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="fixed-nav">
+		<a href="home.html"><i class="icon-nav icon-home"></i>首页</a>
+		<a href="share.html"><i class="icon-nav icon-camera"></i>晒单</a>
+		<a href="#"><i class="icon-nav icon-gift"></i>活动</a>
+		<a href="cart.html"><i class="icon-nav icon-cart"></i>夺宝车</a>
+		<a href="personal_center.html" class="active"><i class="icon-nav icon-avatar"></i>个人中心</a>
+	</div>
+	<!-- jquery lib script -->
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+	<!-- common script -->
+	<script type="text/javascript" src="js/lib.js"></script>
+	<!-- jquery layer script -->
+	<script type="text/javascript" src="js/layer/layer.js"></script>
+	<script>
+	$(function(){
+		var aBtnExchange = $('.btn-mall-exchange');
+		aBtnExchange.each(function(){
+			var _this = $(this);
+			_this.on('click', function(){
+				var needScore = $(this).prev().find('strong').text();
+				layer.confirm('确认使用'+ needScore +'积分兑换吗?', {
+					title: false,
+					closeBtn: false,
+					btn: ['确认兑换', '&nbsp;&nbsp;&nbsp;取消&nbsp;&nbsp;&nbsp;']
+				}, function(){ // 确认回调
+					layer.closeAll();
+					layer.msg('兑换成功', {icon: 1}); // 兑换成功
+				}, function(){ // 取消回调
+					layer.msg('积分不足', {icon: 2}); // 积分不足
+				});
+			})
+		});
+	})
+	</script>
+</body>
+</html>

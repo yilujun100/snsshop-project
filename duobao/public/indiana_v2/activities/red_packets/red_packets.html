@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>红包活动</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="author" content="">
+	<meta name="Copyright" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<!-- style base -->
+	<link rel="stylesheet" href="../../css/base.css">
+	<!-- style common -->
+	<link rel="stylesheet" href="../../css/common.css">
+	<!-- style layout -->
+	<link rel="stylesheet" href="../../css/layout_red_packets.css">
+</head>
+<body>
+	<div class="viewport">
+		<div class="red-packets">
+			<!-- screen -->
+			<div class="screen">
+				<div class="w-marquee">					
+		            <p><strong>XXX</strong>领取到<strong>XX元</strong>红包</p>
+		            <p><strong>XXX</strong>领取到<strong>XX元</strong>红包</p>
+		            <p><strong>XXX</strong>领取到<strong>XX元</strong>红包</p>
+		            <p><strong>XXX</strong>领取到<strong>XX元</strong>红包</p>
+		            <p><strong>XXX</strong>领取到<strong>XX元</strong>红包</p>
+		            <p><strong>XXX</strong>领取到<strong>XX元</strong>红包</p>
+				</div>
+				<div class="w-marquee">					
+		            <p><strong>XXX</strong>领取到<strong>XX元</strong>红包</p>
+		            <p><strong>XXX</strong>领取到<strong>XX元</strong>红包</p>
+		            <p><strong>XXX</strong>领取到<strong>XX元</strong>红包</p>
+		            <p><strong>XXX</strong>领取到<strong>XX元</strong>红包</p>
+		            <p><strong>XXX</strong>领取到<strong>XX元</strong>红包</p>
+		            <p><strong>XXX</strong>领取到<strong>XX元</strong>红包</p>
+				</div>
+			</div>
+
+			<!-- grab red packets -->
+			<div class="grab-red-packets">
+				<!-- @后台: 这里红包有三种状态 红包(可抢) && 红包(拆开) && 红包(不可抢) -->
+				<div class="status-grab" id="status1">
+					<a href="#" class="btn-grab" id="btnGrap">
+						<img src="../../images/red_packets/red_packet.png" width="284" height="184" alt="">
+					</a>
+					<a href="#" class="btn-opera btn-go-card-pkg">去我的卡包</a>					
+				</div>
+				<div class="status-disabled hide" id="status2">
+					<a href="#" class="btn-grab-diaabled">
+						<img src="../../images/red_packets/red_packet_disabled.png" width="284" height="184" alt="">
+					</a>	
+					<a href="#" class="btn-opera btn-go-card-pkg">去我的卡包</a>					
+				</div>
+				<div class="status-open hide" id="status3">
+					<img src="../../images/red_packets/red_packet_open.png" width="284" height="237" alt="">
+					<span class="amount-money">98</span>
+					<a href="#" class="btn-opera btn-use-ticket">如何使用卡券</a>	
+				</div>
+
+			</div>
+			<div class="use-ticket"><i class="icon-info"></i>如何使用卡券</div>
+			
+			<!-- rules -->
+			<div class="rules">
+				<p>1.活动时间8月10日10：00-22：00</p>
+				<p>2.每个账号限领一次</p>
+				<p>3.领取到的红包可在“我的卡包”中查看</p>
+				<p>4.特别申明：若发现用户在活动过程中使用不正当手段参与，活动主办方有权取消其参与活动资格与商品，主办方在法律允许范围内保留对本次活动的最终解释权</p>
+			</div>
+		</div>
+	</div>
+
+	<!-- pop start -->
+	<div class="pop-mask-red-pkts"></div>
+	<div class="pop-red-pkts">
+		<div class="pop-red-pkts-con">
+			<img src="../../images/red_packets/pop_red_packet.png" width="284" height="auto" alt="">
+			<span class="pop-amount-money">98</span>
+		</div>
+		<a href="#" class="btn-pop-pkts">查看我的卡包</a>
+		<a href="javascript:;" class="btn-pop-close">关闭</a>
+	</div>
+	<!-- pop end -->
+
+	<!-- jquery lib script -->
+	<script type="text/javascript" src="../../js/jquery-2.1.4.min.js"></script>
+	<!-- jquery marquee script -->
+	<script type="text/javascript" src="../../js/jquery.marquee.js"></script>
+	<script>
+		$(function(){
+			$('#btnGrap').on('click', function(){
+				$('#status1').addClass('hide').siblings('#status3').removeClass('hide');
+				$('.pop-mask-red-pkts, .pop-red-pkts').show();
+			});
+			$('.btn-pop-close').on('click', function(){
+				$('.pop-mask-red-pkts, .pop-red-pkts').hide();
+			});
+
+			
+ 			// barrage 			
+			var aMarquee = $('.w-marquee');
+			var aMarP = $('.w-marquee p');
+			aMarP.each(function(){
+				var randomNum = parseInt(Math.random()*(100-20+1) + 20);
+				$(this).css('margin-right', randomNum);
+			});
+			aMarquee.each(function(){
+				var _this = $(this);
+				if (_this.index() % 2 == 0) {
+					_this.marquee({
+						duration: 15000,
+						duplicated: true,
+						delayBeforeStart: 2000
+					});
+				} else {
+					_this.marquee({
+						duration: 15000,
+						duplicated: true
+					});					
+				}
+			}) 
+
+		})
+	</script>
+</body>
+</html>

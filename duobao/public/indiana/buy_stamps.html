@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>购买夺宝券——夺宝奇兵</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="author" content="">
+	<meta name="Copyright" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<!-- style base -->
+	<link rel="stylesheet" href="css/base.css">
+	<!-- style common -->
+	<link rel="stylesheet" href="css/common.css">
+	<!-- layer skin extend style -->
+	<link rel="stylesheet" href="css/layer_skin_extend.css">
+	<!-- style layout -->
+	<link rel="stylesheet" href="css/layout.css">
+</head>
+<body>
+	<div class="viewport v-buy-stamps">
+		<!-- buy stamps start -->
+		<div class="grid column buy-stamps">
+			<div class="column-hd buy-stamps-hd">
+				<h3>请选择购买夺宝券数量</h3>
+			</div>
+			<div class="buy-stamps-con clearfix">
+				<p><input type="radio" name="stampsNumber" checked id="number20"><label for="number20">20张</label></p>
+				<p><input type="radio" name="stampsNumber" id="number50"><label for="number50">50张</label></p>
+				<p><input type="radio" name="stampsNumber" id="number100"><label for="number100">100张<strong>（赠2张）</strong></label></p>
+				<p><input type="radio" name="stampsNumber" id="number200"><label for="number200">200张<strong>（赠5张）</strong></label></p>
+				<p><input type="radio" name="stampsNumber" id="number350"><label for="number350">350张<strong>（赠10张）</strong></label></p>
+				<p><input type="radio" name="stampsNumber" id="number500"><label for="number500">500张<strong>（赠15张）</strong></label></p>
+				<p><input type="radio" name="stampsNumber" id="number1000"><label for="number1000">1000张<strong>（赠30张）</strong></label></p>
+				<p><input type="text" id="numberOther" placeholder="其他数量"></p>
+			</div>
+		</div>
+
+		<!-- pay type -->
+		<div class="grid column pay-type mt-10">
+			<div class="column-hd pay-type-hd">
+				<h3>支付方式</h3>
+			</div>
+			<div class="pay-type-con">
+				<div class="pay-type-item">
+					<input type="radio" name="payType" id="payWenxin" checked>
+					<label for="payWenxin">微信支付</label>
+				</div>
+				<div class="pay-type-item">
+					<input type="radio" name="payType" id="payQQ">
+					<label for="payQQ">手Q支付</label>
+				</div>
+			</div>
+		</div>
+
+		<a href="#" class="btn btn-block btn-red" id="order-submit">确认支付</a>
+		<!-- buy stamps end -->
+	</div>
+	
+	<div class="fixed-nav">
+		<a href="home.html" class="active"><i class="icon-nav icon-home"></i>首页</a>
+		<a href="share.html"><i class="icon-nav icon-camera"></i>晒单</a>
+		<a href="#"><i class="icon-nav icon-gift"></i>活动</a>
+		<a href="cart.html"><i class="icon-nav icon-cart"></i>夺宝车</a>
+		<a href="personal_center.html"><i class="icon-nav icon-avatar"></i>个人中心</a>
+	</div>
+	<!-- jquery lib script -->
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+	<!-- jquery layer script -->
+	<script src="js/layer/layer.js" type="text/javascript"></script>
+	<script>
+		$(function(){
+			$('#numberOther').on('focus', function(){
+				$('.buy-stamps-con').find('input[type="radio"]').prop('checked', false);
+			});
+
+			$('#order-submit').on('click', function(){
+				if ($('#numberOther').val() == 1) { // 最低夺宝券购买数量
+					layer.alert('夺宝券购买数量最少2张,请重新输入', {title: false, closeBtn: 0}, function(index){
+						$('#numberOther').focus();
+						layer.close(index);
+					});
+				}
+			})
+		})
+	</script>
+</body>
+</html>

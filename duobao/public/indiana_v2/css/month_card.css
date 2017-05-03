@@ -1,0 +1,128 @@
+img{ max-width: 100%; }
+
+/*上下居中-伪表格*/
+.tabcte{ display:table;}
+.tebcte-son{display:table-cell; vertical-align:middle;}
+/*显示隐藏*/
+.hide{display:none;}
+.show{display:block!important;}
+/*遮罩层*/
+.masked{ display:none; background:rgba(0,0,0,0.8); position:fixed; top:0; right:0; bottom:0;left:0; z-index:990;height: 100%; width:100%;}
+@-webkit-keyframes alertAnimation{  
+	0% {  
+		-webkit-transform: scale(0.5); }  
+	45% {  
+		-webkit-transform: scale(1.25); }  
+	80% {  
+		-webkit-transform: scale(0.95); }  
+	100% {  
+		-webkit-transform: scale(1);  
+	}   
+}
+/*弹窗*/
+    /*tips*/
+.popup-tips {position:fixed; z-index:999; top:20%;border-radius:1rem; width:74%; margin:auto; left:0; right:0;max-width: 640px;-webkit-animation:alertAnimation 0.5s ease-in-out;}
+.popup-tips .pucen{ padding:25px 0 25px; background:#fff; position:relative; border-radius:.5rem; overflow:hidden;}
+.popup-tips .pucen:before{ content: ""; position: absolute;left: 0; top: 0; background: url(../images/bfhl_vip/puico.png) no-repeat; width: 75px; height: 44px; background-size: 100%; }
+.popup-tips .putt{ width:67px; text-align:center; color:#854b13; font-weight:normal; position:relative; left:1.5rem; top:0rem; z-index:9;}
+.popup-tips .close{ position:absolute; right:0; top:0; width:3rem; height:3rem;margin:0 auto 1rem;}
+.popup-tips .tips-t{ text-align:center;}
+.popup-tips .tips-t h3{ font-size: 18px; color: #333; margin-bottom: 20px; }
+.popup-tips .tips-t p{ font-size:12px; color:#000; line-height:15px; width:90%; margin:auto;}
+.popup-tips .tips-q { text-align:center; margin-top:20px;}
+.popup-tips .tips-q a{display: block; width: 120px; height: 33px; line-height: 33px; margin: 0 auto; font-size: 15px; color: #fff; background: #fd5e51; text-align: center; border-radius: 5px; overflow: hidden; margin-top: 10px;}
+.popup-tips .in_close{ width: 30px; height: 30px; position: absolute; right: 10px; top: 10px; display: block; background: url(../images/bfhl_vip/btn_close.png) no-repeat center center; background-size: 25px 25px; text-indent: -999em; }
+
+    /*logn*/
+.popup-tips2 { display: none; position:fixed; z-index:999; top:20%;border-radius:1rem; width:74%; margin:auto; left:0; right:0;max-width: 640px;-webkit-animation:alertAnimation 0.5s ease-in-out;}
+.popup-tips2 .pucen{ padding:25px 0 25px; background:#fff; position:relative; border-radius:.5rem; overflow:hidden;}
+.popup-tips2 .pucen:before{ content: ""; position: absolute;left: 0; top: 0; background: url(../images/bfhl_vip/puico.png) no-repeat; width: 75px; height: 44px; background-size: 100%; }
+.popup-tips2 .putt{ width:67px; text-align:center; color:#854b13; font-weight:normal; position:relative; left:1.5rem; top:0rem; z-index:9;}
+.popup-tips2 .close{ position:absolute; right:0; top:0; width:3rem; height:3rem;margin:0 auto 1rem;}
+.popup-tips2 .tips-t{ text-align:center;}
+.popup-tips2 .tips-t h3{ font-size: 18px; color: #333; margin-bottom: 20px; }
+.popup-tips2 .tips-t p{ font-size:12px; color:#000; line-height:15px; width:90%; margin:auto;}
+.popup-tips2 .tips-q { text-align:center; margin-top:20px;}
+.popup-tips2 .tips-q a{display: block; width: 120px; height: 33px; line-height: 33px; margin: 0 auto; font-size: 15px; color: #fff; background: #fd5e51; text-align: center; border-radius: 5px; overflow: hidden; margin-top: 10px;}
+.popup-tips2 .in_close{ width: 30px; height: 30px; position: absolute; right: 10px; top: 10px; display: block; background: url(../images/bfhl_vip/btn_close.png) no-repeat center center; background-size: 25px 25px; text-indent: -999em; }
+
+/*购买卡片*/
+.screen { height: 52px;  background: #ff5d5f; overflow: hidden; }
+.w-marquee { height: 26px; }
+.w-marquee p{ display:inline-block; margin: 0; margin-right:25px; line-height: 26px; font-size: 12px; color: #fff;}
+.w-marquee strong { color: #fff; }
+.mthc_ps{ position: relative; padding: 15px; background:#fff; }
+.mthc_ps:after{ content: ""; position: absolute; left: 0; right: 0; top: 50%; margin: -6px auto 0; background: url(../images/bfhl_vip/nx.png); background-size: 100% 100%; width: 12px; height: 13px; }
+.mthc_ps span{ float: left; width: 50%; text-align: center; }
+.mthc_ps span img{ width: 104px; height: 104px; }
+/*卡片*/
+.card_box{ padding: 15px 0; }
+.card_box .buy_card{ display: block; width: 120px; height: 33px; line-height: 33px; margin: 0 auto; font-size: 15px; color: #fff; background: #fd5e51; text-align: center; border-radius: 5px; overflow: hidden; margin-top: 10px;}
+.card_msg{ width: 80%; margin: auto; border-radius: 10px; overflow: hidden;}
+.cardbox_top{ height: 83px; position: relative; text-indent: -999999px;}
+.cardbox_botm { padding: 8px;  text-align: center; background: #fff;}
+.cardbox_botm span{ display: block; width: 80%; margin: auto; color: #fff; border-radius: 20px; height: 20px; line-height: 20px; font-size: 12px; }
+.cardbox_botm p{ font-size: 12px; line-height: 20px; margin: 0; }
+/*钻石*/
+.diamond_card { background: #e3e0d9; }
+.diamond_card .cardbox_top{ background: url(../images/bfhl_vip/diamond.png) #6a5d59 no-repeat 23px center; background-size: 150px 39.5px; }
+.diamond_card .cardbox_top:before{ content: ""; position: absolute; top: 5px; right: 5px; background: url(../images/bfhl_vip/tag1.png) no-repeat; width: 38px; height: 38px; background-size: 100%;  }
+.diamond_card .cardbox_botm span{ background: #6a5d59; }
+.diamond_card .cardbox_botm p{color: #6a5d59; }
+/*白金*/
+.white_card { background: #f2e8ff; }
+.white_card .cardbox_top{ background: url(../images/bfhl_vip/white.png) #cdcdcd no-repeat 31px center; background-size: 126px 41.5px; }
+.white_card .cardbox_top:before{ content: ""; position: absolute; top: 5px; right: 5px; background: url(../images/bfhl_vip/tag2.png) no-repeat; width: 38px; height: 38px; background-size: 100%;  }
+.white_card .cardbox_botm span{ background: #cdcdcd; }
+.white_card .cardbox_botm p{color: #cdcdcd; }
+/*黄金*/
+.gold_card { background: #fff1dc; }
+.gold_card .cardbox_top{ background: url(../images/bfhl_vip/gold.png) #c08a2a no-repeat 27px center; background-size: 126.5px 39.5px; }
+.gold_card .cardbox_top:before{ content: ""; position: absolute; top: 5px; right: 5px; background: url(../images/bfhl_vip/tag3.png) no-repeat; width: 38px; height: 38px; background-size: 100%;  }
+.gold_card .cardbox_botm span{ background: #c08a2a; }
+.gold_card .cardbox_botm p{color: #c08a2a; }
+/*白银*/
+.silver_card { background: #f6fff2; }
+.silver_card .cardbox_top{ background: url(../images/bfhl_vip/silver.png) #c0dbe2 no-repeat 33px center; background-size: 128px 46px; }
+.silver_card .cardbox_top:before{ content: ""; position: absolute; top: 5px; right: 5px; background: url(../images/bfhl_vip/tag4.png) no-repeat; width: 38px; height: 38px; background-size: 100%;  }
+.silver_card .cardbox_botm span{ background: #c0dbe2; }
+.silver_card .cardbox_botm p{color: #c0dbe2;}
+/*规则*/
+.rules-con { padding: 20px 3%; background: #fefae0; }
+.rules-con .rule_tt{position: relative; text-align: center;}
+.rules-con .rule_tt strong{ display: block; font-size: 15px; color: #554540; width: 3em; margin: auto;background: #fefae0; position: relative;z-index: 2 }
+.rules-con .rule_tt:after{ content: ""; position: absolute; left: 0; width: 100%; height: 1px; top: 50%; background: #6e6e6e; z-index: 1}
+.rules-con p { position: relative; margin: 6px 0; padding-left: 24px; font-size: 12px; color: #554540; }
+.rules-con p i { position: absolute; top: -2px; left: 0; display: block; width: 18px; height: 18px; line-height: 18px; text-align: center;color: #554540;  }
+.rules-con p b{ color: #fd5e51 }
+
+/*签到*/
+/*弹性布局*/
+.mui_flex { display: -webkit-box; display: -moz-box; display: -o-box; display: -ms-flexbox; display: flex; }
+.mui_flex .cell { -moz-box-flex: 1; -webkit-box-flex: 1; -o-box-flex: 1; -ms-flex: 1; flex: 1; }
+.sign_in{padding-top: 25px;}
+/*用户信息*/
+.user_msg_gcard { width: 206px; margin: auto; }
+.user_msg_gcard .cuser_pic{ width: 71px; height: 71px; border-radius: 5px; overflow: hidden; margin-right: 15px;  float: left;}
+.user_msg_gcard .cuser_msg{ width: 120px; float: left; }
+.user_msg_gcard .cuser_msg span{ margin-bottom: 7px; height: 12px; line-height: 12px; overflow: hidden;}
+.user_msg_gcard .cuser_name{ display: block; color: #3f312c; font-size: 12px;}
+.user_msg_gcard .cuser_name b{-webkit-line-clamp: 1;  -webkit-box-orient: vertical;display: -webkit-box; overflow: hidden;width: 70%; float: right;}
+.user_msg_gcard .cuser_grade{ display: block; font-size: 12px; color: #ff4b4d;}
+.user_msg_gcard .go_duobao{ display: block; height: 33px;line-height: 33px; width: 120px; background: #fd5e51; text-align: center; font-size: 15px; border-radius: 5px; color: #fff;}
+/*签到纪录*/
+.user_in_date{margin-top: 50px; text-align: center;}
+.in_datett{ display: inline-block; font-size: 15px; color: #828282; text-align: center; position: relative; }
+.in_datett:before{content: ""; position: absolute; top: 50%; margin-top: -2px; left: -25px; background:url(../images/bfhl_vip/ico.png) left center; background-size: 100%; width: 17px; height: 2.5px; }
+.in_datett:after{content: ""; position: absolute; top: 50%; margin-top: -2px; right: -25px; background:url(../images/bfhl_vip/ico.png) left center; background-size: 100%; width: 17px; height: 2.5px; transform: rotate(180deg); }
+.in_onbox span { display: block; margin: auto; width: 34px; height: 34px; text-align: center; background: #fefae0; border: 2px #828282 solid; border-radius: 50%; }
+.in_onbox span i{ display: block; font-size: 24px; color: #828282; width: 28px; height: 28px; border: 1px #828282 solid; background: #fefae0; border-radius: 50%;margin: 2px; line-height: 28px; }
+.in_onbox .in_yet span{border: 1.5px #4adbcd solid;}
+.in_onbox .in_yet span i{border: 1px #4adbcd solid;background: #4adbcd; color: #fff;}
+.in_onbox .in_none span{border: 1.5px #828282 solid;}
+.in_onbox .in_none span i{border: 1px #828282 solid;background: #828282; color: #fff;}
+.ck_in{display: block; padding: 0; margin: 0 auto; border:0; height: 33px;line-height: 33px; width: 120px; background: #fd5e51; text-align: center; font-size: 15px; border-radius: 5px; color: #fff;}
+.yilingqu{background: #8a8a8a !important;}
+.in_adterecord{ margin: 25px 0; position: relative; }
+.in_onbox{ position: relative; z-index: 2 }
+.in_adterecord:after{ content: ""; position: absolute; left: 10%; top: 49%; height: 1px; width: 80%; background: #dedede; z-index: 1 }

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>百分好礼</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="format-detection" content="telephone=no,email=no">
+		<link rel="stylesheet" type="text/css" href="css/base.css" />
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<link rel="stylesheet" type="text/css" href="css/former-renk.css" />
+		<link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css" />
+		<script src="js/jquery-2.1.4.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div class="active-head">
+			<img src="img/index/head-bg.png" />
+			<div class="head-nav">
+				<div class="btn-wrap-back">
+					<img class="back-btn" src="img/index/back-btn.png" onclick="window.history.go(-1)" />
+				</div>
+				<div class="btn-wrap-title">
+					<h3>我的战绩</h3>
+				</div>
+			</div>
+		</div>
+		<img src="img/formerrank/top-img.png" alt="" />
+		<div class="list-wrap">
+			<!--菜单-->
+			<ul class="tab-bar">
+				<li class="active">全部</li>
+				<li>进行中</li>
+				<li>已揭晓</li>
+				<li>已中奖</li>
+			</ul>
+			<!--全部-->
+			<ul class="list-content rank-list">
+				<!--进行中-->
+				<li>
+					<div class="list-text">
+						<div class="list-img">
+							<div class="hot-tags ongoing">
+								进行中
+							</div>
+							<div class="product-wrap">
+								<img src="img/formerrank/product-img.png" />
+							</div>
+						</div>
+						<div class="list-info">
+							<div class="info-title">苹果专区 iPad pro small 颜色随机</div>
+							<div class="issue-code">期号:<span>123456789</span></div>
+							<div class="progress-wrap">
+								<div class="progress"></div>
+								<div class="progress-market">
+									<span>80</span>%
+								</div>
+							</div>
+							<div class="join-count">您已参与<span>108</span>次</div>
+						</div>
+						<div class="share-btn share-btn1 rank-btn">分享</div>
+					</div>
+				</li>
+				<!--定制-->
+				<li>
+					<div class="list-text">
+						<div class="list-img">
+							<div class="hot-tags only">
+								定制
+							</div>
+							<div class="product-wrap">
+								<img src="img/formerrank/product-img.png" alt="" />
+							</div>
+						</div>
+						<div class="list-info">
+							<div class="info-title">苹果专区 iPad pro small 颜色随机</div>
+							<div class="issue-code">期号:<span>123456789</span></div>
+							<div class="join-count">您已参与<span>108</span>次
+								<a class="join-detail" href="join-detail.html">参与详情></a>
+							</div>
+							<div class="info-list">
+								<div><span>获奖者:</span><span>今天星期五</span></div>
+								<div><span>幸运码:</span><span class="luck-code">12345678</span></div>
+								<div><span>本期购买:</span><span class="count-num">123</span>人次</div>
+								<div><span>揭晓时间:</span><span>今天星期五</span></div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<!--即将揭晓-->
+				<li>
+					<div class="list-text">
+						<div class="list-img">
+							<div class="product-wrap">
+								<div class="product-box">即将揭晓</div>
+								<img src="img/formerrank/product-img.png" alt="" />
+							</div>
+						</div>
+						<div class="list-info">
+							<div class="info-title">苹果专区 iPad pro small 颜色随机</div>
+							<div class="issue-code">期号:<span>123456789</span></div>
+							<div class="join-count">您已参与<span>108</span>次</div>
+							<div class="count-down" data-start-time="2016/12/01 09:50:00" data-end-time="2016/12/06 09:50:10">揭晓倒计时:<span class="hour">14</span>:<span class="min">33</span>:<span class="sec">95</span>
+
+								<a class="join-detail" href="join-detail.html">参与详情></a>
+							</div>
+						</div>
+
+					</div>
+				</li>
+				<!--已中奖填写收货信息-->
+				<li>
+					<div class="list-text">
+						<div class="list-img">
+							<div class="hot-tags draw-prize"></div>
+							<div class="product-wrap">
+								<img src="img/formerrank/product-img.png" alt="" />
+							</div>
+						</div>
+						<div class="list-info">
+							<div class="info-title">苹果专区 iPad pro small 颜色随机</div>
+							<div class="issue-code">期号:<span>123456789</span></div>
+							<div class="join-count">您已参与<span>108</span>次
+								<a class="join-detail" href="join-detail.html">参与详情></a>
+							</div>
+							<div class="info-list">
+								<div><span>获奖者:</span><span>今天星期五</span></div>
+								<div><span>幸运码:</span><span class="luck-code">12345678</span></div>
+								<div><span>本期购买:</span><span class="count-num">123</span>人次</div>
+								<div><span>揭晓时间:</span><span>今天星期五</span></div>
+							</div>
+						</div>
+						<div class="share-btn rank-btn take-btn">填写收货信息</div>
+					</div>
+				</li>
+				<!--已中奖查询详情-->
+				<li>
+					<div class="list-text">
+						<div class="list-img">
+							<div class="hot-tags draw-prize"></div>
+							<div class="product-wrap">
+								<img src="img/formerrank/product-img.png" alt="" />
+							</div>
+						</div>
+						<div class="list-info">
+							<div class="info-title">苹果专区 iPad pro small 颜色随机</div>
+							<div class="issue-code">期号:<span>123456789</span></div>
+							<div class="join-count">您已参与<span>108</span>次
+								<a class="join-detail" href="join-detail.html">参与详情></a>
+							</div>
+							<div class="info-list">
+								<div><span>获奖者:</span><span>今天星期五</span></div>
+								<div><span>幸运码:</span><span class="luck-code">12345678</span></div>
+								<div><span>本期购买:</span><span class="count-num">123</span>人次</div>
+								<div><span>揭晓时间:</span><span>今天星期五</span></div>
+							</div>
+						</div>
+						<div class="share-btn rank-btn check-btn">查询中奖信息</div>
+						<div class="enter-btn rank-btn">确认收货</div>
+					</div>
+				</li>
+				<!--查询我的码-->
+				<li>
+					<div class="list-text">
+						<div class="list-img">
+							<div class="product-wrap">
+								<img src="img/formerrank/product-img.png" alt="" />
+							</div>
+						</div>
+						<div class="list-info">
+							<div class="info-title">苹果专区 iPad pro small 颜色随机</div>
+							<div class="issue-code">期号:<span>123456789</span></div>
+							<div class="join-count">您已参与<span>108</span>次
+								<a class="join-detail" href="join-detail.html">参与详情></a>
+							</div>
+							<div class="info-list">
+								<div><span>获奖者:</span><span>今天星期五</span></div>
+								<div><span>幸运码:</span><span class="luck-code">12345678</span></div>
+								<div><span>本期购买:</span><span class="count-num">123</span>人次</div>
+								<div><span>揭晓时间:</span><span>今天星期五</span></div>
+							</div>
+						</div>
+						<div class="share-btn rank-btn code-btn">查询我的码</div>
+					</div>
+				</li>
+				<div class="no-data">
+					<p>暂无战绩快去喊小伙伴一起玩吧!</p>
+					<img src="img/rank/creat-room-btn.png" class="creat-btn" />
+				</div>
+			</ul>
+
+		</div>
+		<img src="img/formerrank/bottom-img.png" class="bottom-img" />
+		<!--底部tabbar-->
+		<div class="fixed-nav clearfix">
+			<a href="home.html"><i class="icon-nav icon-home"></i>首页</a>
+			<a href="share.html"><i class="icon-nav icon-camera"></i>晒单</a>
+			<a href="#"><i class="icon-nav icon-acti"></i>活动</a>
+			<a href="cart.html"><i class="icon-nav icon-cart"></i>清单</a>
+			<a href="personal_center.html"><i class="icon-nav icon-avatar"></i>个人中心</a>
+		</div>
+		<!--蒙层-->
+		<div class="layout-box"></div>
+		<!--我的二维码弹窗-->
+		<div class="code-popup-box popup-box">
+			<div class="close-btn"></div>
+			<div class="keyboard">
+				assssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss assssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss assssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
+			</div>
+		</div>
+		<!--确认收货信息弹窗-->
+		<div class="take-over-wrap popup-box">
+			<div class="close-btn"></div>
+			<div class="take-over">
+				<div class="take-info">
+					<div class="take-name">姓名：<span>产品测试</span></div>
+					<div class="take-mobile">手机：<span>13000000000</span></div>
+					<div class="take-addr"><span>地区：</span>广东省深圳市</div>
+					<div class="take-addrdetail">详细地址：<span>深圳市高新科技园科研路9号比克科技大
+               厦13楼1301-A</span></div>
+					<div class="take-notice">注：请仔细核对您的收货地址，确认后将无法修改</div>
+				</div>
+				<div class="take-confirme"><img class="take-confirme-btn" src="img/rank/comfirm-btn.png" /></div>
+			</div>
+		</div>
+		<!--确认成功弹窗-->
+		<div class="confirme-wrap popup-box">
+			<div class="close-btn"></div>
+			<div class="confirme">确认成功</div>
+		</div>
+		<!--填写收货地址弹窗-->
+		<div class="share-box">
+			<img src="img/share.png" />
+		</div>
+
+	</body>
+	<script src="js/jquery-ui-1.10.4.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery.mousewheel.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery.mCustomScrollbar.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var ele = $('.count-down');
+		var leftTime = (new Date(ele.attr('data-end-time')).getTime() - new Date(ele.attr('data-start-time')).getTime()) / 1000;
+		countDown(ele, leftTime);
+		$(".tab-bar li").click(function() {
+			$(this).addClass('active').siblings().removeClass('active');
+		})
+		$(".close-btn").click(function() {
+			$(".layout-box").hide();
+			$(".popup-box").hide();
+			bodyAuto();
+		})
+
+		$(window).load(function() {
+			$(".keyboard").mCustomScrollbar({
+				setWidth: false,
+				setHeight: false,
+				scrollButtons: {
+					enable: true,
+					scrollType: "continuous",
+					scrollSpeed: 20,
+					scrollAmount: 40
+				}
+			});
+		});
+		$(".code-btn").click(function() {
+			bodyHidden();
+			$(".layout-box").show();
+			$(".code-popup-box").show();
+		})
+		$(".share-btn1").click(function() {
+			$(".share-box").show();
+			bodyHidden()
+		})
+		$(".share-box").click(function() {
+			$(".share-box").hide();
+			bodyAuto()
+		})
+		$(".enter-btn").click(function() {
+			$(".take-over-wrap").show();
+			$(".layout-box").show();
+			bodyHidden();
+		})
+		$(".take-confirme-btn").click(function() {
+			$(this).parents().find('.popup-box').hide();
+			$(".confirme-wrap").show();
+		})
+		$(".check-btn").click(function() {
+			window.location = 'prize-detail.html';
+		})
+		$(".creat-btn").click(function() {
+			window.location = 'creat-room.html';
+		})
+	</script>
+
+</html>

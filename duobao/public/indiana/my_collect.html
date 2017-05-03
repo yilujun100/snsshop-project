@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的收藏——夺宝奇兵</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="author" content="">
+	<meta name="Copyright" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<!-- style base -->
+	<link rel="stylesheet" href="css/base.css">
+	<!-- style common -->
+	<link rel="stylesheet" href="css/common.css">
+	<!-- layer skin extend style -->
+	<link rel="stylesheet" href="css/layer_skin_extend.css">
+	<!-- style layout -->
+	<link rel="stylesheet" href="css/layout.css">
+</head>
+<body>
+	<div class="viewport v-collect">
+		<div class="grid collect-list">
+			<ul>				
+				<li>
+					<div class="items">
+						<div class="check-wrap">
+							<input type="checkbox" checked>
+						</div>
+						<div class="collect-item-core">
+							<div class="collect-product-cell-1"><img src="images/product_8.jpg" width="84" height="84" alt=""></div>
+							<div class="collect-product-cell-2">
+								<div class="collect-product-name">苹果专区 IPHONE 6S 粉色过年就换新手机</div>
+								<div class="collect-opt">
+									<span class="single-cost">单次<strong>￥10</strong></span>
+									<a href="#" class="btn-collect-item-del">删除</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="items">
+						<div class="check-wrap">
+							<input type="checkbox" checked>
+						</div>
+						<div class="collect-item-core">
+							<div class="collect-product-cell-1"><img src="images/product_8.jpg" width="84" height="84" alt=""></div>
+							<div class="collect-product-cell-2">
+								<div class="collect-product-name">苹果专区 IPHONE 6S 粉色过年就换新手机</div>
+								<div class="collect-opt">
+									<span class="single-cost">单次<strong>￥10</strong></span>
+									<a href="#" class="btn-collect-item-del">删除</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="items items-invalid">
+						<div class="check-wrap">
+							<label class="label-invalid">失效</label>
+						</div>
+						<div class="collect-item-core">
+							<div class="collect-product-cell-1"><img src="images/product_8.jpg" width="84" height="84" alt=""></div>
+							<div class="collect-product-cell-2">
+								<div class="collect-product-name">苹果专区 IPHONE 6S 粉色过年就换新手机</div>
+								<div class="collect-opt">
+									<a href="javascript:;" class="btn-collect-item-del">删除</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="grid-1 bott-collect-actions">
+		<div class="coll-actions-hd clearfix">
+			<em>每件奖品参与</em>			
+			<div class="quantity-wrap">
+				<a href="javascript:;" class="quantity-decrease">-</a>
+				<input type="text" class="quantity" value="3" name="num">
+				<a href="javascript:;" class="quantity-increase">+</a>
+			</div>
+			<span>次</span>
+		</div>
+		<div class="coll-actions-con clearfix">
+			<span>
+				<p>奖品共计：<strong id="totalQty">2</strong>件</p>
+				<p>参与次数：<strong id="totalTimes">4</strong>次</p>
+			</span>
+			<span class="total-cost">总计：<strong>￥11</strong></span>
+			<a href="#" class="btn btn-red btn-quick-indiana">一键夺宝</a>
+		</div>
+	</div>
+
+	<div class="fixed-nav">
+		<a href="home.html"><i class="icon-nav icon-home"></i>首页</a>
+		<a href="share.html"><i class="icon-nav icon-camera"></i>晒单</a>
+		<a href="#"><i class="icon-nav icon-gift"></i>活动</a>
+		<a href="cart.html"><i class="icon-nav icon-cart"></i>夺宝车</a>
+		<a href="personal_center.html" class="active"><i class="icon-nav icon-avatar"></i>个人中心</a>
+	</div>
+	<!-- jquery lib script -->
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+	<!-- common script -->
+	<script type="text/javascript" src="js/lib.js"></script>
+	<!-- jquery layer script -->
+	<script type="text/javascript" src="js/layer/layer.js"></script>
+	<script>
+	DUOBAO.collect = {
+		perTimes: 1,
+		totalPrize: 0,
+		totalPartiTimes: 0,
+		cost: 0
+	};
+	</script>
+	<script type="text/javascript" src="js/my_collect.js"></script>
+</body>
+</html>

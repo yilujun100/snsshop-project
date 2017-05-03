@@ -1,0 +1,10 @@
+{
+	"description": "YYDB project",
+	"name": "mskj/yydb",
+	"type": "project",
+	"license": "MIT",
+	"require": {
+		"php": ">=5.3.9",
+		"monolog/monolog": "1.18.2"
+	}
+}

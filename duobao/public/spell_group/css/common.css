@@ -1,0 +1,165 @@
+/*
+ * 公共样式 common.css
+ * author:yilj@snsshop.cn
+ * date:2015-12-17
+*/
+
+.clearfix:after { content: '\200B'; display: block; clear: both; height: 0; overflow: hidden; visibility: hidden; }
+.clearfix { zoom: 1; }
+.fl { float: left; }
+.fr { float: right; }
+.aL { text-align: left; }
+.aR { text-align: right; }
+.aC { text-align: center; }
+.mt-5 { margin-top: 5px; }
+.mt-10 { margin-top: 10px; }
+.mt-15 { margin-top: 15px; }
+.hide { display: none; }
+.fixed { position: fixed; }
+.viewport {margin: 0 auto; min-width: 320px; max-width: 640px; min-height: 456px; }
+.border-radius-4 { -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px;}
+body { background: #efefef; font-size: 14px;}
+
+
+.content { padding-top: 44px; padding-bottom: 48px;}
+.grid{ padding: 10px; background: #fff; }
+
+/*  ===================================*/
+html{font-size: 62.5%; height:100%;-webkit-text-size-adjust: 100%;}
+body { background:#f5f8fa;background-size: 100% auto; -webkit-background-size:100% auto;color:#555;font-family:Arial, Helvetica, sans-serif;font-size:14px; position:relative;-webkit-font-smoothing: antialiased;}
+a{ color:#333; text-decoration:none;}
+i,em{ font-style:normal;}
+img{max-width:100%; vertical-align:top; border:0;}
+ul,li{ list-style-type:none;}
+.clearfix:after{clear:both;content:".";display:block;font-size:0;height:0;line-height:0;visibility:hidden;}
+.clearfix{zoom:1;}
+.hide{ display:none;}
+.show{ display:block;}
+.fl { float: left;}
+.fr {float: right;}
+body{ min-width:320px; max-width:640px; margin:0 auto; height:100%;}
+fieldset{ border:0 none;}
+.ellipsis { overflow:hidden; white-space:nowrap; text-overflow:ellipsis; letter-spacing:1px; }/*超出范围用省略号代替*/
+input[type="text"],input[type="button"],input[type="submit"], input[type="reset"],textarea{-webkit-appearance: none;outline:none;}
+button:active{-webkit-appearance: none;}
+a, input, a:focus, input:focus{-webkit-tap-highlight-color: rgba(0,0,0,0);}
+:-moz-placeholder {color: #999;}
+::-webkit-input-placeholder {color: #ccc;}
+.m_shop,.m_shop_h,.m_account_h{ position:relative;}
+/* ============================== 按钮 ============================== */
+button,.common_btn{ position:relative; background-color:#fff; margin:0; padding:0; outline:none; font-weight: normal;cursor:pointer; vertical-align:top; overflow:visible;
+width:auto; border:0 none;}
+button[disabled] {cursor: default;opacity: 0.5;}
+.orange_btn,.common_btn{background:#f75d2c; color:#fff;}
+.green_btn {background-color:rgba(115,194,92,1); color:#fff;}
+.copyright { margin-bottom: 5rem; text-align: center; font-size: 12px; padding: 20px 0;}
+
+
+/* ============================== fixed bottom ============================== */
+.fixed-bott { position: fixed; bottom: 0; left: 0; z-index: 100; width: 100%; height: 52px; background: #f5f4f4; border-top: 1px solid #ebebeb; display: -webkit-box; display: -moz-box; display: box; }
+.bott-entry { margin-top: 4px; }
+.bott-entry li { float: left; border-left: 1px solid #ebebeb; }
+.bott-entry li:first-child { border-left: 0; }
+.bott-entry li a { display: block; width: 50px; text-align: center; font-size: 13px; color: #666; }
+.bott-entry li i.icon-entry { display: block; margin: 0 auto 4px; width: 25px; height: 25px; background-repeat: no-repeat; background-size: 25px 25px; }
+.icon-home { background-image: url(../images/icon_home.png); }
+.icon-order { background-image: url(../images/icon_order.png); }
+.btn-groups { margin-left: 20px; -webkit-box-flex: 1; -moz-box-flex: 1; box-flex: 1; display: -webkit-box; display: -moz-box; display: box; }
+.btn-groups a { display: block; padding: 8px 0; height: 40px;  font-size: 15px; color: #fff; -webkit-box-flex: 1; -moz-box-flex: 1; box-flex: 1; }
+.btn-groups a em,
+.btn-groups a span { display: block; text-align: center; }
+.low-stocks { width: 100px; background: #a0a0a0; }
+.btn-buy-single,
+.btn-buy-group { width: 100px; }
+.btn-buy-single { background: #ff7529; }
+.btn-buy-group { background: #ff4949; }
+
+.fixed-bott-1 .bott-entry { -webkit-box-flex: 0; -moz-box-flex: 0; box-flex: 0; }
+.fixed-bott-1 .btn-groups { -webkit-box-flex: 1; -moz-box-flex: 1; box-flex: 1; }
+.btn-share,
+.btn-join,
+.btn-stock,
+.btn-join-again { display: block !important; line-height: 40px; text-align: center; font-size: 16px; color: #fff; }
+.btn-share,
+.btn-join,
+.btn-join-again { background: #ff7529; }
+.btn-stock { background: #a0a0a0; }
+
+
+/* ============================== bottom btn ============================== */
+.bott-btn { position: fixed; bottom: 0; left: 0; z-index: 100; width: 100%; height: 42px; display: -webkit-box; display: -moz-box; display: box; }
+.bott-btn a { display: block; height: 42px; line-height: 44px; text-align: center; font-size: 15px; -webkit-box-flex: 1; -moz-box-flex: 1; box-flex: 1; }
+.bott-btn .btn-block { display: block; width: 100%; height: 42px; line-height: 44px; text-align: center; font-size: 15px; }
+.btn-pay,
+.btn-receipt,
+.btn-open-group { background: #ff7529; color: #fff; }
+.btn-order-cancel { background: #fff; color: #333; }
+
+
+.fixed-bott-menu { position: fixed; bottom: 0; left: 0; z-index: 100; width: 100%; height: 52px; background: #fff; border-top: 1px solid #ebebeb; }
+.fixed-bott-menu a { float: left; width: 33.33%; height: 52px; line-height: 52px; text-align: center; font-size: 15px; color: #333; }
+.fixed-bott-menu a.active { background: #ff7529; color: #fff; }
+
+
+/* ============================== tab ============================== */
+.tab .tab-hd { background: #fff; display: -webkit-box; display: -moz-box; display: box; }
+.tab-hd a { position: relative; display: block; height: 42px; line-height: 42px; text-align: center; font-size: 15px; color: #333; -webkit-box-flex: 1; -moz-box-flex: 1; box-flex: 1; }
+.tab-hd a.tab-active { color: #ff7529; }
+.tab-hd a.tab-active:after { position: absolute; bottom: -1px; left: 0; display: block; content: ''; width: 100%; height: 1px; border-top: 1px solid #ff7529; }
+.tab-con > div { display: none; }
+.content-empty i.icon-list { display: block; margin: 30px auto 0; width: 69px; height: 69px; background: url(../images/icon_list.png) no-repeat; background-size: 69px 69px; }
+.content-empty p { margin: 0; margin-top: 20px; text-align: center; font-size: 15px; color: #333; }
+.content-empty a { display: block; margin: 30px 10px 0; line-height: 40px; text-align: center; background: #ff7529; font-size: 15px; color: #fff;  -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; }
+
+
+/* ============================== pop window ============================== */
+.pop-mask,
+.pop-window { display: none; }
+.pop-mask { position: fixed; top: 0; left: 0; z-index: 101; width: 100%; height: 100%; background: rgba(0,0,0,.65); }
+.pop-window { position: fixed; top: 50%; left: 50%; z-index: 102; }
+.pop-acti-end { margin-top: -49px; margin-left: -135px; width: 270px; height: 98px; }
+.pop-acti-end .pop-acti-end-content { padding: 10px; border: 1px dashed #fff; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; }
+.pop-acti-end .pop-acti-end-content p { margin: 0; text-align: center; font-size: 15px; color: #fff; }
+.pop-acti-end .btn-pop-close { position: absolute; top: -46px; right: -16px; z-index: 103; display: block; width: 34px; height: 34px; background: url(../images/icon_close_circle.png) no-repeat; background-size: 34px 34px; text-indent: -999em; }
+.pop-acti-end-btns { margin-top: 10px; display: -webkit-box; display: -moz-box; display: box; }
+.pop-acti-end-btns a { display: block; margin-left: 10px;  height: 32px; line-height: 32px; text-align: center; background: #ff7529; font-size: 15px; color: #fff; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; -webkit-box-flex: 1; -moz-box-flex: 1; box-flex: 1; }
+.pop-acti-end-btns a:first-child { margin-left: 0; }
+
+
+
+.back-top { display: none; position: fixed; bottom: 62px; right: 10px; z-index: 100; padding: 16px 10px 0; width: 50px; height: 50px; line-height: 14px; text-align: center; background: #bf0129; font-size: 13px; color: #fff; -webkit-border-radius: 50%; -moz-border-radius: 50%; border-radius: 50%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+.back-top i.arrow-up { position: absolute; display: block; top: 6px; left: 20px;  width: 8px; height: 8px; border-top: 1px solid #fff; border-left: 1px solid #fff; -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); transform: rotate(45deg); }
+
+
+/*====================== loading style =======================*/
+.loading-mask { position: fixed; top: 0; left: 0; z-index: 100; width: 100%; height: 100%; background: rgba(0,0,0,.4); }
+.loading { position: fixed; top: 50%; left: 50%; z-index: 101; margin-top: -15px; margin-left: -50px; width: 100px; height: 30px; line-height: 30px; font-size: 13px; color: #fff; }
+.icon-loading { display: inline-block; vertical-align: -10px; margin-right: 10px; width: 30px; height: 30px; background: url(../images/icon_loading.png) no-repeat; background-size: 30px 30px; -webkit-animation:my_fhload 1.5s linear infinite; }
+@-webkit-keyframes my_fhload { 0% {
+	-webkit-transform:rotate(0deg)
+	}
+	100% {
+	-webkit-transform:rotate(360deg)
+	}
+}
+
+
+/*====================== loadMore style =======================*/
+.Fh_laod { padding: 20px; padding-bottom: 10px; background-color: #efefef; text-align: center; }
+.Fh_laod span { margin:0 auto; text-align:center }
+.Fh_laod span.Fh_laod-text { padding:0; margin:0; color:#909090; text-shadow:0 2px 1px #fff; font-size:80%; text-align:center; margin-top: 70px }
+.Fh_laod i { display: inline-block; vertical-align: -8px; margin-right: 10px; width: 24px; height: 24px; background: url(../images/flashSmall.png) no-repeat; background-size: 24px 24px; -webkit-animation:my_fhload 1.5s linear infinite; }
+@-webkit-keyframes my_fhload { 0% {
+	-webkit-transform:rotate(0deg)
+	}
+	100% {
+	-webkit-transform:rotate(360deg)
+	}
+}
+.no-more { line-height: 42px;  text-align: center; background: #f3f3f3; color:#909090; text-shadow:0 2px 1px #fff; font-size:80%; display: none; }
+
+
+/*====================== button style =======================*/
+.btn-detail { display: block; line-height: 42px; text-align: center; font-size: 15px; -webkit-box-flex: 1; -moz-box-flex: 1; box-flex: 1; }
+.btn-detail-default { background: #fff; color: #333; }
+.btn-detail-warning { background: #ff7529; color: #fff; }

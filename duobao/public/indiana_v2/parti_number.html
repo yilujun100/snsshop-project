@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>输入参与人数——夺宝奇兵</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="author" content="">
+	<meta name="Copyright" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<!-- style base -->
+	<link rel="stylesheet" href="css/base.css">
+	<!-- style common -->
+	<link rel="stylesheet" href="css/common.css">
+	<!-- layer skin extend style -->
+	<link rel="stylesheet" href="css/layer_skin_extend.css">
+	<!-- style layout -->
+	<link rel="stylesheet" href="css/layout.css">
+</head>
+<body>
+	<div class="viewport v-choose-prize">
+		<div class="custom-process">
+			<div class="grid-1 custom-process-hd clearfix">
+				<h3 class="fl"><i class="icon-diamond"></i>定制私人夺宝</h3>
+				<a href="#" class="view-rule fr">查看规则</a>
+			</div>
+			<div class="grid custom-process-con">
+				<ul class="clearfix">
+					<li class="step-on"><i class="icon-custom-pro icon-custom-gift"></i><h3>1.选择奖品</h3></li>
+					<li class="step-on"><i class="icon-custom-pro icon-custom-users"></i><h3>2.选择参与人数</h3></li>
+					<li><i class="icon-custom-pro icon-custom-share-alt"></i><h3>3.定制成功<br>分享给好友参与</h3></li>
+					<li><i class="icon-custom-pro icon-custom-cup"></i><h3>4.集齐人数开奖</h3></li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- prize selected -->
+		<div class="prize-selected mt-10">
+			<div class="grid-1 prize-selected-hd clearfix">
+				<h3 class="fl">选择奖品</h3>
+				<a href="#" class="reselect fr">重新选择</a>
+			</div>
+			<div class="grid-1 prize-selected-con">
+				<div class="prize-selected-pic"><img src="images/share_1.jpg" width="54" height="54" alt=""></div>
+				<div class="prize-selected-info">
+					<p>苹果专区 IPHONG 6S粉色过年就买新手机过年就买新手机</p>
+					<p>期号：<strong>1234567890</strong></p>
+				</div>
+			</div>
+		</div>
+
+		<!-- participate number -->
+		<div class="parti-number-1 mt-10">
+			<div class="grid-1 parti-number-hd clearfix">
+				<h3>输入参与总人数</h3>
+			</div>
+			<div class="grid-1 parti-number-con">
+				<div class="quantity-wrap">
+					<a href="javascript:;" class="quantity-decrease">-</a>
+					<input type="number" class="quantity" value="3" name="num">
+					<a href="javascript:;" class="quantity-increase">+</a>
+				</div>
+				<em class="each-limit">（每人次：500夺宝券）</em>
+			</div>
+		</div>
+		
+		<!-- custom mode -->
+		<div class="custom-mode mt-10">
+			<div class="grid-1 custom-mode-hd">
+				<h3>选择订制方式</h3>
+			</div>
+			<div class="grid-1 custom-mode-con">
+				<ul class="clearfix">
+					<li>
+						<a href="#">我要公开</a>
+						<p>可以更快凑齐人数哦</p>
+					</li>
+					<li>
+						<a href="#">我要私密</a>
+						<p>朋友多我任性，自己吆喝</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- activity name -->
+		<div class="acti-name mt-10">
+			<div class="grid-1 acti-name-hd">
+				<h3>输入活动名称</h3>
+			</div>
+			<div class="grid-1 acti-name-con">
+				<input type="text" value="金三胖的私人夺宝" placeholder="请输入活动名称">
+			</div>
+		</div>
+
+		<div class="bott-prize-actions">
+			<a href="#" class="btn-prize-action btn-prize-cancel">取消</a>
+			<a href="#" class="btn-prize-action btn-prize-confirm">确认奖品</a>
+		</div>
+	</div>
+	<!-- jquery lib script -->
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+	<!-- common script -->
+	<script type="text/javascript" src="js/lib.js"></script>
+	<!-- swiper script -->
+	<script type="text/javascript" src="js/swiper/swiper.min.js"></script>
+	<!-- jquery layer script -->
+	<script src="js/layer/layer.js" type="text/javascript"></script>
+	<script>
+	$(function(){
+		DUOBAO.chooseQty.init();
+		$('.btn-prize-confirm').on('click', function(){
+			if ($('.acti-name-con input').val() == '') {
+				// layer.tips('不能为空', $('.acti-name-con input'), {tips: 1});
+				layer.alert('本奖品最多可由2人参与,参与人数已达最大值哦', {title: false, closeBtn: 0}, function(index){
+					$('.acti-name-con input').focus();
+					layer.close(index);
+				});
+			}
+		});
+	})
+	</script>
+</body>
+</html>

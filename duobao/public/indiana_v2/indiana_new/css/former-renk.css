@@ -1,0 +1,499 @@
+html{height: 100%;}
+body {
+	background: #97642d url(../img/index/html-bg-light.png);
+	color: #e3b27d;
+	height: 100%;
+}
+body::-webkit-scrollbar{
+width:0;
+height:0;
+}
+.list-wrap {
+	width: 94%;
+	margin: 0 auto;
+	background: #cd7e29;
+	border-left: 1px solid transparent;
+	border-right: 1px solid #eaab60;
+	box-sizing: border-box;
+	position: relative;
+}
+
+.list-content {
+	border-radius: 10px;
+	background: #593712;
+	margin: 0 2%;
+	-moz-box-shadow: -5px 1px 5px #333333 inset;
+	-webkit-box-shadow: -5px 1px 5px #333333 inset;
+	box-shadow: -5px 1px 5px #333333 inset;
+	padding: 10px 10px 10px;
+}
+
+.bottom-img {
+	margin-bottom: 50px;
+}
+
+.list-content li {
+	width: 100%;
+	border-radius: 10px;
+	background: #f4c589;
+	margin: 0 auto;
+	overflow: hidden;
+	position: relative;
+	margin-bottom: 10px;
+	border-bottom: 1px solid #774a19;
+	border-top: 1px solid #fddeb4;
+}
+
+.list-content li .list-title {
+	width: 156px;
+	height: 36px;
+	line-height: 36px;
+	text-align: center;
+	margin: 0 auto;
+	background: url(../img/formerrank/title-bg.png);
+	background-size: 100% 100%;
+	color: #f1c080;
+	font-size: 15px;
+}
+.no-data {
+	text-align: center;
+	font-size: 14px;
+}
+.no-data img{
+	width: 47%;
+}
+
+.title-name {
+	color: #ff931f;
+}
+
+.list-img {
+	width: 90px;
+	height: 90px;
+	background: #805424;
+	border-radius: 8px;
+	padding: 5px;
+	box-sizing: border-box;
+	float: left;
+	margin: 20px 5%;
+	-moz-box-shadow: -1px -1px 1px #333333;
+	-webkit-box-shadow: -1px -1px 1px #333333;
+	box-shadow: -1px -1px 1px #333333;
+}
+
+.list-img img {
+	width: 100%;
+}
+
+.list-text {
+	overflow: hidden;
+}
+
+.list-info {
+	float: right;
+	width: 55%;
+	margin-right: 4%;
+	font-size: 12px;
+
+}
+
+.list-img .product-wrap {
+	width: 80px;
+	height: 80px;
+	overflow: hidden;
+	background: #fff;
+	border-radius: 6px;
+	position: relative;
+	z-index: 1;
+	line-height: 80px;
+	text-align: center;
+}
+.product-wrap .product-box {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: rgba(0,0,0,.5);
+	color: #fff;
+}
+
+.info-title {
+	border-bottom: 1px dashed #000;
+	margin-top: 20px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: #452b0e;
+}
+
+.info-list {
+	width: 100%;
+	border-radius: 8px;
+	background: #9f7039;
+	padding: 5px;
+	box-sizing: border-box;
+	margin: 10px auto;
+	color: #f3c184;
+	font-size: 12px;
+	-moz-box-shadow: -1px -1px 1px #333333;
+	-webkit-box-shadow: -1px -1px 1px #333333;
+	box-shadow: -1px -1px 1px #333333;
+}
+
+.luck-code,
+.count-num {
+	color: #fff;
+}
+
+.list-num-wrap {
+	position: absolute;
+	width: 48px;
+	height: 48px;
+	background: url(../img/formerrank/count-bg.png);
+	background-size: 100% 100%;
+	top: 0;
+	right: 15px;
+}
+
+.list-num-wrap p {
+	color: #fff;
+	line-height: 0.5;
+	text-align: center;
+}
+
+
+/*rank页面*/
+
+.tab-bar {
+	width: 96%;
+	border-radius: 10px;
+	-moz-box-shadow: -5px 5px 5px #333333 inset;
+	-webkit-box-shadow: -5px 5px 5px #333333 inset;
+	box-shadow: -3px 0px 5px #333333 inset, 3px 0px 5px #333333 inset, 0px 3px 5px #333333 inset, 0px -3px 5px #333333 inset;
+	background: #593712;
+	position: absolute;
+	overflow: hidden;
+	padding: 2px;
+	margin: 0 2%;
+	z-index: 100;
+	box-sizing: border-box;
+}
+
+.tab-bar li {
+	float: left;
+	width: 25%;
+	text-align: center;
+	line-height: 40px;
+	background: #e4aa68;
+	color: #593712;
+}
+
+.tab-bar li:nth-of-type(1) {
+	border-bottom-left-radius: 5px;
+	border-top-left-radius: 5px;
+}
+
+.tab-bar li:nth-of-type(4) {
+	border-bottom-right-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+.tab-bar .tab-active {
+	background: transparent;
+	color: #e4aa68;
+}
+
+.progress-wrap {
+	height: 10px;
+	width: 100%;
+	background: #c4955a;
+	border-radius: 50px;
+	position: relative;
+	margin: 10px 0;
+}
+
+.progress {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 10px;
+	background: #9b5e1d;
+	border-radius: 50px;
+	width: 80%;
+}
+
+.progress-market {
+	width: 30px;
+	height: 30px;
+	background: url(../img/rank/market-bg.png);
+	background-size: 100% 100%;
+	position: absolute;
+	top: -30px;
+	right: 0;
+	line-height: 30px;
+	text-align: center;
+	color: #fff;
+}
+
+.share-btn {
+	background: url(../img/rank/btn-bg.png) 0 0 /100% 100%;
+}
+
+.info-title {}
+
+.rank-btn {
+	width: 40%;
+	height: 37.5px;
+	float: right;
+	line-height: 37.5px;
+	text-align: center;
+	margin: 10px 4% 10px 0  ;
+}
+
+.issue-code {
+	color: #866438;
+	padding: 2px 0;
+}
+
+.rank-list li {
+	border-radius: 0;
+	margin-bottom: 1px;
+	color: ;
+}
+.rank-list {
+	padding-top: 66px;
+}
+.list-wrap .rank-list li:nth-of-type(1) {
+	border-radius: 10px;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+.list-wrap .rank-list li:nth-last-of-type(1) {
+	border-radius: 10px;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+
+.list-img {
+	position: relative;
+}
+
+.hot-tags {
+	position: absolute;
+	top: -2px;
+	left: -2px;
+	color: #fff;
+	font-size: 12px;
+	z-index: 100;
+}
+
+.list-img .ongoing {
+	width: 50%;
+	height: 25%;
+	background: url(../img/rank/ongoing.png) 0 0 / 100% 100%;
+	line-height: 2.3;
+	padding-left: 5px;
+}
+
+.only {
+	width: 30px;
+	height: 35px;
+	line-height: 35px;
+	text-align: center;
+	background: url(../img/rank/only.png) 0 0 / 100% 100%;
+}
+
+.join-count {
+	color: #866438;
+	overflow: hidden;
+}
+
+.join-count span {
+	color: #ac1e1e;
+}
+
+.join-detail {
+	color: #ac1e1e;
+	float: right;
+}
+
+.count-down {
+	color: #452b0e;
+}
+
+.count-down span {
+	background: #492d0e;
+	border-radius: 5px;
+	padding: 0 1px;
+	color: #fff;
+}
+.draw-prize {
+	width: 45%;
+	height: 45%;
+	background: url(../img/rank/draw-prize.png) 0 0 /100% 100%;
+}
+.enter-btn {
+	background: url(../img/rank/btn-bg-2.png) 0 0 /100% 100%;
+}
+/*keyboard*/
+.code-popup-box{
+	height: 290px;
+	background: url(../img/rank/my-code-bg.png) 0 0/ 100% 100%;
+	padding-top:70px;
+}
+.take-over-wrap {
+	background: url(../img/rank/take-over-bg.png) 0 0/ 100% 100%;
+	height: 300px;
+	padding-top:60px;
+}
+.confirme-wrap {
+	background: url(../img/rank/take-over.png) 0 0/ 100% 100%;
+	height: 180px;	
+	padding-top:60px;
+}
+.popup-box {
+	width:300px;
+	position:  fixed;
+	top: 50%;
+	right: 0;
+	bottom: 0;
+	left:0;
+	margin:0 auto;
+	box-sizing: border-box;
+	z-index: 1001;
+	-webkit-transform: translateY(-50%);
+	display: none;
+
+}
+.share-box img{
+	width: 100%;
+}
+
+
+
+.layout-box ,.share-box{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1000;
+	background-color:rgba(0,0,0,.5);
+	display: none;
+}
+
+.keyboard ,.take-over,.confirme{
+	width: 275px;	
+	padding: 10px 0 0;
+	background: #f0be85;
+	border-radius: 8px;
+	box-sizing: border-box;
+	margin: 0 auto;
+	color:#866438 ;
+	font-size: 14px;	
+	word-wrap:break-word;
+}
+.confirme {
+	height: 100px;
+	font-size: 14px;
+	text-align: center;
+	line-height: 100px;
+	padding: 0;
+}
+.take-over {
+	overflow: hidden;
+	height: 230px;
+	padding: 10px 5px;
+	color: #452b0e;
+}
+.take-info {
+	padding: 5px;
+	border-bottom: 1px dashed #000;
+}
+.take-notice {
+	color: #a62f22;
+}
+.take-confirme {
+	margin: 5px auto;
+	/*padding:0 20%;*/
+}
+.take-confirme img{
+	width: 60%;
+	margin: 5px 20%;
+}
+.keyboard {
+	height: 200px;
+	overflow-x: auto;
+	padding-left: 3px;
+}
+
+.keyboard-key {
+	width: 100%;
+	overflow: hidden;
+}
+.keyboard-key li {
+	width: 33.3%;
+	height: 43px;
+	float: left;
+	margin: 4px 0;
+	background: url(../img/index/key-bg.png);
+	background-size: 100% 100%;
+	text-align: center;
+	line-height: 43px;
+	color: #e3b27d;
+	-webkit-appearance:none;
+	outline:none;
+}
+.keyboard-key .active {
+	background: url(../img/index/key-active-bg.png);
+	background-size: 100% 100%;
+	-webkit-appearance:none;
+	outline:none;
+}
+
+.close-btn {
+	position: absolute;
+	width: 46px;
+	height: 46px;
+	background: url(../img/index/close-btn.png) 0 0/ 100% 100%;
+	top:-5px;
+	right: -5px;
+}
+
+
+@media screen and (max-width: 320px) {
+	.list-img {
+		width: 76px;
+		height: 76px;
+		background: #805424;
+		border-radius: 8px;
+		padding: 3px;
+		box-sizing: border-box;
+		float: left;
+		margin: 20px 2%;
+		-moz-box-shadow: -1px -1px 1px #333333;
+		-webkit-box-shadow: -1px -1px 1px #333333;
+		box-shadow: -1px -1px 1px #333333;
+	}
+	.list-img .product-wrap {
+		width: 70px;
+		height: 70px;
+		overflow: hidden;
+		background: #fff;
+		border-radius: 6px;
+		line-height: 70px;
+		text-align: center;
+	}
+	.list-info {
+		float: right;
+		width: 62%;
+		margin-right: 4%;
+	}
+	.list-info {
+		font-size: 11px;
+	}
+}

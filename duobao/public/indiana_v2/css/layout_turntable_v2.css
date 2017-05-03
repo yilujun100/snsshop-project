@@ -1,0 +1,45 @@
+/*
+ * 大转盘活动页样式 layout_turntable.css
+ * author:yilj@snsshop.cn
+ * date:2016-8-16
+ */
+
+
+body { background-color: #fffdf3; }
+.v-turntable { min-height: 810px; }
+.turntable { position: relative; width: 100%; }
+.turntable-area { position: absolute; top: 66%; left: 50%; width: 80%; height: 80%; max-height: 512px; margin-left: -40%; }
+.turntable-area > img { position: absolute; z-index: 10; }
+.turntable-area .ecc { position: absolute; bottom: -2%; left: 50%; z-index: 9; width: 60%; margin-left: -30%; }
+.arrow-box { position: absolute; top: 50%; left: 50%; z-index: 10; margin-top: -48px; margin-left: -38px; width: 76px; height: 84px; }
+.btn-start { display: block; width: 76px; height: 84px; background: url(../images/turntable_v2/btn_start.png) no-repeat; background-size: 76px auto; text-indent: -999em; }
+.rules { position: absolute; top: 148%; left: 50%; margin-left: -48%; margin-bottom: 30px; width: 96%; background: url(../images/turntable_v2/bg_rules.png) no-repeat; background-size: cover; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+.rules-hd { padding: 4% 0;}
+.rules-hd h3 { position: relative; margin: 0 auto; width: 120px; height: 30px; line-height: 30px; text-align: center; font-size: 15px; color: #765422; font-weight: bold; }
+.rules-con { padding: 20px 10px; }
+.rules-con p { position: relative; margin: 6px 0; padding-left: 24px; font-size: 12px; color: #765422; }
+.rules-con p i { position: absolute; top: -2px; left: 0; display: block; width: 18px; height: 18px; line-height: 20px; text-align: center; }
+
+.popup { position: fixed; top: 50%; left: 50%; z-index: 100; margin-left: -140px; width: 280px; padding: 20px; background: #fff; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+.popup .popup-title { margin-bottom: 10px; text-align: center; font-size: 16px; color: #a93333; }
+.popup-content p { margin: 0; }
+.popup-desc { text-align: center; font-size: 13px; color: #000; }
+.popup-confrim { margin-top: -75px; height: 150px; }
+.popup-iframe { margin-top: -110px; height: 220px; }
+.popup-iframe form { margin-top: 10px; }
+.form-code p { position: relative; margin-top: 10px; width: 100%; height: 32px; border: 1px solid #e4e4e4; background: #f3f3f3; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+.form-code p:first-child { margin-top: 0; }
+.form-code input { border: 0; padding: 0; padding-left: 10px; width: 100%; line-height: 30px; font-size: 13px; color: #000; -webkit-border-radius: 0; -moz-border-radius: 0; border-radius: 0; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); -webkit-appearance: none; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+.btn-send-code { position: absolute; top: -1px; right: -1px; width: 82px; height: 32px; line-height: 32px; text-align: center; background: #d95959; font-size: 13px; color: #fff; }
+.btn-popup-error { display: block; margin: 10px auto 0; border: 0; width: 120px; height: 40px; line-height: 40px; text-align: center; background: #dc4f4f; font-size: 15px; color: #fff; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; }
+.btn-popup-close { position: absolute; top: -15px; right: -15px; z-index: 100; width: 30px; height: 30px; background: rgba(0,0,0,.6) url(../images/turntable_v2/icon_close.png) no-repeat center center; background-size: 28px 28px; border-radius: 50%; text-indent: -999em; }
+.popup-confrim b { display: block; margin-bottom: 6px; font-size: 16px; font-weight: bold; }
+.btn-popup-back { margin-top: 30px; }
+.fill-phone .btn-popup-error { margin-top: 26px; }
+.error-tips { position: absolute; bottom: 56px; left: 20px; font-size: 13px; color: #dc4f4f; }
+
+@media screen and (max-width: 640px) {
+	.turntable-area { top: 65%; max-height: 300px; }
+	.rules-hd { padding: 3% 0 2%; }
+	.rules { background-size: 100% 100%; }
+}

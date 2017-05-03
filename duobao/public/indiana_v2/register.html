@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>注册首页——夺宝奇兵</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="author" content="">
+	<meta name="Copyright" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<!-- style base -->
+	<link rel="stylesheet" href="css/base.css">
+	<!-- style common -->
+	<link rel="stylesheet" href="css/common.css">
+	<!-- style layout account set -->
+	<link rel="stylesheet" href="css/layout_account_set.css">
+</head>
+<body>
+	<div class="viewport">
+		<!-- register start -->
+		<div class="register">
+			<div class="set-title set-title-1">
+				<h3>注册百分好礼</h3>
+				<a href="#" class="btn-top-back">返回</a>
+			</div>
+			<div class="set-content">
+				<div class="tips-set" id="tipsSet"></div>
+				<!-- <div class="tips-set tips-error"><i class="icon-set-info"></i>手机号码格式不正确，请核对后重新输入</div> -->
+				<form action="" class="form-register mt-15" id="formRegister">
+					<div class="form-box">
+						<p class="form-item-col2">
+							<label for="phoneNum">手机号</label>
+							<input type="number" name="phoneNum" id="phoneNum" placeholder="请填写您的手机号码（仅限中国大陆用户）">
+							<a href="javascript:;" class="btn-field-clear" id="clear">清除文本域</a>
+							<i class="icon-ok"></i>
+						</p>
+						<p class="form-item-col3">
+							<label for="verifyCode">验证码</label>
+							<input type="text" name="verifyCode" id="verifyCode" placeholder="请填写手机收到的验证码">
+							<a href="javascript:;" class="btn-set btn-send-code btn-set-disabled" id="btnSendCode">发送验证码</a>
+						</p>						
+					</div>
+					<div class="other-opera mt-10"><a href="#">&lt;已有账号直接登录</a></div>
+					<input type="submit" class="btn-form-action btn-form-next btn-form-next-disabled" id="btnNext" value="">
+					<div class="user-agreement mt-10">
+						<input type="checkbox" checked>
+						我同意<a href="user_agreement.html">《百分好礼平台用户协议》</a>
+					</div>
+				</form>
+			</div>
+		</div>
+		<!-- register end -->
+
+		<!-- login others start -->
+		<div class="login-others">
+			<div class="login-others-hd">
+				<h3>用其他账号登录</h3>
+			</div>
+			<div class="login-others-con clearfix mt-15">
+				<a href="#">
+					<i class="icon-weixin"></i>
+					<h3>微信登录</h3>
+				</a>
+				<a href="#">
+					<i class="icon-qq"></i>
+					<h3>QQ登录</h3>
+				</a>
+			</div>
+		</div>
+		<!-- login others end -->
+
+		<!-- ad start -->
+		<div class="ad">
+			<ul>
+				<li><img src="images/v2/info/banner.jpg" width="100%" height="auto" alt=""></li>
+			</ul>
+		</div>
+		<!-- ad end -->
+	</div>
+
+	<!-- 图形验证码提示框 start -->
+	<div class="pop-mask-set"></div>
+	<div class="pop-graph-verify">
+		<div class="content">
+			<h3>图形验证</h3>
+			<p><img src="images/v2/info/code.jpg" width="100" height="42" alt="" class="pic-verify-code"><a href="javascript:;" class="btn-refresh">刷新</a></p>
+			<p><input type="text" id="verifyCode1" placeholder="请输入图形验证码(区分大小写)"></p>
+			<!-- <div class="pop-tips-error"><i class="icon-error-info"></i><span>验证码错误,请重新输入</span></div> -->
+		</div>
+		<a href="javascript:;" class="btn-pop-set btn-verify-confirm btn-verify-confirm-disabled" id="btnPopConfirm">确认</a>
+		<a href="javascript:;" class="btn-pop-set-close" id="btnPopClose">关闭</a>
+	</div>
+	<!-- 图形验证码提示框 end -->
+
+	<!-- jquery lib script -->
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+	<!-- common script -->
+	<script type="text/javascript" src="js/lib.js"></script>
+	<!-- register script -->
+	<script type="text/javascript" src="js/register.js"></script>
+</body>
+</html>

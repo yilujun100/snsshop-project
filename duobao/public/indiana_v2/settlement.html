@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>从夺宝车结算——夺宝奇兵</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="author" content="">
+	<meta name="Copyright" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<!-- style base -->
+	<link rel="stylesheet" href="css/base.css">
+	<!-- style common -->
+	<link rel="stylesheet" href="css/common.css">
+	<!-- style swiper -->
+	<link rel="stylesheet" href="js/swiper/swiper.min.css">
+	<!-- style layout -->
+	<link rel="stylesheet" href="css/layout.css">
+</head>
+<body>
+	<div class="viewport v-settlement">
+		<!-- pay progress -->
+		<div class="grid-1 pay-progress">
+			<ul class="clearfix">
+				<li class="step-on">
+					<i class="icon-pay-step icon-pro-gift"></i>
+					<em class="icon-dotted"></em>
+					<h3>选择参与活动</h3>
+				</li>
+				<li class="step-on">
+					<i class="icon-pay-step icon-cash"></i>
+					<em class="icon-dotted"></em>
+					<h3>确认参与</h3>
+					<s></s>
+				</li>
+				<li>
+					<i class="icon-pay-step icon-codes"></i>
+					<em class="icon-dotted"></em>
+					<h3>系统发放参与码</h3>
+					<s></s>
+				</li>
+				<li>
+					<i class="icon-pay-step icon-cup-1"></i>
+					<em class="icon-dotted"></em>
+					<h3>集齐人数开奖</h3>
+					<s></s>
+				</li>
+			</ul>
+		</div>
+
+		<!-- indiana list -->
+		<div class="indiana-list">
+			<div class="settle-list-w">
+				<div class="grid settle-item">
+					<div class="settle-goods-pic">
+						<img src="images/product_8.jpg" width="60" height="60" alt="">
+					</div>
+					<h3>苹果专区 IPHONE 6S 粉红色</h3>
+					<p class="clearfix"><span class="fl">单次用券<strong>10</strong></span><em class="fr">x1</em></p>
+				</div>
+				<div class="grid settle-item mt-10">
+					<div class="settle-goods-pic">
+						<img src="images/product_8.jpg" width="60" height="60" alt="">
+					</div>
+					<h3>苹果专区 IPHONE 6S 粉红色</h3>
+					<p class="clearfix"><span class="fl">单次用券<strong>10</strong></span><em class="fr">x1</em></p>
+				</div>
+				<div class="grid settle-item mt-10">
+					<div class="settle-goods-pic">
+						<img src="images/product_8.jpg" width="60" height="60" alt="">
+					</div>
+					<h3>苹果专区 IPHONE 6S 粉红色</h3>
+					<p class="clearfix"><span class="fl">单次用券<strong>10</strong></span><em class="fr">x1</em></p>
+				</div>				
+			</div>
+			<a href="javascript:;" class="btn-settle-toggle btn-settle-down">展开<i></i></a>
+		</div>
+		<div class="settle-total-stamps">总计用券：<strong>20</strong></div>
+
+		<div class="grid settle-col clearfix">			
+			<div class="quick-pay-type-hd">
+				<h3>支付方式</h3>
+			</div>			
+			<div class="quick-pay-type-con parti-detail-column-3 clearfix">
+				<span class="stamps-my fl"><i class="icon-dollar-1"></i><label>我的券</label>(余<b>4</b>张)</span>
+				<!-- <span class="stamps-use-1 fr">本次使用<strong>50</strong>张</span> -->
+				<span class="settle-stamps-use stamps-use-1 fr"><input type="radio" checked></span>
+				<span class="stamps-insuff fr"><a href="javascript:;">券不足,请先充值</a></span>
+			</div>
+			<!-- <span class="fl">我的券：24张</span>
+			<span class="settle-stamps-use fr">使用<strong>20</strong>张</span>
+			<span class="stamps-insuff fr">券不足,请先充值</span> -->
+		</div>
+		
+		<a href="#" class="btn btn-block btn-error btn-confirm-parti"><span>确认参与</span></a>
+	</div>	
+	
+	<div class="fixed-nav">
+        <a href="home.html"><i class="icon-nav icon-home"></i>首页</a>
+        <a href="share.html"><i class="icon-nav icon-camera"></i>晒单</a>
+        <a href="#"><i class="icon-nav icon-acti"></i>活动</a>
+        <a href="cart.html"><i class="icon-nav icon-cart"></i>清单</a>
+        <a href="personal_center.html"><i class="icon-nav icon-avatar"></i>个人中心</a>
+	</div>
+	<!-- jquery lib script -->
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+	<!-- common script -->
+	<script type="text/javascript" src="js/lib.js"></script>
+	<script>
+		$(function(){
+			var itemSettle = $('.settle-item');
+			if (itemSettle.length > 2) {
+				$('.btn-settle-toggle').show();
+			} else {
+				$('.indiana-list').css('padding-bottom', '20px');
+				$('.indiana-list > div').removeClass('settle-list-w');
+				$('.btn-settle-toggle').hide();
+			}
+
+			$('.btn-settle-toggle').on('click', function(){
+				if ($(this).hasClass('btn-settle-down')) {
+					$(this).removeClass('btn-settle-down').addClass('btn-settle-up');
+					$(this).siblings().removeClass('settle-list-w');
+					$(this).html('折叠<i></i>');
+				} else if ($(this).hasClass('btn-settle-up')) {
+					$(this).removeClass('btn-settle-up').addClass('btn-settle-down');
+					$(this).siblings().addClass('settle-list-w');
+					$(this).html('展开<i></i>');
+				}
+			});
+
+			DUOBAO.stampsRemain = 24; // 我的券
+			DUOBAO.stampsUse = 30; // 本次用券
+
+			if (DUOBAO.stampsRemain < DUOBAO.stampsUse) {
+		 		$('.settle-stamps-use').hide().next().show();		 		
+				$('.btn-confirm-parti').addClass('btn-parti-disabled');
+			} else {
+				$('.settle-stamps-use').show().next().hide();		 		
+				$('.btn-confirm-parti').removeClass('btn-parti-disabled');
+			}
+		})
+	</script>
+</body>
+</html>

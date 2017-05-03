@@ -1,0 +1,26 @@
+/*
+ * 弹出层扩展皮肤样式 
+ * author:yilujun100@qq.com 
+ * date:2015-9-8
+ */
+.layui-layer-dialog .layui-layer-content{text-align:center !important; font-size: 15px !important; color:#666 !important;}
+.layui-layer-btn{padding:0 !important; text-align:center !important; border-top:1px solid #ccc; display:-webkit-box !important; display:box !important;}
+.layui-layer-btn a{margin:0 !important; padding:0 !important; border:0 !important; display:block !important; height:42px !important; line-height:42px !important; background:none !important; font-size:15px !important; color: #666 !important; border-radius:0 !important; -webkit-box-flex:1 !important; box-flex:1 !important;}
+.layui-layer-btn .layui-layer-btn0{ color:#f03e3c !important;}
+.layui-layer-btn .layui-layer-btn1 { border-left:1px solid #ccc !important; }
+.layui-layer-dialog{max-width:260px !important;}
+.layui-layer-hui{background-color:#000;filter:alpha(opacity=60);background-color:rgba(0,0,0,.6);color:#fff;border:none}
+.layui-layer-hui .layui-layer-content{color:#fff !important;}
+
+
+/*====================== layer mobile extend 扩展 style =======================*/
+.layermbox0 .layermchild { max-width: 76% !important; background: rgba(0,0,0,.6) !important; color: #fff; }
+
+
+.layui-layer-msg { border: 0 !important; background: rgba(0,0,0,.7) !important; }
+.layui-layer-dialog .layui-layer-padding { padding: 46px 20px 10px !important; text-align: center !important;  color: #fff !important; }
+.layui-layer-dialog .layui-layer-ico { top: 50% !important; left: 50% !important; margin-top: -26px !important; margin-left: -15px !important; display: block !important; }
+.layui-layer-ico1,
+.layui-layer-ico2 { background-image: url(../images/sprite_icons.png) !important; background-size: 200px 300px !important; }
+.layui-layer-ico1 { background-position: -6px -76px !important; }
+.layui-layer-ico2 { background-position: -6px -112px !important; }

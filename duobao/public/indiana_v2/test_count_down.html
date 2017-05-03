@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>倒计时</title>
+</head>
+<body>
+	<div class="countDown" data-start-time="2016/3/21 10:00:00" data-end-time="2016/3/21 11:00:00">
+		<label class="hour">01</label>:
+		<label class="min">28</label>:
+		<label class="sec">216</label>
+	</div>
+	<div class="countDown" data-start-time="2016/3/20 9:00:00" data-end-time="2016/3/20 11:00:00">
+		<label class="hour">01</label>:
+		<label class="min">28</label>:
+		<label class="sec">216</label>
+	</div>
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+	<script>	
+	var aCountDown = $('.countDown');
+	aCountDown.each(function(i){
+		var _this = $(this);
+		var index = i;
+		var startTime = _this.attr('data-start-time');
+		var endTime = _this.attr('data-end-time');
+		var leftTime = new Date(endTime).getTime() - new Date(startTime).getTime();
+		console.log(leftTime);
+
+		setInterval(function(){
+			var timeDistance = leftTime;			
+			var hm = Math.floor(timeDistance%1000);
+			var sec = Math.floor(timeDistance/1000%60);
+			var min = Math.floor(timeDistance/1000/60%60);
+			var hour = Math.floor(timeDistance/1000/60/60%24);
+
+			$('.countDown').eq(i).find('.hour').html(toDouble(min));
+			$('.countDown').eq(i).find('.min').html(toDouble(sec));
+			$('.countDown').eq(i).find('.sec').html(haomiao(hm));
+			leftTime = leftTime - 50;
+		}, 50);	
+	});	
+						
+	function toDouble(num){
+
+		return num < 10 ? '0'+num : num;
+
+	};
+
+	function haomiao(num) {
+		if (num < 10) return '00' + num.toString();
+		if (num < 100) return '0' + num.toString();
+		return num.toString();
+	};
+	</script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>支付失败——夺宝奇兵</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="author" content="">
+	<meta name="Copyright" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<!-- style base -->
+	<link rel="stylesheet" href="css/base.css">
+	<!-- style common -->
+	<link rel="stylesheet" href="css/common.css">
+	<!-- style swiper -->
+	<link rel="stylesheet" href="js/swiper/swiper.min.css">
+	<!-- style layout -->
+	<link rel="stylesheet" href="css/layout.css">
+</head>
+<body>
+	<div class="viewport v-pay-failure">
+		<div class="pay-success">
+			<div class="success-info">
+				<i class="icon-pay-success"><img src="images/win-ico2.png" alt=""/></i>
+				<h3 class="suc-txt">下单失败！</h3>
+				<div class="indiana-info">
+                	<strong>此次参与下单失败<br>并未支付成功</strong><!--下单失败时显示-->
+                	<p class="status-info-failure">注：若券有减少，减少的券将会原路返回您的账户。</p>
+				</div>
+				<a href="#" class="btn btn-error btn-back-home"><span>返回首页</span></a>
+			</div>
+			<div class="win-banner"><img src="images/win-banner.jpg" alt=""/></div>
+			<!-- hot -->
+			<div class="grid hot mt-10" id="swiper">
+				<div class="hot-hd">
+					<h3><i class="icon-tag-1"></i>为您推荐</h3>
+				</div>
+				<ul class="swiper-wrapper clearfix">
+					<li class="swiper-slide">
+						<div class="goods-pic">
+							<img src="images/share_1.jpg" width="100%" alt="">
+							<label class="tag-hot">热门</label>
+						</div>
+						<div class="goods-name">多功能榨汁机多功能榨机多功能榨汁机</div>
+					</li>
+					<li class="swiper-slide">
+						<div class="goods-pic">
+							<img src="images/share_1.jpg" width="100%" alt="">
+							<label class="tag-hot">热门</label>
+						</div>
+						<div class="goods-name">多功能榨汁机多功能榨机多功能榨汁机</div>
+					</li>
+					<li class="swiper-slide">
+						<div class="goods-pic">
+							<img src="images/share_1.jpg" width="100%" alt="">
+							<label class="tag-hot">热门</label>
+						</div>
+						<div class="goods-name">多功能榨汁机多功能榨机多功能榨汁机</div>
+					</li>
+					<li class="swiper-slide">
+						<div class="goods-pic">
+							<img src="images/share_1.jpg" width="100%" alt="">
+							<label class="tag-hot">热门</label>
+						</div>
+						<div class="goods-name">多功能榨汁机多功能榨机多功能榨汁机</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="fixed-nav">
+        <a href="home.html"><i class="icon-nav icon-home"></i>首页</a>
+        <a href="share.html"><i class="icon-nav icon-camera"></i>晒单</a>
+        <a href="#"><i class="icon-nav icon-acti"></i>活动</a>
+        <a href="cart.html"><i class="icon-nav icon-cart"></i>清单</a>
+        <a href="personal_center.html"><i class="icon-nav icon-avatar"></i>个人中心</a>
+	</div>
+	<!-- jquery lib script -->
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+	<!-- swiper script -->
+	<script type="text/javascript" src="js/swiper/swiper.min.js"></script>
+	<script>
+	$(function(){
+		// 热门
+		var swiper = new Swiper('#swiper', {
+			slidesPerView: 3,
+			spaceBetween: 10,
+			slidesOffsetBefore: 10,
+			freeMode: true
+		});
+	})
+	</script>
+</body>
+</html>
