@@ -1,0 +1,86 @@
+<!-- breadcrumb start -->
+<div class="code-breadcrumb">
+	<ul>
+		<li>活动码统计</li>
+	</ul>
+</div>
+<!-- breadcrumb end -->
+<div class="page-content statis-activity">
+	<div class="code-panel">
+		<p class="panel-control">
+			<label>扫码日期</label>
+			<input type="text" class="date-picker" id="dateRangePicker" date-range-picker ng-model="date" options="opts">
+			<i class="icon-panel-calendar fa fa-calendar"></i>
+		</p>
+		<p class="panel-control panel-filter">
+			<a href="javascript:;" class="btn-filter" id="last7Day" ng-click="setDateRange(7)">7天</a>
+			<a href="javascript:;" class="btn-filter" id="last30Day" ng-click="setDateRange(30)">30天</a>
+		</p>
+		<p class="panel-control">
+			<label for="policyName">策略名称</label>
+			<select name="policyName" id="policyName">
+				<option value="1">大转盘</option>
+				<option value="2">积分</option>
+				<option value="3">刮刮乐</option>
+				<option value="4">测试</option>
+				<option value="5">测试数据</option>
+			</select>
+		</p>
+		<div class="panel-btns">
+			<a href="javascirpt:;" class="btn-code btn-code-primary btn-query">查询</a>
+		</div>
+	</div>
+	
+	<div class="column column-5 mt-20">
+		<div class="column-item"><label>扫码数</label><span>2</span></div>
+		<div class="column-item"><label>用户数</label><span>1</span></div>
+		<div class="column-item"><label>粉丝数</label><span>1</span></div>
+		<div class="column-item"><label>转粉率</label><span>100.0%</span></div>
+		<div class="column-item"><label>中奖数</label><span>0</span></div>
+	</div>
+
+	<div class="chart mt-20">
+		<highchart id="chart1" config="chartConfig"></highchart>
+	</div>
+	
+	<div class="table-operations">
+		<a href="javascript" class="btn-code btn-code-xs btn-code-primary">批量导出</a>
+	</div>
+	<table class="code-table code-table-border code-table-hover mt-20">
+		<thead>
+			<tr>
+				<th><input type="checkbox" name=""></th>
+				<th>日期(天)</th>
+				<th>扫码数</th>
+				<th>用户数</th>
+				<th>粉丝数</th>
+				<th>转粉率</th>
+				<th>中奖数</th>
+			</tr>		
+		</thead>
+		<tbody>
+			<tr>
+				<td>
+					<input type="checkbox" name="">
+				</td>
+				<td>2017-03-20</td>
+				<td>2</td>
+				<td>1</td>
+				<td>1</td>
+				<td>100.0%</td>
+				<td>0</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="checkbox" name="">
+				</td>
+				<td>2017-03-20</td>
+				<td>2</td>
+				<td>1</td>
+				<td>1</td>
+				<td>100.0%</td>
+				<td>0</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

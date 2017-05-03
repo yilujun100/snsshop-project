@@ -1,0 +1,38 @@
+<div class="login-wrap">
+	<div class="login">
+		<h3>欢迎登录</h3>
+		<form class="form form-login" name="loginForm" novalidate>
+			<div class="form-group">
+				<label for="userName">用户名</label>
+				<input type="text" name="username" id="userName" ng-model="user.name" 
+					ng-class="{'input-error': showErrorUserName.required || showErrorUserName.pattern}" 
+					ng-blur="checkUserName()"
+					ng-pattern="/^[a-zA-Z]+$/" 
+					required>
+				<div class="error-info">
+					<span class="error" ng-show="showErrorUserName.required">用户名不能为空</span>
+					<span class="error" ng-show="showErrorUserName.pattern">用户名格式有误</span>
+				</div>	
+			</div>
+			<div class="form-group">
+				<label for="pwd">密码</label>
+				<input type="password" name="pwd" id="pwd" ng-model="user.pwd" 
+					ng-class="{'input-error': showErrorPwd.required || showErrorPwd.minlength}"
+					ng-blur="checkPwd()"
+					ng-minlength="6" 
+					required>
+				<div class="error-info">
+					<span class="error" ng-show="showErrorPwd.required">密码不能为空</span>
+					<span class="error" ng-show="showErrorPwd.minlength">密码至少六位</span>
+				</div>	
+			</div>
+			<p class="login-auto">
+				<input type="checkbox" id="loginAuto" ng-model="user.autoLogin" ng-init="user.autoLogin = true" ng-checked="user.autoLogin">
+				<label for="loginAuto">自动登录</label>
+			</p>
+			<div class="form-bott">
+				<a href="javascript:;" class="btn btn-block btn-primary btn-radius" ng-click="validate()">登录</a>
+			</div>
+		</form>
+	</div>	
+</div>

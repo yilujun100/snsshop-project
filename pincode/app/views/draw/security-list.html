@@ -1,0 +1,141 @@
+<div class="page-content">
+  <h4 class="header header-titles">溯源码策略
+    <small>（共<span>12</span>条）</small>
+  </h4>
+  <div class="row">
+    <div class="header-search">
+      <label>活动类型:</label>
+      <select>
+        <option>全部</option>
+        <option>大转盘</option>
+        <option>刮刮乐</option>
+        <option>积分</option>
+      </select>
+    </div>
+    <div class="header-search">
+      <label>活动状态:</label>
+      <select>
+        <option>全部</option>
+        <option>进行中</option>
+        <option>未开始</option>
+        <option>已结束</option>
+      </select>
+    </div>
+    <div class="header-search">
+      <label>启用状态:</label>
+      <select>
+        <option>全部</option>
+        <option>关闭</option>
+        <option>开启</option>
+      </select>
+    </div>
+    <div class="header-search">
+      <label>策略名称:</label>
+      <input type="text" placeholder="请输入关键字">
+    </div>
+    <div class="panel-btns">
+      <a href="javascirpt:;" class="btn-code btn-code-primary btn-query">查询</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="margin-bottom20 margin-top10 margin-left20">
+      <a class="btn-code btn-code-primary btn-query" href="#/securityCreate">创建码策略</a>
+      <a class="btn-code btn-code-primary btn-query">批量导出</a>
+    </div>
+
+  </div>
+  <div class="row margin-top10">
+    <div style="margin: 0 20px;">
+      <div class="table-responsive">
+        <table width="100%" class="code-table code-table-border code-table-hover">
+          <thead>
+          <th class="text-center">
+            <label>
+              <input type="checkbox" class="ace">
+              <span class="lbl"></span>
+            </label>
+          </th>
+          <th class="text-center">策略名称</th>
+          <th class="text-center">活动类型</th>
+          <th class="text-center">活动时间</th>
+          <th class="text-center">活动状态</th>
+          <th class="text-center">串码总数</th>
+          <th class="text-center">扫码数</th>
+          <th class="text-center">扫码率</th>
+          <th class="text-center">扫码用户数</th>
+          <th class="text-center">已关注粉丝数</th>
+          <th class="text-center">转粉率</th>
+          <th class="text-center">启用状态</th>
+          <th class="text-center">操作</th>
+          </thead>
+          <tbody>
+          <tr>
+            <td>
+              <label>
+                <input type="checkbox" class="ace" >
+                <span class="lbl"></span>
+              </label>
+            </td>
+            <td>图片混乱</td>
+            <td>大转盘</td>
+            <td>2017-03-20 12:56:27 ~ 2017-03-23 12:56:28</td>
+            <td>已结束</td>
+            <td>5</td>
+            <td>1</td>
+            <td>20.00%</td>
+            <td>1</td>
+            <td>1</td>
+            <td>100.00%</td>
+            <td>
+              <label>
+                <input type="checkbox" class="ace ace-switch ace-switch-6" name="switch-field-1">
+                <span class="lbl"></span>
+              </label>
+            </td>
+            <td>
+              <a class="pointer" ng-click="manage()">串码管理</a>
+              <a class="pointer" ng-click="edit()">编辑</a>
+              <a class="blue pointer" href="#/prizeRecord">中奖记录</a>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+  <div class="bootbox modal" id="myModal" tabindex="-1" role="dialog" open-close-modal
+       aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content" style="margin-top:50%">
+        <div class="modal-header" style="background: #1b6aaa;color: #fff;"><a class="bootbox-close-button close" ng-click="close()" data-dismiss="modal">×</a>
+          <h4 class="modal-title">一品一码</h4>
+        </div>
+        <div class="modal-body">
+          <div class="bootbox-body">
+            <form   role="form">
+              <div class="row">
+                <div class="col-xs-12">
+                  <div class="form-group text-center">
+                    <div class="margin-top20 margin-bottom20">
+                      为保障账户资金安全，请使用管理员手机<span>132*****761</span>完成验证后才可修改活动
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label style="display: inline-block;margin-left: 60px;">验证码：</label>
+                    <input type="text" placeholder="请输入6位数字验证码" style="display: inline-block;width: 50%">
+                    <a  class="btn-code btn-code-primary btn-query">免费获取验证码</a>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <a data-bb-handler="cancel" class="btn-code  btn-code-default btn-query" data-dismiss="modal" ng-click="close()">取消</a>
+          <a data-bb-handler="confirm" class="btn-code btn-code-primary btn-query"  data-dismiss="modal">确定</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

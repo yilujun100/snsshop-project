@@ -1,0 +1,92 @@
+<div class="page-content">
+  <div class="row">
+    <div class="bg-white padding20">
+      <div class="prize-record-index">
+        <div class="mod_wininfo">
+          <div class="form-group field-prizerecordsearch-code">
+            <label class="control-label">中奖码</label>
+            <input type="text" class="form-control">
+            <div class="help-block"></div>
+          </div>
+          <div class="form-group field-prizerecordsearch-uid">
+            <label class="control-label">用户id</label>
+            <input type="text" class="form-control">
+            <div class="help-block"></div>
+          </div>
+          <div class="form-group field-prizerecordsearch-nickname">
+            <label class="control-label">用户昵称</label>
+            <input type="text" class="form-control">
+            <div class="help-block"></div>
+          </div>
+          <div class="form-group field-prizerecordsearch-wx_adress">
+            <label class="control-label">物理地址</label>
+            <input type="text" class="form-control">
+            <div class="help-block"></div>
+          </div>
+          <div class="form-group field-prizerecordsearch-client_ip">
+            <label class="control-label">中奖IP</label>
+            <input type="text" class="form-control">
+            <div class="help-block"></div>
+          </div>
+          <div class="form-group field-prizerecordsearch-exchange">
+            <label class="control-label">是否发送</label>
+            <select class="form-control">
+              <option>全部</option>
+              <option>是</option>
+              <option>否</option>
+              <option>不再</option>
+            </select>
+            <div class="help-block"></div>
+          </div>
+          <div class="form-group field-prizerecordsearch-prize_type">
+            <label class="control-label">奖品类型</label>
+            <select class="form-control">
+              <option>实物奖</option>
+              <option>红包</option>
+              <option>优惠券</option>
+            </select>
+            <div class="help-block"></div>
+          </div>
+          <div class="form-group">
+            <label class="control-label">扫码日期</label>
+            <div class="panel">
+              <p>
+                <input type="text" style="width: 70%;margin-top:0" class="date-picker" date-range-picker ng-model="date">
+              </p>
+            </div>
+          </div>
+          <div class="form-group">
+            <a  class="btn-code btn-code-primary btn-query">查询</a>
+            <a  class="btn-code btn-code-primary btn-query">重置</a>
+            <a  class="btn-code btn-code-primary btn-query">导出</a>
+          </div>
+          <table class="code-table code-table-border code-table-hover">
+            <thead>
+            <th>#</th>
+            <th>中奖码</th>
+            <th>昵称</th>
+            <th>扫码次数</th>
+            <th>中奖IP</th>
+            <th>奖品等级</th>
+            <th>奖品</th>
+            <th>是否发送</th>
+            <th>中奖时间</th>
+            <th>物理地址</th>
+            <th>发送失败次数</th>
+            <th>上次发送</th>
+            <th>操作</th>
+            </thead>
+            <tbody>
+            <tr>
+              <td colspan="13">没有找到数据</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</div>

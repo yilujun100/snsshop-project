@@ -1,0 +1,198 @@
+<div class="page-content home-wrap">
+
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="infobox infobox-big infobox-red">
+        <h2>账户信息</h2>
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="infobox-icon">
+              <img src="//imgcache.vikduo.com/static/166f9d8ff9e6aae1bccd7227e6ee1068.jpg"/>
+            </div>
+            <div class="infobox-data">
+              <div class="my-code">我的码</div>
+              <div class="infobox-content infoboxContent">
+                <span>8801</span><i>个</i>
+              </div>
+            </div>
+            <div class="add-price">
+              <a href="#/code">我要充值</a>
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <div class="infobox-icon">
+              <img src="//imgcache.vikduo.com/static/f4f4b023057a7e5e7abee0b5c48bee76.jpg"/>
+            </div>
+            <div class="infobox-data infobox-data-codeadmin">
+              <div class="my-code">管理者</div>
+              <div class="infobox-content infoboxContent">
+                <i>132*****761</i>
+              </div>
+            </div>
+            <div class="add-price">
+              <a ng-click="bind()">换绑</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="infobox infobox-big" style="height: 680px;padding-top:46px;">
+        <div class="data-wrap">
+          <h2 class="col-lg-10">数据概况</h2>
+          <div class="col-lg-2">
+            <select class="data-code">
+              <option value="7">近7天</option>
+              <option value="1">昨日</option>
+              <option value="0">今日</option>
+              <option value="30">近30天</option>
+            </select>
+          </div>
+        </div>
+        <div class="padding-30">
+          <div class="code-detail">
+            <ul class="clearfix">
+              <li class="rline today">
+                <div class="graph_box">
+                  <div class="graph_right">
+                    <div class="txt">扫码数</div>
+                    <div class="num-wrap"><strong class="number">2</strong></div>
+                    <div class="detail-afterday">
+                      <b>较上7天</b>
+                      <i class="arrow_down"></i>
+                      <span>75.0%</span>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="rline today">
+                <div class="graph_box">
+                  <div class="graph_right">
+                    <div class="txt">用户数</div>
+                    <div class="num-wrap"><strong class="number">2</strong></div>
+                    <div class="detail-afterday">
+                      <b>较上7天</b>
+                      <i class="arrow_up"></i>
+                      <span>75.0%</span>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="rline today">
+                <div class="graph_box">
+                  <div class="graph_right">
+                    <div class="txt">粉丝数</div>
+                    <div class="num-wrap"><strong class="number">2</strong></div>
+                    <div class="detail-afterday">
+                      <b>较上7天</b>
+                      <i class="arrow_up"></i>
+                      <span>75.0%</span>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="rline today">
+                <div class="graph_box">
+                  <div class="graph_right">
+                    <div class="txt">转粉率</div>
+                    <div class="num-wrap"><strong class="number">2</strong></div>
+                    <div class="detail-afterday">
+                      <b>较上7天</b>
+                      <i class="arrow_up"></i>
+                      <span>75.0%</span>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="rline today">
+                <div class="graph_box">
+                  <div class="graph_right">
+                    <div class="txt">中奖数</div>
+                    <div class="num-wrap"><strong class="number">2</strong></div>
+                    <div class="detail-afterday">
+                      <b>较上7天</b>
+                      <i class="arrow_down"></i>
+                      <span>75.0%</span>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div id="echarts" style="height: 370px;"></div>
+      </div>
+    </div>
+  </div>
+  <div class="bootbox modal" id="telPhone" tabindex="-1" role="dialog" open-close-modal
+       aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header"><a class="bootbox-close-button close" data-dismiss="modal">×</a>
+          <h4 class="modal-title">一品一码</h4>
+        </div>
+        <div class="modal-body">
+          <div class="bootbox-body">
+            <ng-form name="myform1" novalidate="novalidate" class="form-horizontal" role="form">
+              <div class="row">
+                <div class="col-xs-12">
+                  <div class="form-group clearfix"  ng-show="!parData.mobile">
+                    <label class="col-sm-3 control-label" for="form-field-1">手机号：</label>
+
+                    <div class="col-sm-9">
+                      <input type="text" class="col-sm-6" name="tel" placeholder="请输入您要绑定的手机号码" ng-model="model.mobile"   reg-telephone required>
+                      <span class="inline margin-left10" ></span>
+                      <span class="help-block m-b-none txt-err" ng-show="myform1.tel.$error.required && isSubmit">必填项</span>
+                      <span class="help-block m-b-none txt-err" ng-show="myform1.tel.$error.telephone">手机号码输入错误</span>
+
+                    </div>
+                  </div>
+                  <div class="form-group clearfix"  ng-show="parData.mobile">
+                    <label class="col-sm-3 control-label" for="form-field-1">旧手机号：</label>
+
+                    <div class="col-sm-9">
+                      <input type="text" class="col-sm-6" placeholder="请输入您已绑定的手机号码" name="oldMobile" ng-model="oldMobile"   reg-telephone required>
+                      <span class="inline margin-left10" ></span>
+                      <span class="help-block m-b-none txt-err" ng-show="myform1.oldMobile.$error.required && isSubmit">必填项</span>
+                      <span class="help-block m-b-none txt-err" ng-show="myform1.oldMobile.$error.telephone">手机号码输入错误</span>
+
+                    </div>
+                  </div>
+                  <div class="form-group clearfix"  ng-show="parData.mobile">
+                    <label class="col-sm-3 control-label" for="form-field-1">新手机号：</label>
+
+                    <div class="col-sm-9">
+                      <input type="text" class="col-sm-6" placeholder="请输入您要绑定的手机号码"  name="newMobile" ng-model="newMobile"   reg-telephone required>
+                      <span class="inline margin-left10" ></span>
+                      <span class="help-block m-b-none txt-err" ng-show="myform1.newMobile.$error.required && isSubmit">必填项</span>
+                      <span class="help-block m-b-none txt-err" ng-show="myform1.newMobile.$error.telephone">手机号码输入错误</span>
+
+                    </div>
+                  </div>
+                  <div class="form-group clearfix">
+                    <label class="col-sm-3 control-label" for="form-field-1">验证码：</label>
+
+                    <div class="col-sm-9">
+                      <input type="text" class="col-sm-6" ng-model="model.code" name="verificationCode"
+                             required="required" maxlength="6" ng-pattern=""  reg-int ><span class="margin-left10"></span>
+                      <span class="inline padding5 red"
+                            ng-show="myform1.verificationCode.$error.required && istrue">必填项</span>
+                        <span class="inline padding5 red"
+                              ng-show="myform1.verificationCode.$error.verificationCode ">必填项</span>
+                      <a class="btn btn-primary btn-xs " ng-click="getCode()" ng-bind="contCode" ng-disabled="isDisCode">免费获取验证码</a>
+
+                    </div>
+                    <span class="red" ng-show="myform1.daily_budget.$error.pattern"></span>
+                  </div>
+                </div>
+              </div>
+            </ng-form>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <a data-bb-handler="cancel" class="btn btn-default"
+             data-dismiss="modal">取消</a>
+          <a id="submit" data-bb-handler="confirm" class="btn btn-primary" ng-click="saveAd()">确定</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

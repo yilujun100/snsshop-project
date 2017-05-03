@@ -1,0 +1,31 @@
+<!-- breadcrumb start -->
+<div class="code-breadcrumb">
+	<ul>
+		<li>活动模板</li>
+	</ul>
+</div>
+<!-- breadcrumb end -->
+<div class="page-content acti-template">
+	<div class="code-panel">
+		<p class="panel-control">
+			<label for="actiType">活动类型</label>
+			<select name="actiType" id="actiType">
+				<option value="1">全部</option>
+				<option value="2">大转盘</option>
+				<option value="3">刮刮乐</option>
+				<option value="4">积分</option>
+			</select>
+		</p>
+		<p class="panel-control">
+			<label for="actiName">活动名称</label>
+			<input type="text" name="actiName" placeholder="请输入关键字">
+		</p>
+		<div class="panel-btns">
+			<a href="javascirpt:;" class="btn-code btn-code-primary btn-query">查询</a>
+		</div>
+	</div>
+	<div class="template-actions mt-40">
+		<a ui-sref="index.newActiTemplate" class="btn-code btn-code-primary">创建活动模板</a>
+		<a href="#" class="btn-code btn-code-primary">批量删除</a>
+	</div>
+</div>

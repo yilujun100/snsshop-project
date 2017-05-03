@@ -1,0 +1,369 @@
+.header-titles {
+  border-left: 4px solid #428bca;
+  text-indent: 6px;
+  margin-bottom: 30px;
+}
+.header {
+  line-height: 28px;
+  margin-bottom: 16px;
+  margin-top: 18px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #CCC;
+}
+
+
+.header-search {
+  display: inline-block;
+  margin: 5px 25px;
+}
+.header-search label{
+  font-size: 12px;
+  font-weight: normal;
+}
+.create-active {
+  max-width: 320px;
+}
+
+.col-xs-3 {
+  width: 25%;
+}
+.content-telphone {
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+}
+
+/***************创建码策略 style*********************/
+.scanHeader-top {
+  height: 52px;
+  width: 100%;
+  background: url(//imgcache.vikduo.com/static/c1831e62d8193f7f48aeb3104ae6121d.jpg) no-repeat center;
+  background-size: cover;
+  -webkit-background-size: cover;
+}
+.address_san_top {
+  height: 65px;
+  line-height: 65px;
+  text-align: center;
+  color: #989898;
+}
+.address_san {
+  height: 83px;
+  width: 83px;
+  margin: 0 auto;
+  -webkit-background-size: contain;
+  background-size: contain;
+}
+.address_san_one {
+  background: url(//imgcache.vikduo.com/static/ddae8e026f6bfc3d90162d32448a5434.jpg) no-repeat left top;
+  -webkit-background-size: contain;
+  background-size: contain;
+}
+
+
+
+.scanHeader {
+  height: 226px;
+  background: #fff;
+}
+.scanHeaderTop-m {
+  height: 45px;
+  width: 100%;
+  font-size: 16px;
+  font-weight: bolder;
+  color: #feaf30;
+  text-align: center;
+  line-height: 45px;
+}
+.scanHeaderTop-m-one {
+  color: #1cafcd;
+}
+.scanHeaderTop-b {
+  height: 25px;
+  width: 100%;
+  text-align: center;
+}
+.scanHeaderTop-b-m {
+  height: 25px;
+  width: 100%;
+  color: #1cafcd;
+  text-align: center;
+}
+.oneHeaderBottom {
+  height: 6px;
+  width: 100%;
+  background: #f8f8f8;
+}
+.content-m {
+  height: 40px;
+  background: #ffffff;
+}
+.content-m-top {
+  background: #ffffff;
+  padding: 0 15px 4px;
+  color: #fb8346;
+}
+.icon_home {
+  display: inline-block;
+  height: 18px;
+  width: 18px;
+  vertical-align: middle;
+  background: url(//imgcache.vikduo.com/static/eb34cef41c6d626097b67f18fb7d9c8b.png) no-repeat 0px 1px;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+.content-m-top span {
+  padding-left: 12px;
+}
+.content-bottom ul li.icon_prize-img {
+  height: 74px;
+  padding: 0rem;
+  border-bottom: 1px solid #f8f8f8;
+}
+
+.content-bottom ul li {
+  min-height: 45px;
+  padding: 0 15px;
+  line-height: 45px;
+  border-bottom: 1px solid #f8f8f8;
+  height: auto!important;
+}
+.content-footer {
+  height: 36px;
+  width: 100%;
+  line-height: 36px;
+  text-align: center;
+  bottom: 0;
+  left: 0;
+  color: #c3c0c0;
+  margin-top: 10px;
+}
+.icon_prize-img img {
+  height: 74px;
+  width: 100%;
+}
+
+img {
+  vertical-align: middle;
+}
+
+.icon_home {
+  display: inline-block;
+  height: 18px;
+  width: 18px;
+  vertical-align: middle;
+  background: url(//imgcache.vikduo.com/static/eb34cef41c6d626097b67f18fb7d9c8b.png) no-repeat 0px 1px;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+.icon_look {
+  background-position: 0px -35px;
+}
+.icon_shop {
+  background-position: 0px -73px;
+}
+.icon_setter {
+  background-position: 0px -149px;
+}
+.icon_text {
+  height: 100%;
+  display: inline-block;
+  padding-left: 0.22rem;
+}
+.icon_jian {
+  display: inline-block;
+  height: 100%;
+  float: right;
+  font-size: 0.34rem;
+}
+.create-active-wrap {
+  border: 1px solid #ccc;
+  min-height: 900px;
+  margin-left: 40px;
+  background: #fff;
+}
+.col-xs-9 {
+  width: 75%;
+}
+.form-group-me {
+  margin: 20px 20px 0 40px;
+  line-height: 30px;
+  height: 30px;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+.margin-top10{
+  margin-top: 10px;
+}
+.margin-bottom20{
+  margin-bottom: 20px;
+}
+.margin-left20{
+  margin-left:20px;
+}
+/*中奖记录 style*/
+.bg-white {
+  background: #fff;
+}
+.padding20{
+  padding: 20px;
+}
+.prize-record-index {
+  min-width: 1460px;
+  overflow-x: auto;
+}
+.mod_wininfo {
+  border: 1px solid #ebebeb;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.mod_wininfo .form-group {
+  float: left;
+  margin-bottom: 0;
+  padding: 10px 0;
+  width: 23%;
+}
+.mod_wininfo .form-group label {
+  margin-bottom: 0;
+  width: 30%;
+  text-align: right;
+}
+.prize-record-index .form-group label {
+  float: left;
+  height: 34px;
+  line-height: 34px;
+  padding-right: 10px;
+}
+.prize-record-index .form-group {
+  margin-right: 10px;
+}
+.mod_wininfo .form-group .form-control {
+  width: 70%;
+}
+.secondary-menu {
+  margin: 15px 20px;
+  background: #fff;
+  height: 50px;
+  line-height: 50px;
+}
+.secondary-menu ul {
+  padding: 0;
+  margin: 0;
+}
+.mui_flex, .mui_flex *, .mui_flex:after, .mui_flex:before {
+  box-sizing: border-box;
+}
+.mui_flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.mui_flex > .cell {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  width: 0;
+  -webkit-flex-basis: 0;
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+  max-width: 100%;
+  display: block;
+  padding: 0!important;
+  position: relative;
+}
+.secondary-menu li {
+  position: relative;
+  text-align: center;
+}
+.mui_flex, .mui_flex *, .mui_flex:after, .mui_flex:before {
+  box-sizing: border-box;
+}
+.secondary-menu li a:hover, .secondary-menu li a.choose {
+  border-bottom: 2px solid #64acd4;
+}
+.secondary-menu li a {
+  display: block;
+  color: #3c8dbc;
+  cursor: pointer;
+}
+.field-rechargecodeform-pincode {
+  height: 40px!important;
+  margin-top: 40px;
+}
+.mod_fill .control-label {
+  float: left;
+  margin-right: 10px;
+  line-height: 34px;
+  width: 16%;
+  text-align: right;
+}
+.form-group label {
+  font-size: 12px;
+  font-weight: normal;
+}
+.pointer{
+  cursor: pointer;
+}
+
+
+/************串码管理 style**************/
+.mod_graph {
+  margin: 20px 20px 0 30px;
+  padding: 10px 0px 0px;
+  position: relative;
+}
+.mod_graph ul {
+  padding: 0;
+  margin: 0;
+}
+.mod_graph  li {
+  width: 25%;
+  height: 140px;
+  float: left;
+  padding: 15px;
+  position: relative;
+  list-style: none;
+}
+.mod_graph li .graph_box {
+  width: 250px;
+  margin: 0 auto;
+}
+.mod_graph .graph_left {
+  float: left;
+  margin-top: 30px;
+}
+.mod_graph .graph_left .tit {
+  font-size: 16px;
+  color: #666;
+  padding-bottom: 15px;
+}
+.mod_graph .graph_left .number {
+  display: block;
+  padding-bottom: 15px;
+  font-size: 16px;
+  color: #333;
+  cursor: pointer;
+}
+.mod_graph .rline:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 1px;
+  background: #ebebeb;
+}
+.header-h4{
+  border-left: 4px solid #428bca;
+  text-indent: 6px;
+  margin-bottom: 30px;
+  font-size: 14px;
+  height: 24px;
+}

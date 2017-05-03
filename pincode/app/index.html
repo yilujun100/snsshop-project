@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <!-- build:css(.) styles/vendor.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="bower_components/bootstrap-daterangepicker/daterangepicker.css" />
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:css(.tmp) styles/main.css -->
+  <!-- style reset -->
+  <link rel="stylesheet" href="styles/reset.css">
+  <!-- style bootstrap -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />  
+  <!-- style common -->
+  <link rel="stylesheet" href="styles/common.css">
+  <link rel="stylesheet" href="styles/home.css">
+  <link rel="stylesheet" href="styles/active.css">
+  <!-- style font awesome -->
+  <link rel="stylesheet" href="styles/font-awesome-4.7.0/css/font-awesome.css">
+  <!-- style layout -->
+  <link rel="stylesheet" href="styles/layout.css">  
+  <!-- endbuild -->
+</head>
+<body ng-app="pincodeApp">
+  <div ui-view="indexView"></div>
+
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+<script>
+ !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+ (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+ r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+ }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ ga('create', 'UA-XXXXX-X');
+ ga('send', 'pageview');
+</script>
+
+<!-- build:js(.) scripts/vendor.js -->
+<!-- bower:js -->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="bower_components/angular-touch/angular-touch.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="bower_components/moment/moment.js"></script>
+<script src="bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+<script src="bower_components/angular-daterangepicker/js/angular-daterangepicker.js"></script>
+<script src="bower_components/highcharts/highcharts.js"></script>
+<script src="bower_components/highcharts-ng/dist/highcharts-ng.js"></script>
+<script src="bower_components/tinymce/tinymce.js"></script>
+<script src="bower_components/angular-ui-tinymce/src/tinymce.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+<!-- build:js({.tmp,app}) scripts/scripts.js -->
+<script src="scripts/app.js"></script>
+<script src="scripts/auth.js"></script>
+<script src="scripts/controllers/topbarCtrl.js"></script>
+<script src="scripts/controllers/leftbarCtrl.js"></script>
+<script src="scripts/controllers/homeCtrl.js"></script>
+<script src="scripts/controllers/activityListCtrl.js"></script>
+<script src="scripts/controllers/codeCheckCtrl.js"></script>
+<script src="scripts/controllers/statisActivityCtrl.js"></script>
+<script src="scripts/controllers/statisSecurityCtrl.js"></script>
+<script src="scripts/controllers/statisRootsCtrl.js"></script>
+<script src="scripts/controllers/actiTemplateCtrl.js"></script>
+<script src="scripts/controllers/activityRecordCtrl.js"></script>
+<script src="scripts/controllers/rootsListCtrl.js"></script>
+<script src="scripts/controllers/rootsRecordCtrl.js"></script>
+<script src="scripts/controllers/securityListCtrl.js"></script>
+<script src="scripts/controllers/securityRecordCtrl.js"></script>
+<script src="scripts/controllers/securityCreateCtrl.js"></script>
+<script src="scripts/controllers/prizeRecordCtrl.js"></script>
+<script src="scripts/controllers/codeCtrl.js"></script>
+<script src="scripts/controllers/logCtrl.js"></script>
+<script src="scripts/controllers/newActiTemplateCtrl.js"></script>
+<script src="scripts/controllers/codeAdministrateCtrl.js"></script>
+<script src="scripts/controllers/rootsTemplateCtrl.js"></script>
+<script src="scripts/controllers/newRootsTemplateCtrl.js"></script>
+<script src="scripts/services/function.js"></script>
+<!-- endbuild -->
+</body>
+</html>

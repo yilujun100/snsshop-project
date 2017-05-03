@@ -1,0 +1,267 @@
+<!-- breadcrumb start -->
+<div class="code-breadcrumb">
+	<ul>
+		<li>创建活动模板</li>
+	</ul>
+</div>
+<!-- breadcrumb end -->
+<div class="page-content new-acti-tmp">
+	<!-- template view start -->
+	<div class="tmp-view tmp-view-acti">
+		<div class="tmp-view-hd">
+			<img src="images/draw/tmp_head.png" width="100%" height="auto" alt="">
+		</div>
+		<div class="tmp-view-content">
+			<div class="user-avatar">
+				<img src="images/draw/avatar.jpg" width="26" height="26" alt="">
+			</div>
+			<div class="turntable">
+				<img src="images/draw/turntable.png" width="280" height="280" alt="">
+				<div class="pointer">
+					<img src="images/draw/pointer.png" width="140" height="140" alt="">
+				</div>
+				<div class="arrow-box">
+					<a href="javascript:;" class="btn-draw-start">开始抽奖</a>
+				</div>
+				<div class="prize-list">
+					<div class="prize-item prize-first">
+						<img src="images/draw/prize.png" width="36" height="36" alt="">
+					</div>
+					<div class="prize-item prize-second">
+						<img src="images/draw/prize.png" width="36" height="36" alt="">						
+					</div>
+					<div class="prize-item prize-third">
+						<img src="images/draw/prize.png" width="36" height="36" alt="">							
+					</div>
+					<div class="prize-item prize-parti prize-parti-1">
+						<img src="images/draw/face.png" width="36" height="36" alt="">							
+					</div>
+					<div class="prize-item prize-parti prize-parti-2">						
+						<img src="images/draw/face.png" width="36" height="36" alt="">
+					</div>
+					<div class="prize-item prize-parti prize-parti-3">
+						<img src="images/draw/face.png" width="36" height="36" alt="">
+					</div>
+				</div>
+			</div>
+			<div class="tmp-wrap">
+				<div class="bg-black"></div>
+				<div class="win-list">
+					<ul>
+						<li><label>张****</label><span>抽中一等奖现金红包</span></li>
+						<li><label>张****</label><span>抽中一等奖现金红包</span></li>
+						<li><label>张****</label><span>抽中一等奖现金红包</span></li>
+					</ul>
+				</div>
+
+				<div class="bg-black"></div>
+				<div class="acti-info">
+					<div class="acti-info-item">
+						<label>奖项说明:</label>
+						<p></p>
+					</div>
+					<div class="acti-info-item">
+						<label>活动时间:</label>
+						<p></p>
+					</div>
+					<div class="acti-info-item">
+						<label>活动规则:</label>
+						<p></p>
+					</div>
+					<b class="win-record">我的中奖纪录&gt;&gt;</b>
+				</div>				
+			</div>
+		</div>
+		<div class="tmp-view-foot">
+			<img src="images/draw/qrcode.jpg" width="32" height="32" alt="">
+			<p>关注"智慧链接"公众号了解更多</p>
+			<p>由微商户提供技术支持</p>
+		</div>
+	</div>
+	<!-- template view end -->
+	<!-- template config start -->
+	<div class="tmp-config">
+		<form class="form-new-acti-tmp">
+			<div class="form-tmp-control">
+				<label for="actiName">策略名称：</label>
+				<input type="text" name="actiName" id="actiName" placeholder="请输入策略名称">
+				<b>您还可以输入8字</b>
+			</div>
+			<div class="form-tmp-control">
+				<label>活动类型：</label>
+				<span class="acti-type">
+					<a href="javascript:;" class="active">大转盘</a>
+					<a href="javascript:;">刮刮乐</a>
+					<a href="javascript:;">积分活动</a>
+				</span>
+			</div>
+			<div class="form-tmp-control form-tmp-control-time">
+				<label for="dateTimeRangePicker">活动时间：</label>
+				<input type="text" class="date-picker" id="dateTimeRangePicker" date-range-picker ng-model="dateTimeRange" options="dateTimeRangeopts" name="actiTime" placeholder="请选择活动时间" readonly>
+				<i class="icon-panel-calendar fa fa-calendar"></i>
+			</div>
+			<div class="form-tmp-control">
+				<label for="deadline">兑奖截止时间：</label>
+				<input type="text" name="deadline" date-range-picker ng-model="singleDateTime" ng-init="singleDateTime = ''" options="singleDateTimeOpts" id="singleDateTime" placeholder="请输入截止时间" readonly>
+				<i class="icon-panel-calendar fa fa-calendar"></i>
+			</div>
+			<div class="form-tmp-control">
+				<label for="condition">参与条件：</label>
+				<select name="condition" id="condition">
+					<option value="0">不限</option>
+					<option value="1">关注公众号才能参与</option>
+				</select>
+			</div>
+			<div class="form-tmp-control award-set">
+				<label>奖项设置：</label>
+				<div class="flex-box">
+					<label></label>
+					<table class="code-table code-table-border code-table-hover">
+						<thead>
+							<tr>
+								<th width="12%">奖项</th>
+								<th width="16%">类型</th>
+								<th width="32%">奖品名称</th>
+								<th width="16%">奖品图片</th>
+								<th width="12%">数量</th>
+								<th width="12%">中奖率</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>未中奖</td>
+								<td>
+									<input type="text" class="award-set-type" >
+									<b>6个字以内</b>
+								</td>
+								<td></td>
+								<td>
+									<input type="file">
+								</td>
+								<td></td>
+								<td>
+									<input type="text" class="win-probability" placeholder="请输中奖率">%
+								</td>
+							</tr>
+							<tr>
+								<td>一等奖</td>
+								<td>
+									<select class="award-set-type">
+										<option value="0">实物奖</option>
+										<option value="1">现金红包</option>
+										<option value="2">优惠券</option>
+									</select>
+								</td>
+								<td class="td-award-name">
+									<input type="text" placeholder="实物奖名称">
+									<input type="text" placeholder="现金红包格式(1.00~200.00)">
+									<select>
+										<option value="0">满100减10</option>
+										<option value="1">满200减50</option>
+										<option value="2">满200减50</option>
+									</select>
+								</td>
+								<td>
+									<input type="file">
+								</td>
+								<td>
+									<input type="text" class="award-qty" placeholder="请输入数量">
+								</td>
+								<td>
+									<input type="text" class="win-probability" placeholder="请输中奖率">%
+								</td>
+							</tr>
+							<tr>
+								<td>二等奖</td>
+								<td>
+									<select class="award-set-type">
+										<option value="0">实物奖</option>
+										<option value="1">现金红包</option>
+										<option value="2">优惠券</option>
+									</select>
+								</td>
+								<td class="td-award-name">
+									<input type="text" placeholder="实物奖名称">
+									<input type="text" placeholder="现金红包格式(1.00~200.00)">
+									<select>
+										<option value="0">满100减10</option>
+										<option value="1">满200减50</option>
+										<option value="2">满200减50</option>
+									</select>
+								</td>
+								<td>
+									<input type="file">
+								</td>
+								<td>
+									<input type="text" class="award-qty" placeholder="请输入数量">
+								</td>
+								<td>
+									<input type="text" class="win-probability" placeholder="请输中奖率">%
+								</td>
+							</tr> 
+							<tr>
+								<td>三等奖</td>
+								<td>
+									<select class="award-set-type">
+										<option value="0">实物奖</option>
+										<option value="1">现金红包</option>
+										<option value="2">优惠券</option>
+									</select>
+								</td>
+								<td class="td-award-name">
+									<input type="text" placeholder="实物奖名称">
+									<input type="text" placeholder="现金红包格式(1.00~200.00)">
+									<select>
+										<option value="0">满100减10</option>
+										<option value="1">满200减50</option>
+										<option value="2">满200减50</option>
+									</select>
+								</td>
+								<td>
+									<input type="file">
+								</td>
+								<td>
+									<input type="text" class="award-qty" placeholder="请输入数量">
+								</td>
+								<td>
+									<input type="text" class="win-probability" placeholder="请输中奖率">%
+								</td>
+							</tr>
+						</tbody>
+						<tfoot>
+							<tr>
+								<td colspan="6">
+									<span class="award-tips fl">奖品图片仅支持jpg,png,尺寸40*40且不超过1M</span>
+									<span class="award-actions fr">
+										<a href="javascript:;" class="btn-code btn-code-xs btn-code-primary">添加奖项</a>
+										<a href="javascript:;" class="btn-code btn-code-xs btn-code-primary">删除</a>
+									</span>
+								</td>
+							</tr>
+						</tfoot>
+					</table>
+				</div>
+			</div>
+			<div class="form-tmp-control">
+				<label>奖项说明：</label>
+				<div class="flex-box">
+					<label></label>
+					<textarea ui-tinymce="tinymceOptions" ng-model="actiConstruct"></textarea>
+					<!-- <div text-angular ng-model="actiConstruct"></div> -->
+				</div>
+			</div>
+			<div class="form-tmp-control">
+				<label>活动规则：</label>
+				<div class="flex-box">
+					<label></label>
+					<textarea ui-tinymce="tinymceOptions" ng-model="actiRules"></textarea>
+				</div>
+			</div>
+			<div class="form-tmp-control form-tmp-bott">
+				<label></label>
+				<a href="javascript:;" class="btn-code btn-code-primary">保存</a>
+			</div>
+		</form>
+	</div>
+	<!-- template config end -->
+</div>

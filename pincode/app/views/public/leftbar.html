@@ -1,0 +1,75 @@
+
+	<div class="logo">
+		<a href="#/">
+			<img src="images/logo.png" width="170" height="auto" alt="">
+		</a>
+	</div>
+	<ul class="code-nav">
+		<li ng-repeat="menuItem in menu" ng-class="{'open': menuItem.isOpen, 'active': menuItem.isActive}">
+			<a href="javascript:;" ng-click="menuItem.isOpen = !menuItem.isOpen">
+				<i class="icon-nav fa" ng-class="menuItem.iconClass"></i>
+				<span class="menu-text" ng-bind="menuItem.name"></span>
+				<i class="icon-arrow fa fa-angle-down" ng-class="{'fa-angle-down': menuItem.isOpen, 'fa-angle-up': !menuItem.isOpen}"></i>
+			</a>
+			<ul class="submenu">
+				<li ng-repeat="submenuItem in menuItem.submenu" ng-class="{'active': submenuItem.isActive}"><a ng-href="#{{submenuItem.url}}" ng-bind="submenuItem.name"></a></li>
+			</ul>
+		</li>
+		<!-- <li class="open active">
+			<a href="javascript:;">
+				<i class="icon-nav fa fa-gift"></i>
+				<span class="menu-text">活动</span>
+				<i class="icon-arrow fa fa-angle-down"></i>
+			</a>
+			<ul class="submenu">
+				<li class="active"><a href="#">活动码策略</a></li>
+				<li><a href="#">扫码记录</a></li>
+			</ul>
+		</li>
+		<li class="open">
+			<a href="javascript:;">
+				<i class="icon-nav fa fa-qrcode"></i>
+				<span class="menu-text">防伪</span>
+				<i class="icon-arrow fa fa-angle-down"></i>
+			</a>
+			<ul class="submenu">
+				<li><a href="#">防伪码策略</a></li>
+				<li><a href="#">扫码记录</a></li>
+			</ul>
+		</li>
+		<li class="open">
+			<a href="javascript:;">
+				<i class="icon-nav fa fa-qrcode"></i>
+				<span class="menu-text">溯源</span>
+				<i class="icon-arrow fa fa-angle-down"></i>
+			</a>
+			<ul class="submenu">
+				<li><a href="#">溯源码策略</a></li>
+				<li><a href="#">扫码记录</a></li>
+			</ul>
+		</li>
+		<li class="open">
+			<a href="javascript:;">
+				<i class="icon-nav fa fa-line-chart"></i>
+				<span class="menu-text">数据统计</span>
+				<i class="icon-arrow fa fa-angle-down"></i>
+			</a>
+			<ul class="submenu">
+				<li><a href="#">扫码概况</a></li>
+				<li><a href="#">活动码统计</a></li>
+				<li><a href="#">防伪码统计</a></li>
+				<li><a href="#">溯源码统计</a></li>
+			</ul>
+		</li>
+		<li class="open">
+			<a href="javascript:;">
+				<i class="icon-nav fa fa-inbox"></i>
+				<span class="menu-text">素材库</span>
+				<i class="icon-arrow fa fa-angle-down"></i>
+			</a>
+			<ul class="submenu">
+				<li><a href="#">活动模板</a></li>
+				<li><a href="#">溯源模板</a></li>
+			</ul>
+		</li> -->
+	</ul>

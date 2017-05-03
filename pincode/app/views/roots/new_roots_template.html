@@ -1,0 +1,148 @@
+<!-- breadcrumb start -->
+<div class="code-breadcrumb">
+	<ul>
+		<li>创建溯源模板</li>
+	</ul>
+</div>
+<!-- breadcrumb end -->
+<div class="page-content new-roots-tmp">
+	<!-- template view start -->
+	<div class="tmp-view">
+		<div class="tmp-view-hd">
+			<img src="images/roots/tmp_head.jpg" width="100%" height="auto" alt="">
+		</div>
+		<div class="tmp-view-content">
+			<div class="banner">
+				<img src="images/roots/banner.jpg" width="100%" height="auto" alt="">
+			</div>
+			<div class="roots-tmp-bg"></div>
+			<div class="roots-tmp-grid mt-20">
+				<div class="roots-grid-hd">
+					<h3>溯源产品</h3>
+				</div>
+				<div class="roots-grid-con">
+					<p><label>产品名称</label><span></span></p>
+					<p><label>规格</label><span></span></p>
+					<p><label>产地</label><span></span></p>
+					<p><label>原材料</label><span></span></p>
+				</div>
+			</div>
+			<div class="roots-tmp-bg"></div>
+			<div class="roots-tmp-grid mt-20">
+				<div class="roots-grid-hd">
+					<h3>溯源信息</h3>
+				</div>
+				<div class="roots-grid-con">
+					<div class="tmp-timeline">
+						<div class="tmp-timeline-item">
+							<div class="tl-item-no">1</div>
+							<div class="tl-item-content">
+								<h3 class="tl-item-title">市场分析</h3>
+								<p class="tl-item-time">2015.01.02 -至今 盛灿科技</p>
+								<p class="tl-item-desc">盛灿科技的小伙伴们开始对用户的行为习惯进行调研。对一品一码的使用场景和用户角色进行模拟，深入了解用户心理和诉求，多数据多角度的收集不同层次用户群体的用户需求,为提供更完善的产品服务而努力。</p>
+								<img class="tl-item-thumb" src="images/roots/pic_1.jpg" width="100%" alt="">
+							</div>
+						</div>
+						<div class="tmp-timeline-item">
+							<div class="tl-item-no">2</div>
+							<div class="tl-item-content">
+								<h3 class="tl-item-title">功能设计</h3>
+								<p class="tl-item-time">2015.01.02 -至今 盛灿科技</p>
+								<p class="tl-item-desc">通过分析用户心理，用户的诉求，使产品的流程设计、功能设计、交互设计更加合理化和人性化，给用户提供更优质的产品服务。</p>
+								<img class="tl-item-thumb" src="images/roots/pic_2.jpg" width="100%" alt="">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="roots-tmp-bg"></div>
+			<div class="roots-tmp-ad">
+				<img src="images/roots/pic_3.jpg" width="100%" height="auto" alt="">
+			</div>
+		</div>
+		<div class="tmp-view-foot tmp-view-foot-roots">
+			<p>由微商户提供技术支持</p>
+		</div>
+	</div>
+	<!-- template view end -->	
+	<!-- template config start -->
+	<div class="tmp-config">
+		<form class="form-new-roots-tmp">
+			<div class="form-tmp-control">
+				<label>宣传图片：</label>
+				<a href="javascript:;" class="btn-input-file">
+					+ 编辑图片
+					<input type="file" class="input-file">
+				</a>
+				<b>(仅支持 jpg、png、 尺寸750*560 不超过1M)</b>
+				<div class="pic-preview" style="margin-left: 134px;">
+					<img src="images/roots/banner.jpg" width="140" height="auto" alt="">
+				</div>
+			</div>
+			<div class="form-tmp-group">
+				<h3>溯源产品信息</h3>
+				<div class="form-tmp-item flex-box">
+					<input type="text" class="tmp-product-info" value="产品名称" disabled>
+					<input type="text" class="tmp-product-content" placeholder="请填写单个商品的产品名称">
+					<a href="javascript:;" class="btn-tmp-actions"><i class="fa fa-plus"></i></a>
+				</div>
+				<div class="form-tmp-item flex-box mt-20">
+					<input type="text" class="tmp-product-info" value="规格">
+					<input type="text" class="tmp-product-content" placeholder="请填写单个商品的规格">
+					<a href="javascript:;" class="btn-tmp-actions"><i class="fa fa-trash-o"></i></a>
+				</div>
+				<div class="form-tmp-item flex-box mt-20">
+					<input type="text" class="tmp-product-info" value="产地">
+					<input type="text" class="tmp-product-content" placeholder="请填写单个商品的产地">
+					<a href="javascript:;" class="btn-tmp-actions"><i class="fa fa-trash-o"></i></a>
+				</div>
+				<div class="form-tmp-item flex-box mt-20">
+					<input type="text" class="tmp-product-info" value="原材料">
+					<input type="text" class="tmp-product-content" placeholder="请填写单个商品的原材料">
+					<a href="javascript:;" class="btn-tmp-actions"><i class="fa fa-trash-o"></i></a>
+				</div>
+			</div>
+			<div class="form-tmp-group">
+				<h3>溯源节点信息</h3>
+				<div class="tmp-node flex-box">
+					<label>节点1：</label>
+					<div class="tmp-node-content">
+						<p>
+							<input type="text" class="tmp-node-title" placeholder="例如：饲养奶牛">
+							<input type="text" class="tmp-node-time" date-range-picker ng-model="singleDateTime" ng-init="singleDateTime = ''" options="singleDateTimeOpts" id="singleDateTime" placeholder="请选择开始时间" readonly>
+							<input type="text" class="tmp-node-subtitle" placeholder="例如：意大利XX牧牛场">
+						</p>
+						<p>
+							<textarea class="tmp-node-desc"></textarea>
+						</p>
+						<div class="tmp-node-pic">
+							<a href="javascript:;" class="btn-input-file">
+								+ 编辑图片
+								<input type="file" class="input-file">
+							</a>
+							<b>(仅支持 jpg、png、 尺寸750*560 不超过1M)</b>
+							<div class="pic-preview">
+								<img src="images/roots/pic_1.jpg" width="140" height="auto" alt="">
+							</div>
+						</div>
+						<div class="node-actions">
+							<a href="javascript:;" class="btn-node-add" title="添加节点"><i class="fa fa-plus"></i></a>
+							<a href="javascript:;" class="btn-node-remove" title="删除节点"><i class="fa fa-trash-o"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="form-tmp-group">
+				<h3>产品介绍 ( 选填项，点击查看更多显示此内容 )</h3>
+				<div class="form-tmp-control flex-box">
+					<textarea ui-tinymce="tinymceOptions" ng-model="productIntro"></textarea>
+				</div>
+			</div>
+			<div class="form-tmp-control form-tmp-bott">
+				<label></label>
+				<a href="javascript:;" class="btn-code btn-code-primary">保存</a>
+			</div>
+		</form>
+	</div>
+	<!-- template config end -->
+</div>

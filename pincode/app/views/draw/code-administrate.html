@@ -1,0 +1,142 @@
+<div class="page-content">
+  <div class="mod_graph bg-white">
+    <ul class="clearfix">
+      <li class="rline today" style="width: 16.5%">
+        <div class="graph_box">
+          <div class="graph_left">
+            <div class="txt">串码总数</div>
+            <strong class="number" style="font-size: 30px;font-family: normal">10</strong>
+          </div>
+        </div>
+      </li>
+      <li class="rline today" style="width: 16.5%">
+        <div class="graph_box">
+          <div class="graph_left">
+            <div class="txt">扫码数</div>
+            <strong class="number" style="font-size: 30px;font-family: normal">10</strong>
+          </div>
+        </div>
+      </li>
+      <li class="rline today" style="width: 16.5%">
+        <div class="graph_box">
+          <div class="graph_left">
+            <div class="txt">扫码率</div>
+            <strong class="number" style="font-size: 30px;font-family: normal">80.00%</strong>
+          </div>
+        </div>
+      </li>
+      <li class="rline today" style="width: 16.5%">
+        <div class="graph_box">
+          <div class="graph_left">
+            <div class="txt">用户数</div>
+            <strong class="number" style="font-size: 30px;font-family: normal">1</strong>
+          </div>
+        </div>
+      </li>
+      <li class="rline today" style="width: 16.5%">
+        <div class="graph_box">
+          <div class="graph_left">
+            <div class="txt">粉丝数</div>
+            <strong class="number" style="font-size: 30px;font-family: normal">1</strong>
+          </div>
+        </div>
+      </li>
+      <li class="rline today" style="width: 16.5%">
+        <div class="graph_box">
+          <div class="graph_left">
+            <div class="txt">转粉率</div>
+            <strong class="number" style="font-size: 30px;font-family: normal">100.00%</strong>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <h4 class="header header-h4">全部批次
+        <small>（共<span>1</span>条）</small>
+      </h4>
+    </div>
+  </div>
+  <div class="row margin-left20 margin-bottom20">
+    <a class="btn-code btn-code-primary btn-query" ng-click="add()">添加批次</a>
+  </div>
+  <div class="row margin-left20">
+    <table class="code-table code-table-border code-table-hover">
+      <thead>
+      <th>批次</th>
+      <th>码数量</th>
+      <th>关联奖项</th>
+      <th>奖品类型</th>
+      <th>奖品名称</th>
+      <th>备注</th>
+      <th>串码数</th>
+      <th>扫码数</th>
+      <th>扫码率</th>
+      <th>扫码用户数</th>
+      <th>已关注粉丝数</th>
+      <th>转粉率</th>
+      <th>下载次数</th>
+      <th>操作</th>
+
+      </thead>
+      <tbody>
+      <tr>
+        <td>2974</td>
+        <td>10</td>
+        <td>未关联</td>
+        <td>--</td>
+        <td>--</td>
+        <td>--</td>
+        <td>10</td>
+        <td>8</td>
+        <td>80.00%</td>
+        <td>1</td>
+        <td>1</td>
+        <td>100.00%</td>
+        <td>1</td>
+        <td><a>下载串码</a></td>
+
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="bootbox modal" id="addModal" tabindex="-1" role="dialog" open-close-modal
+       aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content" style="margin-top:50%">
+        <div class="modal-header" style="background: #1b6aaa;color: #fff;"><a class="bootbox-close-button close" ng-click="close()" data-dismiss="modal">×</a>
+          <h4 class="modal-title">一品一码</h4>
+        </div>
+        <div class="modal-body">
+          <div class="bootbox-body">
+            <form   role="form">
+              <div class="row">
+                <div class="col-xs-12">
+                  <div class="form-group">
+
+                      <label style="display: inline-block;margin-left: 60px;">数量：</label>
+                      <input type="text" style="width: 50%;display: inline-block">
+
+                  </div>
+                  <div class="form-group">
+                    <label style="display: inline-block;margin-left:36px;">关联奖项：</label>
+                    <input type="checkbox" style="width: 2%;display: inline-block">
+                  </div>
+                  <div class="form-group">
+                    <label style="display: inline-block;margin-left: 60px;">备注：</label>
+                    <textarea></textarea>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <a data-bb-handler="cancel" class="btn-code  btn-code-default btn-query" data-dismiss="modal" ng-click="close()">取消</a>
+          <a data-bb-handler="confirm" class="btn-code btn-code-primary btn-query"  data-dismiss="modal">确定</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
